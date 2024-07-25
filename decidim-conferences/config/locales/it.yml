@@ -1,0 +1,533 @@
+it:
+  activemodel:
+    attributes:
+      conference:
+        assemblies_ids: Assemblee collegate
+        available_slots: Slot disponibili
+        banner_image: Immagine banner
+        copy_categories: Copia le categorie
+        copy_components: Copia componenti
+        copy_features: Copia le caratteristiche
+        decidim_scope_id: Obiettivo
+        description: Descrizione
+        end_date: Data di fine
+        hashtag: Hashtag
+        hero_image: Immagine della home page
+        location: Luogo
+        main_logo: Logo principale
+        objectives: Obiettivi
+        participatory_processes_ids: Processi partecipativi correlati
+        promoted: In evidenza
+        published_at: Pubblicato il
+        registration_terms: Termini di registrazione
+        registrations_enabled: Registrazioni abilitate
+        scope_id: Obiettivo
+        scopes_enabled: Ambiti abilitati
+        short_description: Breve descrizione
+        show_statistics: Mostra statistiche
+        sign_date: Firmato il
+        signature: Firma
+        slogan: Slogan
+        slug: Slug URL
+        start_date: Data di inizio
+        title: Titolo
+      conference_media_link:
+        date: Data
+        link: Collegamento
+        title: Titolo
+      conference_partner:
+        link: Collegamento
+        logo: Logo
+        name: Nome
+        partner_type: Tipo di partner
+      conference_registration_invite:
+        email: Email
+        name: Nome
+        registration_type_id: Tipo di registrazione
+        user_id: Utente
+      conference_registration_type:
+        description: Descrizione
+        price: Prezzo
+        title: Titolo
+      conference_speaker:
+        affiliation: Affiliazione
+        avatar: Avatar
+        conference_meeting_ids: Conferenze correlate
+        full_name: Nome e cognome
+        position: Posizione
+        user_id: Utente
+      conference_user_role:
+        email: E-mail
+        name: Nome
+        role: Ruolo
+  activerecord:
+    models:
+      decidim/conference:
+        one: Conferenza
+        other: conferenze
+      decidim/conference_speaker:
+        one: Relatore della conferenza
+        other: Relatori della conferenza
+      decidim/conference_user_role:
+        one: Ruolo dell'utente della conferenza
+        other: Ruolo dell'utente della conferenza
+  decidim:
+    admin:
+      actions:
+        confirm: Confermare
+        send_diplomas: Invia certificati di frequenza
+      conference_copies:
+        new:
+          copy: Copia
+          select: Seleziona i dati che desideri duplicare
+          title: Duplica Conferenza
+      conference_publications:
+        create:
+          error: Si è verificato un errore durante la pubblicazione di questa conferenza.
+          success: Conferenza pubblicata con successo.
+        destroy:
+          error: Si è verificato un errore durante la cancellazione di questa conferenza.
+          success: Conferenza ritirata con successo.
+      conference_registration:
+        confirm:
+          error: Si è verificato un errore durante la conferma di questa registrazione alla conferenza.
+          success: Registrazione della conferenza confermata con successo.
+      conference_speakers:
+        create:
+          error: Si è verificato un errore durante l'aggiunta di un relatore per questa conferenza.
+          success: Relatore aggiornato con successo per questa conferenza.
+        destroy:
+          success: Relatore della conferenza cancellato con successo.
+        edit:
+          title: Aggiorna relatore della conferenza.
+          update: Aggiorna
+        index:
+          conference_speakers_title: Relatori della conferenza
+        new:
+          create: Crea
+          title: Nuovo relatore per la conferenza.
+        update:
+          error: Si è verificato un errore durante l'aggiornamento del relatore per questa conferenza.
+          success: Relatore aggiornato con successo per questa conferenza.
+      conference_user_roles:
+        create:
+          error: Si è verificato un errore durante l'aggiunta di un Admin per questa conferenza.
+          success: Amministratore della conferenza aggiunto con successo.
+        destroy:
+          success: Amministratore della conferenza rimosso con successo.
+        edit:
+          title: Aggiorna l'amministratore della conferenza.
+          update: Aggiornare
+        new:
+          create: Creare
+          title: Nuovo amministratore della conferenza.
+        update:
+          error: Si è verificato un problema durante l'aggiornamento di questo amministratore della conferenza.
+          success: Amministratore della conferenza aggiornato con successo.
+      conferences:
+        create:
+          error: Si è verificato un errore durante la creazione di una nuova conferenza.
+          success: Conferenza creata con successo.
+        edit:
+          update: Aggiorna
+        exports:
+          registrations: Iscrizioni
+        form:
+          title: Informazioni Generali
+        index:
+          published: Pubblicata
+          unpublished: Non pubblicato
+        new:
+          create: Crea
+          title: Conferenza
+        update:
+          error: Si è verificato un errore durante l'aggiornamento di questa conferenza.
+          success: Conferenza aggiornata con successo.
+      conferences_copies:
+        create:
+          error: Si è verificato un errore durante la duplicazione di questa conferenza.
+          success: Conferenza duplicata con successo.
+      media_links:
+        create:
+          error: Si è verificato un errore durante la creazione di un nuovo collegamento multimediale.
+          success: Link multimediale creato correttamente.
+        destroy:
+          success: Link multimediale cancellato con successo.
+        edit:
+          title: Aggiorna collegamento multimediale.
+          update: Aggiorna
+        index:
+          media_links_title: Link multimediali
+        new:
+          create: Crea
+          title: Link multimediale
+        update:
+          error: Si è verificato un errore aggiornando questo link multimediale.
+          success: Link multimediale aggiornato correttamente.
+      menu:
+        conferences: Conferenze
+        conferences_submenu:
+          attachment_collections: Cartelle
+          attachment_files: Files
+          attachments: Allegati
+          categories: Categorie
+          components: Componenti
+          conference_admins: Amministratori della conferenza
+          conference_invites: Inviti
+          conference_speakers: Relatori
+          diploma: Certificato di partecipazione
+          media_links: Link multimediali
+          moderations: Moderazioni
+          partners: Partners
+          registration_types: Tipi di iscrizione
+          registrations: Iscrizioni
+          user_registrations: Iscrizioni utenti
+      models:
+        conference:
+          fields:
+            created_at: Creato il
+            published: Pubblicato
+            title: Titolo
+        conference_speaker:
+          fields:
+            affiliation: Affiliazione
+            full_name: Nome e cognome
+            position: Posizione
+          name: Relatore della conferenza
+        conference_user_role:
+          fields:
+            email: E-mail
+            name: Nome
+            role: Ruolo
+          name: Amministratore della conferenza
+          roles:
+            admin: Amministratore
+            collaborator: Collaboratore
+            moderator: Moderatore
+            valuator: Valutatore
+        media_link:
+          fields:
+            date: Data
+            link: Collegamento
+            title: Titolo
+          name: Link multimediale
+        partner:
+          fields:
+            link: Collegamento
+            logo: Logo
+            name: Nome
+            partner_type: Tipo
+          name: Partner
+          types:
+            collaborator: Collaboratore
+            main_promotor: Promotore principale
+        registration_type:
+          fields:
+            conference_meetings: Riunioni della conferenza
+            price: Prezzo
+            registrations_count: Conteggio delle iscrizioni
+            title: Titolo
+            weight: Ordine di posizionamento
+          name: Tipo di iscrizione
+      partners:
+        create:
+          error: Si è verificato un errore durante l'aggiunta di un partner per questa conferenza.
+          success: Partner aggiunto con successo a questa conferenza.
+        destroy:
+          success: Partner rimosso correttamente da questa conferenza.
+        edit:
+          title: Aggiorna partner.
+          update: Aggiornare
+        new:
+          create: Crea
+          title: Nuovo partner
+        update:
+          error: Si è verificato un errore durante l'aggiornamento di un partner per questa conferenza.
+          success: Partner aggiornato correttamente per questa conferenza.
+      registration_type_publications:
+        create:
+          error: Si è verificato un errore durante la pubblicazione di questo tipo di iscrizione.
+          success: Tipo di iscrizione pubblicato con successo.
+        destroy:
+          error: Si è verificato un errore durante la cancellazione di questo tipo di iscrizione.
+          success: Tipo di iscrizione cancellato correttamente.
+      registration_types:
+        create:
+          error: Si è verificato un errore durante l'aggiunta di un tipo di iscrizione per questa conferenza.
+          success: Tipo di iscrizione aggiunto correttamente a questa conferenza.
+        destroy:
+          success: Tipo di iscrizione rimosso con successo da questa conferenza.
+        edit:
+          title: Aggiorna il tipo di iscrizione.
+          update: Aggiorna
+        new:
+          create: Crea
+          title: Nuovo tipo di iscrizione
+        update:
+          error: Si è verificato un errore durante l'aggiornamento di un tipo di iscrizione per questa conferenza.
+          success: Tipo di iscrizione aggiornato correttamente in questa conferenza.
+      titles:
+        conferences: Conferenze
+    admin_log:
+      conference:
+        create: "%{user_name} ha creato la conferenza %{resource_name}"
+        publish: "%{user_name} ha pubblicato la conferenza %{resource_name}"
+        send_conference_diplomas: "%{user_name} ha inviato gli attestati di partecipazione ai partecipanti alla conferenza %{resource_name}"
+        unpublish: "%{user_name} ha ritirato la conferenza %{resource_name}"
+        update: "%{user_name} ha aggiornato la conferenza %{resource_name}"
+        update_diploma: "%{user_name} ha aggiornato la configurazione dei certificati di presenza per la conferenza %{resource_name}"
+      conference_speaker:
+        create: "%{user_name} ha aggiunto %{resource_name} come relatore della conferenza%{space_name}"
+        delete: "%{user_name} ha rimosso il relatore %{resource_name} dalla conferenza %{space_name}"
+        update: "%{user_name} aggiornato il relatore %{resource_name} nella conferenza %{space_name}"
+      conference_user_role:
+        create: "%{user_name} ha invitato %{resource_name} alla conferenza %{space_name}"
+        delete: "%{user_name} ha rimosso l'Admin %{resource_name} dalla conferenza %{space_name}"
+        update: "%{user_name} ha cambiato il ruolo di %{resource_name} nella conferenza %{space_name}"
+      conferences:
+        conference_registration:
+          confirm: "%{user_name} confermato la registrazione alla conferenza %{resource_name}"
+        partner:
+          create: "%{user_name} ha creato il partner %{resource_name} nella conferenza %{space_name}"
+          delete: "%{user_name} ha rimosso il partner %{resource_name} dalla conferenza %{space_name}"
+          update: "%{user_name} ha aggiornato il partner %{resource_name} nella conferenza %{space_name}"
+        registration_type:
+          create: "%{user_name} ha creato il %{resource_name} tipo di registrazione nella conferenza %{space_name}"
+          publish: "%{user_name} ha pubblicato il %{resource_name} tipo di registrazione nella %{space_name} conferenza"
+          unpublish: "%{user_name} ha ritirato il %{resource_name} tipo di registrazione nella conferenza %{space_name}"
+          update: "%{user_name} ha aggiornato il %{resource_name} tipo di registrazione nella conferenza %{space_name}"
+      media_link:
+        create: "%{user_name} ha creato il collegamento %{resource_name} link multimediale nella %{space_name} conferenza"
+        delete: "%{user_name} rimosso il collegamento multimediale %{resource_name} dalla conferenza %{space_name}"
+        update: "%{user_name} ha aggiornato il %{resource_name} collegamento multimediale nella %{space_name} conferenza"
+    conference_program:
+      index:
+        title: Programma
+    conference_speakers:
+      index:
+        title: Relatori
+    conferences:
+      admin:
+        conference_invites:
+          create:
+            error: Si è verificato un problema durante l'invito dell'utente a partecipare alla conferenza.
+            success: L'utente è stato invitato con successo ad unirsi alla conferenza.
+          form:
+            attendee_type: Tipo di partecipante
+            existing_user: Utente esistente
+            invite_explanation: L'utente sarà invitato a partecipare alla conferenza e all'organizzazione.
+            non_user: Utente non esistente
+            select_user: Seleziona utente
+          index:
+            invite_attendee: Invita il partecipante
+            invites: Inviti
+          new:
+            invite: Invita
+            new_invite: Invita partecipante
+        conference_registrations:
+          index:
+            registrations: Iscrizioni
+        conference_speakers:
+          form:
+            existing_user: Utente esistente
+            non_user: Non utente
+            select_user: Seleziona utente
+            user_type: Tipologia di utente
+          index:
+            search: Ricerca
+        conferences:
+          form:
+            available_slots_help: Lasciare a 0 se si dispone di posti illimitati disponibili.
+            registrations_count:
+              one: C'è stata 1 registrazione.
+              other: Ci sono state %{count} iscrizioni.
+        diplomas:
+          edit:
+            save: Salva
+            title: Certificato di partecipazione
+        invite_join_conference_mailer:
+          invite:
+            decline: Rifiuta l'invito '%{conference_title}'
+            invited_existing_user_to_join_a_conference: "%{invited_by} ti ha invitato a partecipare alla conferenza %{application}. Puoi rifiutare o accettare tramite i link sottostanti."
+            registration: Registrazione a '%{conference_title}'
+        partners:
+          index:
+            title: Partner
+        registration_types:
+          form:
+            select_conference_meetings: Seleziona le riunioni della conferenza
+          index:
+            title: Tipi di registrazione
+        send_conference_diploma_mailer:
+          diploma:
+            diploma_html: Troverai il certificato di frequenza per la conferenza <a href="%{url}">%{title}</a> negli allegati.
+          diploma_user:
+            attendance_verified_by: Presenza verificata da
+            certificate_of_attendance: Certificato di partecipazione
+            certificate_of_attendance_description: La presente per certificare che <strong>%{user}</strong> ha partecipato e partecipato al <strong>%{title}</strong> tenuta al <strong>%{location}</strong> in data <strong>%{start} - %{end}</strong>
+        send_diploma:
+          error: C'è stato un problema durante l'invio dei certificati di frequenza alla conferenza.
+          success: Certificati di frequenza delle conferenze inviati correttamente
+      conference:
+        registration_confirm:
+          cancel: Annulla
+          confirm: Conferma
+        show:
+          going: Iscritto
+          no_slots_available: Nessuno posto disponibile
+          registration: Registrazione
+      conference_program:
+        show:
+          program: Programma
+      conference_registration_mailer:
+        confirmation:
+          confirmed_html: La tua registrazione per la conferenza <a href="%{url}">%{title}</a> è stata confermata.
+          details_1: 'Sei iscritt* alla conferenza in modalità %{registration_type}. Ha un costo di %{price} e puoi partecipare ai seguenti eventi:'
+          details_2: Troverete i dettagli della conferenza nell'allegato.
+        pending_validation:
+          confirmation_pending: Riceverai la conferma a breve
+          details: 'Ti sei registrat* come %{registration_type} con un costo di %{price} e puoi partecipare ai seguenti eventi:'
+          pending_html: La tua registrazione per la conferenza <a href="%{url}">%{title}</a> è in attesa di conferma.
+      conference_registrations:
+        create:
+          invalid: C'è stato un problema nel partecipare a questa conferenza.
+          success: Ti sei iscritt* alla conferenza con successo.
+        decline_invitation:
+          invalid: Si è verificato un problema durante il declino dell'invito.
+          success: Hai rifiutato l'invito con correttamente.
+        destroy:
+          invalid: C'è stato un problema a lasciare questa conferenza.
+          success: Hai lasciato la conferenza con successo.
+      conference_speaker:
+        more_info: Ulteriori informazioni
+        personal_website: Sito web personale
+        show:
+          more_info: maggiori informazioni
+          speaking_at: Parlando a
+      conference_speaker_cell:
+        personal_url:
+          personal_website: Sito web personale
+      conferences:
+        partners:
+          collaborators: Partner
+          main_promotors: Organizzatori
+        show:
+          login_as: Hai effettuato l'accesso come %{name} <%{email}>
+          register: Registrati
+      content_blocks:
+        highlighted_conferences:
+          name: Conferenze in evidenza
+      index:
+        title: Conferenze
+      mailer:
+        invite_join_conference_mailer:
+          invite:
+            subject: Invito a partecipare a una conferenza
+        send_conference_diploma_mailer:
+          diploma:
+            subject: Il tuo attestato di partecipazione alla conferenza è stato inviato
+      models:
+        conference_invite:
+          fields:
+            email: E-mail
+            name: Nome
+            registration_type: Tipo di registrazione
+            sent_at: Inviato a
+            status: Stato
+          status:
+            accepted: Accettato (%{at})
+            rejected: Rifiutato (%{at})
+            sent: Inviato
+        conference_registration:
+          fields:
+            email: E-mail
+            name: Nome
+            registration_type: Tipo di registrazione
+            state: Stato
+            states:
+              confirmed: Confermato
+              pending: in attesa di
+      pages:
+        home:
+          highlighted_conferences:
+            active_spaces: Conferenze attive
+      registration_types:
+        index:
+          choose_an_option: 'Scegli la tua opzione di registrazione:'
+          no_registrations: Nessuna registrazione
+          register: Registrati
+          title: Tipi di registrazione
+      show:
+        details: Dettagli
+        introduction: Introduzione
+        objectives: Obiettivi
+        related_assemblies: Assemblee collegate
+        related_participatory_processes: Processi di partecipazione correlati
+    events:
+      conferences:
+        conference_registration_confirmed:
+          notification_title: La tua registrazione per la conferenza <a href="%{resource_url}">%{resource_title}</a> è stata confermata.
+        conference_registration_validation_pending:
+          notification_title: La tua registrazione per la conferenza <a href="%{resource_url}">%{resource_title}</a> è in attesa di conferma.
+        conference_registrations_over_percentage:
+          email_intro: I posti occupati per la conferenza "%{resource_title}" sono il %{percentage}%.
+          email_outro: Hai ricevuto questa notifica perché sei un amministratore dello spazio partecipativo della conferenza.
+          email_subject: I posti occupati per la conferenza "%{resource_title}" sono il %{percentage}%
+          notification_title: I posti occupati per la conferenza <a href="%{resource_path}">%{resource_title}</a> superano il %{percentage}%.
+        conference_updated:
+          email_intro: 'La conferenza "%{resource_title}" è stata aggiornata. Puoi leggere la nuova versione dalla pagina:'
+          email_outro: Hai ricevuto questa notifica perché stai seguendo la conferenza "%{resource_title}". Puoi smettere di seguirla dal link precedente.
+          email_subject: La conferenza "%{resource_title}" è stata aggiornata
+          notification_title: La conferenza <a href="%{resource_path}">%{resource_title}</a> stata aggiornata.
+        registrations_enabled:
+          email_intro: 'La conferenza "%{resource_title}" ha abilitato le registrazioni. Puoi registrarti sulla pagina:'
+          email_outro: Hai ricevuto questa notifica perché stai seguendo la conferenza "%{resource_title}". Puoi smettere di seguirla dal link precedente.
+          email_subject: La conferenza "%{resource_title}" ha abilitato le registrazioni.
+          notification_title: La conferenza <a href="%{resource_path}">%{resource_title}</a> ha abilitato le registrazioni.
+        role_assigned:
+          email_intro: Sei stato nominato %{role} per la conferenza "%{resource_title}".
+          email_outro: Hai ricevuto questa notifica perché sei %{role} della conferenza "%{resource_title}.
+          email_subject: Sei %{role} per "%{resource_title}".
+          notification_title: Sei %{role} per la conferenza <a href="%{resource_url}">%{resource_title}</a>.
+        upcoming_conference:
+          email_intro: 'La conferenza "%{resource_title}" ha luogo tra 2 giorni. Puoi leggere la descrizione dalla pagina:'
+          email_outro: Hai ricevuto questa notifica perché stai seguendo la conferenza "%{resource_title}". Puoi smettere di seguirla dal link precedente.
+          email_subject: La conferenza "%{resource_title}" sta arrivando!
+          notification_title: La conferenza <a href="%{resource_path}">%{resource_title}</a> sarà tra 2 giorni.
+    help:
+      participatory_spaces:
+        conferences:
+          contextual: "<p>Una <strong>conferenza</strong> è una raccolta di riunioni organizzate in un programma, con un certo numero di persone invitate come relatori, e altri campi di informazione tipici di grandi congressi o eventi sociali (registrazione, elenco delle organizzazioni che sostengono o sponsorizzano l'evento, ecc.).</p> <p>Esempi: Una conferenza può essere un evento rilevante per un'organizzazione e i suoi membri, o può essere parte di un processo partecipativo o il seguito di una consultazione.</p>\n"
+          page: "<p>Una <strong>conferenza</strong> è una raccolta di riunioni organizzate in un programma, con un certo numero di persone invitate come relatori, e altri campi di informazione tipici di grandi congressi o eventi sociali (registrazione, elenco delle organizzazioni che sostengono o sponsorizzano l'evento, ecc.).</p> <p>Esempi: Una conferenza può essere un evento rilevante per un'organizzazione e i suoi membri, o può essere parte di un processo partecipativo o il seguito di una consultazione.</p>\n"
+          title: Cosa sono le conferenze?
+    media:
+      index:
+        description: Collegamenti su questa conferenza
+        title: Media e collegamenti
+    menu:
+      conferences: Conferenze
+    statistics:
+      conferences_count: Conferenze
+  devise:
+    mailer:
+      join_conference:
+        subject: Invito a partecipare a una conferenza
+  layouts:
+    decidim:
+      conference_hero:
+        register: Registrati
+      conferences:
+        conference:
+          more_info: Ulteriori informazioni
+          take_part: Partecipa
+        index:
+          promoted_conferences: Conferenze in evidenza
+        order_by_conferences:
+          conferences:
+            one: "%{count} conferenza"
+            other: "%{count} conferenze"
+      conferences_nav:
+        conference_partners_menu_item: Partner
+        conference_speaker_menu_item: Relatori
+        media: Media
+        venues: Luoghi

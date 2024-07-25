@@ -1,0 +1,8 @@
+<% if show_html_view_dropdown? %>
+  <div class="version__selector">
+    <label for="diff-html">
+      <%= t("versions.dropdown.choose_diff_view_html") %>
+    </label>
+    <%= select_tag "diff-html", html_options, id: "diff-html" %>
+  </div>
+<% end %>

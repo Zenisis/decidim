@@ -1,0 +1,162 @@
+sv:
+  activemodel:
+    attributes:
+      oauth_application:
+        name: OAuth app namn
+        organization_logo: Organisationslogo (kvadrat)
+        organization_name: Organisation
+        organization_url: Organisationens hemsida
+        redirect_uri: Omdirigerings-URI
+      organization:
+        address: SMTP-värdnamn
+        from_email: Från (e-postadress)
+        from_label: Från (namn)
+        password: Lösenord
+        port: Port
+        user_name: Användarnamn
+      organization_file_uploads:
+        allowed_content_types:
+          admin: Admin MIME-typer
+          default: Förvalda MIME-typer
+        allowed_file_extensions:
+          admin: Admin filändelser
+          default: Förvalda filändelser
+          image: Bild filändelser
+        maximum_file_size:
+          avatar: Avatarens filstorlek
+          default: Standardstorlek för filer
+    errors:
+      models:
+        oauth_application:
+          attributes:
+            redirect_uri:
+              must_be_ssl: Omdirigerings-URI måste vara en SSL URI
+  decidim:
+    system:
+      actions:
+        confirm_destroy: Vill du radera detta?
+        destroy: Radera
+        edit: Redigera
+        save: Spara
+        title: Åtgärder
+      admins:
+        create:
+          error: Det gick inte att skapa en ny administratör.
+        edit:
+          title: Redigera administratören
+          update: Uppdatera
+        index:
+          title: Administratörer
+        new:
+          create: Skapa
+          title: Ny administratör
+        update:
+          error: Det gick inte att uppdatera administratören.
+      dashboard:
+        show:
+          current_organizations: Nuvarande organisationer
+      default_pages:
+        placeholders:
+          content: Lägg till relevant innehåll på den statiska sidan %{page} på adminpanelen.
+          title: Standardtitel för %{page}
+      menu:
+        admins: Administratörer
+        dashboard: Adminpanel
+        oauth_applications: OAuth appar
+        organizations: Organisationer
+      models:
+        admin:
+          fields:
+            created_at: Skapad
+            email: E-post
+          validations:
+            email_uniqueness: det finns redan en administratör med samma e-postadress
+        oauth_application:
+          fields:
+            created_at: Skapad den
+            name: OAuth app namn
+            organization_name: Organisation
+        organization:
+          actions:
+            save_and_invite: Skapa organisation och bjud in administratör
+          fields:
+            created_at: Skapad
+            file_upload_settings: Inställningar för filuppladdning
+            name: Namn
+            omniauth_settings: Omniauth-inställningar
+            smtp_settings: SMTP-inställningar
+      oauth_applications:
+        create:
+          error: Det gick inte att skapa appen.
+          success: Appen har skapats.
+        destroy:
+          error: Det gick inte att ta bort appen.
+          success: Appen har tagits bort.
+        edit:
+          save: Spara
+          title: Redigera appen
+        form:
+          select_organization: Välj en organisation
+        index:
+          confirm_delete: Vill du ta bort appen?
+          title: OAuth appar
+        new:
+          save: Spara
+          title: Ny app
+        update:
+          error: Det gick inte att uppdatera appen.
+          success: Appen har uppdaterats.
+      organizations:
+        advanced_settings:
+          hide: Dölj avancerade inställningar
+          show: Visa avancerade inställningar
+        create:
+          error: Det gick inte att skapa en ny organisation.
+        edit:
+          secondary_hosts_hint: Ange var och en av dem på en ny rad
+        file_upload_settings:
+          content_types:
+            title: Tillåtna MIME-typer
+          file_extensions:
+            title: Tillåtna filändelser
+          file_sizes:
+            title: Max filstorlekar
+        index:
+          title: Organisationer
+        new:
+          title: Ny organisation
+        omniauth_settings:
+          decidim:
+            client_id: Klient ID
+            client_secret: Klient hemlig
+            site_url: Webbplatsens URL
+          enabled: Aktiverad
+          enabled_by_default: Denna leverantör är aktiverad som standard. Den kan redigeras men inte inaktiveras.
+          facebook:
+            app_id: App-ID
+            app_secret: App-hemlighet
+          google_oauth2:
+            client_id: Klient-ID
+            client_secret: Klient-hemlighet
+          icon: Symbol
+          icon_path: Sökväg till symbol
+          twitter:
+            api_key: API-nyckel
+            api_secret: API-hemlighet
+        smtp_settings:
+          fieldsets:
+            sender: Avsändare
+          placeholder:
+            from_email: your-organization@example.org
+            from_label: din-organisation-namn
+        update:
+          error: Det gick inte att uppdatera organisationen.
+          success: Organisationen har uppdaterats.
+        users_registration_mode:
+          disabled: Åtkomst kan endast göras med externa konton
+      shared:
+        notices:
+          no_organization_warning_html: Kom igång genom att skapa en organisation. Läs %{guide} innan du fortsätter.
+          our_getting_started_guide: vår startguide
+      titles:
+        dashboard: Adminpanel

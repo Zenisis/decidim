@@ -1,0 +1,8 @@
+<div>
+  <div>
+    <%= l meeting.start_time, format: "%d" %> <span><%= l meeting.start_time, format: "%B %Y" %></span>
+  </div>
+  <div>
+    <%= meeting.start_time.strftime("%H:%M") %> - <%= meeting.end_time.strftime("%H:%M") %>
+  </div>
+</div>

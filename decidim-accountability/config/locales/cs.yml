@@ -1,0 +1,300 @@
+cs:
+  activemodel:
+    attributes:
+      result:
+        decidim_accountability_status_id: Stav
+        decidim_category_id: Kategorie
+        decidim_scope_id: Oblast působnosti
+        description: Popis
+        end_date: Datum ukončení
+        meetings_ids: Zahrnuté schůzky
+        progress: Průběh
+        project_ids: Zahrnuté projekty
+        proposals: Zahrnuté návrhy
+        start_date: Datum zahájení
+        title: Titul
+        updated_at: Aktualizováno v
+      status:
+        description: Popis
+        key: Klíč
+        name: Název
+        progress: Průběh
+      timeline_entry:
+        description: Popis
+        entry_date: Datum
+        title: Název
+    models:
+      decidim/accountability/proposal_linked_event: Návrh zahrnutý do výsledku
+      decidim/accountability/result_progress_updated_event: Výsledek byl aktualizován
+  activerecord:
+    models:
+      decidim/accountability/result:
+        one: Výsledek
+        few: Výsledek
+        many: Výsledek
+        other: Výsledků
+  decidim:
+    accountability:
+      actions:
+        attachment_collections: Složky
+        attachments: Přílohy
+        confirm_destroy: Opravdu chcete smazat tento %{name}?
+        destroy: Odstranit
+        edit: Upravit
+        import: Importovat projekty z jiné komponenty
+        import_csv: Importovat výsledky z CSV souboru
+        new_result: Nový výsledek
+        new_status: Nový status
+        new_timeline_entry: Nový záznam v časové ose
+        preview: Náhled
+        timeline_entries: Vývoj projektu
+        title: Akce
+      admin:
+        exports:
+          result_comments: Komentáře
+          results: Výsledky
+        import_results:
+          new:
+            download_export: Stáhnout export s CSV formátem
+            import: Importovat
+            info: |
+              <p>Doporučujeme postupovat podle těchto kroků:</p>
+              <ol>
+              <li><a href='%{link_new_status}' target='_blank'>Vytvořit stavy pro výsledky</a>, které chcete přidat</li>
+              <li><a href='%{link_new_result}' target='_blank'>Vytvořte alespoň jeden výsledek manuálně</a> přes tento Admin panel před použitím Importu, za lepší pochopení formátu a toho, co budete muset vyplnit.</li>
+              <li>%{link_export_csv}</li>
+              <li>Změňte lokálně. Můžete změnit pouze následující sloupce CSV:
+                <ul>
+                <li><b>category/id:</b> ID pro kategorii</li>
+                <li><b>scope/id:</b> ID pro rozsah</li>
+                <li><b>parent/id:</b> ID rodičů (pro související výsledky). Volitelné</li>
+                <li><b>title/en:</b> Název v angličtině. To bude záviset na konfiguraci jazyka vaší platformy.</li>
+                <li><b>description/en:</b> Popis anglického jazyka. To bude záviset na konfiguraci jazyka vaší platformy.</li>
+                <li><b>start_date:</b> datum zahájení provádění výsledků (formát YYYY-MM-DD)</li>
+                <li><b>end_date:</b> datum ukončení provedení výsledků (formát YYYY-MM-DD)</li>
+                <li><b>status/id:</b> ID statusu pro tento výsledek</li>
+                <li><b>progress:</b> procento (od 0 do 100) provedení</li>
+                <li><b>proposals_ids:</b> interní ID souvisejících návrhů (oddělené čárkou). Automaticky se převede na <span class='attribute-name'>proposal_url</span></li>
+                </ul>
+              </li>
+              </ol>
+            title: Importovat výsledky z CSV souboru
+        imports:
+          create:
+            invalid: Při importu výsledků došlo k chybě.
+            success: Soubor se začal importovat. Během několika následujících minut obdržíte e-mail s výsledkem importu.
+        models:
+          result:
+            name: Výsledek
+          status:
+            name: Stav
+        projects_import:
+          create:
+            invalid: Došlo k potížím při importu projektů do výsledků, postupujte prosím pečlivě podle pokynů a ujistěte se, že jste vybrali projekty pro realizaci.
+          new:
+            create: Importovat
+            import_all_selected_projects: Importovat všechny projekty vybrané pro realizaci
+            new_items:
+              one: 1 vybraný projekt bude importován
+              few: "%{count} vybrané projekty budou importovány"
+              many: "%{count} vybraných projektů bude importováno"
+              other: "%{count} vybraných projektů bude importováno"
+            no_components: V tomto participačním prostoru nejsou žádné složky rozpočtů pro import projektů do výsledků.
+            origin_component_id: Původ komponenty
+            select_component: Vybrat komponentu
+            success:
+              one: 1 projekt, který má být importován. Po dokončení budete upozorněni e-mailem.
+              few: "%{count} projekty, které mají být importovány. Po dokončení budete upozorněni e-mailem."
+              many: "%{count} projektů, které mají být importovány. Po dokončení budete upozorněni e-mailem."
+              other: "%{count} projektů, které mají být importovány. Po dokončení budete upozorněni e-mailem."
+            title: Importovat projekty z jiné komponenty
+        results:
+          create:
+            invalid: Při vytváření tohoto výsledku nastal problém.
+            success: Výsledek byl úspěšně vytvořen.
+          destroy:
+            success: Výsledek byl úspěšně smazán.
+          edit:
+            title: Upravit výsledek
+            update: Aktualizovat výsledek
+          index:
+            title: Výsledky
+          new:
+            create: Vytvořit výsledek
+            title: Nový výsledek
+          update:
+            invalid: Při aktualizaci tohoto výsledku došlo k chybě.
+            success: Výsledek byl úspěšně aktualizován.
+        shared:
+          subnav:
+            statuses: Stavy
+        statuses:
+          create:
+            invalid: Při vytváření tohoto stavu došlo k chybě.
+            success: Stav byl úspěšně vytvořen.
+          destroy:
+            success: Stav byl úspěšně smazán.
+          edit:
+            title: Upravit stav
+            update: Aktualizovat stav
+          index:
+            title: Stavy
+          new:
+            create: Vytvořit stav
+            title: Nový stav
+          update:
+            invalid: Při aktualizaci tohoto stavu došlo k chybě.
+            success: Stav byl úspěšně aktualizován.
+        timeline_entries:
+          create:
+            invalid: Při vytváření tohoto záznamu došlo k chybě.
+            success: Položka byla úspěšně vytvořena.
+          destroy:
+            success: Položka byla úspěšně smazána.
+          edit:
+            title: Upravit položku
+            update: Aktualizovat položku
+          index:
+            title: Položky časové osy projektu
+          new:
+            create: Vytvořit položku
+            title: Nová položka
+          update:
+            invalid: Při aktualizaci této položky došlo k problému.
+            success: Záznam byl úspěšně aktualizován.
+      admin_log:
+        result:
+          create: "%{user_name} vytvořen výsledek %{resource_name} v %{space_name}"
+          delete: "%{user_name} odstranil %{resource_name} výsledek v %{space_name}"
+          update: "%{user_name} aktualizovaný výsledek %{resource_name} v %{space_name}"
+        status:
+          create: "%{user_name} vytvořil/a stav %{resource_name}"
+          delete: "%{user_name} odstranil stav %{resource_name}"
+          update: "%{user_name} aktualizoval stav %{resource_name}"
+        timeline_entry:
+          create: "%{user_name} vytvořil záznam %{resource_name} časové osy"
+          delete: "%{user_name} odstranil záznam %{resource_name} časové osy"
+          update: "%{user_name} aktualizoval záznam %{resource_name} časové osy"
+        value_types:
+          parent_presenter:
+            not_found: 'Nadřazený nebyl nalezen v databázi (ID: %{id})'
+      content_blocks:
+        highlighted_results:
+          results: Výsledky
+      import_mailer:
+        import:
+          errors: Chyby
+          errors_present: Při importu došlo k chybě.
+          row_number: Řádek
+          subject: Úspěšný import výsledků
+          success: Úspěšný import výsledků. Výsledky můžete zkontrolovat v rozhraní administrace.
+      import_projects_mailer:
+        import:
+          added_projects:
+            one: Jeden výsledek byl importován z projektů.
+            few: "%{count} výsledky byly importovány z projektů."
+            many: "%{count} výsledků bylo importováno z projektů."
+            other: "%{count} výsledků bylo importováno z projektů."
+          subject: Úspěšný import projektů
+          success: Úspěšný import projektů do výsledků v komponentě %{component_name}. Výsledky si můžete prohlédnout v administračním rozhraní.
+      last_activity:
+        new_result: 'Nový výsledek:'
+      models:
+        result:
+          fields:
+            category: Kategorie
+            created_at: Vytvořeno
+            end_date: Datum ukončení
+            id: ID
+            progress: Průběh
+            scope: Oblast působnosti
+            start_date: Počáteční datum
+            status: Stav
+            title: Název
+        status:
+          fields:
+            description: Popis
+            key: Klíč
+            name: Název
+            progress: Průběh
+        timeline_entry:
+          fields:
+            entry_date: Datum
+            title: Název
+      results:
+        count:
+          results_count:
+            one: 1 výsledek
+            few: "%{count} výsledků"
+            many: "%{count} výsledků"
+            other: "%{count} výsledků"
+        filters:
+          all: Vše
+        home:
+          categories_label: Kategorie
+          empty: Zatím nejsou žádné výsledky.
+          empty_filters: S těmito kritérii nejsou žádné výsledky.
+          subcategories_label: Podkategorie
+        home_header:
+          global_status: Globální stav provedení
+        nav_breadcrumb:
+          global: Globální provedení
+        no_results: Nebyly nalezeny žádné projekty
+        search:
+          search: Hledat akce
+        show:
+          stats:
+            back_to_resource: Přejít zpět na výsledek
+        timeline:
+          title: Vývoj projektu
+    admin:
+      filters:
+        results:
+          category_id_eq:
+            label: Kategorie
+          scope_id_eq:
+            label: Oblast působnosti
+          status_id_eq:
+            label: Stav
+    components:
+      accountability:
+        actions:
+          comment: Komentář
+        name: Odpovědnost
+        settings:
+          global:
+            comments_enabled: Komentáře povoleny
+            comments_max_length: Maximální délka komentáře (ponechte 0 pro výchozí hodnotu)
+            display_progress_enabled: Zobrazit průběh
+            intro: Intro
+            scope_id: Oblast působnosti
+            scopes_enabled: Oblast působnosti povolena
+          step:
+            comments_blocked: Komentáře blokovány
+    events:
+      accountability:
+        proposal_linked:
+          email_intro: 'Návrh "%{proposal_title}" byl zahrnut do výsledku. Můžete jej vidět z této stránky:'
+          email_outro: Toto oznámení jste obdrželi, protože sledujete "%{proposal_title}". Můžete přestat dostávat oznámení za předchozím odkazem.
+          email_subject: Aktualizace na %{proposal_title}
+          notification_title: Návrh <a href="%{proposal_path}">%{proposal_title}</a> byl zahrnut do výsledku <a href="%{resource_path}">%{resource_title}</a>.
+        result_progress_updated:
+          email_intro: 'Výsledek "%{resource_title}", který zahrnuje návrh "%{proposal_title}", je nyní %{progress}% dokončen. Můžete ji vidět z této stránky:'
+          email_outro: Toto oznámení jste obdrželi, protože jste sledovali "%{proposal_title}" a tento návrh je zahrnut ve výsledku "%{resource_title}". Po předchozím propojení můžete přestat přijímat oznámení.
+          email_subject: Aktualizace postupu %{resource_title}
+          notification_title: Výsledek <a href="%{resource_path}">%{resource_title}</a>, který zahrnuje návrh <a href="%{proposal_path}">%{proposal_title}</a>, je nyní %{progress}% dokončen.
+    metrics:
+      results:
+        description: Počet vygenerovaných výsledků
+        object: výsledky
+        title: Výsledky
+    participatory_spaces:
+      highlighted_results:
+        see_all: Zobrazit všechny výsledky (%{count})
+    resource_links:
+      included_projects:
+        result_project: Projekty zahrnuté v tomto výsledku
+      included_proposals:
+        result_proposal: Návrhy zahrnuté v tomto výsledku
+    statistics:
+      results_count: Výsledky

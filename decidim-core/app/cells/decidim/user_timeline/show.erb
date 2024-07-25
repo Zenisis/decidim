@@ -1,0 +1,13 @@
+<div>
+  <div id="activities" class="columns small-12">
+    <% if activities.length == 0 %>
+      <%= cell("decidim/announcement", t("decidim.user_activity.index.no_activities_warning"), callout_class: "warning") %>
+    <% else %>
+      <div class="row">
+        <%= cell "decidim/activities", activities %>
+      </div>
+
+      <%= decidim_paginate activities %>
+    <% end %>
+  </div>
+</div>

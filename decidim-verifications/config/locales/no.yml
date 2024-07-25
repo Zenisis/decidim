@@ -1,0 +1,199 @@
+"no":
+  activemodel:
+    attributes:
+      config:
+        available_methods: Tilgjengelige metoder
+        offline: Offline
+        offline_explanation: Instruksjoner for offline verifisering
+        online: Online
+      id_document_information:
+        document_number: Dokumentnummer (med brev)
+        document_type: Type dokument
+      id_document_upload:
+        document_number: Dokumentnummer (med brev)
+        document_type: Ditt type dokument
+        user: Deltaker
+        verification_attachment: Skannet kopi av dokumentet ditt
+      offline_confirmation:
+        email: Deltaker email
+      postal_letter_address:
+        full_address: Full adresse
+      postal_letter_confirmation:
+        verification_code: Verifiseringskode
+      postal_letter_postage:
+        full_address: Full adresse
+        verification_code: Verifiseringskode
+  decidim:
+    admin:
+      menu:
+        authorization_revocation:
+          before_date_info: Nyttig hvis prosessen allerede har begynt og du vil tilbakekalle tillatelsene for den forrige prosessen.
+          button: Opphev alle
+          button_before: Tilbakekall før dato
+          destroy_ok: Alle matchede autorisasjoner er nå tilbakekallet.
+          info: Det er totalt %{count} bekreftede deltakere.
+          title: Tilbakekall av autorisasjoner
+        authorization_workflows: Autorisasjoner
+    admin_log:
+      organization:
+        update_id_documents_config: "%{user_name} oppdaterte identitetsdokumenters autorisasjonskofigurasjon"
+      user:
+        grant_id_documents_offline_verification: "%{user_name} bekreftet at %{resource_name} bruker en offline identitetdokumentsautorisasjon"
+    authorization_handlers:
+      admin:
+        id_documents:
+          help:
+            - Brukere fyller ut sin identitets-informasjon og laster opp en kopi av dokumentet.
+            - Du fyller ut informasjonen som er tilstede i det opplastede bildet.
+            - Informasjonen skal samsvare med hva brukeren fylte ut.
+            - 
+        postal_letter:
+          help:
+            - Deltakere ber om at en verifiseringskode sendes til adressen deres.
+            - Du sendte brevet til adressen deres med verifiseringskoden.
+            - Du merkere brevet som sendt.
+            - Når du har merket brevet som sendt, vil deltakeren kunne introdusere koden og bli bekreftet.
+      csv_census:
+        name: Organisasjonens folketelling
+      direct: Direkte
+      help: Hjelp
+      id_documents:
+        name: Identitets dokumenter
+      multistep: Multi-skritt
+      name: Navn
+      postal_letter:
+        name: Kode med post brev
+    verifications:
+      authorizations:
+        authorization_metadata:
+          info: 'Dette er data fra den gjeldende verifikasjonen:'
+          no_data_stored: Ingen data lagret.
+        create:
+          error: Det oppstod et problem med å opprette autoriseringen.
+          unconfirmed: Du må bekrefte e-posten din for å autorisere deg.
+        destroy:
+          error: Det oppsto et problem med å slette autorisasjonen.
+        first_login:
+          actions:
+            another_dummy_authorization_handler: Verifiser mot et annet eksempel på autorisasjons behandler
+            csv_census: Verifiser mot organisasjonens folketelling
+            dummy_authorization_handler: Verifiser mot eksempelets autoriserings behandler
+            dummy_authorization_workflow: Verifiser mot eksempelets autoriserings arbeidsflyt
+            id_documents: Bli verifisert med å laste opp ditt identitets dokumentet
+            postal_letter: Bli verifisert med å motta en verifiseringskode gjennom posten
+            sms: Bli bekreftet ved å motta en verifiseringskode på SMS
+          title: Verifiser din identitet
+          verify_with_these_options: 'Disse er de tilgjengelige alternativene for å verifisere identiteten din:'
+        index:
+          expired_verification: Verifikasjon utløpt
+          pending_verification: Venter på verifisering
+          show_renew_info: Klikk for å fornye verifisering
+        new:
+          authorize: Send
+          authorize_with: Verifiser med %{authorizer}
+        renew_modal:
+          cancel: Avbryt
+          continue: Fortsett
+          title: Forny verifisering
+        skip_verification: Du kan hoppe over dette for nå og %{link}
+        start_exploring: begynn å utforske
+      csv_census:
+        admin:
+          census:
+            create:
+              error: Det oppstod et problem under import av folketellingen.
+          destroy:
+            title: Slett alle folketellingsdata
+          index:
+            empty: Det er ingen data for folketellingen. Bruk skjemaet nedenfor for å importere det ved hjelp av en CSV-fil.
+            title: Nåværende folketelling data
+          instructions:
+            body: For å gjøre dette må du gå inn i systemadministrasjon og legge til cvs_census autoriseringen til organisasjonen
+            title: Du må aktivere CSV-tellingen for denne organisasjonen
+          new:
+            file: ".csv fil med e-postdata"
+            info: 'Må være en fil i CSV-format med bare en kolonne med e-postadressen:'
+            submit: Last opp fil
+            title: Last opp en ny folketelling
+        authorizations:
+          new:
+            error: Vi kunne ikke bekrefte kontoen din, eller du er ikke i organisasjonens folketelling.
+            success: Kontoen din er verifisert.
+      dummy_authorization:
+        extra_explanation:
+          postal_codes:
+            one: Deltakelse er begrenset til deltakere med postnummer %{postal_codes}.
+            other: 'Deltakelse er begrenset til deltakere med postnummer %{postal_codes}.'
+          scope: Deltakelse er begrenset til deltakere med tema %{scope_name}.
+          user_postal_codes:
+            one: Deltagelse er begrenset til deltakere med postnummer %{postal_codes}, og postnummeret ditt er %{user_postal_code}.
+            other: 'Deltagelse er begrenset til deltakere med følgende postkoder: %{postal_codes}. Ditt postnummer er %{user_postal_code}.'
+          user_scope: Deltakelse er begrenset til deltakere med tema %{scope_name}, og ditt tema er %{user_scope_name}.
+      id_documents:
+        admin:
+          config:
+            edit:
+              title: Konfigurasjon av identitetsdokumenter
+              update: Oppdater
+            update:
+              error: Det oppsto et problem med å oppdatere konfigurasjonen.
+          confirmations:
+            new:
+              introduce_user_data: Introduser dataene på bildet
+              reject: Avvis
+              verify: Verifiser
+          offline_confirmations:
+            new:
+              cancel: Avbryt
+              introduce_user_data: Introduser deltakerens email og dokumentdata
+              verify: Verifiser
+          pending_authorizations:
+            index:
+              config: Konfigurer
+              offline_verification: Offline verifisering
+              title: Venter på online verifiseringer
+              verification_number: 'Verifikasjon #%{n}'
+        authorizations:
+          choose:
+            choose_a_type: 'Vennligst velg hvordan du vil bli verifisert:'
+            offline: Offline
+            online: Online
+            title: Verifiser deg selv ved å bruke ditt identitetsdokument
+          edit:
+            offline: Bruk offline verifisering
+            online: Bruk online verifisering
+            send: Be om verifikasjon igjen
+          new:
+            send: Be om verifikasjon
+            title: Last opp dine identitetsdokumentet
+        passport: Pass
+      postal_letter:
+        admin:
+          pending_authorizations:
+            index:
+              address: Adresse
+              letter_sent_at: Brev sendt
+              mark_as_sent: Marker som sendt
+              not_yet_sent: Ikke sendt ennå
+              title: Pågående verifiseringer
+              username: Kallenavn
+              verification_code: Verifiseringskode
+        authorizations:
+          edit:
+            send: Bekreft
+          new:
+            send: Send meg et brev
+            title: Be om din verifiseringskode
+      sms:
+        authorizations:
+          edit:
+            confirm_destroy: Er du sikker på at du vil tilbakestille verifikasjonskoden?
+            destroy: Tilbakestill verifiseringskode
+            send: Bekreft
+            title: Introduser verifiseringskoden du mottok
+          new:
+            send: Send meg en meldig
+            title: Be om din verifiseringskode
+  errors:
+    messages:
+      uppercase_only_letters_numbers: må bare være store bokstaver og inneholder bare bokstaver og/eller tall

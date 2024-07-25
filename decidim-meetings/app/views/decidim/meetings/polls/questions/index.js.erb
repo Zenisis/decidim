@@ -1,0 +1,5 @@
+var $meetingPoll = $("[data-decidim-meetings-poll]");
+
+if($meetingPoll.length){
+  $meetingPoll.html('<%= j(render partial: "decidim/meetings/polls/questions/index").strip.html_safe %>');
+}

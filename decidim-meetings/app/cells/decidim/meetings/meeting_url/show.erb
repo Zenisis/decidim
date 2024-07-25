@@ -1,0 +1,20 @@
+<div>
+  <ul>
+    <li>
+      <%= resource_icon %>
+    </li>
+    <li>
+      <div class="text-left">
+        <div>
+          <% if future? %>
+            <span><%= t("link_available_soon", scope: "decidim.meetings.meetings.show") %></span>
+          <% elsif live? %>
+            <span><%= link_to(t("join", scope: "decidim.meetings.meetings.show"), live_event_url, target: "_blank") %></span><br>
+          <% else %>
+            <span><%= link_to(t("visit_finished", scope: "decidim.meetings.meetings.show"), live_event_url, target: "_blank") %></span><br>
+          <% end %>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

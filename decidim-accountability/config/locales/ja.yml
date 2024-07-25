@@ -1,0 +1,286 @@
+ja:
+  activemodel:
+    attributes:
+      result:
+        decidim_accountability_status_id: ステータス
+        decidim_category_id: カテゴリ
+        decidim_scope_id: スコープ
+        description: 説明
+        end_date: 終了日
+        meetings_ids: 含まれるミーティング
+        progress: 進捗状況
+        project_ids: 含まれるプロジェクト
+        proposals: 含まれる提案
+        start_date: 開始日
+        subresults: 結果（サブ）
+        title: タイトル
+        updated_at: 更新日時
+      status:
+        description: 説明
+        key: キー
+        name: 名前
+        progress: 進捗状況
+      timeline_entry:
+        description: 説明
+        entry_date: 日付
+        title: タイトル
+    models:
+      decidim/accountability/proposal_linked_event: 結果に提案を含めます
+      decidim/accountability/result_progress_updated_event: 結果の進捗状況が更新されました
+  activerecord:
+    models:
+      decidim/accountability/result:
+        other: 結果
+  decidim:
+    accountability:
+      actions:
+        attachment_collections: フォルダー
+        attachments: 添付ファイル
+        confirm_destroy: この %{name} を削除してもよろしいですか？
+        destroy: 削除
+        edit: 編集
+        import: 別のコンポーネントからプロジェクトをインポート
+        import_csv: CSVファイルから結果をインポート
+        new_result: 新しい結果
+        new_status: 新しいステータス
+        new_timeline_entry: 新しいタイムラインのエントリ
+        preview: プレビュー
+        timeline_entries: プロジェクトの進化
+        title: アクション
+      admin:
+        exports:
+          result_comments: コメント
+          results: 結果
+        import_results:
+          new:
+            download_export: CSV形式でエクスポートをダウンロード
+            import: インポート
+            info: |
+              <p>以下の手順をお勧めします:</p>
+              <ol>
+              <li>追加したい<a href='%{link_new_status}' target='_blank'>結果のステータスを作成</a>してください。</li>
+              <li>インポートを使用する前に、この管理画面を通じて<a href='%{link_new_result}' target='_blank'>少なくとも1つの結果を手動で作成</a>し、フォーマットと必要な入力内容をより理解してください。</li>
+              <li>%{link_export_csv}</li>
+              <li>ローカルで変更を加えてください。次の列のみ変更可能です。
+                <ul>
+                <li><b>category/id:</b> カテゴリのID</li>
+                <li><b>scope/id:</b> スコープのID</li>
+                <li><b>parent/id:</b> 関連する結果のID（オプション）</li>
+                <li><b>title/en:</b> 英語のタイトル。プラットフォームの言語設定に依存します。</li>
+                <li><b>description/en:</b> 英語の説明。プラットフォームの言語設定に依存します。</li>
+                <li><b>start_date:</b> 結果が実行を開始する日付（形式：YYYY-MM-DD）</li>
+                <li><b>end_date:</b> 結果が実行を終了する日付（形式：YYYY-MM-DD）</li>
+                <li><b>status/id:</b> この結果のステータスのID</li>
+                <li><b>progress:</b> 実行の進捗率（0〜100のパーセント）</li>
+                <li><b>proposals_ids:</b> 関連する提案の内部ID（コンマで区切られています）。自動的に<span class='attribute-name'>proposal_url</span>に変換されます。</li>
+                </ul>
+              </li>
+              </ol>
+            title: CSVファイルから結果をインポート
+        imports:
+          create:
+            invalid: 結果のインポート中に問題が発生しました。
+            success: ファイルのインポートが開始されました。インポートの結果は、数分後にメールで届きます。
+        models:
+          result:
+            name: 結果
+          status:
+            name: ステータス
+        projects_import:
+          create:
+            invalid: プロジェクトを結果にインポートする際に問題が発生しました。指示に従い、実装のためにプロジェクトを選択していることを確認してください。
+          new:
+            create: インポート
+            import_all_selected_projects: 実装のために選択されたすべてのプロジェクトをインポート
+            new_items:
+              other: "選択した %{count} 件のプロジェクトがインポートされます"
+            no_components: この参加スペースにはプロジェクトを結果にインポートするための予算コンポーネントはありません。
+            origin_component_id: 元のコンポーネント
+            select_component: コンポーネントを選択
+            success:
+              other: "%{count} 件のプロジェクトがインポートする準備を行いました。完了次第、メールで通知します。"
+            title: 別のコンポーネントからプロジェクトをインポート
+        results:
+          create:
+            invalid: 結果の作成中に問題がありました。
+            success: 結果が正常に作成されました。
+          destroy:
+            success: 結果を削除しました。
+          edit:
+            title: 結果を編集
+            update: 結果を更新
+          index:
+            title: 結果
+          new:
+            create: 結果を作成
+            title: 新しい結果
+          update:
+            invalid: 結果の更新中に問題が発生しました。
+            success: 結果を更新しました。
+        shared:
+          subnav:
+            statuses: ステータス
+        statuses:
+          create:
+            invalid: ステータスの作成中に問題が発生しました。
+            success: ステータスが正常に作成されました。
+          destroy:
+            success: ステータスを削除しました。
+          edit:
+            title: ステータスの編集
+            update: ステータスを更新
+          index:
+            title: ステータス
+          new:
+            create: ステータスを作成
+            title: 新しいステータス
+          update:
+            invalid: ステータスの更新中に問題が発生しました。
+            success: ステータスが正常に更新されました。
+        timeline_entries:
+          create:
+            invalid: エントリの作成中に問題が発生しました。
+            success: エントリが正常に作成されました。
+          destroy:
+            success: エントリを削除しました。
+          edit:
+            title: エントリを編集
+            update: エントリを更新
+          index:
+            title: プロジェクトのタイムライン項目
+          new:
+            create: エントリを作成
+            title: 新しいエントリ
+          update:
+            invalid: エントリの更新中に問題が発生しました。
+            success: エントリを更新しました。
+      admin_log:
+        result:
+          create: "%{user_name} が結果 %{resource_name} を %{space_name} に作成しました"
+          delete: "%{user_name} が %{resource_name} の結果 %{space_name} を削除しました"
+          update: "%{user_name} の結果 %{resource_name} を %{space_name} に更新しました"
+        status:
+          create: "%{user_name} が %{resource_name} ステータスを作成しました"
+          delete: "%{user_name} が %{resource_name} ステータスを削除しました"
+          update: "%{user_name} が %{resource_name} ステータスを更新しました"
+        timeline_entry:
+          create: "%{user_name} が %{resource_name} タイムラインエントリを作成しました"
+          delete: "%{user_name} が %{resource_name} タイムラインエントリを削除しました"
+          update: "%{user_name} が %{resource_name} タイムラインエントリを更新しました"
+        value_types:
+          parent_presenter:
+            not_found: '親がデータベース上に見つかりませんでした (ID: %{id})'
+      content_blocks:
+        highlighted_results:
+          results: 結果
+      import_mailer:
+        import:
+          errors: エラー
+          errors_present: 結果のインポート中に問題が発生しました。
+          row_number: 行
+          subject: 結果のインポートに成功しました
+          success: 結果のインポートに成功しました。管理画面で結果を確認できます。
+      import_projects_mailer:
+        import:
+          added_projects:
+            other: "%{count} 件の結果がプロジェクトからインポートされました。"
+          subject: プロジェクトのインポートに成功しました
+          success: '%{component_name} コンポーネントに結果をインポートしました。管理インターフェイスで結果を確認できます。'
+      last_activity:
+        new_result: '新しい結果:'
+      models:
+        result:
+          fields:
+            category: カテゴリ
+            created_at: 作成日時
+            end_date: 終了日
+            id: ID
+            progress: 進捗状況
+            scope: スコープ
+            start_date: 開始日
+            status: ステータス
+            title: タイトル
+        status:
+          fields:
+            description: 説明
+            key: キー
+            name: 名前
+            progress: 進捗状況
+        timeline_entry:
+          fields:
+            entry_date: 日付
+            title: タイトル
+      results:
+        count:
+          results_count:
+            other: "%{count} 件の結果"
+        filters:
+          all: すべて
+        home:
+          categories_label: カテゴリ
+          empty: まだ結果はありません。
+          empty_filters: この条件の結果はありません。
+          subcategories_label: サブカテゴリ
+        home_header:
+          global_status: グローバル実行状況
+        nav_breadcrumb:
+          global: グローバル実行
+        no_results: プロジェクトがありません
+        search:
+          search: アクションを検索
+        show:
+          stats:
+            back_to_resource: 結果に戻る
+        timeline:
+          title: プロジェクトの進化
+    admin:
+      filters:
+        results:
+          category_id_eq:
+            label: カテゴリ
+          scope_id_eq:
+            label: スコープ
+          status_id_eq:
+            label: ステータス
+    components:
+      accountability:
+        actions:
+          comment: コメント
+        name: アカウンタビリティ
+        settings:
+          global:
+            comments_enabled: コメントを有効にする
+            comments_max_length: コメント最大長 (デフォルト値は 0 のまま)
+            display_progress_enabled: 進行状況を表示
+            intro: はじめに
+            scope_id: スコープ
+            scopes_enabled: スコープが有効
+          step:
+            comments_blocked: コメントをブロック
+    events:
+      accountability:
+        proposal_linked:
+          email_intro: '提案「%{proposal_title}」が結果に含まれています。このページから見ることができます：'
+          email_outro: '「%{proposal_title}」をフォローしているため、この通知を受け取りました。前のリンクに続く通知の受信を停止できます。'
+          email_subject: '%{proposal_title} への更新'
+          notification_title: 提案 <a href="%{proposal_path}">%{proposal_title}</a> が <a href="%{resource_path}">%{resource_title}</a> の結果に含まれています。
+        result_progress_updated:
+          email_intro: '提案「%{resource_title}」を含む結果「%{proposal_title}」が %{progress}%完了しました。このページから見ることができます：'
+          email_outro: '"%{proposal_title}" をフォローしているため、この通知を受け取りました。この提案は結果 "%{resource_title}" に含まれています。 前のリンクに続く通知の受信を停止できます。'
+          email_subject: '%{resource_title} の進捗状況の更新'
+          notification_title: 提案 <a href="%{resource_path}">%{resource_title}</a> <a href="%{proposal_path}">%{proposal_title}</a>を含む結果 , が %{progress}%完了しました。
+    metrics:
+      results:
+        description: 生成した結果の数
+        object: 結果
+        title: 結果
+    participatory_spaces:
+      highlighted_results:
+        see_all: すべての結果を見る (%{count})
+    resource_links:
+      included_projects:
+        result_project: この結果に含まれるプロジェクト
+      included_proposals:
+        result_proposal: この結果に含まれる提案
+    statistics:
+      results_count: 結果

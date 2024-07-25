@@ -1,0 +1,68 @@
+pt-BR:
+  activemodel:
+    attributes:
+      questionnaire:
+        title: Título
+      template:
+        description: Descrição
+        name: Nome
+  decidim:
+    admin:
+      menu:
+        templates: Modelos
+      templates:
+        apply:
+          error: Ocorreu um erro ao aplicar este modelo.
+        copy:
+          error: Ocorreu um erro ao copiar este modelo.
+        create:
+          error: Ocorreu um erro ao criar este modelo.
+        empty: Ainda não existem modelos.
+      titles:
+        template_types:
+          questionnaires: Modelos de questionário
+        templates: Modelos
+    models:
+      questionnaire_template:
+        fields:
+          questions: Número de Questões
+          title: Nome do questionário
+      template:
+        fields:
+          created_at: Criado em
+        name: Modelo
+    templates:
+      admin:
+        block_user_templates:
+          form:
+            save: Salvar
+        proposal_answer_templates:
+          form:
+            save: Salvar
+        questionnaire_templates:
+          choose:
+            create_from_template: Criar a partir de modelo
+            description: Você está prestes a criar um novo questionário. Você pode escolher um modelo predefinido e modificá-lo depois.
+            label: Selecionar modelo
+            placeholder: Selecionar modelo
+            skip_template: Ignorar
+          edit:
+            edit: Editar
+            questionnaire: Questionário
+          form:
+            title: Modelo de questionário %{questionnaire_for}
+          index:
+            confirm_delete: Tem certeza de que deseja excluir este modelo?
+            title: Modelos de questionário
+          preview:
+            current_step: Passo %{step}
+            of_total_steps: de %{total_steps}
+            tos_agreement: Ao participar você aceita os Termos de Serviço
+      admin_log:
+        template:
+          create: "O %{user_name} criou o modelo de questionário %{resource_name}"
+          delete: "%{user_name} excluiu o modelo de questionário %{resource_name}"
+          duplicate: "%{user_name} duplicou o modelo de questionário %{resource_name}"
+          update: "%{user_name} atualizou o modelo de questionário %{resource_name}"
+      template_types:
+        questionnaires: Questionários

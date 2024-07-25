@@ -1,0 +1,53 @@
+zh-CN:
+  decidim:
+    admin:
+      menu:
+        templates: 模板
+      templates:
+        apply:
+          error: 应用此模板时出现问题。
+        copy:
+          error: 复制此模板时出现问题。
+        create:
+          error: 创建此模板时出现问题。
+        empty: 尚无模板。
+      titles:
+        template_types:
+          questionnaires: 问卷模板
+        templates: 模板
+    models:
+      questionnaire_template:
+        fields:
+          questions: 问题数量
+          title: Questionnaire Title
+      template:
+        fields:
+          created_at: 创建于
+        name: 模板
+    templates:
+      admin:
+        block_user_templates:
+          form:
+            save: 保存
+        proposal_answer_templates:
+          form:
+            save: 保存
+        questionnaire_templates:
+          choose:
+            create_from_template: 从模板创建
+            description: 您即将创建一个新的问题单。您可以选择一个预定义的模板并在其后进行修改。
+            label: 选择模板
+            placeholder: 选择模板
+            skip_template: 跳过
+          edit:
+            edit: 编辑
+            questionnaire: Questionnaire
+          index:
+            confirm_delete: 您确定要删除此模板吗？
+            title: 问卷模板
+          preview:
+            current_step: 步骤 %{step}
+            of_total_steps: '%{total_steps}'
+            tos_agreement: 通过参与您接受其服务条款
+      template_types:
+        questionnaires: Questionnaires

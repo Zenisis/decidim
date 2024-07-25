@@ -1,0 +1,29 @@
+<div class="card" data-component="accordion" id="accordion-services">
+  <div class="card-divider">
+    <button class="card-divider-button" data-open="true" data-controls="panel-services" type="button">
+      <%= icon "arrow-right-s-line" %>
+      <h2 class="card-title" id="services"><%= t(".services") %>
+      </h2>
+    </button>
+  </div>
+
+  <div id="panel-services" class="card-section">
+    <div class="meeting-services row column">
+      <script type="text/template" class="decidim-template">
+        <%= fields_for "meeting[services][#{blank_service.to_param}]", blank_service do |service_form| %>
+          <%= render "decidim/meetings/admin/meetings/service", form: service_form, id: tabs_id_for_service(blank_service) %>
+        <% end %>
+      </script>
+
+      <div class="meeting-services-list">
+        <% form.object.services.each do |service| %>
+          <%= fields_for "meeting[services][]", service do |service_form| %>
+            <%= render "decidim/meetings/admin/meetings/service", form: service_form, id: tabs_id_for_service(service) %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <button class="button button__sm button__secondary add-service" type="button"><%= t(".add_service") %></button>
+    </div>
+  </div>
+</div>

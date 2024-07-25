@@ -1,0 +1,250 @@
+uk:
+  activemodel:
+    attributes:
+      initiative:
+        decidim_user_group_id: Автор
+        description: Опис
+        offline_votes: Підтримка на особистих зустрічах
+        scope_id: Обсяг
+        signature_end_date: Конець періоду збору підписів
+        signature_start_date: Початок періоду збору підписів
+        signature_type: Різновид збору підписів
+        signature_type_values:
+          any: Поєднаний
+          offline: На особистих зустрічах
+          online: Онлайн
+        title: Назва
+      initiatives_committee_member:
+        user: Член робочого гурту
+      initiatives_type:
+        banner_image: Банерне зображення
+        description: Опис
+        title: Назва
+      organization_data:
+        address: Адреса
+        id_document: Документ, що завідчує особу
+        name: Повне ім'я
+  activerecord:
+    models:
+      decidim/initiative_comittee:
+        one: Робочий гурт
+        few: Робочих гурти
+        many: Робочих гуртів
+        other: Робочих гуртів
+      decidim/initiative_vote:
+        one: Підпис
+        few: Підписи
+        many: Підписів
+        other: Підписів
+  decidim:
+    admin:
+      actions:
+        new_initiative_type: Додати різновид почину
+      menu:
+        information: Відомості
+        initiatives: Почини
+        initiatives_types: Різновиди починів
+      models:
+        initiatives:
+          fields:
+            created_at: 'Створено:'
+            state: Стан
+            supports_count: Підписів
+            title: Почини
+        initiatives_type_scope:
+          fields:
+            scope: Обсяг
+            supports_required: Необхідно проявів підтримки
+          name: Обсяг різновиду почину
+        initiatives_types:
+          fields:
+            created_at: 'Створено:'
+            title: Різновиди починів
+          name: Різновид почину
+      titles:
+        initiatives: Почини
+        initiatives_types: Різновиди починів
+    events:
+      initiatives:
+        initiative_extended:
+          email_intro: Строк збору підписів на підтримку почину %{resource_title} продовжено!
+          email_outro: Ви отримали це сповіщення, тому що ви стежите за %{resource_title}. Ви можете відписатися від цих сповіщень, перейшовши за наведеним вище посиланням.
+          email_subject: Строк збору підписів на підтримку почину продовжено!
+          notification_title: Строк збору підписів на підтримку почину <a href="%{resource_path}">%{resource_title}</a> продовжено.
+        milestone_completed:
+          affected_user:
+            email_subject: Досягнута нова віха!
+          follower:
+            email_intro: Почин %{resource_title} досяг %{percentage}% підписів!
+            email_subject: Досягнута нова віха!
+            notification_title: Почин <a href="%{resource_path}">%{resource_title}</a> досяг %{percentage}% підписів.
+    initiatives:
+      admin:
+        answers:
+          info_initiative:
+            state: Стан
+        committee_requests:
+          index:
+            approve: Схвалити
+            confirm_revoke: Ви впевнені?
+            revoke: Відкликати
+            title: Члени робочого гурту
+        initiatives:
+          edit:
+            accept: Прийняти почин
+            confirm: Ви впевнені?
+            discard: Відкинути почин
+            export_votes: Зберегти у вигляді файлу перелік тих, хто підтримує
+            reject: Відхилити почин
+            send_to_technical_validation: Надіслати на технічну перевірку
+            update: Оновити
+          form:
+            title: Загальні відомості
+          index:
+            actions_title: Дія
+            preview: Попередній перегляд
+            print: Друк
+        initiatives_type_scopes:
+          edit:
+            title: Редагувати обсяг різновиду почину
+            update: Оновити
+          new:
+            create: Створити
+            title: Створити обсяг різновиду почину
+        initiatives_types:
+          edit:
+            update: Оновити
+          initiative_type_scopes:
+            title: Обсяги для цього різновиду почину
+          new:
+            create: Додати
+            title: Додати різновид почину
+      admin_log:
+        initiative:
+          publish: "%{user_name} оприлюднив почин %{resource_name}"
+          send_to_technical_validation: "%{user_name} надіслав почин %{resource_name} на технічну перевірку"
+          unpublish: "%{user_name} відкинув почин %{resource_name}"
+          update: "%{user_name} оновив почин %{resource_name}"
+      admin_states:
+        created: Створені
+        discarded: Відкинуті
+        validating: Технічна перевірка
+      application_helper:
+        filter_state_values:
+          closed: Закриті
+          open: Відкриті
+      committee_requests:
+        new:
+          continue: Продовжити
+        spawn:
+          success: Ваш запит було надіслано автору почину.
+      content_blocks:
+        highlighted_initiatives:
+          name: Висвітлені почини
+      create_initiative:
+        fill_data:
+          back: Повернутись
+          continue: Продовжити
+          more_information: "(Додаткові відомості)"
+          select_scope: Оберіть обсяг
+        finish:
+          back: Повернутись
+          back_to_initiatives: Повернутися до починів
+          go_to_my_initiatives: Перейти до моїх починів
+          more_information: "(Додаткові відомості)"
+        previous_form:
+          back: Повернутись
+          continue: Продовжити
+        promotal_committee:
+          more_information: "(Додаткові відомості)"
+        select_initiative_type:
+          back: Повернутись
+          more_information: (Додаткові відомості)
+        share_committee_link:
+          invite_to_committee_help: Посилання для запрошення людей, які увійдуть в робочий гурт з просування
+      events:
+        create_initiative_event:
+          email_intro: "%{author_name} %{author_nickname}, за яким ви стежите, зробив новий почин. Прочитайте його та зробіть свій внесок:"
+          email_outro: Ви отримали це сповіщення, тому що ви стежите за %{author_nickname}. Ви можете відписатися від цих сповіщень, перейшовши за наведеним вище посиланням.
+          email_subject: Новий почин, започаткований %{author_nickname}
+          notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> створив почин <a href="%{resource_path}">%{resource_title}</a>.
+        endorse_initiative_event:
+          email_intro: "%{author_name} %{author_nickname}, за яким ви стежите, підтримав наступний почин. Чи не бажаєте ви зробити свій внесок у розмову:"
+          email_outro: Ви отримали це сповіщення, тому що ви стежите за %{author_nickname}. Ви можете відписатися від цих сповіщень, перейшовши за наведеним вище посиланням.
+          email_subject: '%{author_nickname} підтримав почин'
+          notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> підтримав почин <a href="%{resource_path}">%{resource_title}</a>.
+      initiative_votes:
+        create:
+          error: При підписанні цього почину сталися помилки.
+      initiatives:
+        author_list:
+          hidden_authors_count:
+            one: і ще 1 особа
+            few: і ще %{count} людей
+            many: і ще %{count} людей
+            other: і ще %{count} людей
+        count:
+          title:
+            one: "%{count} почин"
+            few: "%{count} почини"
+            many: "%{count} починів"
+            other: "%{count} починів"
+        filters:
+          any: Будь-які
+          author: Автор
+          myself: Мої почини
+          state: Стан
+          type: Різновид
+        index_header:
+          new_initiative: Започаткувати почин
+        orders:
+          label: 'Впорядкувати почини за ознакою:'
+          most_commented: Найбільш коментовані
+          most_voted: З найбільшою кількістю підписів
+          random: Довільно
+          recent: Найновіші
+        print:
+          city: Місто
+        result:
+          initiative_rejected_reason: Цей почин був відхилений через недостатню підтримку.
+        signatures_count:
+          one: " підпис"
+          few: " підписи"
+          many: " підписів"
+          other: " підписів"
+        vote_cabin:
+          already_voted: Вже підписалися
+          vote: Підписати
+          votes_blocked: Підписування вимкнене
+        votes_count:
+          count:
+            one: ПІДПИС
+            few: ПІДПИСИ
+            many: ПІДПИСІВ
+            other: ПІДПИСІВ
+      initiatives_mailer:
+        creation_subject: Ваш громадський почин "%{title}" був доданий
+        initiative_link:
+          check_initiative_details: Ви можете переглянути детальні відомості про почин
+          here: тут
+        more_information: Ось додаткові відомості про послідовність створення почину.
+        progress_report_body_for: Почин %{title} отримав %{percentage}% необхідної підтримки.
+        progress_report_for: 'Коротко про почин: %{title}'
+        promotal_committee_help: Пам'ятайте, що ви повинні запросити щонайменше %{member_count} людей до робочого гурту з просування. Перешліть їм наступне посилання, щоб запросити їх до робочого гурту з просування
+        status_change_body_for: 'Стан почину %{title} змінився на: %{state}'
+        status_change_for: Стан почину %{title} змінився
+      states:
+        accepted: Прийняті
+        expired: Строк дії яких закінчився
+    menu:
+      initiatives: Почини
+  layouts:
+    decidim:
+      initiative_creation_header:
+        fill_data: Внести
+        finish: Завершити
+        promotal_committee: Робочий гурт з просування
+        select_initiative_type: Обрати
+      initiatives:
+        no_initiatives_yet:
+          no_initiatives_yet: Ще нема жодного почину!

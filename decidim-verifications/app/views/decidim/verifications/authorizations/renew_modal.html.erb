@@ -1,0 +1,31 @@
+<div data-dialog-container>
+  <%= icon "refresh-line" %>
+  <h3 class="h3" id="dialog-title-renew-modal" tabindex="-1" data-dialog-title>
+    <%= t("renew_modal.title", scope: "decidim.verifications.authorizations") %>
+  </h3>
+  <div>
+    <div id="dialog-desc-renew-modal" class="verification-modal__text">
+      <p>
+        <span class="verification-modal__name"><%= t("#{authorization.name}.name", scope: "decidim.authorization_handlers") %></span>
+        <span><%= t("#{authorization.name}.explanation", scope: "decidim.authorization_handlers") %></span>
+      </p>
+
+      <%= cell(authorization.metadata_cell, authorization) %>
+
+      <p>
+        <%= t("renew_modal.info_renew", scope: "decidim.verifications.authorizations") %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div data-dialog-actions>
+  <button class="button button__sm md:button__lg button__transparent-secondary" data-dialog-close="renew-modal">
+    <%= t("renew_modal.cancel", scope: "decidim.verifications.authorizations") %>
+  </button>
+
+  <%= link_to authorization_method(authorization).renew_path, class: "button button__sm md:button__lg button__secondary" do %>
+    <span><%= t("renew_modal.continue", scope: "decidim.verifications.authorizations") %></span>
+    <%= icon "arrow-right-line", class: "fill-current" %>
+  <% end %>
+</div>

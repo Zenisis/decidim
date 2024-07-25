@@ -1,0 +1,204 @@
+"no":
+  activemodel:
+    attributes:
+      result:
+        decidim_accountability_status_id: Status
+        decidim_category_id: Kategori
+        decidim_scope_id: Tema
+        description: Beskrivelse
+        end_date: Sluttdato
+        progress: Framgang
+        project_ids: Inkluderte prosjekter
+        proposals: Inkluderte forslag
+        start_date: Startdato
+        title: Tittel
+        updated_at: Oppdatert
+      status:
+        description: Beskrivelse
+        key: Nøkkel
+        name: Navn
+        progress: Framgang
+      timeline_entry:
+        description: Beskrivelse
+        entry_date: Dato
+        title: Tittel
+    models:
+      decidim/accountability/proposal_linked_event: Forslag inkludert i et resultat
+      decidim/accountability/result_progress_updated_event: Resultat fremgang oppdatert
+  activerecord:
+    models:
+      decidim/accountability/result:
+        one: Resultat
+        other: Resultater
+  decidim:
+    accountability:
+      actions:
+        attachment_collections: Mapper
+        attachments: Vedlegg
+        confirm_destroy: Er du sikker på at du vil slette dette %{name}?
+        destroy: Slett
+        edit: Redigere
+        preview: Forhåndsvisning
+        timeline_entries: Prosjektutvikling
+        title: Handlinger
+      admin:
+        exports:
+          result_comments: Kommentarer
+          results: Resultater
+        import_results:
+          new:
+            import: Importer
+        models:
+          result:
+            name: Resultat
+          status:
+            name: Status
+        results:
+          edit:
+            title: Rediger resultatet
+            update: Oppdater resultatet
+          index:
+            title: Resultater
+          new:
+            create: Opprett resultat
+            title: Nytt resultat
+        shared:
+          subnav:
+            statuses: Statuser
+        statuses:
+          edit:
+            title: Endre status
+            update: Oppdater status
+          index:
+            title: Statuser
+          new:
+            create: Opprett status
+            title: Ny status
+        timeline_entries:
+          edit:
+            title: Rediger oppføring
+            update: Oppdater oppføringen
+          index:
+            title: Oppføringer på prosjekttidslinje
+          new:
+            create: Opprett oppføring
+            title: Ny oppføring
+      admin_log:
+        result:
+          create: "%{user_name} opprettet resultat %{resource_name} i %{space_name}"
+          delete: "%{user_name} slettet %{resource_name}-resultatet i %{space_name}"
+          update: "%{user_name} oppdaterte %{resource_name}-resultatet i %{space_name}"
+        status:
+          create: "%{user_name} har opprettet %{resource_name}-statusen"
+          delete: "%{user_name} slettet %{resource_name}-statusen"
+          update: "%{user_name} oppdaterte statusen %{resource_name}"
+        timeline_entry:
+          create: "%{user_name} opprettet %{resource_name} i tidslinjen"
+          delete: "%{user_name} slettet %{resource_name} i tidslinjen"
+          update: "%{user_name} oppdaterte %{resource_name} i tidslinjen"
+        value_types:
+          parent_presenter:
+            not_found: 'Overordnede ble ikke funnet i databasen (ID: %{id})'
+      content_blocks:
+        highlighted_results:
+          results: Resultater
+      import_mailer:
+        import:
+          errors: Feil
+          row_number: Rad
+          subject: Vellykket import av resultater
+          success: Vellykket import av resultater. Du kan se gjennom resultatene fra administrasjonsgrensesnittet.
+      models:
+        result:
+          fields:
+            category: Kategori
+            created_at: Opprettet
+            end_date: Sluttdato
+            id: ID
+            progress: Framgang
+            scope: Tema
+            start_date: Startdato
+            status: Status
+            title: Tittel
+        status:
+          fields:
+            description: Beskrivelse
+            key: Nøkkel
+            name: Navn
+            progress: Framgang
+        timeline_entry:
+          fields:
+            entry_date: Dato
+            title: Tittel
+      results:
+        count:
+          results_count:
+            one: 1 resultat
+            other: "%{count} resultater"
+        filters:
+          all: Alle
+        home:
+          categories_label: Kategorier
+          subcategories_label: Underkategorier
+        home_header:
+          global_status: Global utførelse status
+        nav_breadcrumb:
+          global: Global utførelse
+        search:
+          search: Søk etter handlinger
+        show:
+          stats:
+            back_to_resource: Gå tilbake til resultatet
+        timeline:
+          title: Prosjektutvikling
+    admin:
+      filters:
+        results:
+          category_id_eq:
+            label: Kategori
+          scope_id_eq:
+            label: Tema
+          status_id_eq:
+            label: Status
+    components:
+      accountability:
+        actions:
+          comment: Kommentar
+        name: Ansvarlighet
+        settings:
+          global:
+            comments_enabled: Kommentarer aktivert
+            comments_max_length: Maks lengde på kommentarer (Sett 0 for standardverdi)
+            display_progress_enabled: Vis fremgang
+            intro: Introduksjon
+            scope_id: Tema
+            scopes_enabled: Temaer aktivert
+          step:
+            comments_blocked: Kommentarer blokkert
+    events:
+      accountability:
+        proposal_linked:
+          email_intro: 'Forslaget %{proposal_title} er blitt inkludert i et resultat. Du kan se det fra denne siden:'
+          email_outro: Du har mottatt denne varslingen fordi du følger "%{proposal_title}". Du kan slutte å motta varsler hvis du følger den forrige linken.
+          email_subject: En oppdatering til %{proposal_title}
+          notification_title: Forslaget <a href="%{proposal_path}">%{proposal_title}</a> har blitt inkludert i <a href="%{resource_path}">%{resource_title}</a> resultatet.
+        result_progress_updated:
+          email_intro: 'Resultatet "%{resource_title}", som inkluderer forslaget "%{proposal_title}", er nå %{progress}% ferdig. Du kan se det fra denne siden:'
+          email_outro: Du har mottatt denne varslingen fordi du følger "%{proposal_title}", og dette forslaget er inkludert i resultatet "%{resource_title}". Du kan slutte å motta varsler hvis du følger den forrige linken.
+          email_subject: En oppdatering til %{resource_title} fremgang
+          notification_title: Resultatet <a href="%{resource_path}">%{resource_title}</a>, som inkluderer forslaget <a href="%{proposal_path}">%{proposal_title}</a> er nå %{progress}% ferdig.
+    metrics:
+      results:
+        description: Antall genererte resultater
+        object: resultater
+        title: Resultater
+    participatory_spaces:
+      highlighted_results:
+        see_all: Se alle resultater (%{count})
+    resource_links:
+      included_projects:
+        result_project: Prosjekter inkludert i dette resultatet
+      included_proposals:
+        result_proposal: Forslagene er inkludert i dette resultatet
+    statistics:
+      results_count: Resultater

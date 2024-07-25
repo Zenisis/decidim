@@ -1,0 +1,149 @@
+uk:
+  activemodel:
+    attributes:
+      result:
+        decidim_accountability_status_id: Стан
+        decidim_category_id: Категорія
+        decidim_scope_id: Обсяг
+        description: Опис
+        end_date: Дата закінчення
+        progress: Перебіг
+        project_ids: Включені проекти
+        proposals: Включені пропозиції
+        start_date: Дата початку
+        title: Назва
+        updated_at: 'Оновлено:'
+      status:
+        description: Опис
+        key: Ключ
+        name: Ім'я
+        progress: Перебіг
+      timeline_entry:
+        description: Опис
+        entry_date: Дата
+    models:
+      decidim/accountability/proposal_linked_event: Пропозиція, включена до підсумку
+  activerecord:
+    models:
+      decidim/accountability/result:
+        one: Підсумок
+        few: Підсумки
+        many: Підсумків
+        other: Підсумків
+  decidim:
+    accountability:
+      actions:
+        confirm_destroy: Ви впевнені, що хочете видалити %{name}?
+        destroy: Видалити
+        edit: Редагувати
+        preview: Попередній перегляд
+        timeline_entries: Розвиток проекту
+        title: Дії
+      admin:
+        exports:
+          results: Підсумки
+        models:
+          result:
+            name: Підсумки
+          status:
+            name: Стан
+        results:
+          edit:
+            title: Редагувати підсумки
+            update: Оновити підсумки
+          index:
+            title: Підсумки
+          new:
+            create: Створити підсумки
+            title: Додати підсумки
+        shared:
+          subnav:
+            statuses: Стани
+        statuses:
+          edit:
+            title: Редагувати стан
+            update: Оновити стан
+          index:
+            title: Стани
+          new:
+            create: Створити стан
+            title: Додати стан
+        timeline_entries:
+          edit:
+            title: Редагувати запис
+            update: Оновити запис
+          index:
+            title: Записи на лінії часу проекту
+          new:
+            create: Створити запис
+            title: Додати запис
+      admin_log:
+        result:
+          create: "%{user_name} створив підсумок %{resource_name} у %{space_name}"
+          delete: "%{user_name} видалив підсумок %{resource_name} у %{space_name}"
+          update: "%{user_name} оновив підсумок %{resource_name} у %{space_name}"
+        value_types:
+          parent_presenter:
+            not_found: 'Батьківський об''єкт не знайдено в базі даних (ID: %{id})'
+      models:
+        result:
+          fields:
+            end_date: Дата закінчення
+            progress: Перебіг
+            start_date: Дата початку
+            status: Стан
+            title: Назва
+        status:
+          fields:
+            description: Опис
+            key: Ключ
+            name: Назва
+            progress: Перебіг
+        timeline_entry:
+          fields:
+            entry_date: Дата
+      results:
+        count:
+          results_count:
+            one: 1 підсумок
+            few: "%{count} підсумків"
+            many: "%{count} підсумків"
+            other: "%{count} підсумків"
+        filters:
+          all: Усі
+        home:
+          categories_label: Категорії
+          subcategories_label: Підкатегорії
+        home_header:
+          global_status: Загальний стан виконання
+        nav_breadcrumb:
+          global: Загальне виконання
+        search:
+          search: Пошук дій
+        show:
+          stats:
+            back_to_resource: Повернутися до підсумків
+        timeline:
+          title: Розвиток проекту
+    components:
+      accountability:
+        name: Звітність
+        settings:
+          global:
+            comments_enabled: Коментарі увімкнено
+            display_progress_enabled: Показувати перебіг
+            intro: Вступ
+          step:
+            comments_blocked: Коментарі вимкнено
+    events:
+      accountability:
+        proposal_linked:
+          email_intro: 'Пропозиція "%{proposal_title}" була включена до підсумку. Ви можете переглянути її на сторінці:'
+          email_outro: Ви отримали це сповіщення, тому що ви стежите за "%{proposal_title}". Ви можете відписатися від цих сповіщень, перейшовши за наведеним вище посиланням.
+          email_subject: Оновлення до %{proposal_title}
+          notification_title: Пропозиція <a href="%{proposal_path}">%{proposal_title}</a> була включена до підсумку <a href="%{resource_path}">%{resource_title}</a>.
+    resource_links:
+      included_projects:
+        result_project: Проекти, включені до цих підсумків
+      included_proposals:
+        result_proposal: Пропозиції, включені до цих підсумків

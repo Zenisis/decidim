@@ -1,0 +1,30 @@
+<%= decidim_modal id: "show-email-modal" do %>
+  <div data-dialog-container>
+    <%= icon "information-line" %>
+    <h3 class="h3" id="dialog-title-show-email-modal" tabindex="-1" data-dialog-title>
+      <%= t(".title") %>
+    </h3>
+    <div id="dialog-desc-show-email-modal" class="my-8">
+      <%= t(".description") %>
+
+      <div class="show_email">
+        <h4><%= t(".full_name") %></h4>
+        <div>
+          <p id="user_full_name"></p>
+        </div>
+        <h4>
+          <%= t(".email_address") %>
+        </h4>
+        <div>
+          <p id="user_email"></p>
+          <p><%= t(".hidden") %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div data-dialog-actions>
+    <button class="button button__sm button__secondary" data-open="user_email" data-remote-url="">
+      <%= t(".show") %>
+    </button>
+  </div>
+<% end %>

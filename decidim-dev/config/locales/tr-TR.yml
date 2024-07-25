@@ -1,0 +1,55 @@
+tr:
+  activemodel:
+    attributes:
+      dummy_resource:
+        created_at: Oluşturuldu
+        decidim_scope_id: Kapsam
+        field: Benim alanım
+        start_date: Başlangıç tarihi
+        title: Başlık
+        translatable_text: Çeviri metni
+        updated_at: Güncellendi
+  decidim:
+    components:
+      dummy:
+        settings:
+          global:
+            readonly_attribute: Salt okunur özniteliği
+            test: Test
+            test_choices:
+              a: Seçenek
+              b: Seçim
+              c: Seçenek
+            test_options:
+              bar: Çubuk
+              foo: Sahte değişken
+          step:
+            endorsements_blocked: Onaylar engellendi
+            endorsements_enabled: Onaylar etkinleştirildi
+            readonly_step_attribute: Salt okunur özniteliği
+            test_options:
+              bar: Çubuk
+              foo: Sahte değişken
+    dummy:
+      admin:
+        exports:
+          dummies: Aptallar
+    gamification:
+      badges:
+        test:
+          conditions:
+            - Decidim için bir test ortamı kullanın.
+          description: Katılımcılar testler oluşturarak bu rozeti alırlar.
+          description_another: Bu katılımcı %{score} test oluşturdu.
+          description_own: '%{score} test oluşturdunuz.'
+          name: Testler
+          next_level_in: Bir sonraki seviyeye ulaşmak için %{score} test daha oluştur!
+          unearned_own: Henüz bir test oluşturmadınız.
+    resource_links:
+      test_link:
+        dummy_resource_dummy: İlgili sahte konu
+    statistics:
+      bar: Çubuk
+      dummies_count_high: Çok sahte
+      dummies_count_medium: Orta sahte
+      foo: Sahte değişken

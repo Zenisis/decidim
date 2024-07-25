@@ -1,0 +1,223 @@
+eu:
+  activemodel:
+    attributes:
+      debate:
+        category_id: Kategoria
+        closed_at: Amaiera-data
+        conclusions: Ondorioak
+        decidim_category_id: Kategoria
+        description: Deskribapena
+        end_time: Bukaera-data
+        information_updates: Informazioaren eguneratzeak
+        instructions: Parte hartzeko argibideak
+        scope_id: Esparrua
+        start_time: Hasi da
+        title: Izenburua
+        user_group_id: Sortu eztabaida honela
+    models:
+      decidim/debates/close_debate_event: Eztabaida itxita
+      decidim/debates/create_debate_event: Eztabaida
+      decidim/debates/creation_disabled_event: Eztabaidak desgaituta daude
+      decidim/debates/creation_enabled_event: Eztabaidak sortzea gaituta
+  activerecord:
+    models:
+      decidim/debates/debate:
+        one: Eztabaida
+        other: Eztabaidak
+  decidim:
+    components:
+      debates:
+        actions:
+          comment: Iruzkina
+          create: Sortu
+          endorse: Atxiki
+        name: Eztabaidak
+        settings:
+          global:
+            announcement: Iragarpena
+            comments_enabled: Iruzkinak gaituta
+            comments_max_length: Iruzkinen gehieneko luzera (utzi 0 lehenetsitako konfigurazioari eutsi nahi badiozu)
+            scope_id: Esparrua
+            scopes_enabled: Esparruak gaituta
+          step:
+            announcement: Iragarpena
+            comments_blocked: Iruzkinak blokeatuta
+            creation_enabled: Parte-hartzaileek eztabaidak sor ditzakete
+            endorsements_blocked: Atxikimenduak blokeatuta
+            endorsements_enabled: Atxikimenduak gaituta
+    debates:
+      actions:
+        close: Itxi
+        confirm_destroy: Ziur zaude?
+        destroy: Ezabatu
+        edit: Editatu
+        new: Beste eztabaida bat
+        title: Ekintzak
+      admin:
+        debate_closes:
+          edit:
+            close: Itxi
+            title: Itxi eztabaida
+        debates:
+          create:
+            invalid: Arazo bat gertatu da eztabaida sortzean.
+            success: Eztabaida zuzen sortu da.
+          destroy:
+            success: Eztabaida zuzen ezabatu da.
+          edit:
+            title: Editatu eztabaida
+            update: Eguneratu eztabaida
+          form:
+            debate_type: Eztabaida mota
+            finite: Amaiera (hasiera- eta amaiera-ordua)
+            open: Zabalik (ez dago hasiera- edo amaiera-ordurik)
+          index:
+            title: eztabaidak
+          new:
+            create: Sortu eztabaida
+            title: Beste eztabaida bat
+          update:
+            invalid: Arazo bat egon da eztabaida hau eguneratzean.
+            success: Debate arrakastaz eguneratu da.
+        exports:
+          comments: Iruzkinak
+      admin_log:
+        debate:
+          close: "%{user_name} erabiltzaileak %{resource_name} eztabaida sortu du %{space_name} esparruan"
+          create: "%{user_name} k %{resource_name} eztabaida sortu du %{space_name} espazioan"
+          update: "%{user_name} k %{resource_name} eztabaida eguneratu du %{space_name} espazioan"
+      debate_m:
+        commented_time_ago: Iruzkina eginda orain dela %{time}
+      debates:
+        close:
+          invalid: Arazo bat egon da eztabaida ixtean.
+          success: Eztabaida zuzen itxi da.
+        close_debate_modal:
+          cancel: Ezeztatu
+          description: Zein da eztabaida honen laburpena edo ondorioa?
+          send: Itxi eztabaida
+        count:
+          debates_count:
+            one: "%{count} eztabaida"
+            other: "%{count} eztabaidak"
+        create:
+          invalid: Arazo bat egon da eztabaida sortzean.
+          success: Debate sortu da behar bezala.
+        debates:
+          empty: Oraindik ez dago eztabaidarik.
+          empty_filters: Ez dago irizpide hau duen eztabaidarik.
+        edit:
+          back: Atzera
+          save: Gorde aldaketak
+          title: Editatu eztabaida
+        filters:
+          activity: Nire jarduera
+          all: guztiak
+          category: Kategoria
+          category_prompt: Aukeratu kategoria bat
+          commented: Iruzkina eginda
+          my_debates: Nire eztabaidak
+          official: Ofiziala
+          origin: Origin
+          participants: Parte-hartzaileak
+          search: Bilatu
+          state: Egoera
+          state_values:
+            closed: Itxita
+            open: Ireki
+          user_group: Taldeak
+        form:
+          select_a_category: Hautatu kategoria bat
+        index:
+          new_debate: Beste eztabaida bat
+        new:
+          back: Atzera
+          create: Sortu
+          title: Beste eztabaida bat
+        orders:
+          commented: Iruzkin gehien dituztenak
+          label: Ordenatu eztabaidak honen arabera
+          random: Ausazko ordena
+          recent: Azkenak
+          updated: Orain dela gutxi eguneratuak
+        show:
+          close_debate: Itxi eztabaida
+          debate_closed: Itxita
+          debate_conclusions_are: 'Eztabaida %{date} egunean itxi zen ondorio hauekin:'
+          edit_conclusions: Editatu ondorioak
+          edit_debate: Editatu eztabaida
+          groups_count: Taldeak
+          open: Eztabaida irekita
+          participants_count: Parte-hartzaileak
+        update:
+          invalid: Arazo bat egon da eztabaida eguneratzean.
+          success: Eztabaida zuzen eguneratu da.
+      last_activity:
+        debate_updated: 'Eztabaida eguneratu da:'
+        new_debate: 'Beste eztabaida bat:'
+      models:
+        debate:
+          fields:
+            end: Amaiera
+            end_time: Amaiera data
+            official_debate: Ofizial eztabaida
+            start: Hasi
+            start_time: Hasiera data
+            title: Izenburua
+    events:
+      debates:
+        create_debate_event:
+          space_followers:
+            email_intro: |-
+              Kaixo:
+              "%{resources ce_title}" eztabaida berria sortu da %{participatory_space_title}} partaidetza-espazioan, egiaztatu eta egin ekarpenak:
+            email_outro: Jakinarazpen hau jaso duzu %{participatory_space_title} parte hartzeko espazioa jarraitzen ari zarelako. Aurreko estekan jakinarazpenak jasotzeari utzi ahal diozu.
+            email_subject: '"%{resource_title}" eztabaida berria hemen %{participatory_space_title}'
+            notification_title: '<a href="%{resource_path}">%{resource_title}</a> eztabaida sortu da hemen: <a href="%{participatory_space_url}">%{participatory_space_title}</a>.'
+          user_followers:
+            email_intro: |-
+              Kaixo,
+              %{author_name} %{author_nickname} k, jarraitzen ari zarenak, "%{resource_title}" eztabaida berri bat sortu du. Begiratu eta lagundu:
+            email_outro: Jakinarazpena jaso duzu %{author_nickname} jarraitzen ari zarelako. Aurreko estekan jakinarazpenak jasotzeari utzi ahal diozu.
+            email_subject: '%{author_nickname} k "%{resource_title}" beste eztabaida bat sortu du'
+            notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> k sortu du <a href="%{resource_path}">%{resource_title}</a> eztabaida.
+        creation_disabled:
+          email_intro: 'Eztabaida sortzea dagoeneko ez dago aktibo %{participatory_space_title}. Oraindik irekita dauden eztabaidetan parte har dezakezu orri honetatik:'
+          email_outro: Jakinarazpena jaso duzu %{participatory_space_title} jarraitzen ari zarelako. Aurreko estekan jakinarazpenak jasotzeari utzi ahal diozu.
+          email_subject: Debate sortzea desgaituta %{participatory_space_title}
+          notification_title: Eztabaiden sorrera orain desaktibatuta dago <a href="%{participatory_space_url}">%{participatory_space_title}</a>
+        creation_enabled:
+          email_intro: 'Oraineztabaida berriak hasi ditzakezu hemen: %{participatory_space_title}! Hasi parte-hartzea orri honetan:'
+          email_outro: Jakinarazpena jaso duzu %{participatory_space_title} jarraitzen ari zarelako. Aurreko estekan jakinarazpenak jasotzeari utzi ahal diozu.
+          email_subject: 'Eztabaidak orain eskuragarri hemen: %{participatory_space_title}'
+          notification_title: 'Orain <a href="%{resource_path}">eztabaida berriak hasi ditzakezu hemen: </a> <a href="%{participatory_space_url}">%{participatory_space_title}</a>.'
+        debate_closed:
+          affected_user:
+            email_intro: '"%{resource_title}" eztabaida itxi egin da. Ondorioak bere orrialdean irakur ditzakezu:'
+            email_outro: Jakinarazpen hau jaso duzu "%{resource_title}" eztabaida jarraitzen ari zarelako. Aurreko loturan utzi ahal diozu jarraitzeari.
+            email_subject: '"%{resource_title}" eztabaida itxi egin da'
+            notification_title: <a href="%{resource_path}">%{resource_title}</a> eztabaida itxi egin da.
+          follower:
+            email_intro: '"%{resource_title}" eztabaida itxi egin da. Ondorioak bere orrialdean irakur ditzakezu:'
+            email_outro: Jakinarazpen hau jaso duzu "%{resource_title}" eztabaida jarraitzen ari zarelako. Aurreko loturan utzi ahal diozu jarraitzeari .
+            email_subject: '"%{resource_title}" eztabaida itxi egin da'
+            notification_title: <a href="%{resource_path}">%{resource_title}</a> eztabaida itxi egin da.
+    gamification:
+      badges:
+        commented_debates:
+          conditions:
+            - Aukeratu eztabaida irekia parte hartzeko
+          description: Garaikur hau eztabaidetan modu aktiboan, zure iruzkinak utziz, parte hartzen duzunean ematen da.
+          description_another: Parte-hartzaile honek %{score} eztabaidatan hartu du parte.
+          description_own: '%{score} eztabaidatan hartu duzu parte.'
+          name: Eztabaidak
+          next_level_in: Parte hartu %{score} eztabaidagai gehiago hurrengo mailara iristeko!
+          unearned_another: Erabiltzaile honek eztabaida batean parte hartu du oraindik.
+          unearned_own: Oraindik ez duzu parte hartu eztabaida batean ere.
+    metrics:
+      debates:
+        description: Sortutako eztabaida kopurua
+        object: eztabaidak
+        title: eztabaidak
+    statistics:
+      debates_count: Eztabaidak

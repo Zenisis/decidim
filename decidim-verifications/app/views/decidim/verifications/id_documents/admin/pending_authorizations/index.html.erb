@@ -1,0 +1,35 @@
+<% add_decidim_page_title(t(".title")) %>
+<div class="card">
+  <div class="item_show__header">
+    <h1 class="item_show__header-title">
+      <%= t(".title") %>
+        <%= link_to t(".config"), edit_config_path, class: "button button__sm button__secondary" %>
+        <%= link_to t(".offline_verification"), new_offline_confirmation_path, class: "button button__sm button__secondary" if has_offline_method? %>
+    </h1>
+  </div>
+  <div class="table-scroll">
+    <table class="table-list">
+      <thead>
+        <tr>
+          <th><%= t("activemodel.attributes.id") %></th>
+          <th><%= t("activemodel.attributes.id_document_upload.verification_attachment") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @pending_online_authorizations.each do |authorization| %>
+          <tr>
+            <td>
+              <%= link_to t(".verification_number", n: authorization.id),
+                          new_pending_authorization_confirmation_path(authorization.id) %>
+            </td>
+            <td>
+              <%= link_to new_pending_authorization_confirmation_path(authorization.id) do %>
+                <%= image_tag authorization.attached_uploader(:verification_attachment).variant_url(:thumbnail), class: "thumbnail-list" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<%= cell("decidim/announcement", announcement_body, callout_class: current_user.admin_terms_accepted? ? "success" : "warning" ) %>
+
+<div class="item_show__header">
+  <h1 class="item_show__header-title">
+    <%= t("title", scope: "decidim.admin.admin_terms_of_service") %>
+  </h1>
+</div>
+
+<article class="card">
+  <div class="card-section p-4">
+    <div class="cell medium-12">
+
+      <div class="admin-terms-of-service">
+        <%= admin_terms_of_service_body %>
+      </div>
+    </div>
+
+    <% unless current_user.admin_terms_accepted? %>
+      <div class="admin-terms-of-service">
+        <h2 class="mb-2">
+          <%= t("decidim.admin.admin_terms_of_service.actions.title") %>
+        </h2>
+      </div>
+
+      <div class="flex align-items gap-x-4">
+        <%= button_to_refuse_admin_terms %>
+        <%= button_to_accept_admin_terms %>
+      </div>
+    <% end %>
+  </div>
+</article>

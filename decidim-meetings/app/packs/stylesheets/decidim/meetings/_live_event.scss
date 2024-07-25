@@ -1,0 +1,34 @@
+.meeting-polls {
+  &__body {
+    @apply flex flex-col min-h-screen;
+  }
+
+  &__header {
+    @apply flex items-center justify-between p-2.5 bg-background border;
+  }
+
+  &__main {
+    @apply flex grow items-stretch;
+  }
+
+  &__iframe {
+    @apply flex grow bg-gray-2 [&>*]:grow [&>*]:border-0;
+  }
+
+  &__aside {
+    @apply flex-none bg-background-2;
+
+    &.is-open {
+      @apply w-1/5 [&+div]:w-4/5;
+
+      // shrink iframe when there is two panels
+      & + & + div {
+        @apply w-3/5;
+      }
+
+      & + & {
+        @apply border-l border-l-background;
+      }
+    }
+  }
+}

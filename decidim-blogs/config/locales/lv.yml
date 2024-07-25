@@ -1,0 +1,53 @@
+lv:
+  activemodel:
+    models:
+      decidim/blogs/create_post_event: Jauna emuāra ziņa
+  activerecord:
+    models:
+      decidim/blogs/post:
+        zero: Ziņas
+        one: Ziņa
+        other: Ziņas
+  decidim:
+    blogs:
+      actions:
+        confirm_destroy: Vai tiešām vēlaties dzēst šo ziņu?
+        destroy: Dzēst
+        edit: Labot
+        new: Jauna ziņa
+        title: Darbības
+      admin:
+        posts:
+          edit:
+            save: Atjaunināt
+          index:
+            title: Ziņas
+          new:
+            create: Izveidot
+            title: Izveidot ziņu
+          update:
+            invalid: Ziņas saglabāšanas laikā radās problēma.
+      models:
+        post:
+          fields:
+            author: Autors
+            body: Pamatteksts
+    components:
+      blogs:
+        name: Emuārs
+        settings:
+          global:
+            announcement: Paziņojums
+            comments_enabled: Komentāri ir iespējoti
+          step:
+            announcement: Paziņojums
+            comments_blocked: Komentāri ir bloķēti
+            endorsements_blocked: Atbalsti ir bloķēti
+            endorsements_enabled: Atbalsti ir iespējoti
+    events:
+      blogs:
+        post_created:
+          email_intro: Ziņa "%{resource_title}" ir publicēta "%{participatory_space_title}", kurai sekojat.
+          email_outro: Jūs saņēmāt šo paziņojumu, jo sekojat "%{participatory_space_title}". Jūs varat atsekot tai no iepriekšējās saites.
+          email_subject: Telpā %{participatory_space_title} ir publicēta jauna ziņa
+          notification_title: Ziņa <a href="%{resource_path}">%{resource_title}</a> ir publicēta telpā %{participatory_space_title}

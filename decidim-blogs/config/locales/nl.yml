@@ -1,0 +1,67 @@
+nl:
+  activemodel:
+    models:
+      decidim/blogs/create_post_event: Nieuwe blogpost
+  activerecord:
+    models:
+      decidim/blogs/post:
+        one: Post
+        other: Posts
+  decidim:
+    blogs:
+      actions:
+        author_id: Bericht aanmaken als
+        confirm_destroy: Weet je zeker dat je dit bericht wilt verwijderen?
+        destroy: Verwijder
+        edit: Bewerk
+        new: Nieuwe blogpost
+        title: acties
+      admin:
+        posts:
+          edit:
+            save: Bijwerken
+            title: Bericht bewerken
+          index:
+            title: berichten
+          new:
+            create: creëren
+            title: Maak bericht
+          update:
+            invalid: Er zijn fouten opgetreden bij het opslaan van deze blogpost.
+      admin_log:
+        post:
+          create: "%{user_name} heeft de %{resource_name} blog gemaakt in %{space_name}"
+          delete: "%{user_name} heeft de %{resource_name} blog verwijderd in %{space_name}"
+          update: "%{user_name} heeft de %{resource_name} blog bijgewerkt in %{space_name}"
+      models:
+        post:
+          fields:
+            author: Auteur
+            body: Tekstgedeelte
+            official_blog_post: Officiële blogpost
+    components:
+      blogs:
+        actions:
+          create: Creëren
+          destroy: Verwijderen
+          update: Bijwerken
+        name: blog
+        settings:
+          global:
+            announcement: Aankondiging
+            comments_enabled: Reacties ingeschakeld
+            comments_max_length: Commentaar maximale lengte (laat 0 voor standaard waarde)
+          step:
+            announcement: Aankondiging
+            comments_blocked: Reacties geblokkeerd
+            endorsements_blocked: Aanbevelingen geblokkeerd
+            endorsements_enabled: Aanbevelingen ingeschakeld
+    events:
+      blogs:
+        post_created:
+          email_intro: Het bericht "%{resource_title}" is gepubliceerd in "%{participatory_space_title}" dat je volgt.
+          email_outro: Je hebt deze melding ontvangen omdat je "%{participatory_space_title}" volgt. Ontvolgen kan door te klikken op de voorgaande link.
+          email_subject: Nieuw bericht gepubliceerd in %{participatory_space_title}
+          notification_title: Het bericht <a href="%{resource_path}">%{resource_title}</a> is gepubliceerd in %{participatory_space_title}
+    statistics:
+      posts_count: Berichten

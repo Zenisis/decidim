@@ -1,0 +1,682 @@
+nl:
+  activemodel:
+    attributes:
+      collaborative_draft:
+        address: Adres
+        body: Tekstgedeelte
+        category_id: Categorie
+        decidim_scope_id: Scope
+        has_address: Heeft adres
+        scope_id: Bereik
+        state: Staat
+        title: Titel
+        user_group_id: Creëer samenwerkingsconcept als
+      proposal:
+        address: Adres
+        answer: Antwoord
+        answered_at: Beantwoord op
+        automatic_hashtags: Hashtags worden automatisch toegevoegd
+        body: Body
+        category_id: Categorie
+        decidim_scope_id: Scope
+        has_address: Heeft adres
+        scope_id: Bereik
+        state: Status
+        suggested_hashtags: Voorgestelde hashtags
+        title: Titel
+        user_group_id: Maak een voorstel als
+      proposal_answer:
+        answer: Antwoord
+        cost: Kost
+        cost_report: Kostenrapport
+        execution_period: Uitvoeringsperiode
+      proposals_copy:
+        origin_component_id: Onderdeel om de voorstellen te kopiëren van
+      proposals_import:
+        import_proposals: Voorstellen importeren
+        keep_answers: Status en antwoorden behouden
+        keep_authors: Bewaar originele auteurs
+      valuation_assignment:
+        admin_log:
+          valuator_role_id: Naam beoordelaar
+    errors:
+      models:
+        proposal:
+          attributes:
+            add_documents:
+              needs_to_be_reattached: Moet opnieuw worden gekoppeld
+            add_photos:
+              needs_to_be_reattached: Moet opnieuw worden gekoppeld
+            body:
+              cant_be_equal_to_template: mag niet gelijk zijn aan het template
+              identical: EN titel kan niet identiek zijn
+            title:
+              identical: EN tekstgedeelte kan niet identiek zijn
+        proposals_merge:
+          attributes:
+            base:
+              not_official: Zijn niet officieel
+        proposals_split:
+          attributes:
+            base:
+              not_official: Zijn niet officieel
+    models:
+      decidim/proposals/admin/update_proposal_category_event: Voorstelcategorie gewijzigd
+      decidim/proposals/admin/update_proposal_scope_event: Voorstel bereik gewijzigd
+      decidim/proposals/creation_enabled_event: Voorstelcreatie ingeschakeld
+      decidim/proposals/endorsing_enabled_event: Voorstel endorsing ingeschakeld
+      decidim/proposals/proposal_mentioned_event: Voorstel vermeld
+      decidim/proposals/publish_proposal_event: Voorstel gepubliceerd
+      decidim/proposals/voting_enabled_event: Voorstel stemmen ingeschakeld
+  activerecord:
+    models:
+      decidim/proposals/collaborative_draft:
+        one: Samenwerkingsconcept
+        other: Samenwerkingsconcepten
+      decidim/proposals/proposal:
+        one: Voorstel
+        other: voorstellen
+      decidim/proposals/proposal_note:
+        one: Notitie
+        other: Notes
+  decidim:
+    admin:
+      filters:
+        proposals:
+          valuator_role_ids_has:
+            label: Toegewezen aan beoordelaar
+        search_placeholder:
+          id_string_or_title_cont: Zoek %{collection} op ID of titel.
+    components:
+      proposals:
+        actions:
+          amend: Pas aan
+          comment: Reactie
+          create: creëren
+          endorse: Aanbevelen
+          vote: Stem
+          vote_comment: Stem op de reactie
+          withdraw: Intrekken
+        name: Voorstellen
+        settings:
+          global:
+            amendments_enabled: Wijzigingen ingeschakeld
+            amendments_enabled_help: 'Indien actief: stel de amendementsfunctionaliteiten in voor elke stap.'
+            amendments_wizard_help_text: Hulptekst van de amendementen wizard
+            announcement: Aankondiging
+            attachments_allowed: Bijlagen toestaan
+            collaborative_drafts_enabled: Samenwerkingsconcepten ingeschakeld
+            comments_enabled: Reacties ingeschakeld
+            comments_max_length: Commentaar maximale lengte (laat 0 voor standaard waarde)
+            default_sort_order: Standaardsortering
+            default_sort_order_options:
+              most_commented: Meeste reacties
+              most_endorsed: Meest gesteund
+              most_followed: Meest gevolgd
+              random: Willekeurig
+              recent: Meest recent
+              with_more_authors: Met meer auteurs
+            geocoding_enabled: Geolocatie ingeschakeld
+            new_proposal_body_template: Nieuw voorstel lichaamssjabloon
+            new_proposal_body_template_help: U kunt de door voorgevulde tekst definiëren die de nieuwe voorstellen zullen hebben
+            new_proposal_help_text: Hulptekst bij de creatie van een nieuw voorstel
+            official_proposals_enabled: Officiële voorstellen zijn ingeschakeld
+            participatory_texts_enabled: Participatieve teksten ingeschakeld
+            participatory_texts_enabled_readonly: Instelling niet aanpasbaar als er bestaande voorstellen zijn. Maak een nieuwe `Voorstellen component` aan als u deze functie wilt inschakelen of wijs alle geïmporteerde voorstellen in het `Participatieve Teksten` menu af, als u de instelling wilt uitschakelen.
+            proposal_answering_enabled: Reacties op voorstellen ingeschakeld
+            proposal_edit_before_minutes: Voorstellen kunnen door auteurs worden bewerkt voordat de tijd (uitgedrukt in minuten) verstreken is
+            proposal_edit_time: Voorstel bewerken
+            proposal_edit_time_choices:
+              infinite: Voorstellen onbeperkt in tijd laten bewerken
+              limited: Voorstellen laten bewerken binnen een bepaalde termijn
+            proposal_length: Maximum aantal tekens voor een voorstel
+            proposal_limit: Beperking van het aantal voorstellen per gebruiker
+            proposal_wizard_step_1_help_text: Helptekst "Maak" bij het maken van een nieuw voorstel
+            resources_permissions_enabled: Actiemachtigingen kunnen voor elk voorstel worden ingesteld
+            scope_id: Scope
+            scopes_enabled: Scopes ingeschakeld
+            threshold_per_proposal: Limiet per voorstel
+          step:
+            amendment_creation_enabled: Aanmaken van amendementen ingeschakeld
+            amendment_creation_enabled_help: Deelnemer kan voorstellen wijzigen.
+            amendment_promotion_enabled: Promoten van amendementen ingeschakeld
+            amendment_promotion_enabled_help: De auteurs van de Emandation kunnen de afgewezen emendatie voorstellen.
+            amendment_reaction_enabled: Reageren op amendementen ingeschakeld
+            amendment_reaction_enabled_help: De auteurs van het voorstel kunnen de amendementen van deelnemers accepteren of verwerpen.
+            amendments_visibility: Zichtbaarheid van amendement
+            amendments_visibility_choices:
+              all: Amendementen zijn zichtbaar voor iedereen
+              participants: Amendementen zijn alleen zichtbaar voor hun auteurs
+            amendments_visibility_help: Als de optie "alleen zichtbaar voor de auteurs" wordt geselecteerd, moet een deelnemer aangemeld zijn om de amendementen te zien.
+            announcement: Aankondiging
+            answers_with_costs: Kosten inschakelen bij antwoorden op voorstel
+            automatic_hashtags: Hashtags toegevoegd aan alle voorstellen
+            comments_blocked: Reacties geblokkeerd
+            creation_enabled: Gebruikers kunnen voorstellen maken
+            default_sort_order: Standaardsortering
+            default_sort_order_options:
+              most_commented: Meeste reacties
+              most_endorsed: Meest gesteund
+              most_followed: Meest gevolgd
+              random: Willekeurig
+              recent: Meest recent
+              with_more_authors: Met meer auteurs
+            endorsements_blocked: Aanbevelingen geblokkeerd
+            endorsements_enabled: "Aanbevelingen toegestaan\n"
+            proposal_answering_enabled: Formeel antwoord op voorstellen toegestaan.
+            publish_answers_immediately: Publiceer voorstel antwoorden onmiddellijk
+            suggested_hashtags: Hashtags stelde gebruikers voor nieuwe voorstellen voor
+            votes_blocked: Stemmen geblokkeerd
+            votes_enabled: Stemmen actief
+    events:
+      proposals:
+        admin:
+          proposal_note_created:
+            email_outro: Je hebt deze melding ontvangen omdat je het voorstel kan waarderen.
+            email_subject: Iemand heeft een notitie achtergelaten bij het voorstel %{resource_title}.
+        collaborative_draft_access_accepted:
+          email_subject: "%{requester_name} is geaccepteerd om toegang te krijgen als een bijdrager van de %{resource_title}."
+          notification_title: <a href="%{requester_path}">%{requester_name} %{requester_nickname}</a> is <strong> aanvaard om als bijdrager</strong> van de <a href="%{resource_path}">%{resource_title}</a> gezamenlijk ontwerp toegang te krijgen.
+        collaborative_draft_access_rejected:
+          email_subject: "%{requester_name} is afgewezen om toegang te krijgen als bijdrager van de %{resource_title} gezamenlijk ontwerp."
+          notification_title: <a href="%{requester_path}">%{requester_name} %{requester_nickname}</a> is <strong>afgewezen om toegang te krijgen als bijdrager</strong> van de <a href="%{resource_path}">%{resource_title}</a> gezamenlijk ontwerp.
+        collaborative_draft_access_requested:
+          email_subject: "%{requester_name} vroeg om toegang om bij te dragen aan %{resource_title}."
+          notification_title: <a href="%{requester_path}">%{requester_name} %{requester_nickname}</a> verzocht om toegang om bij te dragen aan de <a href="%{resource_path}">%{resource_title}</a> gezamenlijk ontwerp. Gelieve <strong>accepteren of het verzoek af te wijzen</strong>.
+        collaborative_draft_access_requester_accepted:
+          email_subject: Je bent geaccepteerd als een bijdrager van %{resource_title}.
+          notification_title: U bent <strong>geaccepteerd om als bijdrager</strong> van de <a href="%{resource_path}">%{resource_title}</a> gezamenlijk ontwerp toegang te krijgen.
+        collaborative_draft_access_requester_rejected:
+          email_subject: Je bent afgewezen als een bijdrager van %{resource_title}.
+          notification_title: U bent <strong>afgewezen om toegang te krijgen als bijdrager</strong> van de <a href="%{resource_path}">%{resource_title}</a> gezamenlijke ontwerp.
+        collaborative_draft_withdrawn:
+          email_subject: "%{author_name} %{author_nickname} de %{resource_title} gezamenlijk ontwerp ingetrokken."
+          notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> <strong>teruggetrokken</strong> de <a href="%{resource_path}">%{resource_title}</a> gezamenlijk ontwerp.
+        creation_enabled:
+          email_intro: 'Je kan nu nieuwe voorstellen maken in %{participatory_space_title}! Neem deel via deze link:'
+          email_outro: Je hebt deze melding ontvangen omdat je %{participatory_space_title} volgt. Schakel de meldingen uit door te klikken op de voorgaande link.
+          email_subject: Voorstellen nu beschikbaar in %{participatory_space_title}
+        endorsing_enabled:
+          email_intro: 'U kunt voorstellen in %{participatory_space_title} goedkeuren! Neem deel op deze pagina:'
+          email_outro: Je hebt deze melding ontvangen omdat je %{participatory_space_title}volgt. Je kan de meldingen uitschakelen door te klikken op de voorgaande link.
+          email_subject: Je kan nu de voorstellen in %{participatory_space_title} steunen
+        proposal_mentioned:
+          email_intro: Uw voorstel "%{mentioned_proposal_title}" is in deze ruimte <a href="%{resource_url}"></a> genoemd in de reacties.
+          email_outro: U hebt deze melding ontvangen omdat u een auteur bent van "%{resource_title}".
+          email_subject: Jouw voorstel "%{mentioned_proposal_title}" is vernoemd
+          notification_title: Je voorstel '%{mentioned_proposal_title}' werd in de reacties van <a href="%{resource_path}"> deze </a> vernoemd.
+        proposal_published:
+          email_intro: '%{author_name} %{author_nickname}, wie u volgt, heeft een nieuw voorstel gepubliceerd met de naam "%{resource_title}". Bekijk het en draag bij:'
+          email_outro: Je hebt deze melding ontvangen omdat je %{author_nickname}volgt. Je kan de meldingen uitschakelen door te klikken op de voorgaande link.
+          email_subject: Nieuw voorstel "%{resource_title}" door %{author_nickname}
+          notification_title: Het <a href="%{resource_path}">%{resource_title}</a> voorstel werd gepubliceerd door <a href="%{author_path}">%{author_name} %{author_nickname}</a>.
+        proposal_published_for_space:
+          email_intro: Het voorstel "%{resource_title}" is toegevoegd aan "%{participatory_space_title}" dat je volgt.
+          email_outro: Je hebt deze melding ontvangen omdat je "%{participatory_space_title}" volgt. Schakel de meldingen uit door op bovenstaande link te klikken en te stoppen met volgen.
+          email_subject: Nieuw voorstel "%{resource_title}" toegevoegd aan %{participatory_space_title}
+        proposal_update_category:
+          email_intro: 'Een beheerder heeft de categorie van uw voorstel "%{resource_title} bijgewerkt, bekijk het op deze pagina:'
+          email_outro: Je hebt deze melding ontvangen omdat je de auteur bent van het voorstel.
+          email_subject: De categorie van het %{resource_title} voorstel is bijgewerkt
+          notification_title: De categorie van het <a href="%{resource_path}">%{resource_title}</a> voorstel is bijgewerkt door een beheerder.
+        proposal_update_scope:
+          email_intro: 'Een admin heeft de reikwijdte van je voorstel "%{resource_title}" geüpdatet, bekijk het op deze pagina:'
+          email_outro: Je hebt deze melding ontvangen omdat je de auteur bent van het voorstel.
+          email_subject: Het toepassingsgebied van het %{resource_title} voorstel is bijgewerkt
+          notification_title: Het bereik van <a href="%{resource_path}">%{resource_title}</a> voorstel is bijgewerkt door een admin.
+        voting_enabled:
+          email_intro: 'Je kan op voorstellen in %{participatory_space_title} stemmen! Neem deel via deze pagina:'
+          email_outro: Je hebt deze melding ontvangen omdat je %{participatory_space_title} volgt. Schakel de meldingen uit door te klikken op de voorgaande link.
+          notification_title: Je kan nu beginnen met <a href="%{resource_path}">stemmen op</a> in <a href="%{participatory_space_url}">%{participatory_space_title}</a>
+    gamification:
+      badges:
+        accepted_proposals:
+          conditions:
+            - Kies de deelnemingsruimte van uw interesse met ingediende inzending voor voorstellen
+            - Probeer voorstellen te doen die kunnen worden uitgevoerd. Op deze manier worden ze eerder geaccepteerd.
+          description: Deze badge wordt toegekend wanneer u actief deelneemt aan nieuwe voorstellen en deze aanvaard worden.
+          description_another: Deze gebruiker heeft %{score} aanvaarde voorstellen.
+          description_own: Je hebt %{score} aanvaarde voorstellen.
+          name: Geaccepteerde voorstellen
+          next_level_in: Ontvang nog %{score} voorstellen die worden geaccepteerd om het volgende niveau te bereiken!
+          unearned_another: Deze gebruiker heeft nog geen aanvaarde voorstellen.
+          unearned_own: U heeft nog geen aanvaarde voorstellen.
+        proposal_votes:
+          conditions:
+            - Blader en besteed wat tijd aan het lezen van de voorstellen van anderen
+            - 
+        proposals:
+          conditions:
+            - Kies de deelnemingsruimte van uw interesse met ingediende inzending voor voorstellen
+            - Maak een nieuw voorstel
+          description: Deze badge wordt toegekend wanneer u actief deelneemt aan nieuwe voorstellen.
+          description_another: Deze gebruiker heeft %{score} voorstellen gemaakt.
+          description_own: U hebt %{score} voorstellen gemaakt.
+          name: voorstellen
+          next_level_in: Maak nog %{score} voorstellen om het volgende niveau te bereiken!
+          unearned_own: U hebt nog geen voorstellen gemaakt.
+    metrics:
+      accepted_proposals:
+        description: Aantal geaccepteerde voorstellen
+        object: voorstellen
+        title: Aanvaarde voorstellen
+      endorsements:
+        description: Aantal goedkeuringen van voorstellen
+        object: goedkeuringen
+        title: Goedkeuringen
+      proposals:
+        description: Aantal voorstellen
+        object: voorstellen
+        title: voorstellen
+    participatory_spaces:
+      highlighted_proposals:
+        see_all: Alles zien (%{count})
+    proposals:
+      actions:
+        answer_proposal: Antwoord voorstel
+        edit_proposal: Bewerk voorstel
+        import: Importeren vanuit een ander onderdeel
+        new: Nieuw voorstel
+        participatory_texts: Participatieve teksten
+        show: Toon voorstel
+        title: Acties
+      admin:
+        actions:
+          preview: Voorbeeldweergave
+        exports:
+          proposal_comments: Reacties
+          proposals: Voorstellen
+        imports:
+          label:
+            answers: Importeer antwoorden vanuit een bestand
+            proposals: Importeer voorstellen vanuit een bestand
+          resources:
+            answers:
+              one: antwoord op het voorstel
+              other: antwoorden op het voorstel
+            proposals:
+              one: voorstel
+              other: voorstellen
+        models:
+          proposal:
+            name: Voorstel
+        participatory_texts:
+          bulk-actions:
+            are_you_sure: Weet je zeker dat je de hele ontwerptekst wilt verwijderen?
+            discard_all: Alles verwijderen
+            import_doc: Document importeren
+          discard:
+            success: Alle participatieve tekstconcepten zijn genegeerd.
+          import:
+            invalid: Het formulier is ongeldig!
+            invalid_file: Het bestand bevat een fout, probeer de inhoud van het bestand te bewerken en opnieuw te uploaden.
+            success: Gefeliciteerd, de volgende secties zijn omgezet in voorstellen. U kunt ze nu bekijken en aanpassen voordat u publiceert.
+          index:
+            info_1: De volgende secties zijn omgezet in voorstellen. U kunt ze nu bekijken en aanpassen voordat u publiceert.
+            publish_document: Publiceer document
+            save_draft: Concept opslaan
+            title: VOORBEELD PARTICIPATIEVE TEKST BEKIJKEN
+          new_import:
+            accepted_mime_types:
+              md: Markdown
+              odt: ODT
+            bottom_hint: "(U kunt documentsecties vooraf bekijken en sorteren)"
+            title: VOEG DOCUMENT TOE
+            upload_document: Document uploaden
+          sections:
+            article: "<em>Artikel</em>"
+            section: "<em>Sectie:</em> <strong>%{title}</strong>"
+            sub-section: "<em>Subsectie:</em> %{title}"
+          update:
+            success: Participatieve tekst succesvol bijgewerkt.
+        proposal_answers:
+          form:
+            answer_proposal: Antwoord
+            title: Antwoord voor voorstel %{title}
+        proposal_notes:
+          form:
+            note: Opmerking
+            submit: Bevestigen
+          leave_your_note: Laat je opmerking achter
+          title: Privé-opmerkingen
+        proposals:
+          edit:
+            title: Voorstel bijwerken
+            update: Bijwerken
+          form:
+            attachment_legend: "(Optioneel) Een bijlage toevoegen"
+            created_in_meeting: Dit voorstel komt uit een vergadering
+            delete_attachment: Bijlage verwijderen
+            select_a_category: Kies een categorie
+            select_a_meeting: Selecteer een vergadering
+          index:
+            actions: acties
+            assign_to_valuator: Toewijzen aan beoordelaar
+            assign_to_valuator_button: Toewijzen
+            cancel: Annuleer
+            change_category: Categorie wijzigen
+            change_scope: Wijzig scope
+            merge: Samenvoegen met een nieuwe
+            merge_button: Samensmelten
+            publish: Publiceren
+            publish_answers: Antwoorden publiceren
+            select_component: Selecteer een component
+            selected: Geselecteerd
+            split: Voorstellen splitsen
+            split_button: Splits
+            title: Voorstellen
+            unassign_from_valuator: Toewijzing beoordelaar ongedaan maken
+            unassign_from_valuator_button: Ontkoppelen
+            update: Bijwerken
+            update_scope_button: Toepassingsgebied bijwerken
+          new:
+            create: Creëren
+            title: Maak een voorstel
+          show:
+            amendments_count: Aantal amendementen
+            assigned_valuators: Toegewezen beoordelaars
+            body: Tekstgedeelte
+            comments_count: Aantal reacties
+            documents: Documenten
+            endorsements_count: Aantal suggesties
+            endorsers: Aanbevelers
+            n_more_endorsers:
+              one: en nog 1
+              other: en %{count} meer
+            photos: Foto's
+            ranking: "%{ranking} van %{total}"
+            related_meetings: Gerelateerde vergaderingen
+            remove_assignment: Opdracht verwijderen
+            remove_assignment_confirmation: Weet u zeker dat u de beoordelaar uit dit voorstel wilt verwijderen?
+            valuators: Beoordelaars
+          update_category:
+            invalid: 'Deze voorstellen hadden al de %{subject_name} categorie: %{proposals}.'
+            success: 'Voorstellen zijn succesvol bijgewerkt naar de %{subject_name} categorie: %{proposals}.'
+          update_scope:
+            invalid: 'Deze voorstellen hadden al het toepassingsgebied van %{subject_name} : %{proposals}.'
+            success: 'Voorstellen zijn succesvol bijgewerkt naar de scope %{subject_name} : %{proposals}.'
+        proposals_imports:
+          new:
+            create: Geïmporteerde voorstellen
+            no_components: Er zijn geen andere componenten van het voorstel in deze participatieruimte om de voorstellen in te voeren.
+            select_component: Selecteer een onderdeel
+            select_states: Controleer de status van de voorstellen om te importeren
+        proposals_merges:
+          create:
+            invalid: 'Er is een probleem opgetreden bij het samenvoegen van de geselecteerde voorstellen omdat:'
+            success: De voorstellen zijn succesvol samengevoegd tot een nieuwe.
+        proposals_splits:
+          create:
+            invalid: 'Er is een probleem opgetreden bij het splitsen van de geselecteerde voorstellen omdat:'
+            success: De voorstellen succesvol gesplitst in nieuwe.
+      admin_log:
+        proposal:
+          answer: "%{user_name} beantwoordde het voorstel %{resource_name} op de %{space_name} ruimte"
+          create: "%{user_name} heeft het voorstel %{resource_name} op de %{space_name} ruimte als officieel voorstel gemaakt"
+          publish_answer: "%{user_name} publiceerde het antwoord op het %{resource_name} voorstel in de %{space_name} ruimte"
+          update: "%{user_name} heeft het %{resource_name} officiële voorstel op de %{space_name} ruimte bijgewerkt"
+        proposal_note:
+          create: "%{user_name} heeft een privé-opmerking achtergelaten op het voorstel %{resource_name} op de %{space_name} ruimte"
+        valuation_assignment:
+          create: "%{user_name} heeft het %{resource_name} voorstel toegewezen aan een beoordelaar"
+          delete: "%{user_name} heeft de toewijzing van een beoordelaar aan voorstel %{proposal_title} ongedaan gemaakt"
+      answers:
+        accepted: Aanvaard
+        evaluating: Aan het beoordelen
+        not_answered: Nog niet beantwoord
+        rejected: Geweigerd
+        withdrawn: Ingetrokken
+      application_helper:
+        filter_origin_values:
+          all: Alle
+          meetings: vergaderingen
+          official: Officieel
+          participants: Deelnemers
+          user_groups: Groepen
+        filter_state_values:
+          all: Alle
+          not_answered: Nog niet beantwoord
+        filter_type_values:
+          all: Alle
+          amendments: wijzigingen
+          proposals: voorstellen
+      collaborative_drafts:
+        collaborative_draft:
+          publish:
+            error: Er zijn fouten opgetreden bij het publiceren van de gezamenlijk ontwerp.
+            irreversible_action_modal:
+              cancel: Annuleer
+              ok: Publiceer als een voorstel
+              title: De volgende actie is onomkeerbaar
+            success: Samenwerkingsconcept met succes gepubliceerd als een voorstel.
+          withdraw:
+            error: Er zijn fouten opgetreden bij het sluiten van het gezamenlijk ontwerp.
+            irreversible_action_modal:
+              cancel: Annuleer
+              ok: Trek het gezamenlijk ontwerp in
+              title: De volgende actie is onomkeerbaar
+            success: Gezamenlijk ontwerp is succesvol ingetrokken.
+        create:
+          success: Gezamenlijk ontwerp met succes gemaakt.
+        edit:
+          attachment_legend: "(Optioneel) Voeg een bijlage toe"
+          back: Terug
+          select_a_category: Selecteer een categorie
+          send: Verzenden
+          title: Bewerk gezamenlijk ontwerp
+        filters:
+          all: Alle
+          amendment: wijzigingen
+          category: Categorie
+          open: Open
+          published: Gepubliceerd
+          related_to: Gerelateerd aan
+          scope: Scope
+          search: Zoeken
+          state: Status
+          withdrawn: teruggetrokken
+        filters_small_view:
+          close_modal: Sluit venster
+          filter: Filter
+          filter_by: Filteren op
+          unfold: Ontvouwen
+        index:
+          count:
+            one: "%{count} gezamenlijk ontwerp"
+            other: "%{count} gezamenlijke ontwerpen"
+        new:
+          send: Doorgaan met
+        new_collaborative_draft_button:
+          new_collaborative_draft: Nieuw gezamenlijk ontwerp
+        orders:
+          label: 'Concepten sorteren op:'
+          most_contributed: Meest bijgedragen
+          random: Willekeurig
+          recent: recent
+        requests:
+          accepted_request:
+            error: Kan niet worden aanvaard als bijdrager, probeer het later opnieuw.
+          access_requested:
+            error: Uw verzoek kan niet worden voltooid, probeer het later opnieuw.
+          collaboration_requests:
+            accept_request: Aanvaarden
+            reject_request: afwijzen
+            title: Samenwerkingsverzoeken
+          rejected_request:
+            error: Kan niet worden afgewezen als bijdrager, probeer het later opnieuw.
+        show:
+          edit: Bewerk gezamenlijk ontwerp
+          final_proposal: definitief voorstel
+          final_proposal_help_text: Dit concept is voltooid. U kunt het definitieve voltooide voorstel zien
+          hidden_authors_count:
+            one: en nog %{count} persoon
+            other: en nog %{count} personen
+          publish: Publiceren
+          publish_info: Publiceer deze versie van het concept of
+          published_proposal: gepubliceerd voorstel
+          request_access: Toegang vragen
+          requested_access: Toegang aangevraagd
+          withdraw: het ontwerp terugtrekken
+        states:
+          open: Open
+          published: Gepubliceerd
+          withdrawn: Ingetrokken
+        update:
+          error: Er is een fout opgetreden bij het opslaan van de gezamenlijke conceptversie.
+          success: Samenwerkingsconcept met succes bijgewerkt.
+        wizard_aside:
+          back_from_collaborative_draft: Terug naar gezamenlijke concepten
+        wizard_header:
+          title: Maak uw gezamenlijk ontwerp
+      create:
+        error: Er is een fout opgetreden bij het opslaan van het voorstel.
+        success: Voorstel succesvol aangemaakt. Opgeslagen als concept.
+      destroy_draft:
+        error: Er zijn fouten opgetreden bij het verwijderen van het concept.
+        success: Voorstel concept is succesvol verwijderd.
+      models:
+        proposal:
+          fields:
+            category: Categorie
+            comments: Reacties
+            id: ID
+            notes: Opmerkingen
+            official_proposal: Officieel voorstel
+            published_answer: Gepubliceerd antwoord
+            published_at: Gepubliceerd op
+            scope: Scope
+            state: Staat
+            title: Titel
+            valuator: Beoordelaar
+            valuators: Beoordelaars
+            votes: Stemmen
+      participatory_text_proposal:
+        alternative_title: Er zijn op dit moment geen participatieve teksten
+        buttons:
+          amend: Wijzigen
+          comment: Commentaar
+      proposals:
+        dynamic_map_instructions:
+          description: De coördinaten worden bijgewerkt bij het klikken op de 'preview' knop. Het adres verandert echter niet.
+          instructions: Je kunt het punt op de kaart verplaatsen.
+        edit:
+          attachment_legend: "(Optioneel) Voeg een bijlage toe"
+          back: Terug
+          select_a_category: Selecteer een categorie
+          send: Verzenden
+          title: Bewerk voorstel
+        edit_draft:
+          discard: Verwijder dit concept
+          discard_confirmation: Weet je zeker dat je dit voorstel wilt verwijderen?
+          send: Voorbeeldweergave
+          title: Bewerk voorstel
+        filters:
+          activity: Mijn activiteit
+          all: Alle
+          amendment_type: Type
+          category: Categorie
+          my_proposals: Mijn voorstellen
+          origin: Oorsprong
+          related_to: Gerelateerd aan
+          scope: Scope
+          search: Zoeken
+          state: Status
+          type: Type
+          voted: Gestemd
+        index:
+          click_here: Bekijk alle voorstellen
+          collaborative_drafts_list: Toegang tot samenwerkende concepten
+          count:
+            one: "%{count} voorstel"
+            other: "%{count} voorstellen"
+          new_proposal: Nieuw voorstel
+          see_all: Bekijk alle voorstellen
+          see_all_withdrawn: Bekijk alle ingetrokken voorstellen
+          text_banner: Je bekijkt de lijst van voorstellen die zijn ingetrokken door hun maker. %{go_back_link}.
+        new:
+          send: Doorgaan
+        orders:
+          label: 'Bestelling sorteren op:'
+          most_commented: Meeste reacties
+          most_endorsed: Meest goedgekeurd
+          most_followed: Meest gevolgd
+          most_voted: Meeste stemmen
+          random: Willekeurig
+          recent: Meest recent
+          with_more_authors: Met meer auteurs
+        preview:
+          announcement_body: Jouw voorstel is opgeslagen als concept. Het moet gepubliceerd worden om het op de site te laten verschijnen.
+          announcement_title: Je voorstel is nog niet gepubliceerd
+          modify: Pas het voorstel aan
+          proposal_edit_before_minutes:
+            one: Je kan dit voorstel bewerken in de eerste minuut nadat het gepubliceerd is. Zodra deze tijd verstreken is, kan je het voorstel niet meer bewerken.
+            other: Je kan dit voorstel bewerken in de eerste %{count} minuten nadat het gepubliceerd is. Zodra deze tijd verstreken is, kan je het voorstel niet meer bewerken.
+          publish: Publiceer
+          title: Publiceer je voorstel
+        show:
+          answer: Antwoord
+          changes_at_title: Amendement op "%{title}"
+          edit_proposal: Bewerk voorstel
+          estimated_cost: Geschatte kosten
+          hidden_endorsers_count:
+            one: en nog %{count} persoon
+            other: en nog %{count} mensen
+          link_to_collaborative_draft_help_text: Dit voorstel is het resultaat van een gezamenlijk concept. Bekijk de geschiedenis
+          link_to_collaborative_draft_text: Bekijk het gezamenlijke ontwerp
+          link_to_promoted_emendation_help_text: Dit voorstel is een gepromoot amendement
+          link_to_promoted_emendation_text: Bekijk het verworpen amendement.
+          link_to_proposal_from_emendation_help_text: Dit is een verworpen amendement
+          link_to_proposal_from_emendation_text: Bekijk het voorstel
+          proposal_accepted_reason: 'Dit voorstel is geaccepteerd omdat:'
+          proposal_in_evaluation_reason: Dit voorstel wordt geëvalueerd
+          proposal_rejected_reason: 'Dit voorstel is afgewezen omdat:'
+          withdraw_confirmation_html: Weet u zeker dat u dit voorstel wilt intrekken?<br><br><strong>Deze actie kan niet worden geannuleerd!</strong>
+          withdraw_proposal: Voorstel intrekken
+        update:
+          title: Update voorstel
+        vote_button:
+          already_voted: Al gestemd
+          maximum_votes_reached: Stemlimiet bereikt
+          no_votes_remaining: Geen stemmen over
+          vote: Stem
+          votes_blocked: Stemmen uitgeschakeld
+        voting_rules:
+          proposal_limit:
+            description: Je kan maximaal %{limit} voorstellen doen.
+          vote_limit:
+            description: U kunt tot %{limit} voorstellen stemmen.
+        wizard_aside:
+          back: Terug
+          back_from_step_1: Terug naar voorstellen
+        wizard_steps:
+          current_step: Huidige stap
+          step_1: Maak je voorstel
+          title: Voorstel creatie stappen
+      proposals_picker:
+        choose_proposals: Kies voorstellen
+      publish:
+        error: Er is een fout opgetreden bij het publiceren van het voorstel.
+        success: Voorstel succesvol gepubliceerd.
+      publish_answers:
+        success: Antwoorden met succes gepubliceerd.
+      update:
+        error: Er is een fout opgetreden bij het opslaan van het voorstel.
+        success: Voorstel succesvol bijgewerkt.
+      update_draft:
+        error: Er is een fout opgetreden bij het opslaan van het gezamenlijk concept.
+        success: Concept succesvol bijgewerkt.
+      versions:
+        index:
+          title: versies
+    resource_links:
+      copied_from_component:
+        proposal_proposal: Verwante voorstellen
+      included_projects:
+        project_result: 'Resultaten die in dit project verschijnen:'
+      included_proposals:
+        proposal_project: 'Voorstel in deze projecten:'
+        proposal_result: 'Voorstel dat in deze resultaten voorkomt:'
+    statistics:
+      proposals_accepted: Aanvaarde voorstellen
+      proposals_count: Voorstellen
+      votes_count: Stemmen

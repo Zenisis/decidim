@@ -1,0 +1,20 @@
+<% add_decidim_page_title t("decidim.links.warning.title") %>
+
+<%= render layout: "layouts/decidim/shared/layout_center" do %>
+
+  <div class="flex justify-center">
+    <h1 class="title-decorator my-12"><%= t("decidim.links.warning.title") %></h1>
+  </div>
+
+  <p><%= t("body_1", scope: "decidim.links.warning") %></p>
+  <p><%= t("body_2", scope: "decidim.links.warning") %></p>
+
+  <code class="mt-5 block break-all">
+    <%= highlight_domain %>
+  </code>
+
+  <div class="form__wrapper-block">
+    <%= link_to t("decidim.links.warning.proceed"), external_url.to_s, class: "button button__lg button__secondary ml-auto", rel: "nofollow noopener noreferrer" %>
+  </div>
+
+<% end %>

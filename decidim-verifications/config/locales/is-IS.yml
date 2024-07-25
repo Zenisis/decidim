@@ -1,0 +1,91 @@
+is-IS:
+  activemodel:
+    attributes:
+      id_document_information:
+        document_number: Skjalnúmer (með bréfi)
+        document_type: Tegund skjalsins
+      id_document_upload:
+        document_number: Skjalnúmer (með bréfi)
+        document_type: Gerðu skjalið þitt
+        verification_attachment: Skannaður afrit af skjalinu þínu
+      postal_letter_address:
+        full_address: Fullt heimilisfang
+      postal_letter_confirmation:
+        verification_code: Staðfestingarkóði
+      postal_letter_postage:
+        full_address: Fullt heimilisfang
+        verification_code: Staðfestingarkóði
+  decidim:
+    authorization_handlers:
+      admin:
+        id_documents:
+          help:
+            - Notendur fylla inn upplýsingar um auðkenni þeirra og senda afrit af skjalinu sínu.
+            - Þú fyllir inn upplýsingar sem eru til staðar í myndinni sem hlaðið var upp.
+            - Upplýsingarnar ættu að passa hvað sem notandinn hefur fyllt inn.
+            - 
+        postal_letter:
+          help:
+            - 
+            - Þú sendir bréfið á heimilisfangið með staðfestingarkóðanum.
+            - Þú merkir stafinn sem sendur er.
+            - 
+      direct: Bein
+      help: Hjálp
+      id_documents:
+        name: Kennimark
+      multistep: Fjölþrep
+      name: Nafn
+      postal_letter:
+        name: Kóði með póstbréfi
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            dummy_authorization_handler: Staðfestu á móti heimildarmyndinni
+            dummy_authorization_workflow: Staðfestu gegn verkflæðinu fyrir heimildir fyrir heimildir
+            id_documents: Fáðu staðfestinguna með því að hlaða upp skjalið þitt
+            postal_letter: Fáðu staðfestingu með því að fá staðfestingarkóða með pósti
+          title: Staðfestu auðkenni þitt
+          verify_with_these_options: 'Þetta eru tiltækar valkostir til að staðfesta auðkenni þitt:'
+        new:
+          authorize: Senda
+          authorize_with: Staðfestu með %{authorizer}
+        skip_verification: Þú getur sleppt þessu nú og %{link}
+        start_exploring: byrja að kanna
+      id_documents:
+        admin:
+          confirmations:
+            new:
+              introduce_user_data: Kynntu gögnin á myndinni
+              reject: Hafna
+              verify: Staðfestu
+          pending_authorizations:
+            index:
+              verification_number: 'Staðfesting #%{n}'
+        authorizations:
+          edit:
+            send: Beiðni um staðfestingu aftur
+          new:
+            send: Beiðni um staðfestingu
+            title: Hladdu upp skjalið þitt
+        passport: Vegabréf
+      postal_letter:
+        admin:
+          pending_authorizations:
+            index:
+              address: Heimilisfang
+              letter_sent_at: Bréf sendur á
+              mark_as_sent: Merktu sem send
+              not_yet_sent: Ekki enn sendur
+              title: Áframhaldandi sannprófanir
+              verification_code: Staðfestingarkóði
+        authorizations:
+          edit:
+            send: Staðfesta
+          new:
+            send: Sendu mér bréf
+            title: Biðja um staðfestingarkóðann þinn
+  errors:
+    messages:
+      uppercase_only_letters_numbers: verður að vera allt hástafi og innihalda aðeins stafi og / eða númer

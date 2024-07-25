@@ -1,0 +1,60 @@
+nl:
+  activemodel:
+    attributes:
+      questionnaire:
+        title: Titel
+      template:
+        description: Beschrijving
+        name: Naam
+  decidim:
+    admin:
+      menu:
+        templates: Templates
+      templates:
+        apply:
+          error: Er is een fout opgetreden bij het bijwerken van dit template.
+        copy:
+          error: Er is een fout opgetreden bij het kopiëren van dit template.
+        create:
+          error: Er is een fout opgetreden bij het maken van dit template.
+        empty: Er zijn nog geen templates.
+      titles:
+        template_types:
+          questionnaires: Vragenlijst templates
+        templates: Templates
+    models:
+      questionnaire_template:
+        fields:
+          questions: Aantal vragen
+          title: Vragenlijst titel
+      template:
+        fields:
+          created_at: Aangemaakt op
+        name: Template
+    templates:
+      admin:
+        block_user_templates:
+          form:
+            save: Opslaan
+        proposal_answer_templates:
+          form:
+            save: Opslaan
+        questionnaire_templates:
+          choose:
+            create_from_template: Met template aanmaken
+            description: Je staat op het punt een nieuwe vragenlijst te maken. Je kunt een vooraf gedefinieerd template kiezen en daarna wijzigen.
+            label: Template kiezen
+            placeholder: Template kiezen
+            skip_template: Overslaan
+          edit:
+            edit: Bewerk
+            questionnaire: Vragenlijst
+          index:
+            confirm_delete: Weet je zeker dat je dit template wilt verwijderen?
+            title: Vragenlijst templates
+          preview:
+            current_step: Stap %{step}
+            of_total_steps: van %{total_steps}
+            tos_agreement: Door deel te nemen accepteer je de gebruiksvoorwaarden
+      template_types:
+        questionnaires: Vragenlijsten

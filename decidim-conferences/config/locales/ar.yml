@@ -1,0 +1,558 @@
+ar:
+  activemodel:
+    attributes:
+      conference:
+        assemblies_ids: الجمعيات ذات الصلة
+        available_slots: المواعيد المتاحة
+        banner_image: صورة بانر
+        copy_categories: نسخ الفئات
+        copy_components: نسخ المكونات
+        copy_features: نسخ الميزات
+        decidim_scope_id: نطاق
+        description: وصف
+        end_date: تاريخ الانتهاء
+        hashtag: رابطة هاشتاق
+        hero_image: الصورة الرئيسية
+        location: الموقع
+        main_logo: الشعار الرئيسي
+        objectives: الأهداف
+        participatory_processes_ids: العمليات التشاركية ذات الصلة
+        promoted: سلط الضوء
+        published_at: نشرت في
+        registration_terms: شروط التسجيل
+        registrations_enabled: التسجيلات مفعلة
+        scope_id: نطاق
+        scopes_enabled: النطاقات المُفعّلَة
+        short_description: وصف قصير
+        show_statistics: عرض الإحصائيات
+        sign_date: تاريخ التوقيع
+        signature: التوقيع
+        signature_name: اسم التوقيع
+        slogan: شعار
+        slug: سبيكة العنوان الشبكي
+        start_date: تاريخ البداية
+        title: عنوان
+      conference_media_link:
+        date: التاريخ
+        link: الرابط
+        title: العنوان
+      conference_partner:
+        link: الرابط
+        logo: الشعار
+        name: الإسم
+        partner_type: نوع الشريك
+      conference_registration_invite:
+        email: البريد الإلكتروني
+        name: الإسم
+        registration_type_id: نوع التسجيل
+        user_id: المستخدم
+      conference_registration_type:
+        description: الوصف
+        price: السعر
+        title: العنوان
+      conference_speaker:
+        affiliation: الانتساب
+        avatar: الصورة الرمزية
+        conference_meeting_ids: الاجتماعات ذات الصلة
+        full_name: الاسم الكامل
+        position: المنصب
+        twitter_handle: معرّف X
+        user_id: المستخدم
+      conference_user_role:
+        email: البريد الإلكتروني
+        name: اسم
+        role: وظيفة
+  activerecord:
+    models:
+      decidim/conference:
+        zero: المؤتمرات
+        one: مؤتمر
+        two: المؤتمرات
+        few: المؤتمرات
+        many: المؤتمرات
+        other: المؤتمرات
+      decidim/conference_speaker:
+        zero: المتحدثون في المؤتمر
+        one: رئيس المؤتمر
+        two: المتحدثون في المؤتمر
+        few: المتحدثون في المؤتمر
+        many: المتحدثون في المؤتمر
+        other: المتحدثون في المؤتمر
+      decidim/conference_user_role:
+        zero: أدوار مستخدم المؤتمر
+        one: دور مستخدم المؤتمر
+        two: أدوار مستخدم المؤتمر
+        few: أدوار مستخدم المؤتمر
+        many: أدوار مستخدم المؤتمر
+        other: أدوار مستخدم المؤتمر
+  decidim:
+    admin:
+      actions:
+        confirm: تؤكد
+        new_conference: مؤتمر جديد
+        new_partner: شريك جديد
+        send_diplomas: إرسال شهادات الحضور
+      conference_copies:
+        new:
+          copy: نسخ
+          select: حدد البيانات التي ترغب في تكرارها
+          title: مؤتمر مكرر
+      conference_publications:
+        create:
+          error: كانت هناك مشكلة في نشر هذا المؤتمر.
+          success: تم نشر المؤتمر بنجاح.
+        destroy:
+          error: كانت هناك مشكلة في إلغاء نشر هذا المؤتمر.
+          success: مؤتمر غير منشور بنجاح.
+      conference_registration:
+        confirm:
+          error: حدثت مشكلة في تأكيد تسجيل المؤتمر هذا.
+          success: تم تأكيد تسجيل المؤتمر بنجاح.
+      conference_speakers:
+        create:
+          error: حدثت مشكلة أثناء إضافة متحدث إلى هذا المؤتمر.
+          success: رئيس المؤتمر تم إنشاؤه بنجاح.
+        destroy:
+          success: تم حذف رئيس المؤتمر بنجاح.
+        edit:
+          title: تحديث المتحدث المؤتمر.
+          update: تحديث
+        index:
+          conference_speakers_title: المتحدثون في المؤتمر
+        new:
+          create: إنشاء
+          title: رئيس المؤتمر الجديد.
+        update:
+          error: حدثت مشكلة أثناء تحديث متحدث المؤتمر هذا.
+          success: تم تحديث مكبر صوت المؤتمر بنجاح.
+      conference_user_roles:
+        create:
+          error: حدثت مشكلة أثناء إضافة مشرف إلى هذا المؤتمر.
+          success: تمت إضافة مسؤول المؤتمر بنجاح.
+        destroy:
+          success: تمت إزالة مسؤول المؤتمر بنجاح.
+        edit:
+          title: تحديث مسؤول المؤتمر.
+          update: تحديث
+        new:
+          create: إنشاء
+          title: مشرف المؤتمر الجديد.
+        update:
+          error: حدثت مشكلة أثناء تحديث مشرف المؤتمر هذا.
+          success: تم تحديث مشرف المؤتمر بنجاح.
+      conferences:
+        create:
+          error: كانت هناك مشكلة في إنشاء هذا المؤتمر.
+          success: تم إنشاء المؤتمر بنجاح.
+        edit:
+          update: تحديث
+        exports:
+          registrations: التسجيلات
+        form:
+          title: معلومات عامة
+        index:
+          published: نشرت
+        new:
+          create: إنشاء
+          title: مؤتمر
+        update:
+          error: حدثت مشكلة أثناء تحديث هذا المؤتمر.
+          success: تم تحديث المؤتمر بنجاح.
+      conferences_copies:
+        create:
+          error: كانت هناك مشكلة في تكرار هذا المؤتمر.
+          success: تم تكرار المؤتمر بنجاح.
+      media_links:
+        create:
+          error: حدثت مشكلة أثناء إنشاء رابط وسائط جديد.
+          success: تم إنشاء رابط الوسائط بنجاح.
+        destroy:
+          success: تم حذف رابط الوسائط بنجاح.
+        edit:
+          title: تحديث رابط الوسائط.
+          update: تحديث
+        index:
+          media_links_title: روابط الوسائط
+        new:
+          create: إنشاء
+          title: وصلة الوسائط
+        update:
+          error: حدثت مشكلة أثناء تحديث رابط الوسائط هذا.
+          success: تم تحديث رابط الوسائط بنجاح.
+      menu:
+        conferences: المؤتمرات
+        conferences_submenu:
+          attachment_collections: المجلدات
+          attachment_files: ملفات
+          attachments: مرفقات
+          categories: الاقسام
+          components: المكونات
+          conference_admins: المشرفون على المؤتمر
+          conference_invites: تدعو
+          conference_speakers: مكبرات الصوت
+          diploma: شهادة حضور
+          info: عن هذا المؤتمر
+          media_links: روابط الوسائط
+          moderations: الإعتدال
+          partners: شركاء
+          registration_types: أنواع التسجيل
+          registrations: التسجيلات
+          user_registrations: تسجيلات المستخدم
+      models:
+        conference:
+          fields:
+            created_at: أنشئت في
+            published: نشرت
+            title: عنوان
+        conference_speaker:
+          fields:
+            affiliation: الانتماء
+            full_name: الاسم الكامل
+            position: موضع
+          name: رئيس المؤتمر
+        conference_user_role:
+          fields:
+            email: البريد الإلكتروني
+            name: اسم
+            role: وظيفة
+          name: إدارة المؤتمر
+          roles:
+            admin: مدير
+            collaborator: متعاون
+            moderator: وسيط
+            valuator: مُقيِّم
+        media_link:
+          fields:
+            date: تاريخ
+            link: حلقة الوصل
+            title: عنوان
+          name: وصلة الوسائط
+        partner:
+          fields:
+            link: حلقة الوصل
+            logo: شعار
+            name: اسم
+            partner_type: نوع
+          name: شريك
+          types:
+            collaborator: متعاون
+            main_promotor: المروج الرئيسي
+        registration_type:
+          fields:
+            conference_meetings: اجتماعات المؤتمر
+            price: السعر
+            registrations_count: عدد التسجيلات
+            title: عنوان
+            weight: موضع الطلب
+          name: نوع التسجيل
+      partners:
+        create:
+          error: حدثت مشكلة أثناء إضافة شريك لهذا المؤتمر.
+          success: وأضاف شريك المؤتمر بنجاح.
+        destroy:
+          success: تمت إزالة شريك المؤتمر بنجاح.
+        edit:
+          title: تحديث شريك.
+          update: تحديث
+        new:
+          create: إنشاء
+          title: شريك جديد
+        update:
+          error: حدثت مشكلة أثناء تحديث شريك لهذا المؤتمر.
+          success: تم تحديث شريك المؤتمر بنجاح.
+      registration_type_publications:
+        create:
+          error: حدثت مشكلة أثناء نشر نوع التسجيل هذا.
+          success: نوع التسجيل نشر بنجاح.
+        destroy:
+          error: حدثت مشكلة في إلغاء نشر نوع التسجيل هذا.
+          success: نوع التسجيل غير منشور بنجاح.
+      registration_types:
+        create:
+          error: حدثت مشكلة أثناء إضافة نوع التسجيل لهذا المؤتمر.
+          success: تمت إضافة نوع تسجيل المؤتمر بنجاح.
+        destroy:
+          success: تمت إزالة نوع تسجيل المؤتمر بنجاح.
+        edit:
+          title: تحديث نوع التسجيل.
+          update: تحديث
+        new:
+          create: إنشاء
+          title: نوع التسجيل الجديد
+        update:
+          error: حدثت مشكلة أثناء تحديث نوع التسجيل لهذا المؤتمر.
+          success: تم تحديث نوع تسجيل المؤتمر بنجاح.
+      titles:
+        conferences: المؤتمرات
+    admin_log:
+      conference:
+        create: "%{user_name} أنشأ المؤتمر %{resource_name}"
+        publish: "%{user_name} نشر المؤتمر %{resource_name}"
+        send_conference_diplomas: "أرسلت %{user_name} شهادات حضور إلى %{resource_name} atendees المؤتمر"
+        unpublish: "%{user_name} غير منشور في المؤتمر %{resource_name}"
+        update: "%{user_name} تحديث المؤتمر %{resource_name}"
+        update_diploma: "%{user_name} تحديث شهادات تكوين الحضور لمؤتمر %{resource_name}"
+      conference_speaker:
+        create: "%{user_name} أنشأ المتكلم %{resource_name} في المؤتمر %{space_name}"
+        delete: "%{user_name} أزال المتحدث %{resource_name} من المؤتمر %{space_name}"
+        update: "%{user_name} تحديث المتكلم %{resource_name} في المؤتمر %{space_name}"
+      conference_user_role:
+        create: "%{user_name} دعا %{resource_name} إلى %{space_name} المؤتمر"
+        delete: "%{user_name} أزال المشرف %{resource_name} من المؤتمر %{space_name}"
+        update: "%{user_name} غير دور %{resource_name} في المؤتمر %{space_name}"
+      conferences:
+        conference_registration:
+          confirm: "%{user_name} أكد تسجيل مؤتمر في مؤتمر %{resource_name}"
+        partner:
+          create: "أنشأ %{user_name} الشريك %{resource_name} في مؤتمر %{space_name}"
+          delete: "قام %{user_name} بإزالة الشريك %{resource_name} من المؤتمر %{space_name}"
+          update: "قام %{user_name} بتحديث الشريك %{resource_name} في مؤتمر %{space_name}"
+        registration_type:
+          create: "%{user_name} أنشأ نوع التسجيل %{resource_name} في المؤتمر %{space_name}"
+          publish: "%{user_name} نشر نوع التسجيل %{resource_name} في المؤتمر %{space_name}"
+          unpublish: "%{user_name} غير منشور نوع التسجيل %{resource_name} في المؤتمر %{space_name}"
+          update: "%{user_name} بتحديث نوع التسجيل %{resource_name} في المؤتمر %{space_name}"
+      media_link:
+        create: "%{user_name} أنشأ رابط الوسائط %{resource_name} في المؤتمر %{space_name}"
+        delete: "%{user_name} أزال رابط الوسائط %{resource_name} من المؤتمر %{space_name}"
+        update: "%{user_name} بتحديث رابط الوسائط %{resource_name} في المؤتمر %{space_name}"
+    conference_program:
+      index:
+        title: برنامج
+    conference_speakers:
+      index:
+        title: مكبرات الصوت
+    conferences:
+      admin:
+        conference_invites:
+          create:
+            error: حدثت مشكلة أثناء دعوة المشارك للانضمام إلى المؤتمر.
+            success: تمت دعوة المشارك بنجاح للانضمام إلى المؤتمر.
+          form:
+            attendee_type: نوع الحضور
+            existing_user: المشارك الحالي
+            invite_explanation: سيتم دعوة المشارك للانضمام إلى المؤتمر وإلى المنظمة أيضًا.
+            non_user: مشارك غير موجود
+            select_user: اختر المشارك
+          index:
+            invite_attendee: دعوة مشارك
+            invites: تدعو
+          new:
+            invite: دعا
+            new_invite: دعوة مشارك
+        conference_registrations:
+          index:
+            registrations: التسجيلات
+        conference_speakers:
+          form:
+            existing_user: المشارك الحالي
+            non_user: غير مشارك
+            select_user: اختر المشارك
+            user_type: نوع المشارك
+          index:
+            search: بحث
+        conferences:
+          form:
+            available_slots_help: اتركه إلى 0 إذا كان لديك فتحات غير محدودة المتاحة.
+            registrations_count:
+              zero: كان هناك %{count} التسجيلات.
+              one: كان هناك 1 تسجيل.
+              two: كان هناك %{count} التسجيلات.
+              few: كان هناك %{count} التسجيلات.
+              many: كان هناك %{count} التسجيلات.
+              other: كان هناك %{count} التسجيلات.
+        diplomas:
+          edit:
+            save: حفظ
+            title: شهادة حضور
+        invite_join_conference_mailer:
+          invite:
+            decline: رفض الدعوة "%{conference_title}"
+            invited_existing_user_to_join_a_conference: "%{invited_by} للانضمام إلى مؤتمر في %{application}. يمكنك رفضه أو قبوله من خلال الروابط أدناه."
+            registration: التسجيل لـ "%{conference_title}"
+        partners:
+          index:
+            title: شركاء
+        registration_types:
+          form:
+            select_conference_meetings: حدد اجتماعات المؤتمر
+          index:
+            title: أنواع التسجيل
+        send_conference_diploma_mailer:
+          diploma:
+            diploma_html: ستجد شهادة حضور المؤتمر <a href="%{url}">%{title}</a> في المرفقات.
+          diploma_user:
+            attendance_verified_by: تم التحقق من الحضور بواسطة
+            certificate_of_attendance: شهادة حضور
+            certificate_of_attendance_description: هذا هو التأكيد على أن <strong>%{user}</strong> قد حضر وشارك في <strong>%{title}</strong> الذي عقد في <strong>%{location}</strong> في <strong>%{start} - %{end}</strong>
+        send_diploma:
+          error: حدثت مشكلة أثناء إرسال شهادات حضور المؤتمر.
+          success: تم إرسال شهادات حضور المؤتمر بنجاح
+      conference:
+        registration_confirm:
+          cancel: إلغاء
+          confirm: تؤكد
+        show:
+          going: حضور
+          no_slots_available: لا فتحات المتاحة
+          registration: التسجيل
+      conference_program:
+        show:
+          program: برنامج
+      conference_registration_mailer:
+        confirmation:
+          confirmed_html: تم تأكيد تسجيلك للمؤتمر <a href="%{url}">%{title}</a>.
+          details_1: 'أنت مسجل في المؤتمر مع %{registration_type} نوع. تبلغ تكلفتها %{price} ويمكنك حضور الأحداث التالية:'
+          details_2: سوف تجد تفاصيل المحاضرة في المرفقات.
+        pending_validation:
+          confirmation_pending: سوف تتلقى التأكيد قريبا
+          details: 'لقد قمت بالتسجيل إلى %{registration_type} نوع بتكلفة %{price} ويمكنك حضور الأحداث التالية:'
+          pending_html: تسجيلك في المؤتمر <a href="%{url}">%{title}</a> انتظار التأكيد.
+      conference_registrations:
+        create:
+          invalid: كانت هناك مشكلة في الانضمام إلى هذا المؤتمر.
+          success: لقد انضممت بنجاح إلى المؤتمر.
+        decline_invitation:
+          invalid: حدثت مشكلة في رفض الدعوة.
+          success: لقد رفضت الدعوة بنجاح.
+        destroy:
+          invalid: حدثت مشكلة أثناء مغادرة هذا المؤتمر.
+          success: لقد تركت المؤتمر بنجاح.
+      conference_speaker:
+        go_to_twitter: الذهاب إلى X
+        more_info: مزيد من المعلومات
+        personal_website: موقع الويب الشخصي
+        show:
+          more_info: مزيد من المعلومات
+          speaking_at: يتحدث في
+      conference_speaker_cell:
+        personal_url:
+          personal_website: موقع الويب الشخصي
+      conferences:
+        partners:
+          collaborators: شركاء
+          main_promotors: المنظمون
+        show:
+          login_as: تم تسجيل دخولك كـ %{name} <%{email}>
+          register: تسجيل
+      content_blocks:
+        highlighted_conferences:
+          name: المؤتمرات البارزة
+      index:
+        title: المؤتمرات
+      mailer:
+        invite_join_conference_mailer:
+          invite:
+            subject: دعوة للانضمام إلى مؤتمر
+        send_conference_diploma_mailer:
+          diploma:
+            subject: تم إرسال شهادة حضور المؤتمر
+      models:
+        conference_invite:
+          fields:
+            email: البريد الإلكتروني
+            name: اسم
+            registration_type: نوع التسجيل
+            sent_at: أرسلت في
+            status: الحالة
+          status:
+            accepted: مقبول (%{at})
+            rejected: مرفوض (%{at})
+            sent: أرسلت
+        conference_registration:
+          fields:
+            email: البريد الإلكتروني
+            name: اسم
+            registration_type: نوع التسجيل
+            state: الحالة
+            states:
+              confirmed: تم تأكيد
+              pending: قيد الانتظار
+      pages:
+        home:
+          highlighted_conferences:
+            active_spaces: المؤتمرات النشطة
+      registration_types:
+        index:
+          choose_an_option: 'اختر خيار التسجيل الخاص بك:'
+          no_registrations: لا توجد تسجيلات
+          register: تسجيل
+          title: أنواع التسجيل
+      show:
+        details: تفاصيل
+        introduction: المقدمة
+        objectives: الأهداف
+        related_assemblies: الجمعيات ذات الصلة
+        related_participatory_processes: العمليات التشاركية ذات الصلة
+    events:
+      conferences:
+        conference_registration_confirmed:
+          notification_title: تم تأكيد تسجيلك للمؤتمر <a href="%{resource_url}">%{resource_title}</a>.
+        conference_registration_validation_pending:
+          notification_title: تسجيلك في المؤتمر <a href="%{resource_url}">%{resource_title}</a> انتظار التأكيد.
+        conference_registrations_over_percentage:
+          email_intro: فتحات "%{resource_title}" التي شغلها المؤتمر تجاوزت %{percentage}٪.
+          email_outro: لقد تلقيت هذا الإشعار لأنك مسؤول عن المساحة التشاركية للمؤتمر.
+          email_subject: '"%{resource_title}" فتحات احتل المؤتمر أكثر من %{percentage}٪'
+          notification_title: و <a href="%{resource_path}">%{resource_title}</a> احتل مؤتمر فتحات ما يزيد على %{percentage}٪.
+        conference_updated:
+          email_intro: 'تم تحديث مؤتمر "%{resource_title}". يمكنك قراءة الإصدار الجديد من صفحته:'
+          email_outro: لقد تلقيت هذا الإشعار لأنك تتابع مؤتمر "%{resource_title}". يمكنك إلغاء تتبعه من الرابط السابق.
+          email_subject: تم تحديث مؤتمر "%{resource_title}"
+          notification_title: تم تحديث مؤتمر <a href="%{resource_path}">%{resource_title}</a>.
+        registrations_enabled:
+          email_intro: 'لقد مكّن المؤتمر "%{resource_title}" التسجيلات. يمكنك تسجيل نفسك على صفحتها:'
+          email_outro: لقد تلقيت هذا الإشعار لأنك تتابع مؤتمر "%{resource_title}". يمكنك إلغاء تتبعه من الرابط السابق.
+          email_subject: لقد مكّن المؤتمر "%{resource_title}" التسجيلات.
+          notification_title: لقد مكّن المؤتمر <a href="%{resource_path}">%{resource_title}</a> التسجيلات.
+        role_assigned:
+          email_intro: لقد تم تعيينك كـ %{role} للمؤتمر "%{resource_title}".
+          email_outro: لقد تلقيت هذا الإشعار لأنك %{role} لهذا المؤتمر "%{resource_title}".
+          email_subject: لقد تم تعيينك كـ %{role} لـ "%{resource_title}".
+          notification_title: لقد تم تعيينك كـ %{role} للمؤتمر <a href="%{resource_url}">%{resource_title}</a>.
+        upcoming_conference:
+          email_intro: 'يعقد مؤتمر "%{resource_title}" خلال يومين. يمكنك قراءة الوصف من صفحته:'
+          email_outro: لقد تلقيت هذا الإشعار لأنك تتابع مؤتمر "%{resource_title}". يمكنك إلغاء تتبعه من الرابط السابق.
+          email_subject: مؤتمر "%{resource_title}" قادم!
+          notification_title: المؤتمر <a href="%{resource_path}">%{resource_title}</a> قادم في يومين.
+    help:
+      participatory_spaces:
+        conferences:
+          contextual: "<p>ال<strong>مؤتمر</strong> هو مجموعة من الاجتماعات المرتبة في برنامج ما، مع عدد من الأشخاص المدعوين كمتحدثين، وحقول أدخال نموذجيه للمعلومات الأخرى للمؤتمرات الكبيرة أو المناسبات الاجتماعية (التسجيل، قائمة بالمنظمات التي تدعم الحدث أو ترعاه، إلخ)..</p> <p>أمثلة: يمكن أن يكون المؤتمر حدثا ذا صلة بالنسبة لمنظمة ما وأعضائها، أو يتم في إطار عملية تشاركية أو في أعقاب مشاورات.</p>\n"
+          page: "<p>ال<strong>مؤتمر</strong> هو مجموعة من الاجتماعات المرتبة في برنامج ما، مع عدد من الأشخاص المدعوين كمتحدثين، وحقول أدخال نموذجيه للمعلومات الأخرى للمؤتمرات الكبيرة أو المناسبات الاجتماعية (التسجيل، قائمة بالمنظمات التي تدعم الحدث أو ترعاه، إلخ)..</p> <p>أمثلة: يمكن أن يكون المؤتمر حدثا ذا صلة بالنسبة لمنظمة ما وأعضائها، أو يتم في إطار عملية تشاركية أو في أعقاب مشاورات.</p>\n"
+          title: ما هي المؤتمرات؟
+    media:
+      index:
+        description: روابط حول هذا المؤتمر
+        title: وسائل الإعلام والروابط
+    menu:
+      conferences: المؤتمرات
+    statistics:
+      conferences_count: المؤتمرات
+  devise:
+    mailer:
+      join_conference:
+        subject: دعوة للانضمام إلى مؤتمر
+  layouts:
+    decidim:
+      conference_hero:
+        register: تسجيل
+      conferences:
+        conference:
+          more_info: مزيد من المعلومات
+          take_part: خذ جزء
+        index:
+          promoted_conferences: المؤتمرات البارزة
+        order_by_conferences:
+          conferences:
+            zero: "%{count} مؤتمرات"
+            one: "%{count} مؤتمر"
+            two: "%{count} مؤتمرات"
+            few: "%{count} مؤتمرات"
+            many: "%{count} مؤتمرات"
+            other: "%{count} مؤتمرات"
+      conferences_nav:
+        conference_partners_menu_item: شركاء
+        conference_speaker_menu_item: مكبرات الصوت
+        media: وسائل الإعلام
+        venues: أماكن

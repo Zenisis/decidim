@@ -1,0 +1,64 @@
+ja:
+  activemodel:
+    attributes:
+      dummy_resource:
+        created_at: 作成日時
+        decidim_scope_id: スコープ
+        field: 自分のフィールド
+        start_date: 開始日
+        title: タイトル
+        translatable_text: 翻訳可能なテキスト
+        updated_at: 更新日時
+  decidim:
+    components:
+      dummy:
+        settings:
+          global:
+            guided: ガイド付き入力
+            guided_help: ヘルプテキスト
+            guided_readonly: 無効化された入力
+            guided_rich: ガイド付きリッチ入力
+            guided_rich_help_html: HTML <strong>ヘルプ</strong> のテキスト
+            guided_rich_readonly_html: HTML <strong>ヘルプ</strong> の入力を無効にする
+            readonly_attribute: 読み取り専用属性
+            test: テスト
+            test_choices:
+              a: 選択
+              b: B の選択
+              c: C の選択
+            test_options:
+              bar: バー
+              baz: Baz
+              foo: Foo
+          step:
+            endorsements_blocked: オススメをブロック
+            endorsements_enabled: オススメを有効にする
+            readonly_step_attribute: 読み取り専用ステップ属性
+            test_options:
+              bar: バー
+              baz: Baz
+              foo: Foo
+    dummy:
+      admin:
+        exports:
+          dummies: Dummies
+    gamification:
+      badges:
+        test:
+          conditions:
+            - テスト環境を使用してdecidim.
+          description: 参加者はテストを作成することによってこのバッジを受け取ります。
+          description_another: この参加者は %{score} テストを作成しました。
+          description_own: テストを %{score} 作成しました。
+          name: テスト
+          next_level_in: '%{score} 個のテストを作成して、次のレベルに到達しましょう！'
+          unearned_another: この参加者はまだテストを作成していません。
+          unearned_own: テストはまだ作成されていません。
+    resource_links:
+      test_link:
+        dummy_resource_dummy: 関連ダミー
+    statistics:
+      bar: バー
+      dummies_count_high: 高いダミー数
+      dummies_count_medium: Dummies Medium
+      foo: Foo

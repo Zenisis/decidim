@@ -1,0 +1,285 @@
+.meeting {
+  &__filter {
+    &-container {
+      @apply self-stretch;
+    }
+  }
+
+  &__calendar {
+    @apply w-14 flex flex-col justify-start rounded bg-background text-center;
+
+    &:only-child &-month {
+      @apply rounded-t;
+    }
+
+    &-container {
+      @apply grid grid-cols-[auto_1fr] md:grid-cols-[auto_1fr_1fr] items-center gap-0 md:gap-x-5 border-4 border-background rounded md:h-[140px] overflow-hidden;
+
+      > *:nth-child(2) {
+        @apply p-4 md:p-0;
+
+        &:not(:last-child) {
+          @apply col-span-2 md:col-auto order-2 md:order-1;
+        }
+
+        &:last-child {
+          @apply md:col-span-2 pr-4;
+        }
+      }
+
+      > *:nth-child(3) {
+        @apply order-1 md:order-2 h-[135px] md:h-full;
+      }
+    }
+
+    &-month {
+      @apply bg-primary uppercase text-white text-xs rounded-tl;
+    }
+
+    &-day {
+      @apply text-black text-2xl font-bold;
+    }
+
+    &-year {
+      @apply text-black text-xs;
+    }
+
+    &-month,
+    &-day,
+    &-year {
+      @apply inline-flex items-center justify-evenly empty:[&>span]:hidden;
+    }
+
+    &-separator {
+      @apply mx-2 font-normal text-sm;
+    }
+
+    &__lg {
+      @apply w-fit justify-center [&>*]:px-2 min-w-24 h-[8.5rem];
+    }
+
+    &__lg &-month {
+      @apply py-1 text-md;
+    }
+
+    &__lg &-day {
+      @apply text-5xl;
+    }
+
+    &__lg &-year {
+      @apply text-md pb-2;
+    }
+  }
+
+  &__author {
+    @apply flex items-center gap-4;
+  }
+
+  &__grid {
+    @apply grid grid-cols-4 gap-x-12 gap-y-4;
+  }
+
+  &__online {
+    @apply bg-background flex flex-col grid place-items-center p-8 space-y-4 text-gray-2 text-center text-lg;
+  }
+
+  &__agenda {
+    &-title {
+      @apply flex gap-1 items-center;
+
+      svg {
+        @apply w-6 h-6 text-tertiary fill-current;
+      }
+    }
+
+    &-item {
+      @apply mt-6 bg-background rounded p-4 text-gray-2;
+
+      &__title {
+        @apply text-lg inline-flex gap-1 first:[&>*]:font-bold;
+      }
+
+      &__description {
+        @apply mt-2 text-md text-gray-2;
+      }
+    }
+
+    &-subitem {
+      @apply ml-4 mt-4;
+    }
+
+    &-subitem &-item__title {
+      @apply text-md;
+    }
+  }
+
+  &__aside {
+    &-progress {
+      @apply text-sm text-gray-2 text-center space-y-1;
+
+      progress {
+        @apply block w-full h-1 appearance-none rounded-full overflow-hidden bg-gray;
+
+        &::-webkit-progress-value {
+          @apply bg-success;
+        }
+
+        &::-webkit-progress-bar {
+          @apply bg-gray lg:bg-white;
+        }
+
+        &::-moz-progress-bar {
+          @apply bg-success;
+        }
+      }
+
+      &-label {
+        @apply text-sm font-bold lg:hidden;
+      }
+    }
+
+    &-block {
+      @apply bg-background rounded p-2 [&>*]:flex [&>*]:gap-1 first:[&>*>*]:flex-none last:[&>*>*]:space-y-1;
+
+      & + & {
+        @apply mt-4;
+      }
+
+      &__title {
+        @apply text-gray-2 text-sm font-semibold;
+      }
+
+      &__text {
+        @apply text-gray-2 text-sm;
+      }
+
+      &__large {
+        @apply text-gray-2 text-xl font-bold;
+      }
+
+      &__list {
+        @apply ml-4 list-disc text-gray-2 text-sm;
+      }
+    }
+
+    &-actions {
+      @apply flex flex-wrap justify-center gap-x-2;
+    }
+  }
+
+  &__registration-modal {
+    &__terms {
+      @apply text-xs text-gray-2;
+    }
+  }
+
+  &__cancelation-modal {
+    &__description {
+      @apply mt-8 mb-16 text-lg text-gray-2;
+    }
+  }
+}
+
+// layout reset stuff
+.meeting-poll__layout {
+  header,
+  main h1,
+  footer {
+    @apply hidden md:block;
+  }
+
+  .layout-1col {
+    padding: 0;
+  }
+}
+
+.meeting-polls {
+  @apply m-0 md:mt-10 md:mb-24;
+
+  counter-reset: question;
+
+  &__question {
+    @apply bg-white;
+
+    summary {
+      @apply p-4 font-normal text-black text-md transition bg-background cursor-pointer marker:text-secondary;
+
+      transition: background-color 0.2s ease-in-out;
+
+      & > span:first-child::after {
+        counter-increment: question;
+        content: "#" counter(question);
+      }
+
+      & > span:last-child:not(:only-child) {
+        @apply text-sm font-semibold float-right;
+      }
+
+      & + * {
+        @apply mt-4 mb-8 md:mb-16 pr-4 pl-[calc(1rem+14px)] md:px-0 space-y-6;
+      }
+    }
+
+    &[open] summary {
+      @apply bg-secondary md:bg-background marker:text-white md:marker:text-secondary text-white md:text-black;
+    }
+
+    &.is-new {
+      animation: animateHighlight 5s ease-in-out forwards;
+    }
+
+    & + & {
+      @apply mt-4;
+    }
+
+    @keyframes animateHighlight {
+      0%,
+      80% {
+        background-color: rgba(var(--warning-rgb), 0.1);
+      }
+    }
+  }
+
+  &__answer {
+    label {
+      @apply block p-4 ring-4 ring-background rounded transition;
+
+      &:not(:has([disabled])) {
+        @apply hover:ring-tertiary hover:cursor-pointer;
+      }
+    }
+
+    label + label,
+    & + & {
+      @apply mt-4;
+    }
+
+    &--value {
+      @apply flex gap-2 justify-between text-gray-2 text-lg;
+
+      > *:last-child {
+        @apply w-1/6 flex-none text-gray text-right;
+      }
+    }
+
+    &--bar {
+      @apply w-full h-2.5 overflow-hidden rounded bg-background;
+
+      > * {
+        @apply bg-success h-full rounded;
+      }
+    }
+  }
+
+  &__admin-action {
+    @apply py-4 grid grid-cols-2 gap-x-4 gap-y-8 border-t border-t-gray [&>*:nth-child(2)]:ml-auto [&>*:nth-child(3)]:col-span-2;
+  }
+
+  &__topbar {
+    @apply my-4 md:my-0 px-4 md:px-0 py-2 md:py-10 flex justify-between gap-4 bg-background md:bg-transparent;
+
+    &.is-admin {
+      @apply mt-0 bg-tertiary md:bg-transparent text-black;
+    }
+  }
+}

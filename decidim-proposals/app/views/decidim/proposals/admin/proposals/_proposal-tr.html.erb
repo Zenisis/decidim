@@ -1,0 +1,82 @@
+<tr data-id="<%= proposal.id %>" <%= "data-published-state=false" if proposal.answered? && !proposal.published_state? %>>
+  <td>
+    <%= check_box_tag "proposal_ids_s[]", proposal.id, false, class: "js-check-all-proposal js-proposal-list-check  js-proposal-id-#{proposal.id}" %><br>
+  </td>
+  <td class="!text-left">
+    <% if allowed_to? :edit, :proposal, proposal: proposal %>
+      <%= link_to present(proposal).title(html_escape: true), proposal_path(proposal) %><br>
+    <% else %>
+      <%= present(proposal).title(html_escape: true) %><br>
+    <% end %>
+    <div class="flex items-center gap-x-1 mt-2">
+      <% if proposal.category %>
+        <%= icon "price-tag-3-line", class: "fill-gray w-4 h-4" %>
+        <%= translated_attribute proposal.category.name %>
+      <% end %>
+      <div class="flex items-center gap-x-1">
+        <%= icon "scan-line", class: "fill-gray w-4 h-4" %>
+        <span>
+          <% if proposal.scope %>
+             <%= translated_attribute proposal.scope.name %>
+          <% else %>
+             <%= t("decidim.scopes.global") %>
+          <% end %>
+        </span>
+      </div>
+    </div>
+  </td>
+  <td class="table-list__date">
+    <%= l proposal.published_at, format: :decidim_short %>
+  </td>
+
+  <% unless current_settings.publish_answers_immediately? %>
+    <td>
+      <% if proposal.answered? && !proposal.emendation? %>
+        <%= humanize_boolean proposal.published_state? %>
+      <% else %>
+        -
+      <% end %>
+    </td>
+  <% end %>
+
+  <% if current_settings.votes_enabled? %>
+    <td>
+      <%= proposal.proposal_votes_count %>
+    </td>
+  <% end %>
+
+  <% if current_component.settings.comments_enabled? and !current_settings.comments_blocked? %>
+    <td>
+      <%= proposal.comments_count %>
+    </td>
+  <% end %>
+
+  <td>
+    <%= proposal.proposal_notes_count %>
+  </td>
+
+  <td class="valuators-count">
+    <%= proposal.valuation_assignments_count %>
+  </td>
+
+  <td>
+    <strong class="label <%= proposal_state_css_class proposal %>" style="<%= proposal_state_css_style proposal %>">
+      <%= t("decidim/amendment", scope: "activerecord.models", count: 1) if proposal.emendation? %>
+      <%= proposal_complete_state proposal %>
+    </strong>
+  </td>
+
+  <td class="table-list__actions">
+    <% if allowed_to? :edit, :proposal, proposal: proposal %>
+      <%= icon_link_to "pencil-line", edit_proposal_path(proposal), t("actions.edit_proposal", scope: "decidim.proposals"), class: "action-icon--edit-proposal" %>
+    <% else %>
+      <span class="action-space icon"></span>
+    <% end %>
+
+    <%= icon_with_link_to_proposal(proposal) %>
+
+    <%= icon_link_to "eye-line", resource_locator(proposal).path, t("actions.preview", scope: "decidim.proposals.admin"), class: "action-icon--preview", target: :blank, data: { "external-link": false } %>
+
+    <%= resource_permissions_link(proposal) %>
+  </td>
+</tr>

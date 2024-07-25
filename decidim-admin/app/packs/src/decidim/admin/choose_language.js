@@ -1,0 +1,16 @@
+/* eslint-disable no-invalid-this */
+/* eslint-disable require-jsdoc */
+
+export default function initLanguageChangeSelect(elements) {
+  elements.forEach((select) => {
+    select.addEventListener("change", () => {
+      let targetTabPaneSelector = select.value;
+      let tabsContent = select.parentElement.parentElement.nextElementSibling;
+
+      tabsContent.querySelector(".is-active").ariaHidden = "true";
+      tabsContent.querySelector(".is-active").classList.remove("is-active");
+      tabsContent.querySelector(targetTabPaneSelector).ariaHidden = "false";
+      tabsContent.querySelector(targetTabPaneSelector).classList.add("is-active");
+    })
+  });
+}

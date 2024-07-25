@@ -1,0 +1,35 @@
+<% add_decidim_meta_tags(title: t("conferences.index.title", scope: "decidim")) %>
+
+<%
+edit_link(
+  decidim_admin_conferences.conferences_path,
+  :read,
+  :conference_list
+)
+%>
+
+<% content_for :aside do %>
+  <h1 class="title-decorator"><%= t("decidim.conferences.index.title") %></h1>
+<% end %>
+
+<%= render layout:"layouts/decidim/shared/layout_two_col" do %>
+  <%= participatory_space_floating_help %>
+
+  <% if promoted_conferences.any? %>
+    <section id="highlighted-conferences" class="layout-main__section layout-main__heading">
+      <h2 class="h3 decorator"><%= t("conferences.index.promoted_conferences", scope: "layouts.decidim") %></h2>
+      <% promoted_conferences.each do |promoted_conference| %>
+        <%= card_for promoted_conference, highlight: true %>
+      <% end %>
+    </section>
+  <% end %>
+
+  <section id="conferences-grid" class="layout-main__section layout-main__heading">
+    <h2 class="h3 decorator"><%= t("conferences.order_by_conferences.conferences", scope: "layouts.decidim", count: conferences.size) %></h2>
+    <div class="card__grid-grid">
+      <%= render(collection) %>
+    </div>
+
+    <%= decidim_paginate collection %>
+  </section>
+<% end %>

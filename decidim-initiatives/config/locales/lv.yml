@@ -1,0 +1,383 @@
+lv:
+  activemodel:
+    attributes:
+      initiative:
+        decidim_user_group_id: Autors
+        description: Apraksts
+        offline_votes: Klātienes paraksti
+        scope_id: Darbības tvērums
+        signature_end_date: Parakstu vākšanas perioda beigas
+        signature_start_date: Parakstu vākšanas perioda sākums
+        signature_type: Parakstu vākšanas veids
+        signature_type_values:
+          any: Jaukts
+          offline: Klātienē
+          online: Tiešsaistē
+        state: Statuss
+        title: Nosaukums
+      initiatives_committee_member:
+        user: Komitejas loceklis
+      initiatives_type:
+        area_enabled: Iespējot autoriem izdevību izvēlēties jomu viņu iniciatīvai
+        attachments_enabled: Iespējot pielikumus
+        banner_image: Reklāmkaroga attēls
+        collect_user_extra_fields: Vākt dalībnieka personas datus ar parakstu
+        custom_signature_end_date_enabled: Ļaut autoriem izvēlēties parakstu vākšanas perioda beigas
+        description: Apraksts
+        document_number_authorization_handler: Autorizācija, lai verificētu dokumenta numuru parakstos
+        extra_fields_legal_information: Juridiska informācija par personas datu vākšanu
+        minimum_committee_members: Minimālais skaits komisijas locekļu
+        online_signature_enabled: Tiešsaistes paraksts ir iespējots
+        promoting_committee_enabled: Iespējot veicināšanas komiteju
+        title: Nosaukums
+        undo_online_signatures_enabled: Ļaut dalībniekiem atsaukt savus tiešsaistes parakstus
+        validate_sms_code_on_votes: Pievienot paraksta procesam SMS koda validāciju
+      initiatives_vote:
+        date_of_birth: Dzimšanas datums
+        document_number: Dokumenta numurs
+        name_and_surname: Vārds un uzvārds
+        postal_code: Pasta indekss
+      organization_data:
+        address: Adrese
+        id_document: ID dokuments
+        name: Pilns vārds
+    errors:
+      models:
+        initiative:
+          attributes:
+            attachment:
+              file: Fails nav derīgs
+              needs_to_be_reattached: Jāpievieno no jauna
+  activerecord:
+    models:
+      decidim/initiative_comittee:
+        zero: Komitejas
+        one: Komiteja
+        other: Komitejas
+      decidim/initiative_vote:
+        zero: Paraksti
+        one: Paraksts
+        other: Paraksti
+  decidim:
+    admin:
+      actions:
+        new_initiative_type: Jauns iniciatīvas veids
+      filters:
+        search_placeholder:
+          title_or_description_or_id_string_or_author_name_or_author_nickname_cont: Meklēt %{collection} pēc nosaukuma, apraksta, ID vai autora vārda.
+      menu:
+        information: Informācija
+        initiatives: Iniciatīvas
+        initiatives_types: Iniciatīvu veidi
+      models:
+        initiatives:
+          fields:
+            created_at: Izveidots plkst.
+            published_at: Publicēts plkst.
+            state: Statuss
+            supports_count: Paraksti
+            title: Iniciatīvas
+        initiatives_type_scope:
+          fields:
+            scope: Darbības tvērums
+            supports_required: Nepieciešami paraksti
+          name: Iniciatīvas veida darbības tvērums
+        initiatives_types:
+          fields:
+            created_at: Izveidots plkst.
+            title: Iniciatīvu veidi
+          name: Iniciatīvas veids
+        initiatives_votes:
+          fields:
+            date_of_birth: Dzimšanas datums
+            document_number: Dokumenta numurs
+            initiative_end_date: Beigu datums
+            initiative_id: Iniciatīvas ID
+            initiative_signatures_count: Parakstu skaits
+            initiative_start_date: Sākuma datums
+            initiative_title: Iniciatīvas nosaukums
+            name_and_surname: Vārds un uzvārds
+            postal_code: Pasta indekss
+            time_and_date: Laiks un datums
+            timestamp: Laikspiedols
+      titles:
+        initiatives: Iniciatīvas
+        initiatives_types: Iniciatīvu veidi
+    events:
+      initiatives:
+        admin:
+          initiative_sent_to_technical_validation:
+            email_intro: Iniciatīva "%{resource_title}" ir nosūtīta tehniskajai validācijai. Pārbaudiet to <a href="%{admin_initiative_url}">administratora panelī</a>
+            email_outro: Jūs saņēmāt šo paziņojumu, jo esat šīs platformas administrators.
+            email_subject: Iniciatīva "%{resource_title}" tika nosūtīta tehniskajai validācijai.
+            notification_title: Iniciatīva "%{resource_title}" ir nosūtīta tehniskajai validācijai. Pārbaudiet to <a href="%{admin_initiative_path}">administratora panelī</a>
+        initiative_extended:
+          email_intro: Parakstīšanās beigu datums iniciatīvai %{resource_title} ir pagarināts!
+          email_outro: Jūs saņēmāt šo paziņojumu, jo sekojat %{resource_title}. Jūs varat atteikties no paziņojumu saņemšanas, sekojot iepriekšējai saitei.
+          email_subject: Iniciatīvas parakstīšanas beigu datums pagarināts!
+          notification_title: Iniciatīvas <a href="%{resource_path}">%{resource_path}</a> parakstīšanas beigu datums ir pagarināts.
+        milestone_completed:
+          affected_user:
+            email_intro: Jūsu iniciatīva %{resource_title} ir sasniegusi %{percentage}% parakstu!
+            email_outro: Jūs saņēmāt šo paziņojumu, jo esat iniciatīvas "%{resource_title}" autors.
+            email_subject: Jauns sasniegums!
+            notification_title: Jūsu iniciatīva <a href="%{resource_path}">%{resource_title}</a> ir sasniegusi %{percentage}% parakstu.
+          follower:
+            email_intro: Iniciatīva %{resource_title} ir sasniegusi %{percentage}% parakstu!
+            email_outro: Jūs saņēmāt šo paziņojumu, jo sekojat %{resource_title}. Jūs varat atteikties no paziņojumu saņemšanas, sekojot iepriekšējai saitei.
+            email_subject: Jauns sasniegums!
+            notification_title: <a href="%{resource_path}">%{resource_title}</a> iniciatīva ir sasniegusi %{percentage}% parakstu.
+        support_threshold_reached:
+          email_outro: Jūs saņēmāt šo paziņojumu, jo esat šīs platformas administrators.
+    gamification:
+      badges:
+        initiatives:
+          conditions:
+            - Dodieties uz iniciatīvu līdzdalības telpu
+            - Sekojiet soļiem, lai izveidotu jaunu iniciatīvu
+          description: Šis žetons tiek piešķirts, kad jūs sākat jaunas iniciatīvas, sadarbojoties ar citiem, lai tās īstenotu.
+          description_another: Šis dalībnieks ir publicējis %{score} iniciatīvas.
+          name: Publicētās iniciatīvas
+          next_level_in: Publicējiet vēl vairākas %{score} iniciatīvas, lai sasniegtu nākamo līmeni!
+          unearned_own: Jums vēl nav nevienas publicētas iniciatīvas.
+    help:
+      participatory_spaces:
+        initiatives:
+          contextual: "<p><strong>Iniciatīva</strong> ir priekšlikums, kura īstenošanu ikviens brīvprātīgi var veicināt (neatkarīgi no citiem kanāliem vai līdzdalības telpām), vācot (digitālus) parakstus, lai organizācija varētu veikt konkrētas darbības (grozīt regulējumu, ierosināt projektu, mainīt departamenta vai ielas nosaukumu u. tml.)</p> <p> Iniciatīvas veicinātāji var noteikt tās mērķus, piesaistīt atbalstu, debatēt, izplatīt un noteikt tikšanās vietas, kur paraksti var tikt vākti no apmeklētājiem vai atvērt debates citiem dalībniekiem.</p> <p>Piemēri: iniciatīva var savākt parakstus, lai sasauktu konsultācijas, kurās piedalās visi cilvēkiem organizācijā, vai izveidotu vai sasauktu asambleju, vai arī sāktu budžeta palielināšanas procesu organizācijas teritorijai vai jomai. Parakstu vākšanas laikā arī citi cilvēki var pievienot papildu prasības un pārstāvēt tās organizācijā.</p>"
+          page: "<p><strong>Iniciatīva</strong> ir priekšlikums, kura īstenošanu ikviens brīvprātīgi var veicināt (neatkarīgi no citiem kanāliem vai līdzdalības telpām), vācot (digitālus) parakstus, lai organizācija varētu veikt konkrētas darbības (grozīt regulējumu, ierosināt projektu, mainīt departamenta vai ielas nosaukumu u. tml.)</p> <p> Iniciatīvas veicinātāji var noteikt tās mērķus, piesaistīt atbalstu, debatēt, izplatīt un noteikt tikšanās vietas, kur paraksti var tikt vākti no apmeklētājiem vai atvērt debates citiem dalībniekiem.</p> <p>Piemēri: iniciatīva var savākt parakstus, lai sasauktu konsultācijas, kurās piedalās visi cilvēkiem organizācijā, vai izveidotu vai sasauktu asambleju, vai arī sāktu budžeta palielināšanas procesu organizācijas teritorijai vai jomai. Parakstu vākšanas laikā arī citi cilvēki var pievienot papildu prasības un pārstāvēt tās organizācijā.</p>"
+          title: Kas ir iniciatīvas?
+    initiatives:
+      actions:
+        answer: Atbilde
+      admin:
+        answers:
+          edit:
+            answer: Atbilde
+            title: Atbilde uz %{title}
+          info_initiative:
+            created_at: Izveidots plkst.
+            description: Apraksts
+            initiative_votes_count: Balsu skaits
+            initiatives: Iniciatīvas
+            state: Stāvoklis
+        committee_requests:
+          index:
+            approve: Apstiprināt
+            confirm_revoke: Vai esat pārliecināts?
+            revoke: Atsaukt
+            title: Komitejas locekļi
+        content_blocks:
+          highlighted_initiatives:
+            max_results: Maksimālais parādāmo elementu daudzums
+        exports:
+          initiatives: Iniciatīvas
+        initiatives:
+          edit:
+            accept: Pieņemt iniciatīvu
+            confirm: Vai esat pārliecināts?
+            discard: Atmest iniciatīvu
+            export_pdf_signatures: Eksportēt parakstus PDF formātā
+            export_votes: Eksportēt parakstus
+            reject: Noraidīt iniciatīvu
+            send_to_technical_validation: Nosūtiet tehniskajai validācijai
+            update: Atjaunināt
+          form:
+            title: Vispārēja informācija
+          index:
+            actions_title: Darbība
+            preview: Priekšskatīt
+            print: Drukāt
+          initiative_attachments:
+            documents: Dokumenti
+            edit: Labot
+            new: Jauns
+            photos: Fotogrāfijas
+        initiatives_type_scopes:
+          edit:
+            title: Labot iniciatīvas veida darbības tvērumu
+            update: Atjaunināt
+          new:
+            create: Izveidot
+            title: Izveidot iniciatīvas darbības veida tvērumu
+        initiatives_types:
+          edit:
+            update: Atjaunināt
+          initiative_type_scopes:
+            title: Iniciatīvas veida darbības tvērumi
+          new:
+            create: Izveidot
+            title: Jauns iniciatīvas veids
+      admin_log:
+        initiative:
+          publish: "%{user_name} publicēja iniciatīvu %{resource_name}"
+          send_to_technical_validation: "%{user_name} nosūtīja %{resource_name} iniciatīvu tehniskajai validācijai"
+          unpublish: "%{user_name} atmeta %{resource_name} iniciatīvu"
+          update: "%{user_name} atjaunināja %{resource_name} iniciatīvu"
+      admin_states:
+        accepted: Pietiekami daudz parakstu
+        created: Izveidots
+        discarded: Atmests
+        rejected: Nepietiek parakstu
+        validating: Tehniskā validācija
+      application_helper:
+        filter_state_values:
+          accepted: Pietiekami daudz parakstu
+          all: Visi
+          answered: Atbildēts
+          closed: Slēgts
+          open: Atvērts
+          rejected: Nepietiek parakstu
+        filter_type_values:
+          all: Visi
+      committee_requests:
+        new:
+          continue: Turpināt
+        spawn:
+          success: Jūsu pieprasījums ir nosūtīts iniciatīvas autoram.
+      content_blocks:
+        highlighted_initiatives:
+          name: Izceltās iniciatīvas
+      create_initiative:
+        fill_data:
+          back: Atpakaļ
+          continue: Turpināt
+          more_information: "(Papildu informācija)"
+          select_area: Izvēlieties jomu
+          select_scope: Izvēlēties darbības tvērumu
+        finish:
+          back: Atpakaļ
+          back_to_initiatives: Atpakaļ pie iniciatīvām
+          go_to_my_initiatives: Doties pie manām iniciatīvām
+          more_information: "(Papildu informācija)"
+        previous_form:
+          back: Atpakaļ
+          continue: Turpināt
+        promotal_committee:
+          more_information: "(Papildu informācija)"
+        select_initiative_type:
+          back: Atpakaļ
+          choose_html: Es vēlos izveidot <strong>%{title}</strong>
+          more_information: (Papildu informācija)
+          select: Es vēlos veicināt šo iniciatīvu
+        share_committee_link:
+          invite_to_committee_help: Saite, lai uzaicinātu cilvēkus, kas piedalīsies veicinātāju komitejā
+      events:
+        create_initiative_event:
+          email_intro: "{author_name}%{author_nickname}, kam jūs sekojat, ir izveidojis jaunu iniciatīvu \"%{resource_title}\". Aplūkojiet to un piedalieties:"
+          email_outro: Jūs saņēmāt šo paziņojumu, jo sekojat %{author_nickname}. Jūs varat atteikties no paziņojumu saņemšanas, sekojot iepriekšējai saitei.
+          email_subject: '%{author_nickname} ir jauna iniciatīva'
+          notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> izveidoja iniciatīvu <a href="%{resource_path}">%{resource_title}</a>.
+        endorse_initiative_event:
+          email_intro: "%{author_name} %{author_nickname}, kam jūs sekojat, ir atbalstījis šo iniciatīvu, iespējams, jūs vēlaties iesaistīties sarunā par to:"
+          email_outro: Jūs saņēmāt šo paziņojumu, jo sekojat %{author_nickname}. Jūs varat atteikties no paziņojumu saņemšanas, sekojot iepriekšējai saitei.
+          email_subject: Iniciatīvu atbalstīja %{author_nickname}
+          notification_title: <a href="%{resource_path}">%{resource_title}</a> iniciatīvu atbalstīja <a href="%{author_path}">%{author_name} %{author_nickname}</a>.
+      initiative_signatures:
+        fill_personal_data:
+          continue: Turpināt
+        finish:
+          back_to_initiative: Atpakaļ pie iniciatīvas
+        sms_code:
+          continue: Pārbaudīt kodu un turpināt
+          help: Pārbaudiet tālrunī saņemto SMS
+        sms_phone_number:
+          continue: Sūtīt man SMS
+      initiative_votes:
+        create:
+          error: Iniciatīvas parakstīšanas laikā radās problēma
+        personal_data:
+          invalid: Personas dati neatbilst autorizējoties sniegtajiem datiem.
+        sms_phone:
+          invalid: Tālruņa numurs nav derīgs vai gaida autorizāciju. Lūdzu, pārbaudiet savas autorizācijas.
+      initiatives:
+        author_list:
+          hidden_authors_count:
+            zero: un vēl %{count} personas
+            one: un vēl 1 persona
+            other: un vēl %{count} personas
+        count:
+          title:
+            zero: "%{count} iniciatīvas"
+            one: "%{count} iniciatīva"
+            other: "%{count} iniciatīvas"
+        filters:
+          any: Jebkura
+          area: Joma
+          author: Autors
+          myself: Manas iniciatīvas
+          scope: Darbības tvērums
+          state: Statuss
+          type: Veids
+        index_header:
+          new_initiative: Jauna iniciatīva
+        interactions:
+          comments_count:
+            count:
+              zero: Komentēt
+              one: Komentēt
+              other: Komentēt
+        orders:
+          label: 'Kārtot iniciatīvas pēc:'
+          most_commented: Visvairāk komentētie
+          most_voted: Visvairāk parakstītās
+          random: Nejauši
+          recent: Jaunākās
+          recently_published: Pēdējās publicētās
+        print:
+          city: Pilsēta
+        result:
+          initiative_rejected_reason: Šī iniciatīva ir noraidīta parakstu trūkuma dēļ.
+        signatures_count:
+          zero: "paraksti"
+          one: "paraksts"
+          other: "paraksti"
+        vote_cabin:
+          already_voted: Jau parakstīta
+          verification_required: Lai parakstītu iniciatīvu, verificējiet savu kontu
+          vote: Parakstīt
+          votes_blocked: Parakstīšana ir atspējota
+      initiatives_mailer:
+        creation_subject: Jūsu iniciatīva '%{title}' ir izveidota
+        initiative_link:
+          check_initiative_details: Jūs varat redzēt informāciju par iniciatīvu
+          here: šeit
+        more_information: Šeit ir vairāk informācijas par iniciatīvas izveidošanas procesu.
+        progress_report_body_for: Iniciatīva %{title} ir sasniegusi %{percentage}% no nepieciešamajiem parakstiem.
+        progress_report_for: 'Kopsavilkums par iniciatīvu: %{title}'
+        promotal_committee_help: Atcerieties, ka uz veicināšanas komiteju ir jāuzaicina vismaz %{member_count} cilvēku. Pārsūtiet šo saiti, lai uzaicinātu cilvēkus uz veicināšanas komiteju
+        status_change_body_for: 'Iniciatīvas %{title} statuss ir mainīts: %{state}'
+        status_change_for: Iniciatīvas %{title} statuss ir mainīts
+      show:
+        badge_name:
+          accepted: Pietiekami daudz parakstu
+          created: Izveidots
+          discarded: Atmests
+          rejected: Nepietiek parakstu
+          validating: Tehniskā validācija
+      states:
+        accepted: Pieņemts
+        expired: Termiņš beidzies
+      unavailable_scope: Tvērums nav pieejams
+    menu:
+      initiatives: Iniciatīvas
+    resources:
+      initiatives_type:
+        actions:
+          title: Darbības
+          vote: Parakstīt
+  layouts:
+    decidim:
+      initiative_creation_header:
+        fill_data: Izveidot
+        finish: Pabeigt
+        promotal_committee: Veicināšanas komiteja
+        select_initiative_type: Izvēlēties
+      initiative_signature_creation_header:
+        fill_personal_data: Pabeidziet ierakstīt savus datus
+        finish: Pabeigt
+        sms_code: SMS koda verifikācija
+        sms_phone_number: Mobilā tālruņa numurs
+        title: Parakstīt %{initiative_title}
+      initiatives:
+        no_initiatives_yet:
+          no_initiatives_yet: Pagaidām nav iniciatīvu!

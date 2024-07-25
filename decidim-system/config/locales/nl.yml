@@ -1,0 +1,113 @@
+nl:
+  activemodel:
+    attributes:
+      oauth_application:
+        organization_logo: Logo organisatie (vierkant)
+        organization_url: URL van de organisatie
+        redirect_uri: URI doorsturen
+      organization:
+        address: SMTP hostname
+        from_email: E-mailadres
+        from_label: Label
+        password: Wachtwoord
+        port: Poort
+        user_name: Gebruikersnaam
+    errors:
+      models:
+        oauth_application:
+          attributes:
+            redirect_uri:
+              must_be_ssl: De omleidings-URI moet een SSL-URI zijn
+  decidim:
+    system:
+      actions:
+        confirm_destroy: Weet u zeker dat u dit wilt verwijderen?
+        destroy: Verwijder
+        edit: Bewerk
+        save: Opslaan
+        title: Acties
+      admins:
+        create:
+          error: Er is een fout opgetreden bij het maken van een nieuwe admin.
+        edit:
+          title: Beheer admin
+          update: Bijwerken
+        index:
+          title: Admins
+        new:
+          create: Creëren
+          title: Nieuwe admin
+        update:
+          error: Er is een fout opgetreden bij het bijwerken van deze admin.
+      dashboard:
+        show:
+          current_organizations: Huidige organisaties
+      default_pages:
+        placeholders:
+          content: Voeg relevante inhoud aan het statische pagina van %{page} op het admin dashboard.
+          title: Standaard titel voor %{page}
+      menu:
+        admins: Admins
+        dashboard: Dashboard
+        organizations: Organisaties
+      models:
+        admin:
+          fields:
+            created_at: Gemaakt bij
+            email: E-mail
+          validations:
+            email_uniqueness: Een andere admin met dezelfde e-mail bestaat al
+        organization:
+          actions:
+            save_and_invite: Maak een organisatie en nodig admin uit
+          fields:
+            created_at: Gemaakt bij
+            name: Naam
+            omniauth_settings: Omniauth instellingen
+            smtp_settings: SMTP-instellingen
+      organizations:
+        advanced_settings:
+          hide: Geavanceerde instellingen verbergen
+          show: Geavanceerde instellingen tonen
+        create:
+          error: Er is een fout opgetreden bij het aanmaken van een nieuwe organisatie.
+        edit:
+          secondary_hosts_hint: Voer elk van hen op een nieuwe regel in
+        index:
+          title: Organisaties
+        new:
+          title: Nieuwe organisatie
+        omniauth_settings:
+          decidim:
+            client_id: Klant ID
+            client_secret: Klant geheim
+            site_url: Website URL
+          enabled: Ingeschakeld
+          enabled_by_default: Deze provider is standaard ingeschakeld. Het kan worden bewerkt maar niet uitgeschakeld.
+          facebook:
+            app_id: App-ID
+            app_secret: App secret
+          google_oauth2:
+            client_id: Client-ID
+            client_secret: Client secret
+          icon: Pictogram
+          icon_path: Icoon pad
+          twitter:
+            api_key: API key
+            api_secret: API secret
+        smtp_settings:
+          fieldsets:
+            sender: Afzender
+          placeholder:
+            from_label: jouw-organisatienaam
+        update:
+          error: Er is een fout opgetreden bij het bijwerken van deze organisatie.
+          success: Organisatie is succesvol bijgewerkt.
+        users_registration_mode:
+          disabled: Enkel externe accounts hebben toegang
+      shared:
+        notices:
+          no_organization_warning_html: U moet een organisatie aanmaken om te beginnen. Zorg ervoor dat u %{guide} leest voordat u verder gaat.
+          our_getting_started_guide: onze handleiding voor beginners
+      titles:
+        dashboard: Dashboard

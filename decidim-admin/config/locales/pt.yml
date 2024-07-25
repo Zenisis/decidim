@@ -1,0 +1,891 @@
+pt:
+  activemodel:
+    attributes:
+      area:
+        area_type: Tipo de área
+        name: Nome
+        organization: Organização
+      area_type:
+        name: Nome
+        organization: Organização
+        plural: Plural
+      attachment:
+        attachment_collection_id: Pasta
+        description: Descrição
+        file: Arquivo
+        title: Anexo ou nome da imagem
+      attachment_collection:
+        description: Descrição
+        name: Nome
+      category:
+        description: Descrição
+        name: Nome
+        parent_id: Superior
+      component:
+        name: Nome
+        published_at: Publicado em
+        weight: Posição do pedido
+      id: ID
+      import:
+        user_group_id: Criar importações como
+      newsletter:
+        body: Corpo
+        subject: Assunto
+      organization:
+        alert_color: Alerta
+        available_authorizations: Autorizações disponíveis
+        badges_enabled: Ativar distintivos
+        comments_max_length: Comprimento máximo dos comentários (Deixar 0 para o valor predefinido)
+        cta_button_path: Caminho do botão Chamar para Ação
+        cta_button_text: Texto do botão Chamar para Ação
+        customize_welcome_notification: Personalizar a notificação de boas-vindas
+        default_locale: Idioma por defeito
+        description: Descrição
+        enable_omnipresent_banner: Mostrar faixa omnipresente
+        enable_participatory_space_filters: Activar filtros do espaço participativo
+        facebook_handler: Manipulador do Facebook
+        favicon: Ícone
+        force_authentication: Forçar autenticação
+        force_users_to_authenticate_before_access_organization: Forçar usuários a autenticar antes de aceder à organização
+        from: Endereço de e-mail do remetente
+        github_handler: GitHub handler
+        header_snippets: Snippets de cabeçalho
+        highlight_alternative_color: Realçar, alternativo
+        highlight_color: Realçar
+        highlighted_content_banner_action_subtitle: Legenda do botão de ação
+        highlighted_content_banner_action_title: Título do botão de ação
+        highlighted_content_banner_action_url: URL do botão de ação
+        highlighted_content_banner_enabled: Mostrar a faixa de conteúdo realçado
+        highlighted_content_banner_image: Imagem
+        highlighted_content_banner_short_description: Pequena descrição
+        highlighted_content_banner_title: Título
+        host: Anfitrião
+        instagram_handler: Instagram handler
+        logo: Logótipo
+        machine_translation_display_priority: Prioridade de apresentação de tradução automática
+        machine_translation_display_priority_original: Texto original primeiro
+        machine_translation_display_priority_translation: Texto traduzido primeiro
+        name: Nome
+        official_img_footer: Logótipo oficial do rodapé
+        official_url: URL da organização oficial
+        omnipresent_banner_short_description: Pequena descrição
+        omnipresent_banner_title: Título
+        omnipresent_banner_url: URL
+        organization_admin_email: E-mail do administrador da organização
+        organization_admin_name: Nome do administrador da organização
+        organization_locales: Localidades da organização
+        primary_color: Primário
+        reference_prefix: Prefixo de referência
+        rich_text_editor_in_public_views: Ativar o editor de texto avançado para os participantes
+        secondary_color: Secundário
+        secondary_hosts: Anfitriões secundários
+        send_welcome_notification: Enviar notificação de boas-vindas
+        success_color: Sucesso
+        time_zone: Fuso Horário
+        tos_version: Versão dos termos de serviço
+        user_groups_enabled: Ativar grupos
+        users_registration_mode: Modo de registo dos utilizadores
+        warning_color: Aviso
+        welcome_notification_body: Corpo da notificação de boas-vindas
+        welcome_notification_subject: Assunto da notificação de boas-vindas
+        youtube_handler: Manipulador do YouTube
+      scope:
+        code: Código
+        name: Nome
+        organization: Organização
+        parent_id: Pai
+        scope_type: Tipo de âmbito
+        scope_type_id: Tipo de âmbito
+      scope_type:
+        name: Nome
+        organization: Organização
+        plural: Plural
+      settings:
+        scope_id: Âmbito
+      static_page:
+        allow_public_access: Permitir acesso sem autenticação
+        changed_notably: Ocorreram mudanças notáveis.
+        content: Conteúdo
+        organization: Organização
+        show_in_footer: Mostrar no rodapé
+        slug: Texto curto de URL
+        title: Título
+        weight: Posição do pedido
+      static_page_topic:
+        description: Descrição
+        show_in_footer: Mostrar no rodapé
+        title: Título
+        weight: Posição do pedido
+      user_group_csv_verification:
+        file: Ficheiro
+    errors:
+      models:
+        organization:
+          attributes:
+            official_img_footer:
+              allowed_file_content_types: Ficheiro de imagem inválido
+  activerecord:
+    attributes:
+      decidim/static_page:
+        content: Conteúdo
+        slug: Texto curto de URL
+        title: Título
+      doorkeeper/application:
+        authorize_url: Autorizar URL
+        client_id: ID do Cliente
+        client_secret: Segredo do cliente
+        organization_name: Nome da organização
+        organization_url: URL da organização
+        redirect_uri: URI de redirecionamento
+        site: Site da Web
+  decidim:
+    admin:
+      actions:
+        add: Adicionar
+        attachment:
+          new: Novo anexo
+        browse: Explorar
+        category:
+          new: Nova categoria
+        export: Exportar tudo
+        export-selection: Exportar selecção
+        import: Importar
+        manage: Gerir
+        newsletter:
+          new: Novo boletim informativo
+        participatory_space_private_user:
+          new: Novo utilizador privado do espaço participativo
+        per_page: Por página
+        permissions: Permissões
+        reject: Rejeitar
+        share: Partilhar
+        verify: Verificar
+      area_types:
+        create:
+          error: Ocorreu um problema ao criar um novo tipo de área.
+          success: Tipo de área criado corretamente.
+        edit:
+          title: Editar tipo de área
+          update: Atualizar
+        new:
+          create: Criar tipo de área
+          title: Novo tipo de área
+        update:
+          error: Ocorreu um problema ao atualizar este tipo de área.
+      areas:
+        create:
+          error: Ocorreu um problema ao criar uma nova área.
+          success: Área criada corretamente.
+        destroy:
+          has_spaces: Está area tem espaços dependentes. For favor certifique-se que nenhum Espaço Participativo faz referência a esta área antes de a apagar.
+        edit:
+          title: Editar área
+          update: Atualizar
+        new:
+          create: Criar área
+          title: Nova área
+        no_areas: Nenhuma Área
+        update:
+          error: Ocorreu um problema ao atualizar esta área.
+      attachment_collections:
+        create:
+          error: Ocorreu um problema ao criar uma nova pasta.
+          success: Pasta criada corretamente.
+        destroy:
+          success: Pasta destruída corretamente.
+        edit:
+          title: Editar pasta
+          update: Atualizar
+        index:
+          attachment_collections_title: Pastas de anexos
+        new:
+          create: Criar
+          title: Nova pasta
+        update:
+          error: Ocorreu um problema ao atualizar esta pasta.
+          success: Pasta atualizada corretamente.
+      attachments:
+        create:
+          error: Ocorreu um problema ao criar um novo anexo.
+          success: Anexo criado com sucesso.
+        destroy:
+          success: Anexo apagado com sucesso.
+        edit:
+          title: Editar anexo
+          update: Actualizar
+        index:
+          attachments_title: Anexos
+        new:
+          create: Criar anexo
+          title: Novo anexo
+        update:
+          error: Ocorreu um problema ao atualizar este anexo.
+          success: Anexo atualizado com sucesso.
+      autocomplete:
+        no_results: Nenhum resultado encontrado
+      block_user:
+        new:
+          action: Bloquear conta e enviar justificação
+          description: Bloquear um utilizador torna a sua conta inutilizável. Pode dar na sua justificação orientações sobre o que poderia levar a considerar desbloquear o utilizador.
+          justification: Justificação
+          title: Bloquear utilizador %{name}
+      categories:
+        create:
+          error: Ocorreu um problema ao criar esta categoria.
+          success: Categoria criada com sucesso.
+        destroy:
+          error: Ocorreu um problema ao eliminar esta categoria. Por favor elimine qualquer subcategoria primeiro, certifique-se de que nenhuma outra entidade pertence a esta categoria e tente novamente.
+          success: Categoria apagada com sucesso.
+        edit:
+          title: Editar categoria
+          update: Atualizar
+        index:
+          categories_title: Categorias
+        new:
+          create: Criar categoria
+          title: Nova categoria
+        update:
+          error: Ocorreu um problema ao atualizar esta categoria.
+          success: Categoria atualizada com sucesso.
+      component_permissions:
+        update:
+          error: Ocorreu um problema ao atualizar as permissões deste componente.
+          success: Permissões atualizadas corretamente.
+      components:
+        create:
+          error: Ocorreu um problema ao criar este componente.
+          success: Componente criado corretamente.
+        destroy:
+          error: Ocorreu um problema ao destruir este componente.
+          success: Componente eliminado corretamente.
+        edit:
+          title: Editar componente
+          update: Atualizar
+        form:
+          default_step_settings: Configurações do passo padrão
+          global_settings: Configurações globais
+          step_settings: Configurações do passo
+        index:
+          add: Adicionar componente
+          headers:
+            actions: Ações
+            name: Nome do componente
+            scope: Âmbito do componente
+            type: Tipo de componente
+        new:
+          add: Adicionar componente
+          title: 'Adicionar componente: %{name}'
+        publish:
+          success: O componente foi publicado corretamente.
+        title: Componentes
+        unpublish:
+          success: O componente deixou de estar publicado corretamente.
+        update:
+          error: Ocorreu um problema ao atualizar este componente.
+          success: O componente foi atualizado corretamente.
+      conflicts:
+        attempts: Tentativas
+        'false': 'Não'
+        managed_user_name: Utilizador gerido
+        solved: Resolvido
+        title: Conflitos de verificação
+        transfer:
+          email: e-Mail
+          name: Nome
+          reason: Motivo
+          success: A transferência actual foi completada com êxito.
+          title: Transferência
+        'true': 'Sim'
+        user_name: Utilizador
+      dashboard:
+        show:
+          view_more_logs: Ver mais registos
+      exports:
+        export_as: "%{name} como %{export_format}"
+        formats:
+          CSV: CSV
+          Excel: Excel
+          FormPDF: PDF
+          JSON: JSON
+      filters:
+        category_id_eq:
+          label: Categoria
+        filter_label: Filtro
+        invitation_accepted_at_present:
+          label: Convite aceite
+          values:
+            'false': 'Não'
+            'true': 'Sim'
+        last_sign_in_at_present:
+          label: Já se ligou alguma vez?
+          values:
+            'false': 'Não'
+            'true': 'Sim'
+        moderations:
+          reportable_type_string_eq:
+            label: Tipo
+        officialized_at_null:
+          label: Estado
+          values:
+            'false': Oficializado
+            'true': Não oficializado
+        participatory_space_private_users:
+          user_invitation_accepted_at_not_null:
+            label: Convite aceite
+            values:
+              'false': Não aceite
+              'true': Aceite
+          user_invitation_sent_at_not_null:
+            label: Convite enviado
+            values:
+              'false': Não enviado
+              'true': Enviado
+        private_space_eq:
+          label: Privado
+          values:
+            'false': Público
+            'true': Privado
+        published_at_null:
+          label: Publicado
+          values:
+            'false': Publicado
+            'true': Publicação removida
+        scope_id_eq:
+          label: Âmbito
+        search_label: Pesquisa
+        search_placeholder:
+          name_or_nickname_or_email_cont: Pesquisar %{collection} por e-mail, nome ou alcunha.
+          reported_id_string_or_reported_content_cont: Pesquisar %{coleção} por identificador de denúncia ou conteúdo.
+          title_cont: Pesquisar %{collection} por título.
+        state_eq:
+          label: Estado
+          values:
+            all: Todos
+            pending: Pendentes
+            rejected: Rejeitados
+            verified: Verificados
+      forms:
+        file_help:
+          import:
+            explanation: 'Orientação para ficheiro:'
+            message_1: Ficheiros CSV, JSON e Excel (.xlsx) não são suportados
+            message_2: Para ficheiros CSV o separador entre coludas deve ser um ponto e vírgula (";")
+      help_sections:
+        form:
+          save: Guardar
+      impersonatable_users:
+        index:
+          filter:
+            all: Todos
+            managed: Gerido
+            not_managed: Não gerido
+          impersonate: Personificar
+          impersonate_new_managed_user: Gerir novo participante
+          managed: Gerido
+          name: Nome
+          needs_authorization_warning: Precisa de pelo menos uma autorização ativada para esta organização.
+          not_managed: Não gerido
+          promote: Promover
+          search: Pesquisar
+          status: Estado
+          view_logs: Ver registos
+      impersonations:
+        close_session:
+          error: Ocorreu um problema ao encerrar a sessão de gestão do participante atual.
+          success: A sessão de personificação atual foi concluída corretamente.
+        create:
+          error: Ocorreu um problema na gestão do participante.
+          success: O participante gerido foi criado corretamente.
+        form:
+          authorization_method: Método de autorização
+          name: Nome
+          reason: Motivo
+        new:
+          impersonate: Personificar
+          impersonate_existing_managed_user: Gerir participante "%{name}"
+          impersonate_existing_user: Gerir participante "%{name}"
+          impersonate_new_managed_user: Gerir novo participante
+      imports:
+        new:
+          accepted_mime_types:
+            csv: CSV
+            json: JSON
+            xlsx: Excel (.xlsx)
+          actions:
+            back: Voltar
+          file_legend: Adicionar ficheiro para importar a analisar.
+          import: Importar
+      managed_users:
+        promotion:
+          error: Ocorreu um problema ao promover o participante gerido.
+          success: O participante gerido foi promovido corretamente.
+        promotions:
+          new:
+            explanation: Os participantes geridos podem ser promovidos para participantes padrão. Isto significa que eles serão convidados para a aplicação e não poderá geri-los novamente. O participante convidado receberá um e-mail para aceitar o seu convite.
+            new_managed_user_promotion: Nova promoção de usuário participante gerido
+            promote: Destacar
+      menu:
+        admin_log: Registo de atividade de administração
+        admins: Administradores
+        appearance: Aparência
+        area_types: Tipos de área
+        areas: Áreas
+        configuration: Configuração
+        help_sections: Secções de ajuda
+        homepage: Página inicial
+        impersonations: Personificações
+        manage: Gerir
+        moderation: Moderações globais
+        newsletters: Boletins informativos
+        participants: Participantes
+        scope_types: Tipos de âmbito
+        scopes: Âmbitos
+        settings: Configurações
+        static_pages: Páginas
+        user_groups: Grupos
+        users: Utilizadores
+      metrics:
+        metrics:
+          see_more_metrics: Mostrar mais métricas
+      models:
+        area:
+          fields:
+            area_type: Tipo de área
+            name: Nome
+        area_type:
+          fields:
+            name: Nome
+            plural: Plural
+        attachment:
+          fields:
+            collection: Pasta
+            content_type: Tipo
+            file_size: Tamanho
+            title: Título
+          name: Anexo
+        attachment_collection:
+          name: Pasta
+        category:
+          name: Categoria
+        impersonation_log:
+          fields:
+            admin: Administrador(a)
+            ended_at: Terminou em
+            expired_at: Expirou em
+            reason: Motivo
+            started_at: Começou em
+            user: Do utilizador
+        newsletter:
+          fields:
+            created_at: Criado em
+            progress: Progresso
+            sent_at: Enviado em
+            sent_to: Enviado para
+            subject: Assunto
+          name: Boletim Informativo
+        participatory_space_private_user:
+          name: Participante privado de espaço participativo
+        scope:
+          fields:
+            name: Nome
+            scope_type: Tipo de âmbito
+        scope_type:
+          fields:
+            name: Nome
+            plural: Plural
+        share_token:
+          fields:
+            created_at: Criado em
+            expires_at: Expira em
+            last_used_at: Ultima utilização
+            times_used: Total de utilizações
+            token: Identificador
+            user: Criado por
+        static_page:
+          fields:
+            created_at: Criado em
+            title: Título
+        user:
+          fields:
+            created_at: Data de criação
+            email: E-mail
+            name: Nome
+            role: Função
+            roles:
+              admin: Administrador(a)
+              user_manager: Gestor de participante
+          name: Participante
+        user_group:
+          fields:
+            actions: Ações
+            created_at: Criado em
+            document_number: Número do documento
+            name: Nome
+            phone: Telefone
+            state: Estado
+            users_count: Contagem de participantes
+      moderated_users:
+        index:
+          actions:
+            block: Bloquear utilizador
+            title: Acções
+            unblock: Desbloquear utilizador
+            unreport: Remover denúncia
+          name: Nome
+          nickname: Alcunha
+          reason: Motivo
+          reports: Contagem de denúncias
+        report:
+          reasons:
+            does_not_belong: Não pertence
+            offensive: Ofensivo
+            spam: Spam
+        tabs:
+          blocked: Bloqueado
+          unblocked: Não bloqueado
+      moderations:
+        report:
+          reasons:
+            does_not_belong: Não pertence
+            offensive: Ofensiva
+            spam: Spam
+        reports:
+          index:
+            author: Autor(es)
+            callout_html: Um conteúdo aparece no painel de moderação quando ele foi sinalizado por um utilizador (pode ser qualquer pessoa com uma conta registrada) clicando no sinalizador %{icon} ao lado do item.
+            content_original_language: Língua original do conteúdo
+            participatory_space: Espaço participativo
+            reported_content: Conteúdo denunciado
+            see_current: Ver actual
+            see_original: Ver original
+            title: Moderar denúncias
+          show:
+            report_details: Detalhes do motivo
+            report_language: Denunciar linguagem
+            report_reason: Motivo
+            title: Detalhes da denúncia
+      newsletter_templates:
+        index:
+          preview_template: Pré-visualização
+          title: Modelos de Boletim Informativo
+          use_template: Utilizar este modelo
+        show:
+          preview: 'Pré-visualizar modelo: %{template_name}'
+          use_template: Utilizar este modelo
+      newsletters:
+        create:
+          error: Ocorreu um problema ao criar este boletim informativo.
+          success: Boletim informativo criado com sucesso. Reveja antes de enviar.
+        deliver:
+          error: Ocorreu um problema na entrega deste boletim informativo.
+          success: Boletim Informativo entregue corretamente.
+        destroy:
+          error_already_sent: 'Não é possível destruir o boletim informativo: já foi enviado.'
+          success: Boletim Informativo destruído corretamente.
+        edit:
+          save_and_preview: Guardar e pré-visualizar
+          title: Editar boletim de notícias
+        index:
+          all: todos
+          all_users: 'Todos os utilizadores '
+          and: 'e '
+          confirm_delete: Tem certeza de que deseja eliminar este boletim informativo?
+          followers: 'seguidores '
+          has_been_sent_to: 'Foi enviado para: '
+          no_scopes: Sem âmbitos
+          not_sent: Não enviado
+          participants: 'participantes '
+          segmented_to: 'Segmentado para %{subject}: '
+          subscribed_count: 'Subscrito:'
+          title: Boletins informativos
+        new:
+          save: Guardar
+          title: Novo boletim informativo
+        select_recipients_to_deliver:
+          all_spaces: Todos
+          all_users_help: Envia um boletim informativo para todos os utilizadores confirmados.
+          confirm_deliver: Tem a certeza de que deseja enviar este boletim informativo? Esta ação não pode ser desfeita.
+          deliver: Entregar boletim informativo
+          followers_help: Envia um boletim informativo para todos os utilizadores confirmados que seguem quaisquer espaços participativos na lista.
+          none: Nenhum
+          participants_help: Envia um boletim informativo para todos os utilizadores confirmados que tenham participado em qualquer um dos espaços participativos selecionados na lista.
+          recipients_count: Este boletim informativo será enviado para <strong id='recipients_count'>%{count}</strong> utilizadores.
+          scopes_help: Envia um boletim informativo aos utilizadores que tenham qualquer um dos âmbitos selecionados ativados nas definições "Os meus interesses" das suas contas.
+          select_scopes: Filtro para os utilizadores que ativaram qualquer âmbito selecionado nas definições "Os meus interesses" das suas contas.
+          select_spaces: Selecione os espaços para segmentar o boletim informativo
+          select_users: Selecione os utilizadores para os quais pretende enviar o boletim informativo
+          title: Selecione os destinatários
+          warning: "<strong>Atenção:</strong> Este boletim informativo apenas será enviado para utilizadores que tenham ativado a opção <em>Pretendo receber boletins informativo</em> nas suas definições de notificações."
+        show:
+          preview: Pré-visualização
+          select_recipients_to_deliver: Selecione os destinatários
+          subject: Assunto
+        update:
+          error: Ocorreu um problema ao atualizar este boletim informativo.
+          success: Boletim informativo atualizado corretamente. Por favor, reveja-o antes de enviar.
+      officializations:
+        index:
+          actions: Ações
+          badge: Distintivo
+          block: Bloquear utilizador
+          created_at: Criado em
+          name: Nome
+          nickname: Alcunha
+          not_officialized: Não oficializado
+          officialize: Oficializar
+          officialized: Oficializado
+          reofficialize: Reoficializar
+          reports: Relatórios
+          show_email: Mostrar endereço de e-mail
+          status: Estado
+          unblock: Desbloquear utilizador
+          unofficialize: Desoficializar
+        new:
+          badge: Distintivo de oficialização
+          officialize: Oficializar
+          title: Oficializar participante "%{name}"
+        show_email_modal:
+          description: Se precisar de contactar directamente um, pode clicar no botão Mostrar para ver seu endereço de e-mail.
+          email_address: Endereço de e-mail
+          full_name: Nome completo
+          hidden: oculto
+          show: Mostrar
+          title: Mostrar o endereço de e-mail do participante
+      organization:
+        edit:
+          title: Editar organização
+          update: Atualizar
+        form:
+          facebook: Facebook
+          github: GitHub
+          instagram: Instagram
+          rich_text_editor_in_public_views_help: Em algumas áreas de texto, os participantes serão capazes de inserir algumas etiquetas HTML utilizando o editor de texto avançado.
+          social_handlers: Social
+          url: URL
+          youtube: Youtube
+        update:
+          error: Ocorreu um problema ao atualizar esta organização.
+          success: Organização atualizada corretamente.
+      organization_appearance:
+        edit:
+          update: Atualizar
+        form:
+          colors:
+            colors_title: Cores da organização
+          cta_button_text_help: Pode substituir o texto do botão Chamar para Ação na página inicial para cada idioma disponível na sua organização. Se não for definido, o valor padrão será usado. O botão Chamar para Ação é exibido na página inicial entre o texto de boas-vindas e a descrição.
+          homepage_appearance_title: Editar a aparência da página inicial
+          homepage_highlighted_content_banner_title: Faixa de conteúdo realçado
+          images:
+            layout_appearance_title: Editar aparência do layout
+            preview: Pré-visualização
+          omnipresent_banner_appearance_title: Editar faixa omnipresente
+      participatory_space_private_users:
+        create:
+          error: Ocorreu um problema ao adicionar um participante privado neste espaço participativo.
+          success: Acesso ao espaço participativo de participante privado criado corretamente.
+        destroy:
+          error: Houve um problema ao eliminar um participante privado deste espaço participativo.
+          success: Espaço participativo acesso de usuário privado destruído com sucesso.
+        index:
+          import_via_csv: Importar via CSV
+          title: Espaço participativo de participante privado
+        new:
+          create: Criar
+          title: Novo participante privado do Espaço Participativo.
+      participatory_space_private_users_csv_imports:
+        new:
+          upload: Carregar
+      resource_permissions:
+        edit:
+          submit: Submeter
+          title: Editar permissões
+        update:
+          success: Permissões atualizadas corretamente.
+      resources:
+        index:
+          headers:
+            scope: Âmbito
+      scope_types:
+        create:
+          error: Ocorreu um problema ao criar um novo tipo de âmbito.
+          success: Tipo de âmbito criado com sucesso.
+        destroy:
+          success: Tipo de âmbito destruído com sucesso
+        edit:
+          title: Editar tipo de âmbito
+          update: Atualizar
+        new:
+          create: Criar tipo de âmbito
+          title: Novo âmbito
+        update:
+          error: Ocorreu um problema ao atualizar este tipo de âmbito.
+          success: Tipo de âmbito atualizado com sucesso
+      scopes:
+        create:
+          error: Ocorreu um problema ao criar um novo âmbito.
+          success: Âmbito criado com sucesso.
+        edit:
+          title: Editar o âmbito
+          update: Atualizar
+        new:
+          create: Criar âmbito
+          title: Novo âmbito
+        no_scopes: Nenhum âmbito neste nível.
+        update:
+          error: Ocorreu um problema ao atualizar este âmbito.
+          success: Âmbito atualizado com sucesso
+      share_tokens:
+        actions:
+          confirm_destroy: Tem a certeza que quer eliminar este identificador?
+          destroy: Eliminar
+          share: Partilhar
+        destroy:
+          error: Houve um problema ao destruir o identificador
+          success: Identificador destruído com sucesso.
+        share_tokens:
+          help: Estes identificadores são usados para partilhar publicamente para qualquer utilizador este recurso não publicado. Estarão escondidos quando o recurso estiver publicado. Clique no icone de partilha do identificador para visitar o URL parltilhável.
+          title: Compartilhar identificadores
+      shared:
+        gallery:
+          add_images: Adicionar imagens
+          gallery_legend: Adicionar uma galeria de imagens (Opcional)
+      static_page_topics:
+        create:
+          error: Ocorreu um problema ao criar um novo tópico.
+          success: Tópico criado corretamente.
+        edit:
+          title: Editar tópico
+          update: Atualizar tópico
+        new:
+          create: Criar tópico
+          title: Novo tópico
+        update:
+          error: Ocorreu um problema ao atualizar este tópico.
+          success: Tópico atualizado com sucesso
+      static_pages:
+        actions:
+          view: Ver página pública
+        create:
+          error: Ocorreu um problema ao criar uma nova página.
+          success: Página criada corretamente.
+        destroy:
+          success: Página destruída corretamente
+        edit:
+          title: Editar Página
+          update: Atualizar
+        form:
+          none: Nenhum
+        index:
+          last_notable_change: Última alteração notável
+        new:
+          create: Criar página
+          title: Nova página
+        topic:
+          without_topic: Páginas sem tópico
+        update:
+          error: Ocorreu um problema ao atualizar esta página.
+      titles:
+        admin_log: Registo de administrador
+        area_types: Tipos de área
+        areas: Áreas
+        authorization_workflows: Métodos de verificação
+        dashboard: Painel de Controlo
+        impersonatable_users: Participantes geríveis
+        impersonations: Gestão de participantes
+        metrics: Métricas
+        panel: Administrador
+        participants: Participantes
+        scope_types: Tipos de âmbito
+        scopes: Âmbitos
+        statistics: Atividade
+        user_groups: Grupos
+      user_group:
+        csv_verify:
+          invalid: Ocorreu um problema ao ler o ficheiro CSV.
+        reject:
+          invalid: Ocorreu um problema ao rejeitar este grupo.
+        verify:
+          invalid: Ocorreu um problema ao verificar este grupo.
+      user_groups:
+        index:
+          state:
+            pending: Pendente
+            rejected: Rejeitado
+            verified: Verificado
+          verify_via_csv: Verificar via CSV
+      user_groups_csv_verifications:
+        new:
+          explanation: Envie o seu ficheiro CSV. Deve ter os e-mails oficiais dos grupos na sua organização na primeira coluna do ficheiro, sem cabeçalhos. Somente grupos que confirmaram os seus e-mails e que tenham um e-mail a aparecer no arquivo CSV serão validados.
+          title: Envie o seu ficheiro CSV
+          upload: Envio
+      users:
+        create:
+          error: Ocorreu um problema ao convidar este(a) administrador(a).
+          success: Participante convidado corretamente.
+        destroy:
+          error: Ocorreu um problema ao tentar eliminar este(a) administrador(a).
+          success: O participante deixou de ser um administrador.
+        form:
+          email: E-mail
+          name: Nome
+          role: Função
+        new:
+          create: Convidar
+      users_statistics:
+        users_count:
+          admins: Administradores
+          last_day: Último dia
+          last_month: Último mês
+          last_week: Última semana
+          participants: Participantes
+    metrics:
+      blocked_users:
+        object: utilizadores bloqueados
+        title: Utilizadores bloqueados
+      reported_users:
+        object: utilizadores denunciados
+        title: Utilizadores denunciados
+      user_reports:
+        object: relatórios de utilizador
+        title: Relatórios de utilizador
+    moderations:
+      actions:
+        expand: Expandir
+        hidden: Ocultado
+        hide: Ocultar
+        not_hidden: Não oculto
+        title: Ações
+        unhide: Mostrar
+        unreport: Unreport
+      admin:
+        reportable:
+          hide:
+            invalid: Ocorreu um problema ao ocultar o recurso.
+            success: Recurso ocultado corretamente.
+          unhide:
+            invalid: Ocorreu um problema ao mostrar o recurso.
+            success: Recurso mostrado com sucesso.
+          unreport:
+            invalid: Ocorreu um problema não relatando o recurso.
+            success: O recurso não foi relatado com sucesso.
+      models:
+        moderation:
+          fields:
+            hidden_at: Escondido em
+            participatory_space: Espaço participativo
+            reportable_type: Tipo
+            reported_content_url: URL de conteúdo reportado
+            visit_url: URL de visita
+        report:
+          fields:
+            details: Dados relativos ao motivo
+            locale: Língua
+            reason: Motivo
+  errors:
+    messages:
+      invalid_json: JSON inválido
+  layouts:
+    decidim:
+      admin:
+        global_moderations:
+          title: Moderações globais

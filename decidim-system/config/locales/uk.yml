@@ -1,0 +1,73 @@
+uk:
+  activemodel:
+    attributes:
+      oauth_application:
+        organization_logo: Логотип організації (квадрат)
+        organization_url: Адреса сайту організації
+        redirect_uri: URI перенаправлення
+    errors:
+      models:
+        oauth_application:
+          attributes:
+            redirect_uri:
+              must_be_ssl: URI перенаправлення має бути SSL URI
+  decidim:
+    system:
+      actions:
+        confirm_destroy: Ви впевнені, що хочете видалити це?
+        destroy: Видалити
+        edit: Редагувати
+        save: Зберегти
+        title: Дії
+      admins:
+        create:
+          error: При спробі додати нового адміністратора сталася помилка.
+        edit:
+          title: Редагувати адміністратора
+          update: Оновити
+        index:
+          title: Адміністратори
+        new:
+          create: Додати
+          title: Додати адміністратора
+        update:
+          error: При спробі оновити цього адміністратора сталася помилка.
+      default_pages:
+        placeholders:
+          content: Будь ласка, додайте змістовний вміст на статичну сторінку %{page} на приладній дошці адміністратора.
+          title: Назва за замовчуванням для %{page}
+      menu:
+        admins: Адміністратори
+        dashboard: Приладна дошка
+        organizations: Організації
+      models:
+        admin:
+          fields:
+            created_at: 'Додано:'
+            email: Адреса електронної пошти
+          validations:
+            email_uniqueness: вже є інший адміністратор з такою ж адресою електронної пошти
+        organization:
+          actions:
+            save_and_invite: Додати організацію та запросити адміністратора
+          fields:
+            created_at: 'Додано:'
+            name: Ім'я
+      organizations:
+        create:
+          error: При спробі додати нову організацію сталася помилка.
+        edit:
+          secondary_hosts_hint: Введіть кожен з них в новому рядку
+        index:
+          title: Організації
+        new:
+          title: Додати організацію
+        update:
+          error: При спробі оновити цю організацію сталася помилка.
+          success: Організацію успішно оновлено.
+      shared:
+        notices:
+          no_organization_warning_html: Насамперед ви повинні додати організацію. Обов'язково прочитайте %{guide}, перш ніж продовжити.
+          our_getting_started_guide: наш посібник для початківців
+      titles:
+        dashboard: Приладна дошка

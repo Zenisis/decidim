@@ -1,0 +1,97 @@
+fr-CA:
+  activemodel:
+    attributes:
+      post:
+        body: Corps du texte
+        decidim_author_id: Auteur
+        published_at: Date de publication
+        title: Titre
+    models:
+      decidim/blogs/create_post_event: Nouvel article
+  activerecord:
+    models:
+      decidim/blogs/post:
+        one: Article
+        other: Articles
+  decidim:
+    blogs:
+      actions:
+        author_id: Créer un article comme
+        confirm_destroy: Êtes-vous certain de vouloir supprimer cet article ?
+        destroy: Supprimer
+        edit: Modifier
+        new: Nouvel article
+        title: Actions
+      admin:
+        posts:
+          create:
+            invalid: Un problème est survenu lors de la création de cet article.
+            success: Article créé avec succès.
+          destroy:
+            success: Article supprimé avec succès.
+          edit:
+            save: Mettre à jour
+            title: Éditer le post
+          index:
+            not_published_yet: Pas encore publié.
+            title: Articles
+          new:
+            create: Créer
+            title: Créer un article
+          update:
+            invalid: Il y a eu des erreurs lors de l'enregistrement de l'article.
+            success: Article enregistré avec succès.
+      admin_log:
+        post:
+          create: "%{user_name} a créé l'article de blog %{resource_name} dans %{space_name}"
+          delete: "%{user_name} a supprimé l'article de blog %{resource_name} dans %{space_name}"
+          update: "%{user_name} a mis à jour l'article de blog %{resource_name} dans %{space_name}"
+      content_blocks:
+        highlighted_posts:
+          last_published: Dernière publication
+          name: Articles
+          see_all: Voir tous les articles
+      last_activity:
+        new_post: 'Nouvel article :'
+      models:
+        post:
+          fields:
+            author: Auteur
+            body: Corps du texte
+            official_blog_post: Article officiel
+            published_at: Date de publication
+            title: Titre
+      posts:
+        index:
+          count:
+            one: "%{count} article"
+            other: "%{count} articles"
+          empty: Il n'y a pas encore d'articles.
+    components:
+      blogs:
+        actions:
+          comment: Commenter
+          create: Créer
+          destroy: Supprimer
+          endorse: Soutenir
+          update: Mettre à jour
+        name: Actualités
+        settings:
+          global:
+            announcement: Annonce
+            comments_enabled: Activer le module de commentaire
+            comments_max_length: Longueur max des commentaires (laisser 0 pour la valeur par défaut)
+          step:
+            announcement: Annonce
+            comments_blocked: Commentaires désactivés
+            endorsements_blocked: Soutiens bloqués
+            endorsements_enabled: Soutiens activés
+    events:
+      blogs:
+        post_created:
+          email_intro: L'article "%{resource_title}" a été publié dans "%{participatory_space_title}" que vous suivez.
+          email_outro: Vous avez reçu cette notification parce que vous suivez "%{participatory_space_title}". Vous pouvez le retirer du lien précédent.
+          email_subject: Nouvel article publié dans %{participatory_space_title}
+          notification_title: L'article <a href="%{resource_path}">%{resource_title}</a> a été publié dans %{participatory_space_title}
+    statistics:
+      posts_count: Publications

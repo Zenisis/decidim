@@ -1,0 +1,43 @@
+<%= decidim_modal id: "budget-confirm", class: "verification-modal" do %>
+  <div data-dialog-container>
+    <%= icon "check-double-line" %>
+    <h3 class="h3" id="dialog-title-budget-confirm" data-dialog-title>
+      <%= t("title", scope: "decidim.budgets.projects.budget_confirm") %>
+    </h3>
+    <div class="my-8" id="budget-confirm-current-order">
+      <% if current_order.present? %>
+        <h4 class="h4 mb-4"><%= translated_attribute(budget.title) %></h4>
+        <p class="mb-4"><%= t(".description") %></p>
+        <div class="card">
+          <% current_order.projects.each do |project| %>
+            <div class="card__list card__list__project-voted">
+              <div class="card__list__content">
+                <div class="card__list-text">
+                  <%= link_to translated_attribute(project.title), resource_locator([budget, project]).path, class: "card__list-title" %>
+                </div>
+              </div>
+              <div class="budget__card__list-project">
+                <span>
+                  <%= budget_to_currency project.budget_amount %>
+                </span>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div data-dialog-actions>
+
+    <button class="button button__sm md:button__lg button__transparent-secondary" data-dialog-close="budget-confirm">
+      <%= t("cancel", scope: "decidim.budgets.projects.budget_confirm") %>
+    </button>
+
+    <%= button_to checkout_budget_order_path(budget), class: "button button__sm md:button__lg button__secondary", data: { disable: true } do %>
+      <span>
+        <%= t("confirm", scope: "decidim.budgets.projects.budget_confirm") %>
+      </span>
+      <%= icon "arrow-right-line", class: "fill-current" %>
+    <% end %>
+  </div>
+<% end %>

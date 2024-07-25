@@ -1,0 +1,199 @@
+gl:
+  activemodel:
+    attributes:
+      config:
+        available_methods: Métodos dispoñibles
+        offline: Desconectado
+        offline_explanation: Instrucións para a verificación sen conexión
+        online: En liña
+      id_document_information:
+        document_number: Número de documento (con letra)
+        document_type: Tipo de documento
+      id_document_upload:
+        document_number: Número de documento (con letra)
+        document_type: Tipo do teu documento
+        user: Usuario
+        verification_attachment: Copia escaneada do teu documento
+      offline_confirmation:
+        email: Correo electrónico do usuario
+      postal_letter_address:
+        full_address: Enderezo completo
+      postal_letter_confirmation:
+        verification_code: Código de verificación
+      postal_letter_postage:
+        full_address: Enderezo completo
+        verification_code: Código de verificación
+  decidim:
+    admin:
+      menu:
+        authorization_revocation:
+          before_date_info: Útil se o proceso ten comezado e queres rexeitar os permisos do proceso anterior.
+          button: Rexeitar todo
+          button_before: Rexeitar antes da data
+          destroy_ok: Todas as autorizacións coincidentes foron revogadas con éxito.
+          info: Hai un total de %{count} participantes verificados.
+          title: Revogación de autorización
+        authorization_workflows: Autorizacións
+    admin_log:
+      organization:
+        update_id_documents_config: "%{user_name} actualizou a configuración de Documentos de identidade"
+      user:
+        grant_id_documents_offline_verification: "%{user_name} verificou %{resource_name} usando unha autorización fora de liña de Documentos de identidade"
+    authorization_handlers:
+      admin:
+        id_documents:
+          help:
+            - Os usuarios encherán a súa información de identidade e cargarán unha copia do seu documento.
+            - Enche a información presente na imaxe cargada.
+            - A información debe coincidir co que o usuario enche.
+            - 
+        postal_letter:
+          help:
+            - Os usuarios solicitan que se envíe un código de verificación ao seu enderezo.
+            - Envía a carta ao seu enderezo co código de verificación.
+            - Marca a letra como enviada.
+            - Despois de marcar a carta como enviada, o participante poderá inserir o código e ser verificado.
+      csv_census:
+        name: Censo da organización
+      direct: Directo
+      help: Axuda
+      id_documents:
+        name: Documentos de identidade
+      multistep: Paso múltiple
+      name: Nome
+      postal_letter:
+        name: Código por carta postal
+    verifications:
+      authorizations:
+        authorization_metadata:
+          info: 'Estes son os datos da verificación actual:'
+          no_data_stored: Sen datos almacenados.
+        create:
+          error: Produciuse un erro ao crear a autorización.
+          unconfirmed: Debes confirmar o teu correo electrónico para autorizarte.
+        destroy:
+          error: Produciuse un problema ao eliminar a autorización.
+        first_login:
+          actions:
+            another_dummy_authorization_handler: Verifique contra outro exemplo de controlador de autorización
+            csv_census: Comprobe contra o censo da organización
+            dummy_authorization_handler: Verifique contra o controlador de autorización de exemplo
+            dummy_authorization_workflow: Verifique contra o fluxo de traballo de autorización de exemplo
+            id_documents: Verifique a carga do documento de identidade
+            postal_letter: Verifique a recepción dun código de verificación a través do correo postal
+            sms: Verifícate ao recibir un SMS co código de verificación
+          title: Verifica a túa identidade
+          verify_with_these_options: 'Estas son as opcións dispoñibles para verificar a súa identidade:'
+        index:
+          expired_verification: Verificación caducada
+          pending_verification: Verificación pendente
+          show_renew_info: Premer para anovar a verificación
+        new:
+          authorize: Enviar
+          authorize_with: Verifica con %{authorizer}
+        renew_modal:
+          cancel: Cancelar
+          continue: Continuar
+          title: Anovar verificación
+        skip_verification: Podes ignorar isto por agora e %{link}
+        start_exploring: comezar a explorar
+      csv_census:
+        admin:
+          census:
+            create:
+              error: Produciuse un erro ao importar o censo.
+          destroy:
+            title: Elimine todos os datos do censo
+          index:
+            empty: Non hai datos censuais. Usa o seguinte formulario para importalo usando un ficheiro CSV.
+            title: Datos censuais actuais
+          instructions:
+            body: Para iso debes ingresar na administración do sistema e engadir as autorizacións csv_census á organización
+            title: Precisas de activar o censo CSV desta organización
+          new:
+            file: "Ficheiro .csv con datos de correo electrónico"
+            info: 'Ten de ser un ficheiro en formato CSV cunha soa columna co correo electrónico:'
+            submit: Cargar ficheiro
+            title: Suba un novo censo
+        authorizations:
+          new:
+            error: Non puidemos verificar a túa conta ou non estás no censo da organización.
+            success: Verificouse correctamente a túa conta.
+      dummy_authorization:
+        extra_explanation:
+          postal_codes:
+            one: A participación está restrinxida aos usuarios co código postal %{postal_codes}.
+            other: 'A participación está restrinxida aos usuarios que conteñan algún dos seguintes códigos postais: %{postal_codes}.'
+          scope: A participación está restrinxida aos participantes no ámbito de %{scope_name}.
+          user_postal_codes:
+            one: A participación está restrinxida a participantes co código postal %{postal_codes}, e o teu é %{user_postal_code}.
+            other: 'A participación está restrinxida a calquera dos seguintes códigos postais: %{postal_codes}. O teu é %{user_postal_code}.'
+          user_scope: A participación está restrinxida aos participantes do ámbito %{scope_name}, e o teu é %{user_scope_name}.
+      id_documents:
+        admin:
+          config:
+            edit:
+              title: Configuración de documentos de identidade
+              update: Actualización
+            update:
+              error: Produciuse un erro ao actualizar a configuración.
+          confirmations:
+            new:
+              introduce_user_data: Introduce os datos na imaxe
+              reject: Rexeitar
+              verify: Verifique
+          offline_confirmations:
+            new:
+              cancel: Cancelar
+              introduce_user_data: Introduce o correo electrónico do usuario e os datos do documento
+              verify: Verifique
+          pending_authorizations:
+            index:
+              config: Configuración
+              offline_verification: Verificación sen conexión
+              title: Verificacións pendentes
+              verification_number: 'Verificación # %{n}'
+        authorizations:
+          choose:
+            choose_a_type: 'Selecciona como queres verificar:'
+            offline: Desconectado
+            online: En liña
+            title: Verifica a túa conta usando o teu documento de identidade
+          edit:
+            offline: Use a verificación sen conexión
+            online: Use a verificación en liña
+            send: Solicite a verificación de novo
+          new:
+            send: Solicitar verificación
+            title: Carga o documento de identidade
+        passport: Pasaporte
+      postal_letter:
+        admin:
+          pending_authorizations:
+            index:
+              address: Enderezo
+              letter_sent_at: Carta enviada a
+              mark_as_sent: Marcar como enviado
+              not_yet_sent: Aínda non enviado
+              title: Verificacións en curso
+              username: Nome de usuario
+              verification_code: Código de verificación
+        authorizations:
+          edit:
+            send: Confirmar
+          new:
+            send: Envíame unha carta
+            title: Solicita o teu código de verificación
+      sms:
+        authorizations:
+          edit:
+            confirm_destroy: '¿Estás seguro de que queres restablecer o código de verificación?'
+            destroy: Restablecer o código de verificación
+            send: Confirmar
+            title: Introduce o código de verificación que recibiches
+          new:
+            send: Envíame un SMS
+            title: Solicita o teu código de verificación
+  errors:
+    messages:
+      uppercase_only_letters_numbers: deben ser maiúsculas e só conteñen letras e / ou números

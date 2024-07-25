@@ -1,0 +1,14 @@
+<label for="proposals_list">
+  <%= t("name", scope: "decidim.components.proposals") %>
+
+  <select id="proposals_list"
+          placeholder="<%= t("proposals_picker.choose_proposals", scope: "decidim.proposals") %>"
+          data-tm-name="<%= form_name %>"
+          data-tm-items="<%= selected_ids.to_json %>"
+          data-tm-no-results="<%= t("proposals_picker.no_proposals", scope: "decidim.proposals") %>"
+          class="mt-4" multiple>
+    <% decorated_proposals do |proposal| %>
+      <option value="<%= proposal.id %>"><%= proposal.id_and_title(html_escape: true) %> (<%= proposal.reference %>)</option>
+    <% end %>
+  </select>
+</label>

@@ -1,0 +1,24 @@
+<section>
+  <div class="meeting__agenda-title">
+    <%= icon "bill-line" %>
+    <h2 class="h4"><%= t("meeting_minutes", scope: "decidim.meetings.meetings.show") %></h2>
+  </div>
+
+  <div class="meeting__agenda-item">
+    <div class="meeting__agenda-item__description editor-content mb-4"><%= render_meeting_sanitize_field(meeting, :closing_report) %></div>
+
+    <% if meeting.video_url.presence %>
+      <div class="flex items-center gap-2 mt-2">
+        <%= icon "video-line", class: "w-4 h-4 text-tertiary fill-current" %>
+        <%= link_to decidim_url_escape(meeting.video_url), decidim_html_escape(meeting.video_url), target: "_blank", rel: "noopener" %>
+      </div>
+      <% end %>
+
+    <% if meeting.audio_url.presence %>
+      <div class="flex items-center gap-2 mt-2">
+        <%= icon "headphone-line", class: "w-4 h-4 text-tertiary fill-current" %>
+        <%= link_to decidim_url_escape(meeting.audio_url), decidim_html_escape(meeting.audio_url), target: "_blank", rel: "noopener" %>
+      </div>
+    <% end %>
+  </div>
+</section>

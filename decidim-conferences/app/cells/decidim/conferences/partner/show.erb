@@ -1,0 +1,11 @@
+<% if model.link.present? %>
+  <%= link_to model.link, target: "_blank", class: "conference__grid-item", data: { "external-link": "text-only" } do %>
+    <%= render :image %>
+    <%= render :text %>
+  <% end %>
+<% else %>
+  <%= content_tag :div, nil, class: "conference__grid-item" do %>
+    <%= render :image %>
+    <%= render :text %>
+  <% end %>
+<% end %>

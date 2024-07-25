@@ -1,0 +1,164 @@
+id:
+  activemodel:
+    attributes:
+      config:
+        available_methods: Metode yang tersedia
+        offline: Offline
+        offline_explanation: Petunjuk untuk verifikasi offline
+        online: On line
+      id_document_information:
+        document_number: Nomor dokumen (dengan huruf)
+        document_type: Jenis dokumen
+      id_document_upload:
+        document_number: Nomor dokumen (dengan huruf)
+        document_type: Jenis dokumen Anda
+        user: Pengguna
+        verification_attachment: Salinan hasil pindaian dokumen Anda
+      offline_confirmation:
+        email: Email pengguna
+      postal_letter_address:
+        full_address: Alamat lengkap
+      postal_letter_confirmation:
+        verification_code: Kode verifikasi
+      postal_letter_postage:
+        full_address: Alamat lengkap
+        verification_code: Kode verifikasi
+  decidim:
+    authorization_handlers:
+      admin:
+        id_documents:
+          help:
+            - Pengguna mengisi informasi identitas mereka dan mengunggah salinan dokumen mereka.
+            - Anda mengisi informasi yang ada di gambar yang diunggah.
+            - Informasi harus sesuai dengan apa pun yang diisi oleh pengguna.
+            - 
+        postal_letter:
+          help:
+            - Pengguna meminta kode verifikasi untuk dikirim ke alamat mereka.
+            - Anda mengirim surat ke alamat mereka dengan kode verifikasi.
+            - Anda menandai surat yang dikirim.
+            - Setelah Anda menandai surat yang dikirim, pengguna akan dapat memperkenalkan kode dan diverifikasi.
+      csv_census:
+        name: Sensus organisasi
+      direct: Langsung
+      help: Membantu
+      id_documents:
+        name: Dokumen identitas
+      multistep: Multi-Langkah
+      name: Nama
+      postal_letter:
+        name: Kode melalui surat pos
+    verifications:
+      authorizations:
+        create:
+          error: Ada kesalahan saat membuat otorisasi.
+          unconfirmed: Anda perlu mengkonfirmasi email Anda untuk mengotorisasi diri Anda sendiri.
+        first_login:
+          actions:
+            another_dummy_authorization_handler: Verifikasi terhadap contoh lain dari pengendali otorisasi
+            csv_census: Verifikasi terhadap sensus organisasi
+            dummy_authorization_handler: Verifikasi terhadap contoh handler otorisasi
+            dummy_authorization_workflow: Verifikasi terhadap contoh alur kerja otorisasi
+            id_documents: Dapatkan verifikasi dengan mengunggah dokumen identitas Anda
+            postal_letter: Dapatkan verifikasi dengan menerima kode verifikasi melalui surat pos
+          title: Verifikasi identitas Anda
+          verify_with_these_options: 'Ini adalah opsi yang tersedia untuk memverifikasi identitas Anda:'
+        new:
+          authorize: Kirim
+          authorize_with: Verifikasi dengan %{authorizer}
+        renew_modal:
+          cancel: Membatalkan
+        skip_verification: Anda dapat melewati ini untuk sekarang dan %{link}
+        start_exploring: mulai menjelajah
+      csv_census:
+        admin:
+          census:
+            create:
+              error: Terjadi kesalahan saat mengimpor sensus.
+          destroy:
+            title: Hapus semua data sensus
+          index:
+            empty: Tidak ada data sensus. Gunakan formulir di bawah ini untuk mengimpornya menggunakan file CSV.
+            title: Data sensus saat ini
+          instructions:
+            body: Untuk melakukan ini, Anda harus memasukkan administrasi sistem dan menambahkan otorisasi csv_census ke organisasi
+          new:
+            file: "File .csv dengan data email"
+            submit: Unggah data
+            title: Unggah sensus baru
+        authorizations:
+          new:
+            error: Kami tidak dapat memverifikasi akun Anda atau Anda tidak ada dalam sensus organisasi.
+            success: Akun Anda telah berhasil diverifikasi.
+      dummy_authorization:
+        extra_explanation:
+          postal_codes:
+            other: 'Partisipasi dibatasi untuk pengguna dengan salah satu kode pos berikut: %{postal_codes}.'
+      id_documents:
+        admin:
+          config:
+            edit:
+              title: Konfigurasi dokumen identitas
+              update: Memperbarui
+            update:
+              error: Terjadi kesalahan saat memperbarui konfigurasi.
+          confirmations:
+            new:
+              introduce_user_data: Perkenalkan data dalam gambar
+              reject: Menolak
+              verify: Memeriksa
+          offline_confirmations:
+            new:
+              cancel: Membatalkan
+              introduce_user_data: Perkenalkan email pengguna dan data dokumen
+              verify: Memeriksa
+          pending_authorizations:
+            index:
+              config: Config
+              offline_verification: Verifikasi offline
+              title: Verifikasi online yang tertunda
+              verification_number: 'Verifikasi #%{n}'
+        authorizations:
+          choose:
+            choose_a_type: 'Silakan pilih bagaimana Anda ingin diverifikasi:'
+            offline: Offline
+            online: On line
+            title: Verifikasi diri Anda menggunakan dokumen identitas Anda
+          edit:
+            offline: Gunakan verifikasi offline
+            online: Gunakan verifikasi online
+            send: Meminta verifikasi lagi
+          new:
+            send: Meminta verifikasi
+            title: Unggah dokumen identitas Anda
+        passport: Paspor
+      postal_letter:
+        admin:
+          pending_authorizations:
+            index:
+              address: Alamat
+              letter_sent_at: Surat dikirim pada
+              mark_as_sent: Tandai sebagai terkirim
+              not_yet_sent: belum dikirim
+              title: Verifikasi berkelanjutan
+              username: Nama pengguna
+              verification_code: Kode verifikasi
+        authorizations:
+          edit:
+            send: Memastikan
+          new:
+            send: Kirimkan saya surat
+            title: Minta kode verifikasi Anda
+      sms:
+        authorizations:
+          edit:
+            confirm_destroy: Anda yakin ingin mengatur ulang kode verifikasi?
+            destroy: Setel ulang kode verifikasi
+            send: Memastikan
+            title: Perkenalkan kode verifikasi yang Anda terima
+          new:
+            send: Kirimi saya SMS
+            title: Minta kode verifikasi Anda
+  errors:
+    messages:
+      uppercase_only_letters_numbers: harus semuanya huruf besar dan hanya berisi huruf dan / atau angka

@@ -1,0 +1,175 @@
+is-IS:
+  activemodel:
+    attributes:
+      initiative:
+        decidim_user_group_id: Höfundur
+        description: Lýsing
+        scope_id: Umfang
+        signature_type_values:
+          any: Blandað
+        title: Titill
+      initiatives_committee_member:
+        user: Nefndarmaður
+      initiatives_type:
+        banner_image: Banner image
+        description: Lýsing
+        title: Titill
+      organization_data:
+        address: Heimilisfang
+        name: Heill heiti
+  decidim:
+    admin:
+      menu:
+        information: Upplýsingar
+        initiatives: Frumkvæði
+        initiatives_types: Frumgerð tegundir
+      models:
+        initiatives:
+          fields:
+            created_at: Búið til á
+            title: Frumkvæði
+        initiatives_type_scope:
+          fields:
+            scope: Umfang
+          name: Tegund frumkvæðis
+        initiatives_types:
+          fields:
+            created_at: Búið til á
+            title: Frumgerð tegundir
+          name: Frumgerðartegund
+      titles:
+        initiatives: Frumkvæði
+        initiatives_types: Frumgerð tegundir
+    initiatives:
+      admin:
+        answers:
+          info_initiative:
+            state: Ríki
+        committee_requests:
+          index:
+            approve: Samþykkja
+            confirm_revoke: Ertu viss?
+            revoke: Afturkalla
+            title: Nefndarmenn
+        initiatives:
+          edit:
+            accept: Samþykkja frumkvæði
+            confirm: Ertu viss?
+            discard: Fargaðu frumkvæði
+            reject: Hafna frumkvæði
+            send_to_technical_validation: Senda til tæknilegrar staðfestingar
+            update: Uppfæra
+          form:
+            title: Almennar upplýsingar
+          index:
+            actions_title: Aðgerð
+            preview: Preview
+            print: Prenta
+        initiatives_type_scopes:
+          edit:
+            title: Breyta frumgerð gerð umfang
+            update: Uppfæra
+          new:
+            create: Búa til
+            title: Búðu til frumkvæði gerðarsviðs
+        initiatives_types:
+          edit:
+            update: Uppfæra
+          initiative_type_scopes:
+            title: Umfang fyrir frumgerð gerð
+          new:
+            create: Búa til
+            title: Ný frumgerð gerð
+      admin_log:
+        initiative:
+          publish: "%{user_name} birt %{resource_name} frumkvæði"
+          send_to_technical_validation: "%{user_name} sendi %{resource_name} frumkvæði til tæknilegrar staðfestingar"
+          unpublish: "%{user_name} henti %{resource_name} frumkvæði"
+          update: "%{user_name} uppfært %{resource_name} frumkvæði"
+      admin_states:
+        created: Búið til
+        discarded: Fargað
+        validating: Tæknilegar staðfestingar
+      application_helper:
+        filter_state_values:
+          closed: Lokað
+          open: Opna
+      committee_requests:
+        new:
+          continue: Haltu áfram
+        spawn:
+          success: Beiðni þín hefur verið send til frumkvöðull höfundar.
+      create_initiative:
+        fill_data:
+          back: Til baka
+          continue: Haltu áfram
+          more_information: "(Meiri upplýsingar)"
+          select_scope: Veldu umfang
+        finish:
+          back: Til baka
+          back_to_initiatives: Aftur á frumkvæði
+          go_to_my_initiatives: Farið að verkefnum mínum
+          more_information: "(Meiri upplýsingar)"
+        previous_form:
+          back: Til baka
+          continue: Haltu áfram
+        promotal_committee:
+          more_information: "(Meiri upplýsingar)"
+        select_initiative_type:
+          back: Til baka
+          more_information: (Meiri upplýsingar)
+      events:
+        create_initiative_event:
+          email_intro: "%{author_name} %{author_nickname}, sem þú fylgist með, hefur búið til nýtt frumkvæði, athugaðu það og stuðlað að:"
+          email_outro: Þú hefur fengið þessa tilkynningu vegna þess að þú fylgist með %{author_nickname}. Þú getur hætt við að fá tilkynningar eftir fyrri tengilinn.
+          email_subject: Nýtt frumkvæði með %{author_nickname}
+          notification_title: <a href="%{resource_path}">%{resource_title}</a> frumkvöðull var búin til af <a href="%{author_path}">%{author_name} %{author_nickname}</a>.
+        endorse_initiative_event:
+          email_intro: "%{author_name} %{author_nickname}, sem þú ert að fylgja, hefur samþykkt eftirfarandi frumkvæði, kannski viltu stuðla að samtalinu:"
+          email_outro: Þú hefur fengið þessa tilkynningu vegna þess að þú fylgist með %{author_nickname}. Þú getur hætt við að fá tilkynningar eftir fyrri tengilinn.
+          email_subject: Initiative endorsed by %{author_nickname}
+          notification_title: <a href="%{resource_path}">%{resource_title}</a> frumkvæði var samþykkt með <a href="%{author_path}">%{author_name} %{author_nickname}</a>.
+      initiatives:
+        count:
+          title:
+            one: "%{count} frumkvæði"
+            other: "%{count} frumkvæði"
+        filters:
+          any: Einhver
+          author: Höfundur
+          myself: Verkefni mín
+          type: Gerð
+        index_header:
+          new_initiative: Nýtt frumkvæði
+        orders:
+          label: 'Raða aðgerðir með:'
+          most_commented: Flestir athugasemdir
+          random: Handahófi
+          recent: Síðast
+        print:
+          city: Borg
+        vote_cabin:
+          vote: Skráðu þig
+        votes_count:
+          count:
+            one: UNDIRSKRIFT
+            other: Undirritanir
+      initiatives_mailer:
+        initiative_link:
+          check_initiative_details: Þú getur séð frumkvæði upplýsingar
+          here: hér
+        more_information: Hér hefur þú meiri upplýsingar um frumkvöðlunarferlið.
+      states:
+        accepted: Samþykkt
+        expired: Útrunnið
+    menu:
+      initiatives: Frumkvæði
+  layouts:
+    decidim:
+      initiative_creation_header:
+        fill_data: Búa til
+        finish: Klára
+        select_initiative_type: Veldu
+      initiatives:
+        no_initiatives_yet:
+          no_initiatives_yet: Engar aðgerðir ennþá!

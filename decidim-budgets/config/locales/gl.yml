@@ -1,0 +1,213 @@
+gl:
+  activemodel:
+    attributes:
+      budget:
+        decidim_scope_id: Ámbito
+        description: Descripción
+        title: Título
+        total_budget: Orzamento total
+        weight: Orde de posición
+      project:
+        budget_amount: Importe do orzamento
+        decidim_category_id: Categoría
+        decidim_scope_id: Alcance
+        description: Descrición
+        proposal_ids: Propostas relacionadas
+        title: Título
+  activerecord:
+    models:
+      decidim/budgets/project:
+        one: Proxecto
+        other: Proxectos
+  decidim:
+    admin:
+      filters:
+        projects:
+          category_id_eq:
+            label: Categoría
+          scope_id_eq:
+            label: Ámbito
+          selected_at_null:
+            label: Seleccionado
+            values:
+              'false': Seleccionado para implementación
+              'true': Sen seleccionar para implementación
+    budgets:
+      actions:
+        attachment_collections: Carpetas
+        attachments: Anexos
+        confirm_destroy: Estás seguro de que queres eliminar este proxecto?
+        destroy: Eliminar
+        edit: Editar
+        edit_projects: Xestionar proxectos
+        import: Importa propostas a proxectos
+        preview: Vista previa
+        title: Accións
+      admin:
+        budgets:
+          edit:
+            title: Editar orzamento
+            update: Actualizar orzamento
+          index:
+            pending_orders: Votos pendentes
+            title: Orzamentos
+            users_with_pending_orders: Usuarios con votos pendentes
+          new:
+            create: Crear orzamento
+            title: Novo orzamento
+        exports:
+          projects: Proxectos
+        models:
+          budget:
+            name: Orzamento
+          project:
+            name: Proxecto
+        projects:
+          edit:
+            title: Editar proxecto
+            update: Actualización
+          index:
+            finished_orders: Votos rematados
+            pending_orders: Votos pendentes
+            selected: Seleccionado
+            title: Proxectos
+          new:
+            create: Crear
+            title: Novo proxecto
+        proposals_imports:
+          new:
+            create: Importa propostas a proxectos
+            no_components: Non existen outros compoñentes de proposta neste espazo participativo para importar as propostas en proxectos.
+            select_component: Selecciona un compoñente
+        reminders:
+          orders:
+            description: Os usuarios recibirán un correo coas ligazóns aos orzamentos onde teñen ordes pendentes.
+            title:
+              one: Estás a punto de enviar un correo recordatorio a %{count} usuario
+              other: Estás a punto de enviar un correo recordatorio a %{count} usuarios
+      admin_log:
+        project:
+          create: "%{user_name} creou o proxecto %{resource_name} no espazo %{space_name}"
+          delete: "%{user_name} eliminou o %{resource_name} proxecto no espazo %{space_name}"
+          update: "%{user_name} actualizou o proxecto %{resource_name} no espazo %{space_name}"
+      budget_information_modal:
+        back_to: Volver a %{component_name}
+        close_modal: Pechar modal
+        continue: Continuar
+      budgets_list:
+        cancel_order:
+          more_than_one: eliminar o teu voto de %{name} e comezar de novo
+          only_one: eliminar o teu voto e comezar de novo.
+        highlighted_cta: Votar en %{name}
+        progress: Finalizar votación
+        show: Ver proxectos
+        vote: Votar
+      models:
+        budget:
+          fields:
+            name: Nome
+            projects_count: Número de proxectos
+            total_budget: Orzamento total
+        project:
+          fields:
+            category: Categoría
+            id: ID
+            title: Título
+      order_summary_mailer:
+        order_summary:
+          selected_projects: 'Os proxectos que seleccionaches son:'
+      projects:
+        budget_confirm:
+          cancel: Cancelar
+          confirm: Confirmar
+          description: Estes son os proxectos que escolleu para formar parte do orzamento.
+          title: Confirmar voto
+        budget_excess:
+          budget_excess:
+            title: Orzamento máximo excedido
+          ok: Ok
+        budget_summary:
+          are_you_sure: Estás certo de querer cancelar o teu voto?
+          cancel_order: elimine o seu voto e volva comezar
+          checked_out:
+            title: A votación do orzamento completada
+        count:
+          projects_count:
+            one: 1 proxecto
+            other: "%{count} proxectos"
+        exit_modal:
+          cancel: Volver á votación
+          exit: Saír da votación
+          message: O teu voto non foi rexistrado xa que aínda non completaches o proceso de votación. Estás certo/a de querer saír da votación?
+          title: Aínda non votaches
+        filters:
+          category: Categoría
+          scope: Alcance
+          search: Busca
+          status: Estado
+          status_values:
+            all: Todos
+            not_selected: Non seleccionado
+            selected: Seleccionado
+        orders:
+          highest_cost: Maior custo
+          label: Ordenar proxectos por
+          lowest_cost: Menor custo
+          most_voted: Máis votado
+          random: Orde ao chou
+          selected: Seleccionado
+        project:
+          selected: Seleccionado
+          votes:
+            one: voto
+            other: votos
+        project_budget_button:
+          add: Engadir ao teu voto
+          added: Engadido ao teu voto
+        projects_for: Proxectos para %{name}
+        show:
+          budget: Orzamento
+      vote_reminder_mailer:
+        vote_reminder:
+          email_outro: Por favor, lembra completar a voto. Para votar, tes que seleccionar a proposta ou propostas para as que desexas votar e despois confirmar o teu voto premendo o botón "Votat".
+    components:
+      budgets:
+        actions:
+          vote: Vota
+        name: Orzamentos
+        settings:
+          global:
+            announcement: Anuncio
+            comments_enabled: Comentarios habilitados
+            comments_max_length: Lonxitude máxima dos comentarios (0 para valor predefinido)
+            projects_per_page: Proxectos por páxina
+            scope_id: Ámbito
+            scopes_enabled: Ámbitos habilitados
+            title: Título
+            total_budget: Orzamento total
+            vote_minimum_budget_projects_number: Número mínimo de proxectos a votar
+            vote_threshold_percent: Porcentaxe de límite de voto
+          step:
+            announcement: Anuncio
+            comments_blocked: Comentarios bloqueados
+            list_heading: Título da listaxe
+            more_information_modal: Modal de "Máis información"
+            show_votes: Mostrar votos
+            title: Título
+            votes: Votación
+            votes_choices:
+              disabled: Votación deshabilitada
+              enabled: Votación habilitada
+              finished: Votación finalizada
+    events:
+      budgets:
+        budget_published:
+          notification_title: O orzamento <a href="%{resource_path}">%{resource_title}</a> para %{participatory_space_title} xa está aberto.
+    resource_links:
+      included_proposals:
+        project_proposal: Propostas incluídas neste proxecto
+    statistics:
+      orders_count: Apoios
+      projects_count: Proxectos
+  index:
+    confirmed_orders_count: Reconto de votos

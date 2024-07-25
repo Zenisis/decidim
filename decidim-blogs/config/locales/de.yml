@@ -1,0 +1,97 @@
+de:
+  activemodel:
+    attributes:
+      post:
+        body: Haupttext
+        decidim_author_id: Autor*in
+        published_at: Veröffentlicht am
+        title: Titel
+    models:
+      decidim/blogs/create_post_event: Neuer Blogeintrag
+  activerecord:
+    models:
+      decidim/blogs/post:
+        one: Post
+        other: Beiträge
+  decidim:
+    blogs:
+      actions:
+        author_id: Beitrag erstellen als
+        confirm_destroy: Möchten Sie diesen Beitrag wirklich löschen?
+        destroy: Löschen
+        edit: Bearbeiten
+        new: Neuer Beitrag
+        title: Aktionen
+      admin:
+        posts:
+          create:
+            invalid: Beim Erstellen dieses Beitrags ist ein Problem aufgetreten.
+            success: Beitrag wurde erfolgreich erstellt.
+          destroy:
+            success: Beitrag wurde erfolgreich gelöscht.
+          edit:
+            save: Aktualisieren
+            title: Post bearbeiten
+          index:
+            not_published_yet: Noch nicht veröffentlicht.
+            title: Beiträge
+          new:
+            create: Erstellen
+            title: Post erstellen
+          update:
+            invalid: Beim Speichern des Posts sind Fehler aufgetreten.
+            success: Beitrag wurde erfolgreich gespeichert.
+      admin_log:
+        post:
+          create: "%{user_name} hat den Blogpost %{resource_name} in %{space_name} erstellt"
+          delete: "%{user_name} hat den Blogpost %{resource_name} in %{space_name} gelöscht"
+          update: "%{user_name} hat den Blogpost %{resource_name} in %{space_name} aktualisiert"
+      content_blocks:
+        highlighted_posts:
+          last_published: Zuletzt veröffentlicht
+          name: Beiträge
+          see_all: Alle Beiträge ansehen
+      last_activity:
+        new_post: 'Neuer Beitrag:'
+      models:
+        post:
+          fields:
+            author: Autor
+            body: Haupttext
+            official_blog_post: Offizieller Post
+            published_at: Veröffentlicht am
+            title: Titel
+      posts:
+        index:
+          count:
+            one: "%{count} Beitrag"
+            other: "%{count} Beiträge"
+          empty: Es sind noch keine Beiträge vorhanden.
+    components:
+      blogs:
+        actions:
+          comment: Kommentieren
+          create: Erstellen
+          destroy: Löschen
+          endorse: Unterstützen
+          update: Aktualisieren
+        name: Blog
+        settings:
+          global:
+            announcement: Ankündigung
+            comments_enabled: Kommentare aktiviert
+            comments_max_length: Maximale Länge der Kommentare (0 für Standardwert)
+          step:
+            announcement: Ankündigung
+            comments_blocked: Kommentare blockiert
+            endorsements_blocked: Unterstützung deaktiviert
+            endorsements_enabled: Unterstützung aktiviert
+    events:
+      blogs:
+        post_created:
+          email_intro: Der Beitrag "%{resource_title}" wurde in "%{participatory_space_title}" veröffentlicht, dem Sie folgen.
+          email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie "%{participatory_space_title}" folgen. Falls Sie keine solchen Benachrichtigungen mehr erhalten möchten, besuchen Sie den obigen Link.
+          email_subject: Neuer Beitrag in %{participatory_space_title}
+          notification_title: Der Beitrag <a href="%{resource_path}">%{resource_title}</a> wurde in %{participatory_space_title} veröffentlicht
+    statistics:
+      posts_count: Beiträge

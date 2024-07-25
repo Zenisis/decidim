@@ -1,0 +1,114 @@
+lv:
+  activemodel:
+    attributes:
+      project:
+        decidim_category_id: Kategorija
+        decidim_scope_id: Darbības tvērums
+        description: Apraksts
+        proposal_ids: Saistītie priekšlikumi
+        title: Nosaukums
+  activerecord:
+    models:
+      decidim/budgets/project:
+        zero: Projekti
+        one: Projekts
+        other: Projekti
+  decidim:
+    budgets:
+      actions:
+        attachment_collections: Mapes
+        attachments: Pielikumi
+        confirm_destroy: Vai tiešām vēlaties dzēst šo projektu?
+        destroy: Dzēst
+        edit: Labot
+        import: Importēt priekšlikumus projektos
+        preview: Priekšskatīt
+        title: Darbības
+      admin:
+        models:
+          project:
+            name: Projekts
+        projects:
+          edit:
+            title: Rediģēt projektu
+            update: Atjaunināt
+          index:
+            finished_orders: Pabeigtie balsojumi
+            pending_orders: Nepabeigtie balsojumi
+            title: Projekti
+          new:
+            create: Izveidot
+            title: Jauns projekts
+        proposals_imports:
+          new:
+            create: Importēt priekšlikumus projektos
+            no_components: Šajā līdzdalības telpā nav citu priekšlikumu sastāvdaļu, lai priekšlikumus importētu projektos.
+            select_component: Lūdzu, izvēlieties komponentu
+      admin_log:
+        project:
+          create: "%{user_name} izveidoja projektu %{resource_name} telpā %{space_name}"
+          delete: "%{user_name} izdzēsa projektu %{resource_name} telpā %{space_name}"
+          update: "%{user_name} atjaunināja projektu %{resource_name} telpā %{space_name}"
+      models:
+        project:
+          fields:
+            title: Nosaukums
+      order_summary_mailer:
+        order_summary:
+          selected_projects: 'Jūsu izvēlētie projekti ir:'
+          subject: Jūs balsojāt par %{space_name} līdzdalības telpu
+      projects:
+        budget_confirm:
+          cancel: Atcelt
+          confirm: Apstiprināt
+          description: Šie ir projekti, kurus izvēlējāties iekļaut budžetā.
+          title: Apstipriniet balsojumu
+        budget_excess:
+          budget_excess:
+            title: Pārsniegts maksimālais budžets
+          ok: Labi
+        budget_summary:
+          are_you_sure: Vai tiešām vēlaties atcelt savu balsojumu?
+          cancel_order: izdzēsiet savu balsojumu un sāciet no jauna
+          checked_out:
+            title: Balsojums par budžetu pabeigts
+        count:
+          projects_count:
+            zero: "%{count} projekti"
+            one: 1 projekts
+            other: "%{count} projekti"
+        filters:
+          category: Kategorija
+          scope: Darbības tvērums
+          search: Meklēt
+        orders:
+          highest_cost: Lielākās izmaksas
+          label: Sakārtot projektus pēc
+          lowest_cost: Mazākās izmaksas
+          most_voted: Visvairāk balsu
+          random: Nejauša secība
+        show:
+          budget: Budžets
+    components:
+      budgets:
+        actions:
+          vote: Balsot
+        name: Budžeti
+        settings:
+          global:
+            announcement: Paziņojums
+            comments_enabled: Komentāri ir iespējoti
+            projects_per_page: Projekti vienā lappusē
+            total_budget: Kopējais budžets
+            vote_minimum_budget_projects_number: Minimālais projektu skaits, par kuriem jābalso
+            vote_rule_minimum_budget_projects_enabled: 'Iespējot noteikumu: minimālais projektu skaits, par kuriem jābalso'
+            vote_rule_threshold_percent_enabled: 'Iespējot noteikumu: minimālais budžeta procents'
+            vote_threshold_percent: Balsu slieksnis procentos
+          step:
+            announcement: Paziņojums
+            comments_blocked: Komentāri ir bloķēti
+            show_votes: Rādīt balsis
+            votes_choices:
+              enabled: Balsošana ir iespējota
+  index:
+    confirmed_orders_count: Balsu skaits

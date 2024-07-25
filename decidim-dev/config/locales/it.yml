@@ -1,0 +1,57 @@
+it:
+  activemodel:
+    attributes:
+      dummy_resource:
+        created_at: Creato il
+        decidim_scope_id: Obiettivi
+        field: Il mio campo
+        start_date: Data d'inizio
+        title: Titolo
+        translatable_text: Testo traducibile
+        updated_at: Aggiornato a
+  decidim:
+    components:
+      dummy:
+        settings:
+          global:
+            readonly_attribute: Attributi di sola lettura
+            test: Un test
+            test_choices:
+              a: Scelta A
+              b: Scelta B
+              c: Scelta C
+            test_options:
+              bar: Bar
+              baz: Baz
+              foo: foo
+          step:
+            endorsements_blocked: Appoggi bloccati
+            endorsements_enabled: Appoggi abilitati
+            readonly_step_attribute: Attributo di sola lettura
+            test_options:
+              bar: Bar
+              baz: Baz
+              foo: foo
+    dummy:
+      admin:
+        exports:
+          dummies: Risorse Fittizie
+    gamification:
+      badges:
+        test:
+          conditions:
+            - Utilizzare un ambiente di prova per decidim.
+          description: Gli utenti ottengono questo badge creando test.
+          description_another: Questo utente ha creato %{score} test.
+          description_own: Hai creato %{score} test.
+          name: Test
+          next_level_in: Crea altri %{score} test per raggiungere il livello successivo!
+          unearned_own: Non hai ancora creato alcun test.
+    resource_links:
+      test_link:
+        dummy_resource_dummy: Risorse fittizie correlate
+    statistics:
+      bar: Bar
+      dummies_count_high: Manichini in alto
+      dummies_count_medium: Manichino medio
+      foo: foo

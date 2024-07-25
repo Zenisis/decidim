@@ -1,0 +1,15 @@
+var $grid = $('#processes-grid');
+var $order_by_filters = $grid.find('.processes-grid-order-by');
+var $loading = $grid.find('.loading');
+
+$grid.find('.card-grid').html('<%= j(cell(
+                                      "decidim/participatory_processes/filtered_participatory_processes",
+                                      participatory_processes
+                                    ).show).strip.html_safe %>');
+$order_by_filters.html('<%= j(cell(
+                                "decidim/participatory_process_groups/process_filters",
+                                group,
+                                base_relation: participatory_processes
+                              ).show).strip.html_safe %>');
+window.initFoundation($order_by_filters);
+$loading.hide();

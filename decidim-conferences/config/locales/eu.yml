@@ -1,0 +1,598 @@
+eu:
+  activemodel:
+    attributes:
+      conference:
+        assemblies_ids: Erlazionatutako Batzarrak
+        available_slots: Leku libreak
+        banner_image: Banner irudia
+        copy_categories: Kopiatu kategoriak
+        copy_components: Kopiatu osagaiak
+        copy_features: Kopiatu ezaugarriak
+        decidim_scope_id: Esparrua
+        description: Deskribapena
+        end_date: Amaiera-data
+        hashtag: Traola
+        hero_image: Orri nagusiko irudia
+        location: Kokapena
+        main_logo: Logo nagusia
+        objectives: Helburuak
+        participatory_processes_ids: Lotutako parte-hartze prozesuak
+        promoted: Nabarmendua
+        published_at: Argitaratze-data
+        registration_terms: Erregistro-baldintzak
+        registrations_enabled: Izen-emateak gaituta
+        scope_id: Esparrua
+        scopes_enabled: Esparruak gaituta
+        short_description: Deskribapen laburra
+        show_statistics: Erakutsi estatistikak
+        sign_date: Sinatze-data
+        signature: Sinadura
+        signature_name: Sinaduraren izena
+        slogan: Leloa
+        slug: URL laburra
+        start_date: Hasiera-data
+        title: Izenburua
+        weight: Hurrenkera
+      conference_media_link:
+        date: Data
+        link: Esteka
+        title: Izenburua
+        weight: Hurrenkera
+      conference_partner:
+        link: Esteka
+        logo: Logoa
+        name: Izena
+        partner_type: Lankidetza mota
+        weight: Hurrenkera
+      conference_registration_invite:
+        email: Helbide elektronikoa
+        name: Izena
+        registration_type_id: Erregistro mota
+        user_id: Erabiltzailea
+      conference_registration_type:
+        description: Deskribapena
+        price: Prezioa
+        title: Izenburua
+        weight: Hurrenkera
+      conference_speaker:
+        affiliation: Afiliazioa
+        avatar: Abatar
+        conference_meeting_ids: Honekin lotutako topaketak
+        full_name: Izena
+        personal_url: URL pertsonala
+        position: Lekua
+        short_bio: Biografia laburra
+        twitter_handle: X ezizena
+        user_id: Erabiltzailea
+      conference_user_role:
+        email: Helbide elektronikoa
+        name: Izena
+        role: Rola
+    errors:
+      models:
+        conference_registration_invite:
+          attributes:
+            email:
+              already_invited: Helbide elektronikoko kontu hau dagoeneko gonbidatuta dago.
+  activerecord:
+    models:
+      decidim/conference:
+        one: Hitzaldia
+        other: Hitzaldiak
+      decidim/conference_speaker:
+        one: Jardunaldiko hizlaria
+        other: Jardunaldiko hizlariak
+      decidim/conference_user_role:
+        one: Hitzaldiko erabiltzaile rola
+        other: Jardunaldiko hizlari rolak
+  decidim:
+    admin:
+      actions:
+        confirm: Berretsi
+        new_conference: Beste hitzaldi bat
+        new_conference_user_role: Hitzaldiaren beste administratzaile bat
+        new_media_link: Hedabideen beste lotura bat
+        new_partner: Beste kide bat
+        new_registration_type: Beste erregistro mota bat
+        new_speaker: Beste hizlari bat
+        send_diplomas: Bidali bertaratze-ziurtagiriak
+      conference_copies:
+        new:
+          copy: Kopiatu
+          select: Hautatu zein datu bikoiztu nahi dituzun
+          title: Bikoiztu hitzaldia
+      conference_publications:
+        create:
+          error: Arazo bat egon da hitzaldi hau argitaratzean.
+          success: Hitzaldia zuzen argitaratua.
+        destroy:
+          error: Arazo bat egon da hitzaldi hau despublikatzean.
+          success: Hitzaldia zuzen despublikatua.
+      conference_registration:
+        confirm:
+          error: Arazo bat egon da hitzaldi hau erregistratzean.
+          success: Hitzaldiaren erregistroa zuzen onartua.
+      conference_speakers:
+        create:
+          error: Arazo bat egon da hizlari bat gehitzean hitzaldi honetarako.
+          success: Hizlaria zuzen sortua hitzaldi honetarako.
+        destroy:
+          success: Hizlaria behar bezala ezabatua.
+        edit:
+          title: Eguneratu hitzaldiko hizlaria.
+          update: Eguneratu
+        index:
+          conference_speakers_title: Hitzaldi hizlariak
+        new:
+          create: Sortu
+          title: Beste hizlari bat.
+        publish:
+          invalid: Arazo bat izan zen hizlari hau argitaratzean.
+          success: Hizlaria behar bezala argitaratua.
+        unpublish:
+          invalid: Arazo bat izan da hizlari hau despublikatzean.
+          success: Hizlaria behar bezala despublikatua.
+        update:
+          error: Arazo bat egon da hizlari hau eguneratzean.
+          success: Hizlaria zuzen eguneratua hitzaldi honetarako.
+      conference_user_roles:
+        create:
+          error: Arazo bat egon da administratzaile bat gehitzean hitzaldi honetarako.
+          success: Hitzaldiaren administratzailea zuzen gehitua.
+        destroy:
+          success: Hitzaldiaren administratzailea behar bezala ezabatua.
+        edit:
+          title: Eguneratu hitzaldiaren administratzailea.
+          update: Eguneratu
+        index:
+          conference_admins_title: Hitzaldiaren administratzaileak
+        new:
+          create: Sortu
+          title: Hitzaldiaren beste administratzaile bat.
+        update:
+          error: Arazo bat egon da hitzaldi-administratzaile hau eguneratzean.
+          success: Hitzaldiaren administratzailea zuzen eguneratua.
+      conferences:
+        create:
+          error: Arazo bat egon da hitzaldi hau sortzean.
+          success: Konferentzia ondo sortu da.
+        edit:
+          update: Eguneratu
+        exports:
+          registrations: Izen-emateak
+        form:
+          title: Informazio orokorra
+        index:
+          published: Argitaratua
+          unpublished: Despublikatua
+        new:
+          create: Sortu
+          title: Hitzaldia
+        update:
+          error: Arazo bat egon da hitzaldi hau eguneratzean.
+          success: Hitzaldia zuzen eguneratua.
+      conferences_copies:
+        create:
+          error: Arazo bat egon da hitzaldi hau bikoiztean.
+          success: Hitzaldia zuzen bikoiztua.
+      media_links:
+        create:
+          error: Arazo bat egon da beste komunikazio-esteka bat sortzean.
+          success: Hedabideen lotura zuzen sortua.
+        destroy:
+          success: Hedabideen lotura behar bezala ezabatua.
+        edit:
+          title: Eguneratu hedabideen lotura.
+          update: Eguneratu
+        index:
+          media_links_title: Hedabideen loturak
+        new:
+          create: Sortu
+          title: Hedabideen lotura
+        update:
+          error: Arazo bat egon da multimedia link hau eguneratzean.
+          success: Hedabideen lotura zuzen eguneratua.
+      menu:
+        conferences: Hitzaldiak
+        conferences_submenu:
+          attachment_collections: Karpetak
+          attachment_files: Fitxategiak
+          attachments: Eranskinak
+          categories: Kategoriak
+          components: Osagaiak
+          conference_admins: Hitzaldi-administratzaileak
+          conference_invites: Gonbidapenak
+          conference_speakers: Hizlariak
+          diploma: Bertaratze-ziurtagiria
+          info: Hitzaldi honi buruz
+          media_links: Hedabideen loturak
+          moderations: Moderazioak
+          partners: Kideak
+          registration_types: Izen-emate motak
+          registrations: Izen-emateak
+          see_conference: Ikusi hitzaldia
+          user_registrations: Erabiltzaileen erregistroak
+      models:
+        conference:
+          fields:
+            created_at: Noiz sortua
+            published: Argitaratua
+            title: Izenburua
+        conference_speaker:
+          fields:
+            affiliation: Afiliazioa
+            full_name: Izen osoa
+            position: Kargua
+          name: Hizlaria
+        conference_user_role:
+          fields:
+            email: Helbide elektronikoa
+            name: Izena
+            role: Rola
+          name: Hitzaldiaren administratzailea
+          roles:
+            admin: Administratzailea
+            collaborator: Kolaboratzailea
+            moderator: Moderatzailea
+            valuator: Ebaluatzailea
+        media_link:
+          fields:
+            date: Data
+            link: Linka
+            title: Izenburua
+          name: Hedabideen lotura
+        partner:
+          fields:
+            link: Lotura
+            logo: Logotipoa
+            name: Izena
+            partner_type: Mota
+          name: Kidea
+          types:
+            collaborator: Kolaboratzailea
+            main_promotor: Sustatzaile nagusia
+        registration_type:
+          fields:
+            conference_meetings: Hitzaldiaren topaketak
+            price: Prezioa
+            registrations_count: Erregistroak zenbatzea
+            title: Izenburua
+            weight: Kokapenaren hurrenkera
+          name: Izen-emate mota
+      partners:
+        create:
+          error: Arazo bat egon da kide bat gehitzean hitzaldi honetarako.
+          success: Kidea zuzen gehitua hitzaldi honetara.
+        destroy:
+          success: Kidea behar bezala kenduta.
+        edit:
+          title: Eguneratu kidea.
+          update: Eguneratu
+        new:
+          create: Sortu
+          title: Beste kide bat
+        update:
+          error: Arazo bat egon da kide bat eguneratzean hitzaldi honetarako.
+          success: Kidea zuzen eguneratua hitzaldi honetarako.
+      registration_type_publications:
+        create:
+          error: Arazo bat egon da izen-emate mota hau argitaratzean.
+          success: Izen-emate mota zuzen argitaratua.
+        destroy:
+          error: Arazo bat egon da izen-emate mota hau desargitaratzean.
+          success: Izen-emate mota zuzen despublikatua.
+      registration_types:
+        create:
+          error: Arazo bat egon da izen-emate mota hau gehitzean hitzaldi honetarako.
+          success: Erregistro motak arrakastaz gehitu du konferentzia honetara.
+        destroy:
+          success: Izen-emate mota kongresu honetatik atera da.
+        edit:
+          title: Eguneratu erregistro mota.
+          update: eguneratzearen
+        new:
+          create: Sortu
+          title: Beste erregistro mota bat
+        update:
+          error: Arazo bat egon da hitzaldi honetarako izen-emate mota hau eguneratzean.
+          success: Izen-emate mota arrakastaz eguneratu da konferentzia honetarako.
+      titles:
+        conferences: Hitzaldiak
+    admin_log:
+      conference:
+        create: "%{user_name} k sortu du %{resource_name} hitzaldia"
+        publish: "%{user_name} k argitaratu du %{resource_name} hitzaldia"
+        send_conference_diplomas: "%{user_name} k bertaratze-ziurtagiriak bidali dizkie %{resource_name} hitzaldira bertaratuei"
+        unpublish: "%{user_name} k desargitaratu du %{resource_name} hitzaldia"
+        update: "%{user_name} k eguneratu du %{resource_name} hitzaldia"
+        update_diploma: "%{user_name} k bertaratze-agirien konfigurazioa eguneratu du %{resource_name} hitzaldirako"
+      conference_speaker:
+        create: "%{user_name} k %{resource_name} hizlaria sortu du %{space_name} hitzaldian"
+        delete: "%{user_name} k %{resource_name} hizlaria kendu du %{space_name} hitzalditik"
+        update: "%{user_name} k %{resource_name} hizlaria eguneratu du %{space_name} hitzaldian"
+      conference_user_role:
+        create: "%{user_name} k %{resource_name} gonbidatu du %{space_name} hitzaldira"
+        delete: "%{user_name} k %{resource_name} administratzailea kendu du %{space_name} hitzalditik"
+        update: "%{user_name} k %{resource_name} ren rola aldatu du %{space_name} hitzaldian"
+      conferences:
+        conference_registration:
+          confirm: "%{user_name} k berretsi du bere izen-ematea %{resource_name} hitzaldian"
+        partner:
+          create: "%{user_name} k %{resource_name} kidea sortu du %{space_name} hitzaldian"
+          delete: "%{user_name} k %{resource_name} kidea ezabatu du %{space_name} hitzalditik"
+          update: "%{user_name} k %{resource_name} kidea eguneratu du %{space_name} hitzaldian"
+        registration_type:
+          create: "%{user_name} k %{resource_name} izen-emate mota sortu du %{space_name} hitzaldian"
+          delete: "%{user_name} k %{resource_name} izen-emate mota ezabatu du %{space_name} hitzaldian"
+          publish: "%{user_name} k %{resource_name} izen-emate mota argitaratu du %{space_name} hitzaldian"
+          unpublish: "%{user_name} k %{resource_name} izen-emate mota desargitaratu du %{space_name} hitzaldian"
+          update: "%{user_name} k %{resource_name} izen-emate mota eguneratu du %{space_name} hitzaldian"
+      media_link:
+        create: "%{user_name} k %{resource_name} medioetarako lotura sortu du %{space_name} hitzaldian"
+        delete: "%{user_name} k %{resource_name} medioetarako lotura kendu du %{space_name} hitzalditik"
+        update: "%{user_name} k eguneratu du %{resource_name} komunikabideen arteko %{space_name} lotura"
+    conference_program:
+      index:
+        title: Programa
+    conference_speakers:
+      index:
+        title: Hizlariak
+    conferences:
+      admin:
+        conference_copies:
+          form:
+            slug_help_html: 'URL slugak erabiltzen dira konferentzia honetako URLak sortzeko. Soilik onartzen ditu gutunak, zenbakiak eta gidoiak, eta letra batez hasi behar du. Adibidea: % {url}'
+        conference_invites:
+          create:
+            error: Arazo bat izan da erabiltzaileak konferentziara sartzeko gonbidatuta.
+            success: Erabiltzailea behar bezala gonbidatu da biltzarrean parte hartzeko.
+          form:
+            attendee_type: Parte-hartzaile mota
+            existing_user: Parte-hartzailea badago
+            invite_explanation: Parte-hartzailea hitzaldira eta erakundera lotzera gonbidatuko dute.
+            non_user: Parte-hartzailea ez dago
+            select_user: Aukeratu erabiltzailea
+          index:
+            invite_attendee: Gonbidatu parte-hartzailea
+            invites: Gonbidapenak
+          new:
+            explanation: Parte-hartzailea gonbidatuko da hitzaldi batera lotzera. Bere posta elektronikoa erregistratuta ez badago, erakundera ere gonbidatuko dute.
+            invite: gonbidatu
+            new_invite: Gonbidatu erabiltzailea
+        conference_registrations:
+          index:
+            registrations: Izen-emateak
+        conference_speakers:
+          form:
+            existing_user: Parte-hartzailea badago
+            non_user: Parte-hartzailerik ez
+            select_user: Aukeratu erabiltzailea
+            user_type: Erabiltzaile mota
+          index:
+            search: Bilatu
+        conferences:
+          form:
+            available_slots_help: Utzi 0 mugak mugagabea badaude.
+            registrations_count:
+              one: Izen-emate 1 egon da.
+              other: Dena den, %{count} matrikulazioak.
+            slug_help_html: 'URL slugak erabiltzen dira hitzaldi honetako URLak sortzeko. Soilik onartzen ditu gutunak, zenbakiak eta gidoiak, eta letra batez hasi behar du. Adibidea: % {url}'
+        content_blocks:
+          highlighted_conferences:
+            max_results: Erakusteko gehieneko elementu kopurua
+        diplomas:
+          edit:
+            save: Gorde
+            title: Asistentzia ziurtagiria
+        invite_join_conference_mailer:
+          invite:
+            decline: Baztertu gonbidapena '%{conference_title}'
+            invited_existing_user_to_join_a_conference: "%{invited_by} k zu gonbidatu zaitu %{application} hitzaldira. Beheko esteken bidez baztertu edo onartu dezakezu."
+            invited_user_to_join_a_conference: "%{invited_by} k zu gonbidatu zaitu %{application} hitzaldira. Beheko estekan onartu dezakezu."
+            registration: '''%{conference_title}'' izen-ematea'
+        partners:
+          index:
+            title: Kideak
+        registration_types:
+          form:
+            select_conference_meetings: Hautatu hitzaldiaren topaketak
+          index:
+            title: Izen-emate motak
+        send_conference_diploma_mailer:
+          diploma:
+            diploma_html: < a href = " % {url}" >% {title} hitzaldira joan izanaren ziurtagiria aurkituko duzu eranskinetan.
+          diploma_user:
+            attendance_verified_by: Bertaratzea nork egiaztatua
+            certificate_of_attendance: Bertaratze-agiria
+            certificate_of_attendance_description: Honek ziurtatzen du <strong>%{user}</strong> bertaratu dela eta parte hartu duela <strong>%{title}</strong> etan ospatua <strong>%{location}</strong> an <strong>%{start} - %{end}</strong>
+        send_diploma:
+          error: Arazo bat egon da hitzaldiaren bertaratze-agiriak bidaltzean.
+          success: Biltzarrentzako ziurtagiriak zuzen bidali behar dira
+      conference:
+        registration_confirm:
+          cancel: Utzi
+          confirm: Berretsi
+        show:
+          going: joatean
+          no_slots_available: Ez dago slotarik erabilgarri
+          registration: Izen-ematea
+      conference_program:
+        show:
+          program: Programa
+      conference_registration_mailer:
+        confirmation:
+          confirmed_html: Zure hitzaldirako izena emateko <a href="%{url}">%{title}</a> baieztatu da.
+          details_1: '%{registration_type} motako hitzaldian erregistratuta zaude. %{price} kostua dauka eta ondorengo ekitaldietara jo dezakezu:'
+          details_2: Biltzarraren xehetasunak eranskinean aurkituko dituzu.
+        pending_validation:
+          confirmation_pending: Berrespena jasoko duzu laster
+          details: 'To You erregistratu %{registration_type} motako kostua batekin %{price} eta ondorengo gertaerak joateko daiteke:'
+          pending_html: <a href="%{url}">%{title}</a> hitzaldirako zure izen-ematea zain dago berresteko.
+      conference_registrations:
+        create:
+          invalid: Arazo bat egon da hitzaldi honetara lotzean.
+          success: Konferentzia ondo sartu zara.
+          unauthorized: Hitzaldian izena eman aurretik sartu behar duzu.
+        decline_invitation:
+          invalid: Arazo bat egon da gonbidapena ez onartzean.
+          success: Gonbidapena ongi egin du.
+          unauthorized: Gonbidapenari uko egin aurretik hasi behar duzu saioa.
+        destroy:
+          invalid: Arazo bat egon da hitzaldi hau uztean.
+          success: Kongresua behar bezala utzi duzu.
+      conference_speaker:
+        go_to_twitter: Zoaz hona
+        more_info: informazio gehiago
+        personal_website: Webgune pertsonala
+        show:
+          more_info: informazio gehiago
+          speaking_at: Hartzen du parte hemen
+      conference_speaker_cell:
+        personal_url:
+          personal_website: Webgune pertsonala
+      conference_speakers:
+        index:
+          speakers:
+            one: Hizlaria
+            other: Hizlariak
+      conferences:
+        partners:
+          collaborators: Kideak
+          main_promotors: Antolatzaileak
+        show:
+          already_have_an_account?: Ba al duzu kontu bat?
+          are_you_new?: Beste parte-hartzaile bat?
+          login_as: '%{name} <%{email}> gisa erregistratuta zaude'
+          make_conference_registration: Eman izena hitzaldian
+          manage_registration: Kudeatu erregistroa
+          register: Eman izena
+          sign_in_description: Hasi saioa hitzaldian erregistratzeko
+          sign_up_description: Sortu kontu bat hitzaldian erregistratzeko
+      content_blocks:
+        highlighted_conferences:
+          name: Nabarmendutako konferentziak
+      index:
+        title: Hitzaldiak
+      mailer:
+        conference_registration_mailer:
+          confirmation:
+            subject: Zure erregistroa hitzaldian baieztatu da.
+          pending_validation:
+            subject: Zure erregistroa hitzaldian baieztatzearen zain dago.
+        invite_join_conference_mailer:
+          invite:
+            subject: Hitzaldi baterako gonbidapena
+        send_conference_diploma_mailer:
+          diploma:
+            subject: Zure hitzaldiko asistentzia ziurtagiria bidali da
+      models:
+        conference_invite:
+          fields:
+            email: Emaila
+            name: izena
+            registration_type: Izen-emate mota
+            sent_at: Bidalitakoan
+            status: Egoera
+          status:
+            accepted: Onartuta (%{at})
+            rejected: Ukatua (%{at})
+            sent: bidalia
+        conference_registration:
+          fields:
+            email: Emaila
+            name: izena
+            registration_type: Izen-emate mota
+            state: Estatu
+            states:
+              confirmed: baieztatu
+              pending: Zain
+      pages:
+        home:
+          highlighted_conferences:
+            active_spaces: Jardunaldi aktiboak
+            see_all_spaces: Ikusi hitzaldi guztiak
+      registration_types:
+        index:
+          choose_an_option: 'Aukeratu zure erregistro-aukera:'
+          no_registrations: Ez dago izen-ematerik
+          register: Eman izena
+          title: Izen-emate motak
+      show:
+        details: Xehetasunak
+        introduction: Sarrera
+        objectives: Helburuak
+        related_assemblies: Lotutako Batzarrak
+        related_participatory_processes: Lotutako parte-hartze prozesuak
+    events:
+      conferences:
+        conference_registration_confirmed:
+          notification_title: <a href="%{resource_url}">%{resource_title}</a> hitzaldirako zure izen-ematea berretsi egin da.
+        conference_registration_validation_pending:
+          notification_title: <a href="%{resource_url}">%{resource_title}</a> hitzaldirako zure izen-ematea zain dago berresteko.
+        conference_registrations_over_percentage:
+          email_intro: '"%{resource_title}" hitzaldiak okupatutako slotak %{percentage}% baino gehiago dira.'
+          email_outro: Jakinarazpen hau jaso duzu, hitzaldiko parte hartzaileen gunea delako.
+          email_subject: '"%{resource_title}" hitzaldiak okupatutako slotak %{percentage}% baino gehiago dira'
+          notification_title: <a href="%{resource_path}">%{resource_title}</a> hitzaldiak okupatutako slot-ak %{percentage}% baino gehiago dira.
+        conference_updated:
+          email_intro: '"%{resource_title}" hitzaldia eguneratu da. Bertsio berria irakur dezakezu bere orritik:'
+          email_outro: Jakinarazpen hau jaso duzu delako "%{resource_title}" konferentzia jarraituz. Aurreko esteka estekan jarrai dezakezu.
+          email_subject: '"%{resource_title}" hitzaldia eguneratu da'
+          notification_title: <a href="%{resource_path}">%{resource_title}</a> hitzaldia eguneratu da.
+        registrations_enabled:
+          email_intro: '"%{resource_title}" hitzaldiak erregistroak gaitu ditu. Zeure burua erregistratu dezakezu bere orrialdean:'
+          email_outro: Jakinarazpen hau jaso duzu "%{resource_title}" hitzaldia jarraitzen duzulako. Jarraitzeari utzi ahal diozu aurreko estekan.
+          email_subject: '"%{resource_title}" hitzaldiak erregistroak gaitu ditu.'
+          notification_title: <a href="%{resource_path}">%{resource_title}</a> hitzaldiak erregistroak gaitu ditu.
+        role_assigned:
+          email_intro: '%{role} rola esleitu zaizu <a href="%{resource_title}"> hitzaldian.'
+          email_outro: Jakinarazpen hau jaso duzu %{role} rola esleitu dizutelako "%{resource_title}" hitzaldian.
+          email_subject: '%{role} rola esleitu zaizu <a href="%{resource_title}"> batzarrean.'
+          notification_title: '%{role} rola esleitu zaizu <a href="%{resource_url}">%{resource_title}</a> batzarrean.'
+        upcoming_conference:
+          email_intro: '"%{resource_title}" hitzaldia egiten ari da 2 egunetan. Deskribapena bere orrialdetik irakur dezakezu:'
+          email_outro: Jakinarazpen hau jaso duzu "%{resource_title}" hitzaldia jarraitzen ari zarelako. Aurreko esteka estekan jarrai dezakezu.
+          email_subject: '"%{resource_title}" hitzaldia dator!'
+          notification_title: <a href="%{resource_path}">%{resource_title}</a> konferentzia 2 egunetan egongo da.
+    help:
+      participatory_spaces:
+        conferences:
+          contextual: "</p>Programa batean antolatutako bileren bilduma bat da. Bertan, hizlari gisa gonbidatutako pertsonak daude, baita biltzar handietako edo gizarte-ekitaldietako ohiko informazio-eremuak ere (erregistroa, ekitaldia babesten edo laguntzen duten erakundeen zerrenda, etab.).</p> <p>Adibideak: Hitzaldi bat garrantzitsua izan daiteke erakunde batentzat eta haren kideentzat, edo parte hartzeko prozesu baten zati gisa edo kontsulta baten ondoren egin daiteke.</p>\n"
+          page: "</p>Programa batean antolatutako bileren bilduma bat da. Bertan, hizlari gisa gonbidatutako pertsonak daude, baita biltzar handietako edo gizarte-ekitaldietako ohiko informazio-eremuak ere (erregistroa, ekitaldia babesten edo laguntzen duten erakundeen zerrenda, etab.).</p> <p>Adibideak: Hitzaldi bat garrantzitsua izan daiteke erakunde batentzat eta haren kideentzat, edo parte hartzeko prozesu baten zati gisa edo kontsulta baten ondoren egin daiteke.</p>\n"
+          title: Zer dira hitzaldiak?
+    log:
+      value_types:
+        conference_presenter:
+          not_found: 'Hitzaldia ez da aurkitu (ID: %{id}) datu-basean.'
+    media:
+      index:
+        description: Estekak hitzaldi honi buruz
+        title: Media eta estekak
+    menu:
+      conferences: Jardunaldiak
+    statistics:
+      conferences_count: Hitzaldiak
+  devise:
+    mailer:
+      join_conference:
+        subject: Hitzaldi baterako gonbidapena
+  layouts:
+    decidim:
+      conference_hero:
+        manage_registration: Kudeatu erregistroak
+        register: Eman izena
+      conferences:
+        conference:
+          more_info: Informazio gehiago
+          take_part: Parte hartu
+        index:
+          promoted_conferences: Sustatutako hitzaldiak
+        order_by_conferences:
+          conferences:
+            one: "%{count} hitzaldi"
+            other: "%{count} hitzaldiak"
+      conferences_nav:
+        conference_partners_menu_item: Kideak
+        conference_speaker_menu_item: Hizlariak
+        media: Media
+        venues: Egoitzak

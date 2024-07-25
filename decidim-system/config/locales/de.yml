@@ -1,0 +1,279 @@
+de:
+  activemodel:
+    attributes:
+      oauth_application:
+        name: Name OAuth-Anwendung
+        organization_logo: Organisationslogo (quadratisch)
+        organization_name: Organisation
+        organization_url: URL der Organisation
+        redirect_uri: Weiterleitungs-URI
+      organization:
+        address: SMTP Hostname
+        from_email: E-Mail-Adresse
+        from_label: Beschreibung
+        password: Passwort
+        port: Datenbank Port
+        user_name: Kontoname
+      organization_file_uploads:
+        allowed_content_types:
+          admin: Admin MIME-Typen
+          default: Standard MIME-Typen
+        allowed_file_extensions:
+          admin: Admin-Dateierweiterungen
+          default: Standard-Dateierweiterungen
+          image: Bild-Dateierweiterungen
+        maximum_file_size:
+          avatar: Avatar Dateigröße
+          default: Standard-Dateigröße
+    errors:
+      models:
+        oauth_application:
+          attributes:
+            redirect_uri:
+              must_be_ssl: Der Umleitungs-URI muss ein SSL-URI sein
+        organization:
+          attributes:
+            password:
+              secret_key: Sie müssen die SECRET_KEY_BASE Umgebungsvariable definieren, um dieses Feld speichern zu können
+  decidim:
+    system:
+      actions:
+        confirm_destroy: Möchtest du das wirklich löschen?
+        destroy: Löschen
+        edit: Bearbeiten
+        new_admin: Neuer Admin
+        new_oauth_application: Neue OAUTH-Anwendung
+        new_organization: Neue Organisation
+        save: Speichern
+        title: Aktionen
+      admins:
+        create:
+          error: Beim Erstellen eines neuen Administrators ist ein Fehler aufgetreten.
+          success: Admin erfolgreich erstellt.
+        destroy:
+          success: Admin erfolgreich gelöscht.
+        edit:
+          title: Administrator bearbeiten
+          update: Aktualisieren
+        index:
+          title: Admins
+        new:
+          create: Erstellen
+          title: Neuer Administrator
+        update:
+          error: Beim Aktualisieren dieses Administrators ist ein Fehler aufgetreten.
+          success: Admin erfolgreich aktualisiert.
+      dashboard:
+        show:
+          admins: Admins
+          current_organizations: Aktuelle Organisationen
+          system_checks: System-Prüfung
+      default_pages:
+        placeholders:
+          content: Fügen Sie der statischen Seite %{page} im Admin-Dashboard sinnvollen Inhalt hinzu.
+          summary: Fügen Sie der statischen Seite %{page} im Admin-Dashboard eine sinnvolle Zusammenfassung hinzu.
+          title: Standardtitel für %{page}
+        terms-of-service: Nutzungsbedingungen
+      devise:
+        passwords:
+          edit:
+            change_your_password: Passwort ändern
+            minimum_characters: "(Minimum %{minimum} Zeichen)"
+          new:
+            forgot_your_password: Passwort vergessen?
+            send_me_reset_password_instructions: Schicken Sie mir eine Anweisung zum Zurücksetzen des Passwortes
+        shared:
+          links:
+            did_not_receive_confirmation_instructions?: Keine Bestätigungs-Mail erhalten?
+            did_not_receive_unlock_instructions?: Anweisungen zum Entsperren nicht erhalten?
+            forgot_your_password?: Haben Sie Ihr Passwort vergessen?
+            log_in: Anmelden
+            sign_up: Konto erstellen
+      menu:
+        admins: Admins
+        dashboard: Instrumententafel
+        oauth_applications: OAuth-Anwendungen
+        organizations: Organisationen
+      models:
+        admin:
+          fields:
+            created_at: Erstellt am
+            email: Email
+          validations:
+            email_uniqueness: ein anderer Administrator mit der gleichen E-Mail existiert bereits
+        oauth_application:
+          fields:
+            created_at: Erstellt am
+            name: Name OAuth-Anwendung
+            organization_name: Organisation
+        organization:
+          actions:
+            save_and_invite: Organisation erstellen & den Admin einladen
+          fields:
+            content_security_policy: Sicherheitsrichtlinie für Inhalte (Content Security Policy)
+            created_at: Erstellt am
+            file_upload_settings: Datei-Upload Einstellungen
+            name: Name
+            omniauth_settings: Omniauth-Einstellungen
+            smtp_settings: SMTP-Einstellungen
+      oauth_applications:
+        create:
+          error: Beim Erstellen dieser Anwendung ist ein Fehler aufgetreten.
+          success: Anwendung erfolgreich erstellt.
+        destroy:
+          error: Beim Löschen dieser Anwendung ist ein Fehler aufgetreten.
+          success: Anwendung erfolgreich gelöscht.
+        edit:
+          save: Speichern
+          title: Anwendung bearbeiten
+        form:
+          select_organization: Organisation wählen
+        index:
+          confirm_delete: Möchten Sie diese Anwendung wirklich löschen?
+          title: OAuth-Anwendungen
+        new:
+          save: Speichern
+          title: Neue Applikation
+        update:
+          error: Beim Erstellen dieser Anwendung ist ein Fehler aufgetreten.
+          success: Die Anwendung wurde erfolgreich aktualisiert.
+      organizations:
+        advanced_settings:
+          hide: Erweiterte Einstellungen ausblenden
+          show: Zeige erweiterte Einstellungen
+        create:
+          error: Beim Erstellen einer neuen Organisation ist ein Fehler aufgetreten.
+          error_invitation: Es gab ein Problem beim Erstellen einer neuen Organisation. Überprüfen Sie den Administratornamen Ihrer Organisation.
+          success_html: |
+            <p>
+              Organisation erfolgreich erstellt.
+            </p>
+            <ol>
+              <li>Eventuell müssen Sie Ihren Anwendungscode aktualisieren um Anfragen an %{host} zu erlauben. Fügen Sie folgendes zu Ihrer Umgebungskonfiguration (z.B. <code>config/environment/production.rb</code>) oder <code>config/application.rb</code> hinzu:
+                <p> config.hosts << "%{host}" </p>
+              </li>
+              <li>
+                Danach können Sie auf die Plattform über <a href="http://%{host}">http://%{host}</a> zugreifen
+              </li>
+              <li>
+                Wir haben eine E-Mail an <b>%{email}</b> gesendet, die Sie bestätigen müssen.
+              </li>
+            </ol>
+        csp_settings:
+          connect_src: Verbindungsvorschriften (connect-src)
+          connect_src_hint: |
+            Die connect-src Anweisung schränkt URLs ein, die mittels <script> Elementen geladen werden können. Die Plattform fügt "self" hinzu, erlaubt aber zusätzliche Quellen. Lassen Sie das Feld leer, wenn Sie unsicher sind.
+          default_src: Standardvorschriften (default-src)
+          default_src_hint: |
+            Die default-src Anweisung ist die Standardmethode um Inhalte wie JavaScript, Bilder, CSS, Schriften, AJAX-Anfragen, Frames oder HTML5-Medien.
+            Die Plattform fügt "'self' 'unsafe-inline'" hinzu, erlaubt aber zusätzliche Quellen. Lassen Sie das Feld leer, wenn Sie unsicher sind.
+          font_src: Schriftvorschriften (font-src)
+          font_src_hint: |
+            Die font-src Anweisung schränkt URLs ein, die mittels @font-face geladen werden können. Die Plattform fügt "self" hinzu, erlaubt aber zusätzliche Quellen. Lassen Sie das Feld leer, wenn Sie unsicher sind.
+          frame_src: Framevorschriften (frame-src)
+          frame_src_hint: |
+            Die frame-src Anweisung schränkt URLs ein, die mittels <frame>, <iframe> und <object> Elementen geladen werden können. Die Plattform fügt "self" hinzu, erlaubt aber zusätzliche Quellen. Lassen Sie das Feld leer, wenn Sie unsicher sind.
+          img_src: Bildvorschriften
+          img_src_hint: |
+            Die img-src Anweisung schränkt URLs ein, die mittels <img>, <image>, <picture> und <svg>Elementen geladen werden können. Die Plattform fügt "self" hinzu, erlaubt aber zusätzliche Quellen. Lassen Sie das Feld leer, wenn Sie unsicher sind.
+          media_src: Medienvorschriften (media-src)
+          media_src_hint: |
+            Die media-src Anweisung schränkt URLs ein, die mittels <video>, <audio> und <source> Elementen geladen werden können. Die Plattform fügt "self" hinzu, erlaubt aber zusätzliche Quellen. Lassen Sie das Feld leer, wenn Sie unsicher sind.
+          script_src: Skriptvorschriften (script-src)
+          script_src_hint: |
+            Die script-src Anweisung schränkt URLs ein, die mittels <script> Elementen geladen werden können. Die Plattform fügt "'self' 'unsafe-inline''unsafe-eval'" hinzu, erlaubt aber zusätzliche Quellen. Lassen Sie das Feld leer, wenn Sie unsicher sind.
+          style_src: Stilvorschriften (style-src)
+          style_src_hint: |
+            Die style-src Anweisung schränkt URLs ein, die mittels <style> Elementen geladen werden können. Die Plattform fügt "'self' 'unsafe-inline'" hinzu, erlaubt aber zusätzliche Quellen. Lassen Sie das Feld leer, wenn Sie unsicher sind.
+        edit:
+          confirm_resend_invitation: Sind Sie sicher, das Sie die Einladung erneut senden möchten?
+          resend_invitation: Einladung erneut senden
+          secondary_hosts_hint: Geben Sie jede von ihnen in einer neuen Zeile ein
+          title: Organisation bearbeiten
+        file_upload_settings:
+          content_types:
+            admin_hint: Diese MIME-Typen sind für das Hochladen im Admin-Panel erlaubt. Admin-Benutzer sollten sich der Risiken des Hochladens einiger Dokumentformate bewusst sein, so dass man von ihnen erwarten kann dass sie vorsichtiger mit Datei-Uploads sind.
+            default_hint: Diese MIME-Typen sind standardmäßig für alle Benutzer erlaubt.
+            intro_html: Sie fügen Platzhalter mit dem Sternzeichen für die MIME-Typen hinzu, z.B. <code>image/*</code>.
+            title: Erlaubte MIME-Typen
+          file_extensions:
+            admin_hint: Diese Datei-Erweiterungen sind für das Hochladen im Admin-Panel erlaubt. Admin-Benutzer sollten sich der Risiken des Hochladens einiger Dokumentformate bewusst sein, so dass man von ihnen erwarten kann dass sie vorsichtiger mit Datei-Uploads sind.
+            default_hint: Diese Dateierweiterungen sind standardmäßig für alle Benutzer erlaubt.
+            image_hint: Diese Dateierweiterungen sind für alle Arten von Bild-Uploads erlaubt.
+            title: Zulässige Dateierweiterungen
+          file_sizes:
+            avatar_hint: Megabytes (MB). Maximale Dateigröße für das Hochladen des Avatars.
+            default_hint: Megabytes (MB). Diese Dateigröße ist die Standardeinstellung, die für alle Datei-Uploads verwendet wird, sofern nicht anders angegeben.
+            title: Maximale Dateigröße
+          intro: |
+            Bitte seien Sie besonders vorsichtig, wenn Sie überlegen, diese Einstellungen zu ändern. Je weniger Sie erlauben, desto besser.
+            Wenn bestimmte Dateierweiterungen oder MIME-Typen zugelassen werden, können Benutzer Sicherheitsrisiken ausgesetzt werden und es kann auch die Zugänglichkeit der Website beeinträchtigen.
+        index:
+          title: Organisationen
+        new:
+          default: Standard?
+          enabled: Aktiviert
+          locale: Spracheinstellung
+          organization_admin_email_hint: Wir senden Ihnen eine E-Mail an diese Adresse, die Sie bestätigen müssen um Ihr Passwort einrichten zu können.
+          reference_prefix_hint: Das Referenzpräfix wird zur eindeutigen Identifizierung von Ressourcen in allen Organisationen verwendet.
+          secondary_hosts_hint: Geben Sie jede von ihnen in einer neuen Zeile ein.
+          title: Neue Organisation
+        omniauth_settings:
+          decidim:
+            client_id: Client-ID
+            client_secret: Client-Secret
+            site_url: Website-URL
+          enabled: Aktiviert
+          enabled_by_default: Dieser Anbieter ist standardmäßig aktiviert. Er kann bearbeitet aber nicht deaktiviert werden.
+          facebook:
+            app_id: App-ID
+            app_secret: App-Geheimnis
+          google_oauth2:
+            client_id: Client-ID
+            client_secret: Client-Secret
+          icon: Symbol
+          icon_path: Icon-Pfad
+          twitter:
+            api_key: API-Schlüssel
+            api_secret: API-Geheimnis
+        resend_invitation:
+          error: Beim Versand der Einladung ist ein Fehler aufgetreten.
+          success: Einladung erfolgreich gesendet.
+        smtp_settings:
+          fieldsets:
+            sender: Absender
+          instructions:
+            from_label: 'E-Mail-Absender lautet: "Ihre-Organisation <ihre-organisation@example.org>". Leer lassen, um die E-Mail-Adresse als Absender zu verwenden.'
+          placeholder:
+            from_email: deine-organisation@example.org
+            from_label: name-ihrer-organisation
+        update:
+          error: Beim Aktualisieren dieser Organisation ist ein Fehler aufgetreten.
+          success: Die Organisation wurde erfolgreich aktualisiert.
+        users_registration_mode:
+          disabled: Der Zugriff kann nur mit externen Konten erfolgen
+          enabled: Den Teilnehmenden erlauben, ein Konto zu erstellen und sich einzuloggen
+          existing: Teilnehmende können keine neuen Konten erstellen. Bereits bestehende Teilnehmende können sich aber weiterhin anmelden
+      shared:
+        notices:
+          no_organization_warning_html: Sie müssen eine Organisation erstellen, um zu beginnen. Stellen Sie sicher, dass Sie %{guide} lesen, bevor Sie fortfahren.
+          our_getting_started_guide: unser Leitfaden für Anfänger
+        organizations_list:
+          confirm_resend_invitation: Sind Sie sicher, das Sie die Einladung erneut senden möchten?
+          resend_invitation: Einladung erneut senden
+      system_checks:
+        active_job_queue:
+          decidim_documentation: Decidim-Dokumentation
+          error: Die ActiveJob-Warteschlange ist nicht konfiguriert. Dies ist kein empfohlenes Setup für die Produktion. Lesen Sie mehr unter %{error_extra}.
+          success: Die ActiveJob-Warteschlange ist korrekt konfiguriert.
+        secret_key:
+          error: 'Der geheime Schlüssel ist nicht korrekt definiert. Bitte speichern Sie ihn in der SECRET_KEY_BASE Umgebungsvariable und starten Sie den Server neu: %{error_extra}'
+          success: Der geheime Schlüssel ist korrekt konfiguriert.
+      titles:
+        dashboard: Instrumententafel
+        decidim: Decidim
+  layouts:
+    decidim:
+      system:
+        login_items:
+          logout: Abmelden

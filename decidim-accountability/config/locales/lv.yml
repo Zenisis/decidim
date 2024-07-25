@@ -1,0 +1,163 @@
+lv:
+  activemodel:
+    attributes:
+      result:
+        decidim_accountability_status_id: Statuss
+        decidim_category_id: Kategorija
+        decidim_scope_id: Darbības tvērums
+        description: Apraksts
+        end_date: Beigu datums
+        project_ids: Iekļautie projekti
+        proposals: Iekļautie priekšlikumi
+        start_date: Sākuma datums
+        title: Nosaukums
+        updated_at: Atjaunināts plkst.
+      status:
+        description: Apraksts
+        key: Atslēga
+        name: Nosaukums
+      timeline_entry:
+        description: Apraksts
+        entry_date: Datums
+    models:
+      decidim/accountability/proposal_linked_event: Priekšlikums iekļauts rezultātā
+      decidim/accountability/result_progress_updated_event: Rezultātu progress ir atjaunināts
+  activerecord:
+    models:
+      decidim/accountability/result:
+        zero: Rezultāti
+        one: Rezultāts
+        other: Rezultāti
+  decidim:
+    accountability:
+      actions:
+        confirm_destroy: Vai tiešām vēlaties dzēst šo %{name}?
+        destroy: Dzēst
+        edit: Labot
+        preview: Priekšskatīt
+        timeline_entries: Projekta attīstība
+        title: Darbības
+      admin:
+        exports:
+          results: Rezultāti
+        import_results:
+          new:
+            import: Importēt
+        models:
+          result:
+            name: Rezultāts
+          status:
+            name: Statuss
+        results:
+          edit:
+            title: Labot rezultātu
+            update: Atjaunināt rezultātu
+          index:
+            title: Rezultāti
+          new:
+            create: Izveidot rezultātu
+            title: Jauns rezultāts
+        shared:
+          subnav:
+            statuses: Statusi
+        statuses:
+          edit:
+            title: Labot statusu
+            update: Atjaunināt statusu
+          index:
+            title: Statusi
+          new:
+            create: Izveidot statusu
+            title: Jauns statuss
+        timeline_entries:
+          edit:
+            title: Rediģēt ierakstu
+            update: Atjaunināt ierakstu
+          index:
+            title: Projekta laika grafika ieraksti
+          new:
+            create: Izveidot ierakstu
+            title: Jauns ieraksts
+      admin_log:
+        result:
+          create: "%{user_name} izveidoja rezultātu %{resource_name} telpā %{space_name}"
+          delete: "%{user_name} izdzēsa %{resource_name} rezultātu telpā %{space_name}"
+          update: "%{user_name} atjaunināja rezultātu %{resource_name} telpā %{space_name}"
+        value_types:
+          parent_presenter:
+            not_found: 'Saistītais datubāzē netika atrasts (ID:%{id})'
+      import_mailer:
+        import:
+          errors: Kļūdas
+          row_number: Rinda
+          subject: Rezultāti ir veiksmīgi importēti
+          success: Rezultāti ir veiksmīgi importēti. Rezultātus varat apskatīt administrēšanas saskarnē.
+      models:
+        result:
+          fields:
+            end_date: Beigu datums
+            start_date: Sākuma datums
+            status: Statuss
+            title: Nosaukums
+        status:
+          fields:
+            description: Apraksts
+            key: Atslēga
+            name: Nosaukums
+        timeline_entry:
+          fields:
+            entry_date: Datums
+      results:
+        count:
+          results_count:
+            zero: "%{count} rezultāti"
+            one: 1 rezultāts
+            other: "%{count} rezultāti"
+        filters:
+          all: Visi
+        home:
+          categories_label: Kategorijas
+          subcategories_label: Apakškategorijas
+        home_header:
+          global_status: Globālais izpildes statuss
+        nav_breadcrumb:
+          global: Globālā izpilde
+        search:
+          search: Meklēt darbības
+        show:
+          stats:
+            back_to_resource: Atgriezties pie rezultātiem
+        timeline:
+          title: Projekta attīstība
+    components:
+      accountability:
+        name: Atbildība
+        settings:
+          global:
+            comments_enabled: Komentāri ir iespējoti
+            display_progress_enabled: Rādīt progresu
+            intro: Ievads
+          step:
+            comments_blocked: Komentāri ir bloķēti
+    events:
+      accountability:
+        proposal_linked:
+          email_intro: 'Priekšlikums "%{proposal_title}" ir iekļauts rezultātā. Jūs varat to redzēt šajā lapā:'
+          email_outro: Jūs saņēmāt šo paziņojumu, jo sekojat "%{proposal_title}". Jūs varat atteikties no paziņojumu saņemšanas, sekojot iepriekšējai saitei.
+          email_subject: '%{proposal_title} atjauninājums'
+          notification_title: Priekšlikums <a href="%{proposal_path}">%{proposal_title}</a> ir iekļauts <a href="%{resource_path}">%{resource_title}</a> rezultātā.
+        result_progress_updated:
+          email_intro: 'Rezultāts "%{resource_title}", kas ietver priekšlikumu "%{proposal_title}", tagad ir %{progress}% pabeigts. Jūs varat to redzēt šajā lapā:'
+          email_outro: Jūs saņēmāt šo paziņojumu, jo sekojat "%{proposal_title}", un šis priekšlikums ir iekļauts rezultātā "%{resource_title}". Jūs varat atteikties no paziņojumu saņemšanas, sekojot iepriekšējai saitei.
+          email_subject: Atjaunināts %{resource_title} progress
+          notification_title: Rezultāts <a href="%{resource_path}">%{resource_title}</a>, kas ietver priekšlikumu <a href="%{proposal_path}">%{proposal_title}</a>, tagad ir %{progress}% pabeigts.
+    metrics:
+      results:
+        description: Izveidoto rezultātu skaits
+        object: rezultāti
+        title: Rezultāti
+    resource_links:
+      included_projects:
+        result_project: Šajā rezultātā iekļautie projekti
+      included_proposals:
+        result_proposal: Šajā rezultātā iekļautie priekšlikumi

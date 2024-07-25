@@ -1,0 +1,3 @@
+<% resources.each do |project| %>
+  <%= cell "decidim/budgets/project_l", project, url_extra_params: { included_in: resource.to_gid } %>
+<% end %>

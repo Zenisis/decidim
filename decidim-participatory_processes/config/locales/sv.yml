@@ -1,0 +1,437 @@
+sv:
+  activemodel:
+    attributes:
+      participatory_process:
+        announcement: Meddelande
+        area_id: Område
+        copy_categories: Kopiera kategorier
+        copy_components: Kopiera komponenter
+        copy_steps: Kopiera steg
+        decidim_area_id: Område
+        description: Beskrivning
+        developer_group: Kampanjgrupp
+        document: Dokument
+        domain: Domän
+        end_date: Slutdatum
+        hashtag: Hashtag
+        hero_image: Hembild
+        import_steps: Importera steg
+        local_area: Område
+        meta_scope: Omfångets metadata
+        participatory_process_group_id: Dialoggrupp
+        participatory_process_type_id: Dialogtyp
+        participatory_scope: Vad som bestäms
+        participatory_structure: Hur det bestäms
+        promoted: Annonserad
+        published_at: Publicerad
+        related_process_ids: Relaterade dialoger
+        scope_id: Omfång
+        scope_type_max_depth_id: Djup på omfångsfilter
+        scopes_enabled: Omfång aktiverade
+        short_description: Kort beskrivning
+        slug: URL-slug
+        start_date: Startdatum
+        subtitle: Underrubrik
+        target: Vilka deltar
+        title: Titel
+        weight: Vikt
+      participatory_process_group:
+        description: Beskrivning
+        developer_group: Kampanjgrupp
+        group_url: Webbplats
+        hashtag: Hashtag
+        hero_image: Bild
+        local_area: Organisationsområde
+        meta_scope: Omfångets metadata
+        participatory_process_ids: Relaterade dialoger
+        participatory_scope: Vad som bestäms
+        participatory_structure: Hur det bestäms
+        target: Vem deltar
+        title: Titel
+      participatory_process_step:
+        cta_path: Uppmaningens sökväg
+        cta_text: Uppmaningens text
+        description: Beskrivning
+        end_date: Slutdatum
+        short_description: Kort beskrivning
+        start_date: Startdatum
+        title: Titel
+      participatory_process_type:
+        title: Titel
+      participatory_process_user_role:
+        email: E-post
+        name: Namn
+        role: Roll
+    models:
+      decidim/participatory_process_step_activated_event: Steg aktiverat
+      decidim/participatory_process_step_changed_event: Steget har ändrats
+  activerecord:
+    models:
+      decidim/participatory_process:
+        one: Dialog
+        other: Dialoger
+      decidim/participatory_process_group:
+        one: Dialoggrupp
+        other: Dialoggrupper
+      decidim/participatory_process_step:
+        one: Steg
+        other: Steg
+  decidim:
+    admin:
+      actions:
+        activate: Aktivera
+        configure: Konfigurera
+        confirm_destroy: Bekräfta radering
+        destroy: Radera
+        duplicate: Duplicera
+        edit: Redigera
+        import_process: Importera
+        moderate: Moderera
+        new_process: Ny dialog
+        new_process_group: Ny dialoggrupp
+        new_process_step: Nytt steg
+        new_process_user_role: Ny dialogadministratör
+        preview: Förhandsvisa
+        publish: Publicera
+        resend_invitation: Skicka inbjudan igen
+        unpublish: Avpublicera
+      menu:
+        participatory_process_groups: Dialoggrupper
+        participatory_process_groups_submenu:
+          info: Info
+          landing_page: Landningssida
+        participatory_process_types: Processtyper
+        participatory_processes: Dialoger
+        participatory_processes_submenu:
+          attachment_collections: Mappar
+          attachment_files: Filer
+          attachments: Bilagor
+          categories: Kategorier
+          components: Komponenter
+          landing_page: Landningssida
+          moderations: Moderering
+          private_users: Privata deltagare
+          process_admins: Dialogadministratörer
+          steps: Steg
+      models:
+        participatory_process:
+          fields:
+            created_at: Skapad
+            private: Privat
+            published: Publicerad
+            title: Titel
+          name: Dialog
+        participatory_process_group:
+          fields:
+            title: Titel
+          name: Dialoggrupp
+        participatory_process_step:
+          fields:
+            end_date: Slutdatum
+            start_date: Startdatum
+            title: Titel
+          name: Steg i dialog
+        participatory_process_type:
+          fields:
+            created_at: Skapad den
+            title: Titel
+          name: Processtyp
+        participatory_process_user_role:
+          fields:
+            email: E-post
+            name: Namn
+            role: Roll
+          name: Administratör för dialog
+          roles:
+            admin: Administratör
+            collaborator: Medarbetare
+            moderator: Moderator
+            valuator: Värderare
+        user:
+          fields:
+            invitation_accepted_at: Inbjudan godkänd
+            invitation_sent_at: Inbjudan skickad
+      participatory_process_copies:
+        new:
+          copy: Kopiera
+          select: Välj vilka data som du vill duplicera
+          title: Duplicera dialog
+      participatory_process_groups:
+        destroy:
+          error: Det gick inte att radera dialoggruppen.
+          success: Dialoggruppen har raderats.
+        edit:
+          title: Redigera dialoggrupp
+          update: Uppdatera
+        new:
+          create: Skapa
+          title: Ny dialoggrupp
+        update:
+          error: Det gick inte att uppdatera dialoggruppen.
+          success: Dialoggruppen har uppdaterats.
+      participatory_process_imports:
+        create:
+          error: Det gick inte att importera dialogen.
+          success: Dialogen har importerats.
+        new:
+          import: Importera
+          select: Välj vilka data som du vill importera
+          title: Importera dialog
+      participatory_process_publications:
+        create:
+          error: Det gick inte att publicera dialogen.
+          success: Dialogen har publicerats.
+        destroy:
+          error: Det gick inte att avpublicera dialogen.
+          success: Dialogen har avpublicerats.
+      participatory_process_step_activations:
+        create:
+          error: Det gick inte att aktivera det här steget i dialogen.
+          success: Steget i dialogen har aktiverats.
+      participatory_process_steps:
+        create:
+          error: Det gick inte att skapa ett nytt steg i dialogen.
+          success: Steget i deltagarprocessen har skapats.
+        default_title: Introduktion
+        destroy:
+          success: Steget i dialogen har raderats.
+        edit:
+          title: Redigera steg i dialogen
+          update: Uppdatera
+        index:
+          steps_title: Steg
+        new:
+          create: Skapa
+          title: Nytt steg i dialogen
+        ordering:
+          error: Det gick inte att ändra ordningen på stegen i dialogen.
+        update:
+          error: Det gick inte att uppdatera detta steg i dialogen.
+          success: Steget i deltagarprocessen har uppdaterats.
+      participatory_process_types:
+        edit:
+          title: Redigera dialogtyp
+          update: Uppdatera
+        new:
+          create: Skapa
+      participatory_process_user_roles:
+        create:
+          error: Det gick inte att lägga till en deltagare till dialogen.
+          success: Administratören lades till dialogen.
+        destroy:
+          success: Administratören togs bort från dialogen.
+        edit:
+          title: Uppdatera dialogadministratör
+          update: Uppdatera
+        index:
+          process_admins_title: Administratörer för dialogen
+        new:
+          create: Skapa
+          title: Ny dialogadministratör
+        update:
+          error: Det gick inte att uppdatera administratören för dialogen.
+          success: Administratören har uppdaterats för dialogen.
+      participatory_processes:
+        create:
+          error: Det gick inte att skapa en ny dialog.
+          success: Dialogen har skapats. Konfigurera nu dess steg.
+        edit:
+          update: Uppdatera
+        index:
+          private: Privat
+          public: Offentlig
+          published: Publicerad
+        new:
+          create: Skapa
+          title: Ny dialog
+        update:
+          error: Det gick inte att uppdatera dialogen.
+          success: Dialogen har uppdaterats.
+      participatory_processes_copies:
+        create:
+          error: Det gick inte att duplicera dialogen.
+          success: Dialogen har duplicerats.
+      participatory_processes_group:
+        create:
+          error: Det gick inte att skapa en ny grupp för dialoger.
+          success: Dialoggruppen har skapats.
+      titles:
+        participatory_process_groups: Dialoggrupper
+        participatory_processes: Dialoger
+      users:
+        resend_invitation:
+          error: Det gick inte att skicka inbjudan igen.
+          success: Inbjudan har skickats om igen.
+    admin_log:
+      participatory_process:
+        create: "%{user_name} skapade dialogen %{resource_name}"
+        publish: "%{user_name} publicerade dialogen %{resource_name}"
+        unpublish: "%{user_name} avpublicerade dialogen %{resource_name}"
+        update: "%{user_name} uppdaterade dialogen %{resource_name}"
+      participatory_process_group:
+        create: "%{user_name} skapade dialoggruppen %{resource_name}"
+        update: "%{user_name} uppdaterade dialoggruppen %{resource_name}"
+      participatory_process_step:
+        activate: "%{user_name} aktiverade steget %{resource_name} i dialogen %{space_name}"
+        create: "%{user_name} skapade steget %{resource_name} i dialogen %{space_name}"
+        delete: "%{user_name} raderade steget %{resource_name} i dialogen %{space_name}"
+        update: "%{user_name} uppdaterade steget %{resource_name} i dialogen %{space_name}"
+      participatory_process_user_role:
+        create: "%{user_name} bjöd in deltagaren %{resource_name} till dialogen %{space_name}"
+        delete: "%{user_name} tog bort deltagaren %{resource_name} från dialogen %{space_name}"
+        update: "%{user_name} ändrade rollen för deltagaren %{resource_name} i dialogen %{space_name}"
+    events:
+      participatory_process:
+        role_assigned:
+          email_intro: Du har tilldelats som %{role} för deltagarprocess "%{resource_title}".
+          email_outro: Du har fått det här meddelandet eftersom du är %{role} av deltagarprocessen "%{resource_title}".
+          email_subject: Du har tilldelats som %{role} för "%{resource_title}".
+          notification_title: Du har tilldelats %{role} för deltagarprocessen <a href="%{resource_url}">%{resource_title}</a>.
+        step_activated:
+          email_intro: 'Steget %{resource_title} är nu aktivt för %{participatory_space_title}. Visa det från den här sidan:'
+          email_outro: Du har fått det här meddelandet eftersom du följer %{participatory_space_title}. Du kan sluta att ta emot meddelanden via föregående länk.
+          email_subject: En uppdatering till %{participatory_space_title}
+          notification_title: Steget %{resource_title} är nu aktivt för <a href="%{resource_path}">%{participatory_space_title}</a>
+        step_changed:
+          email_intro: 'Datumen för steget %{resource_title} i %{participatory_space_title} har uppdaterats. Visa det på den här sidan:'
+          email_outro: Du har fått det här meddelandet eftersom du följer %{participatory_space_title}. Du kan sluta att ta emot meddelanden via föregående länk.
+          email_subject: En uppdatering till %{participatory_space_title}
+          notification_title: Datumen för steget <a href="%{resource_path}">%{resource_title}</a> i <a href="%{participatory_space_url}">%{participatory_space_title}</a> har uppdaterats.
+    help:
+      participatory_spaces:
+        participatory_processes:
+          contextual: "<p>En <strong>dialog</strong> är en följd av deltagaraktiviteter (t.ex. först fylla i en undersökning, sedan lägga fram förslag, diskutera dem på fysiska eller virtuella möten och slutligen att prioritera dem) i syfte att definiera och fatta beslut om ett visst ämne.</p> <p>Exempel på dialoger är: en process för val av kommittémedlemmar (där kandidaterna presenteras, diskuteras och slutligen väljs kandidaterna), medborgarbudgetar (där förslag läggs fram, utvärderas ekonomiskt och röstas om inom tillgängliga medel), en långsiktig planeringsprocess, samarbete kring ett utkast till förordning eller norm, utformningen av stadsmiljöer eller att skapa en plan för offentlig policy.</p>\n"
+          page: "<p>En <strong>dialog</strong> är en följd av deltagaraktiviteter (t.ex. först fylla i en undersökning, sedan lägga fram förslag, diskutera dem på fysiska eller virtuella möten och slutligen att prioritera dem) i syfte att definiera och fatta beslut om ett visst ämne.</p> <p>Exempel på dialoger är: en process för val av kommittémedlemmar (där kandidaterna presenteras, diskuteras och slutligen väljs kandidaterna), medborgarbudgetar (där förslag läggs fram, utvärderas ekonomiskt och röstas om inom tillgängliga medel), en långsiktig planeringsprocess, samarbete kring ett utkast till förordning eller norm, utformningen av stadsmiljöer eller att skapa en plan för offentlig policy.</p>\n"
+          title: Vad är en dialog?
+    menu:
+      processes: Dialoger
+    metrics:
+      participatory_processes:
+        description: Antal dialoger i organisationen
+        object: dialoger
+        title: Dialoger
+    participatory_process_groups:
+      content_blocks:
+        extra_data:
+          name: Metadata
+        html:
+          name: HTML-block
+        html_1:
+          name: Första HTML-block
+        html_2:
+          name: Andra HTML-block
+        html_3:
+          name: Tredje HTML-block
+        main_data:
+          name: Titel och beskrivning
+        participatory_processes:
+          name: Dialoger
+        stats:
+          name: Statistik
+        title:
+          meta_scope: Omfång
+          participatory_processes:
+            one: 1 dialog
+            other: "%{count} dialoger"
+      show:
+        title: Dialoggrupper
+    participatory_process_steps:
+      index:
+        process_steps: Steg i dialogen
+    participatory_processes:
+      admin:
+        content_blocks:
+          highlighted_processes:
+            active: Aktiv
+            all: Alla
+            max_results: Högsta antal element att visa
+        new_import:
+          accepted_types:
+            json: JSON
+        participatory_process_groups:
+          form:
+            metadata: Metadata
+            visibility: Synlighet
+        participatory_process_imports:
+          form:
+            document_legend: Lägg till ett dokument
+        participatory_process_steps:
+          form:
+            cta_text_help: Om den inte är på kommer knappen inte att visas.
+        participatory_processes:
+          form:
+            announcement_help: Texten du skriver här visas för användaren direkt under dialoginformationen.
+            duration: Varaktighet
+            filters: Filter
+            images: Bilder
+            metadata: Metadata
+            other: Andra
+            related_processes: Relaterade dialoger
+            scope_type_max_depth_help: Begränsa djupet på omfångsfilter; filtret kommer att visa från allmän till den valda omfångstypen.
+            select_an_area: Välj ett område
+            select_process_group: Välj en dialoggrupp
+            title: Allmän information
+      content_blocks:
+        highlighted_processes:
+          name: Viktiga dialoger just nu
+      index:
+        title: Dialoger
+      last_activity:
+        new_participatory_process: Ny dialog
+      participatory_process_steps:
+        index:
+          back_to_process: Tillbaka till dialogsidan
+      participatory_processes:
+        description:
+          area_name: Område
+          data: Dialogdata
+          developer_group: Kampanjgrupp
+          meta_scope: Omfång
+        filters:
+          all_types: Alla typer
+          counters:
+            active:
+              one: En pågående dialog
+              other: "%{count} pågående dialoger"
+            all:
+              one: En dialog
+              other: "%{count} dialoger"
+            past:
+              one: En tidigare dialog
+              other: "%{count} tidigare dialoger"
+            upcoming:
+              one: En kommande dialog
+              other: "%{count} kommande dialoger"
+          date: Datum
+          explanations:
+            no_active_nor_upcoming_callout: Det finns inga pågående eller kommande dialoger. Här är en lista över tidigare dialoger.
+          filter_by: Visa
+          names:
+            active: Pågående
+            all: Alla
+            past: Tidigare
+            upcoming: Kommande
+          see: Se
+          type: Typ
+      show:
+        belongs_to_group: Denna dialog tillhör
+        private_space: Detta är en privat dialog
+        related_processes: Relaterade dialoger
+    statistics:
+      processes_count: Dialoger
+  layouts:
+    decidim:
+      participatory_process_groups:
+        participatory_process_group:
+          browse: Bläddra
+          browse_resource: Bläddra i processgruppen %{resource_name}
+          processes_count: 'Dialoger:'
+      participatory_processes:
+        index:
+          promoted_processes: Viktiga dialoger just nu
+        participatory_process:
+          active_step: 'Aktuellt steg:'
+          more_info: Mer information
+          more_info_about: Mer information om processen %{resource_name}
+          take_part: Delta
+          take_part_in: Delta i dialogen %{resource_name}

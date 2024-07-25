@@ -1,0 +1,9 @@
+<% add_decidim_page_title(t(".title")) %>
+
+<% provide :title do %>
+  <h1 class="h1"><%= t ".title" %></h1>
+<% end %>
+
+<%= link_to t("actions.new_admin", scope: "decidim.system"), [:new, :admin], class: "button button__sm md:button__lg button__primary" %>
+
+<%= render partial: "decidim/system/shared/admins_list", locals: { admins: @admins } %>

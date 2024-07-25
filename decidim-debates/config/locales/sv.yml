@@ -1,0 +1,205 @@
+sv:
+  activemodel:
+    attributes:
+      debate:
+        category_id: Kategori
+        closed_at: Stängt kl
+        conclusions: Slutsatser
+        decidim_category_id: Kategori
+        description: Beskrivning
+        end_time: Slutar vid
+        information_updates: Informationsuppdateringar
+        instructions: Deltagaranvisningar
+        scope_id: Omfång
+        start_time: Börjar vid
+        title: Titel
+        user_group_id: Skapa debatt som
+    models:
+      decidim/debates/close_debate_event: Debatt stängd
+      decidim/debates/create_debate_event: Debatt
+      decidim/debates/creation_disabled_event: Debatter avaktiverade
+  activerecord:
+    models:
+      decidim/debates/debate:
+        one: Debatt
+        other: Debatter
+  decidim:
+    components:
+      debates:
+        actions:
+          comment: Kommentera
+          create: Skapa
+          endorse: Instäm
+        name: Debatter
+        settings:
+          global:
+            announcement: Meddelande
+            comments_enabled: Kommentarer aktiverade
+            comments_max_length: Maximal längd för kommentarer (Lämna 0 för standardvärde)
+            scope_id: Omfång
+            scopes_enabled: Omfång aktiverade
+          step:
+            announcement: Meddelande
+            comments_blocked: Kommentarer blockerade
+            endorsements_blocked: Instämmanden är blockerade
+            endorsements_enabled: Instämmanden aktiverade
+    debates:
+      actions:
+        close: Stäng
+        confirm_destroy: Är du säker?
+        destroy: Radera
+        edit: Redigera
+        title: Åtgärder
+      admin:
+        debate_closes:
+          edit:
+            close: Stäng
+            title: Stäng debatt
+        debates:
+          create:
+            invalid: Det gick inte att skapa debatten.
+            success: Debatten har skapats.
+          destroy:
+            success: Debatten har raderats.
+          edit:
+            title: Redigera debatt
+            update: Uppdatera debatt
+          form:
+            debate_type: Typ av debatt
+            finite: Tidsbegränsad (med start- och sluttider)
+            open: Oendlig (inga start- eller slutdatum)
+          index:
+            title: Debatter
+          new:
+            create: Skapa debatt
+            title: Ny debatt
+          update:
+            invalid: Det gick inte att uppdatera debatten.
+            success: Debatten uppdaterades.
+        exports:
+          comments: Kommentarer
+      admin_log:
+        debate:
+          close: "%{user_name} stängde debatten %{resource_name} i utrymmet %{space_name}"
+          create: "%{user_name} skapade debatten %{resource_name} på platsen %{space_name}"
+          update: "%{user_name} uppdaterade debatten %{resource_name} på platsen %{space_name}"
+      debate_m:
+        commented_time_ago: Kommenterade för %{time} sedan
+      debates:
+        close:
+          invalid: Det gick inte att stänga debatten.
+          success: Debatten har stängts.
+        close_debate_modal:
+          cancel: Avbryta
+          description: Vad är sammanfattningen för denna debatt?
+          send: Stäng debatt
+        count:
+          debates_count:
+            one: "%{count} debatt"
+            other: "%{count} debatter"
+        create:
+          invalid: Det gick inte att skapa debatten.
+          success: Debatten har skapats.
+        edit:
+          back: Tillbaka
+          save: Spara ändringar
+          title: Redigera debatt
+        filters:
+          activity: Min aktivitet
+          all: Alla
+          category: Kategori
+          category_prompt: Välj en kategori
+          commented: Kommenterade
+          my_debates: Mina debatter
+          official: Officiell
+          origin: Ursprung
+          participants: Deltagare
+          search: Sök
+          state: Status
+          state_values:
+            closed: Stängda
+            open: Öppna
+          user_group: Grupper
+        form:
+          select_a_category: Välj en kategori
+        index:
+          new_debate: Ny debatt
+        new:
+          back: Tillbaka
+          create: Skapa
+          title: Ny debatt
+        orders:
+          commented: Mest kommenterade
+          label: Sortera debater efter
+          random: Slumpmässig ordning
+          recent: Senaste
+          updated: Senast uppdaterade
+        show:
+          close_debate: Stäng debatt
+          debate_closed: Stängd
+          debate_conclusions_are: 'Debatten stängdes den %{date} med dessa slutsatser:'
+          edit_conclusions: Redigera slutsatser
+          edit_debate: Redigera debatt
+          groups_count: Grupper
+          open: Öppna debatt
+          participants_count: Deltagare
+        update:
+          invalid: Det gick inte att uppdatera debatten.
+          success: Debatten har uppdaterats.
+      models:
+        debate:
+          fields:
+            end: Slut
+            end_time: Slutdatum
+            official_debate: Officiell debatt
+            start: Start
+            start_time: Startdatum
+            title: Titel
+    events:
+      debates:
+        create_debate_event:
+          user_followers:
+            email_intro: |-
+              Hej,
+              %{author_name} %{author_nickname}, som du följer, har skapat den nya debatten "%{resource_title}". Ta en titt och bidra med:
+            email_outro: Du har fått det här meddelandet eftersom du följer %{author_nickname}. Du kan sluta att ta emot meddelanden via föregående länk.
+            email_subject: Ny debatt "%{resource_title}" med %{author_nickname}
+            notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> skapade debatten <a href="%{resource_path}">%{resource_title}</a>.
+        creation_disabled:
+          email_intro: 'Att skapa debatter är inte längre aktivt i %{participatory_space_title}. Du kan fortfarande delta i öppna debatter via den här sidan:'
+          email_outro: Du har fått det här meddelandet eftersom du följer %{participatory_space_title}. Du kan sluta att ta emot meddelanden via föregående länk.
+          email_subject: Att skapa debatter har avaktiverats i %{participatory_space_title}
+          notification_title: Att skapa debatter är nu avaktiverat i <a href="%{participatory_space_url}">%{participatory_space_title}</a>
+        creation_enabled:
+          email_intro: 'Nu kan du starta nya debatter i %{participatory_space_title}! Börja att delta på den här sidan:'
+          email_outro: Du har fått det här meddelandet eftersom du följer %{participatory_space_title}. Du kan sluta att ta emot meddelanden via föregående länk.
+          email_subject: Debatter är nu tillgängliga i %{participatory_space_title}
+        debate_closed:
+          affected_user:
+            email_intro: 'Debatten "%{resource_title}" stängdes. Du kan läsa slutsatserna från dess sida:'
+            email_outro: Du har fått det här meddelandet eftersom du följer debatten "%{resource_title}". Du kan sluta följa det på föregående länk.
+            email_subject: Debatten "%{resource_title}" stängdes
+            notification_title: Debatten <a href="%{resource_path}">%{resource_title}</a> stängdes.
+          follower:
+            email_intro: 'Debatten "%{resource_title}" stängdes. Du kan läsa slutsatserna från dess sida:'
+            email_outro: Du har fått det här meddelandet eftersom du följer debatten "%{resource_title}". Du kan sluta följa det på föregående länk.
+            email_subject: Debatten "%{resource_title}" stängdes
+            notification_title: Debatten <a href="%{resource_path}">%{resource_title}</a> stängdes.
+    gamification:
+      badges:
+        commented_debates:
+          conditions:
+            - Välj en öppen debatt att delta i
+          description: Detta märke beviljas när du aktivt deltar i de olika debatterna genom att lämna dina kommentarer.
+          description_another: Deltagaren har deltagit i %{score} debatter.
+          description_own: Du har deltagit i %{score} debatter.
+          name: Debatter
+          next_level_in: Delta i %{score} till debatter för att nå nästa nivå!
+          unearned_another: Deltagaren har inte deltagit i någon debatt än.
+    metrics:
+      debates:
+        description: Antal skapade debatter
+        object: debatter
+        title: Debatter
+    statistics:
+      debates_count: Debatter

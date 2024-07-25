@@ -1,0 +1,26 @@
+<% add_decidim_page_title(t("changes_at_title", scope: "decidim.version.show", title: versioned_resource.title)) %>
+<% add_decidim_page_title(t("decidim.proposals.versions.index.title")) %>
+<%
+if versioned_resource.is_a?(Decidim::Proposals::CollaborativeDraft)
+  add_decidim_page_title(Decidim::Proposals::CollaborativeDraft.model_name.human(count: 2))
+end
+%>
+
+<% content_for :aside do %>
+  <%= cell(
+    "decidim/versions_list",
+    versioned_resource,
+    version_path: proc { |version_index| url_for(action: :show, id: version_index) }
+  ) %>
+<% end %>
+
+<%= render layout: "layouts/decidim/shared/layout_item" do %>
+  <%= cell(
+    "decidim/version",
+    current_version,
+    index: params[:id],
+    versioned_resource:,
+    path: proc { |extra_params| url_for(action: :show, id: params[:id], **extra_params) },
+    versions_path: proc { url_for(action: :index) }
+  ) %>
+<% end %>

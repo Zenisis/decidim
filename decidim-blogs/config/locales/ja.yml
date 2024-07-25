@@ -1,0 +1,95 @@
+ja:
+  activemodel:
+    attributes:
+      post:
+        body: 本文
+        decidim_author_id: 作成者
+        published_at: 公開時刻
+        title: タイトル
+    models:
+      decidim/blogs/create_post_event: 新しいブログ投稿
+  activerecord:
+    models:
+      decidim/blogs/post:
+        other: 投稿
+  decidim:
+    blogs:
+      actions:
+        author_id: 次のように投稿を作成
+        confirm_destroy: この投稿を削除してもよろしいですか？
+        destroy: 削除
+        edit: 編集
+        new: 新規投稿
+        title: アクション
+      admin:
+        posts:
+          create:
+            invalid: 投稿の作成中に問題が発生しました。
+            success: 投稿を作成しました。
+          destroy:
+            success: 投稿を削除しました。
+          edit:
+            save: 更新
+            title: 投稿を編集
+          index:
+            not_published_yet: まだ公開されていません。
+            title: 投稿
+          new:
+            create: 作成
+            title: 投稿を作成
+          update:
+            invalid: 投稿の保存中に問題が発生しました。
+            success: 投稿を保存しました。
+      admin_log:
+        post:
+          create: "%{user_name} が %{space_name} でブログ投稿 %{resource_name} を作成しました"
+          delete: "%{user_name} がブログ投稿 %{resource_name} を %{space_name} から削除しました"
+          update: "%{user_name} が %{space_name} のブログ投稿 %{resource_name} を更新しました"
+      content_blocks:
+        highlighted_posts:
+          last_published: 最近公開された投稿
+          name: 投稿
+          see_all: すべての投稿を表示
+      last_activity:
+        new_post: '新しい投稿:'
+      models:
+        post:
+          fields:
+            author: 作成者
+            body: 本文
+            official_blog_post: 公式ポスト
+            published_at: 公開時刻
+            title: タイトル
+      posts:
+        index:
+          count:
+            other: "%{count} 件の投稿"
+          empty: 投稿はまだありません。
+    components:
+      blogs:
+        actions:
+          comment: コメント
+          create: 作成
+          destroy: 削除
+          endorse: オススメ
+          update: 更新
+        name: ブログ
+        settings:
+          global:
+            announcement: お知らせ
+            comments_enabled: コメントを有効にする
+            comments_max_length: コメント最大長 (デフォルト値は 0 のまま)
+          step:
+            announcement: お知らせ
+            comments_blocked: コメントをブロック
+            endorsements_blocked: オススメをブロック
+            endorsements_enabled: オススメが有効
+    events:
+      blogs:
+        post_created:
+          email_intro: あなたがフォローしている "%{participatory_space_title}" で投稿 "%{resource_title}" が公開されました。
+          email_outro: '「%{participatory_space_title}」をフォローしているため、この通知を受け取りました。前のリンクからこの通知をアンフォローすることができます。'
+          email_subject: '%{participatory_space_title} に新しい投稿が公開されました'
+          notification_title: '%{participatory_space_title} で投稿 <a href="%{resource_path}">%{resource_title}</a> が公開されました'
+    statistics:
+      posts_count: 投稿

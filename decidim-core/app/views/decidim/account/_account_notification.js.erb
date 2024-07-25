@@ -1,0 +1,6 @@
+var accountNotification = document.querySelector("[data-alert-box]");
+
+if (accountNotification) {
+  accountNotification.childNodes[1].textContent = <%== @text.to_json %>;
+  accountNotification.classList.add("<%= @alert_class %>");
+}

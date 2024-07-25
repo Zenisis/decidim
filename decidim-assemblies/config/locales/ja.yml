@@ -1,0 +1,454 @@
+ja:
+  activemodel:
+    attributes:
+      assemblies_type:
+        title: タイトル
+      assembly:
+        announcement: お知らせ
+        area_id: エリア
+        assembly_type: 参加スペース種別
+        assembly_type_other: その他（参加スペース）
+        banner_image: バナー画像
+        closing_date: 終了日
+        closing_date_reason: 終了日時の理由
+        composition: 構成
+        copy_categories: カテゴリをコピー
+        copy_components: コンポーネントをコピー
+        copy_features: 機能をコピー
+        created_by: '作成者:'
+        created_by_other: 他によって作成
+        creation_date: 作成日
+        decidim_area_id: エリア
+        decidim_assemblies_type_id: 参加スペース種別
+        decidim_scope_id: スコープ
+        description: 説明
+        developer_group: プロモーターグループ
+        document: ドキュメント
+        domain: ドメイン
+        duration: 持続期間
+        facebook: Facebook
+        github: GitHub
+        hashtag: ハッシュタグ
+        hero_image: ホーム画像
+        import_attachments: 添付ファイルをインポート
+        import_categories: カテゴリをインポート
+        import_components: コンポーネントをインポート
+        included_at: 含まれた日
+        instagram: Instagram
+        internal_organisation: 内部組織
+        is_transparent: 透明性
+        local_area: 組織エリア
+        meta_scope: スコープメタデータ
+        parent_id: 親の参加スペース
+        participatory_processes_ids: 関連する参加型プロセス
+        participatory_scope: 決定されるもの
+        participatory_structure: どのように決められますか？
+        private_space: プライベートスペース
+        promoted: 強調表示
+        published_at: 公開日時
+        purpose_of_action: アクションの目的
+        scope_id: スコープ
+        scopes_enabled: スコープは有効です
+        short_description: 短い説明
+        slug: URL スラグ
+        special_features: 特別な機能
+        subtitle: サブタイトル
+        target: 参加者
+        title: タイトル
+        twitter: X
+        weight: 順番の位置
+        youtube: YouTube
+      assembly_member:
+        birthday: 誕生日
+        birthplace: 出生地
+        ceased_date: 終了日
+        designation_date: 指定日
+        full_name: フルネーム
+        gender: 性別
+        non_user_avatar: アバター
+        position: ポジション
+        user_id: ユーザー
+        weight: 並び順の位置
+      assembly_user_role:
+        email: Eメールアドレス
+        name: 名前
+        role: ロール
+    errors:
+      models:
+        assembly:
+          attributes:
+            document:
+              allowed_file_content_types: '無効なドキュメントタイプです。次の拡張子を持つファイルのみ許可されます: %{types}。'
+  activerecord:
+    models:
+      decidim/assembly:
+        other: 参加スペース
+      decidim/assembly_member:
+        other: 参加スペースメンバー
+      decidim/assembly_user_role:
+        other: 参加スペースユーザーロール
+  decidim:
+    admin:
+      actions:
+        import_assembly: インポート
+        new_assembly: 新しい参加スペース
+        new_assembly_member: 新しい参加スペースメンバー
+        new_assembly_type: 新しい参加スペース種別
+        new_assembly_user_role: 新しい参加スペース管理者
+      assemblies:
+        create:
+          error: 新しい参加スペースの作成中に問題が発生しました。
+          success: 参加スペースが作成されました。
+        edit:
+          update: 更新
+        index:
+          private: プライベート
+          public: 公開
+          published: 公開済み
+          unpublished: 未公開
+        new:
+          create: 作成
+          title: 新しい参加スペース
+        update:
+          error: 参加スペースの更新に問題がありました。
+          success: 参加スペースを更新しました。
+      assemblies_copies:
+        create:
+          error: この参加スペースの複製中に問題が発生しました。
+          success: 参加スペースを複製しました。
+      assemblies_types:
+        create:
+          error: 新しい参加スペース種別の作成に問題がありました。
+          success: 参加スペース種別が正常に作成されました。
+        destroy:
+          success: 参加スペース種別を削除しました。
+        new:
+          create: 作成
+          title: 新しい参加スペース種別
+        update:
+          error: 参加スペース種別の更新中に問題が発生しました。
+          success: 参加スペース種別が正常に更新されました。
+      assembly_copies:
+        new:
+          copy: コピー
+          select: 複製したいデータを選択してください
+          title: 参加スペースを複製
+      assembly_imports:
+        create:
+          error: この参加スペースのインポート中に問題が発生しました。
+          success: 参加スペースは正常にインポートされました。
+        new:
+          import: インポート
+          select: インポートしたいデータを選択
+          title: 参加スペースをインポート
+      assembly_members:
+        create:
+          error: この参加スペースにメンバーを追加する際に問題が発生しました。
+          success: メンバーは正常にこの参加スペース用に作成されました。
+        destroy:
+          success: メンバーはこの参加スペースの削除に成功しました。
+        edit:
+          title: 参加スペースメンバーを更新
+          update: 更新
+        index:
+          assembly_members_title: 参加スペースメンバー
+        new:
+          create: 作成
+          title: 新しい参加スペースメンバー
+        update:
+          error: この参加スペースのメンバーの更新に問題がありました。
+          success: メンバーがこの参加スペースの更新に成功しました。
+      assembly_publications:
+        create:
+          error: この参加スペースの公開中に問題がありました。
+          success: 参加スペースを公開しました。
+        destroy:
+          error: この参加スペースの非公開中に問題が発生しました。
+          success: 参加スペースを非公開にしました。
+      assembly_user_roles:
+        create:
+          error: この参加スペースの管理者追加中に問題が発生しました。
+          success: 管理者がこの参加スペースに追加されました。
+        destroy:
+          success: 管理者がこの参加スペースから削除されました。
+        edit:
+          title: 参加スペース管理者を更新
+          update: 更新
+        index:
+          assembly_admins_title: 参加スペース管理者
+        new:
+          create: 作成
+          title: 新しい参加スペース管理者
+        update:
+          error: この参加スペースの管理者を更新中に問題が発生しました。
+          success: 管理者はこの参加スペースの更新に成功しました。
+      filters:
+        ceased_date_not_null:
+          label: 終了済み
+          values:
+            'false': 未完了
+            'true': 終了済み
+        decidim_assemblies_type_id_eq:
+          label: 参加スペース種別
+        search_placeholder:
+          full_name_or_user_name_or_user_nickname_cont: 名前またはニックネームで検索
+      menu:
+        assemblies: 参加スペース
+        assemblies_submenu:
+          assembly_admins: 参加スペース管理者
+          assembly_members: メンバー
+          attachment_collections: フォルダ
+          attachment_files: ファイル
+          attachments: 添付ファイル
+          categories: カテゴリ
+          components: コンポーネント
+          info: この参加スペースについて
+          landing_page: ランディングページ
+          moderations: モデレーション
+          private_users: プライベート参加者
+          see_assembly: 参加スペースを見る
+        assemblies_types: 参加スペース種別
+      models:
+        assemblies_types:
+          fields:
+            created_at: 作成日時
+            title: タイトル
+        assembly:
+          fields:
+            actions: アクション
+            created_at: 作成日時
+            private: プライベート
+            promoted: 強調表示
+            published: 公開済み
+            title: タイトル
+          name: 参加スペース
+        assembly_member:
+          fields:
+            ceased_date: 終了日
+            designation_date: 指定日
+            full_name: 名前
+            position: ポジション
+          name: メンバー
+          positions:
+            other: その他
+            president: 代表者
+            secretary: 秘書官
+            vice_president: 副代表
+        assembly_user_role:
+          fields:
+            email: Eメールアドレス
+            name: 名前
+            role: ロール
+          name: 参加スペース管理者
+          roles:
+            admin: 管理者
+            collaborator: コラボレーター
+            moderator: モデレーター
+            valuator: 評価者
+      titles:
+        assemblies: 参加スペース
+        assemblies_types: 参加スペース種別
+    admin_log:
+      assembly:
+        create: "%{user_name} が %{resource_name} 参加スペースを作成しました"
+        duplicate: "%{user_name} が %{resource_name} 参加スペースを複製しました"
+        export: "%{user_name} は %{resource_name} 参加スペースをエクスポートしました"
+        import: "%{user_name} が %{resource_name} 参加スペースをインポートしました"
+        publish: "%{user_name} が %{resource_name} 参加スペースを公開しました"
+        unpublish: "%{user_name} が %{resource_name} 参加スペースを非公開にしました"
+        update: "%{user_name} が %{resource_name} 参加スペースを更新しました"
+      assembly_member:
+        create: "%{user_name} が %{resource_name} 参加スペースで %{space_name} メンバーを作成しました"
+        delete: "%{user_name} が %{resource_name} 参加スペースから %{space_name} メンバーを削除しました"
+        update: "%{user_name} が %{resource_name} 参加スペースの %{space_name} メンバーを更新しました"
+      assembly_setting:
+        update: "%{user_name} が参加スペース設定を更新しました"
+      assembly_type:
+        create: "%{user_name} が %{resource_name} 参加スペース種別を作成しました"
+        delete: "%{user_name} が %{resource_name} アセンブリ種別を削除しました"
+        publish: "%{user_name} が %{resource_name} 参加スペース種別を公開しました"
+        unpublish: "%{user_name} が %{resource_name} 参加スペース種別を非公開にしました"
+        update: "%{user_name} が %{resource_name} 参加スペース種別を更新しました"
+      assembly_user_role:
+        create: "%{user_name} が %{resource_name} を %{space_name} 参加スペースに招待しました"
+        delete: "%{user_name} が参加者 %{resource_name} を %{space_name} 参加スペースから削除しました"
+        update: "%{user_name} が %{resource_name} 参加スペースで %{space_name} の役割を変更しました"
+    assemblies:
+      admin:
+        assemblies:
+          form:
+            announcement_help: ここに入力したテキストは、アセンブリ情報のすぐ下に表示されます。
+            duration: 持続期間
+            duration_help: この参加スペースの持続時間が限られている場合は、終了日を選択します。それ以外の場合は、不定義として表示されます。
+            filters: フィルタ
+            images: 画像
+            included_at_help: この参加スペースがプラットフォームに追加された日付を選択します。必ずしも作成日と同じである必要はありません。
+            metadata: メタデータ
+            other: その他
+            select_a_created_by: 作成者を選択してください
+            select_an_area: エリアを選択
+            select_an_assembly_type: 参加スペース種別を選択
+            select_parent_assembly: 親参加スペースを選択
+            slug_help_html: 'URLスラグは、この参加スペースを指すURLを生成するために使用されます。 英字、数字、ハイフンのみを受け付け、英字で始める必要があります。例: %{url}'
+            social_handlers: ソーシャル
+            title: 一般情報
+            visibility: 公開範囲
+        assemblies_types:
+          form:
+            title: タイトル
+        assembly_copies:
+          form:
+            slug_help_html: 'URLスラグは、この参加スペースを指すURLを生成するために使用されます。 英字、数字、ハイフンのみを受け付け、英字で始める必要があります。例: %{url}'
+        assembly_imports:
+          form:
+            slug_help_html: 'URLスラグは、この参加スペースを指すURLを生成するために使用されます。 英字、数字、ハイフンのみを受け付け、英字で始める必要があります。例: %{url}'
+        assembly_members:
+          form:
+            existing_user: 既存の参加者
+            explanation: '画像のガイダンス:'
+            image_guide: テキストを含まない縦長の画像をお勧めします。
+            non_user: 参加者がいません
+            non_user_avatar_help: メンバーとして公開する前に同意を得る必要があります。
+            select_a_position: ポジションを選択
+            select_user: 参加者を選択
+            user_type: 参加者の種類
+        content_blocks:
+          highlighted_assemblies:
+            max_results: 表示する要素の最大量
+        new_import:
+          accepted_types:
+            json: JSON
+      assemblies:
+        description:
+          area_name: エリア
+          closing_date: 終了日
+          created_by: 作成者
+          creation_date: 作成日
+          data: 参加スペースデータ
+          developer_group: プロモーターグループ
+          duration: 期間
+          included_at: 含まれた日時
+          indefinite_duration: 無期限
+          local_area: 組織エリア
+          meta_scope: スコープ
+          participatory_scope: 決めること
+          participatory_structure: 決定方法
+          target: 参加者
+          title: この参加スペースについて
+        filters:
+          names:
+            all: すべて
+          type: 種別
+        show:
+          title: この参加スペースについて
+      assembly_members:
+        index:
+          members: メンバー
+      assembly_types:
+        commission: 委員会
+        consultative_advisory: 協議会/アドバイザリボード
+        executive: 役員会
+        government: 政府
+        others: その他
+        participatory: 参加者
+        working_group: ワーキンググループ
+      content_blocks:
+        children_assemblies:
+          name: 参加スペース
+        dates_metadata:
+          name: 日付のメタデータ
+        extra_data:
+          name: 種別と期間
+        highlighted_assemblies:
+          name: ハイライトされた参加スペース
+        related_assemblies:
+          name: 関連する参加スペース
+      created_by:
+        city_council: 市議会
+        others: その他
+        public: 一般
+      filter:
+        all: すべてのタイプ
+        commission: コミッション
+        consultative_advisory: 協議/アドバイザリ
+        executive: 役員会
+        government: 政府
+        help: '表示:'
+        others: その他
+        participatory: 参加者
+        working_group: ワーキンググループ
+      index:
+        title: 参加スペース
+      last_activity:
+        new_assembly: '新しい参加スペース:'
+      pages:
+        home:
+          highlighted_assemblies:
+            active_spaces: アクティブな参加スペース
+            see_all_spaces: すべての参加スペースを表示
+        user_profile:
+          member_of:
+            member_of: メンバー
+      show:
+        assembly_type: 参加スペース種別
+        duration: 持続期間
+        private_space: これは私的参加スペースです
+        social_networks_title: 参加スペースを訪問
+    assembly_members:
+      assembly_member:
+        designated_on: 指定日時：
+      index:
+        title: メンバー
+    events:
+      assemblies:
+        create_assembly_member:
+          email_intro: <a href="%{resource_url}">%{resource_name}</a> 参加スペースの管理者があなたをメンバーの一人として追加しました。
+          email_outro: 参加スペースに招待されたため、この通知を受け取りました。 <a href="%{resource_url}">参加スペースのページ</a> を確認して協力してください！
+          email_subject: あなたは %{resource_name} 参加スペースのメンバーに招待されています！
+          notification_title: 参加スペース <a href="%{resource_path}">%{resource_name}</a>のメンバーとして登録されました。貢献するには <a href="%{resource_path}">参加スペースページ</a> を確認してください！
+      assembly:
+        role_assigned:
+          email_intro: 参加スペース「 %{role} 」の%{resource_title}として割り当てられました。
+          email_outro: あなたは " %{role} " 参加スペースの%{resource_title}であるため、この通知を受け取りました。
+          email_subject: あなたは " %{role} " の%{resource_title} として割り当てられました。
+          notification_title: あなたは集会<a href="%{resource_url}"ｆ>%{resource_title}</a> に、%{role} として割り当てられました。
+    help:
+      participatory_spaces:
+        assemblies:
+          contextual: "<p> <strong>参加スペース</strong>とは、組織の特定の領域や範囲について決定を下すために定期的に会合を開く組織のメンバーのグループです。</p> <p>会議体はプライベートのものもあれば、公開されているものもあります。公開されている場合は、その集会に参加することができます (例えば、定員に余裕があれば出席したり、議題にポイントを追加したり、この組織の提案や決定に対してコメントしたりすることができます)。</p> <p>例：総会（年に一度開催され、組織の主要な活動方針と執行機関を投票で決定する）、平等諮問評議会（組織内の男女比率等を改善する方法についての提案を行うために2ヶ月ごとに開催される）、評価委員会（プロセスを監視するために毎月開催される）、保証機関（意思決定手続きを改善するために事件や虐待、提案を収集する）などは、すべて会議体の例です。</p>\n"
+          page: "<p> <strong>参加型スペース</strong>とは、組織の特定の領域や範囲について決定を下すために定期的に会合を開く組織のメンバーのグループです。</p> <p>会議体はプライベートのものもあれば、公開されているものもあります。公開されている場合は、その集会に参加することができます (例えば、定員に余裕があれば出席したり、議題にポイントを追加したり、この組織の提案や決定に対してコメントしたりすることができます)。</p> <p>例：総会（年に一度開催され、組織の主要な活動方針と執行機関を投票で決定する）、平等諮問評議会（組織内の男女比率等を改善する方法についての提案を行うために2ヶ月ごとに開催される）、評価委員会（プロセスを監視するために毎月開催される）、保証機関（意思決定手続きを改善するために事件や虐待、提案を収集する）などは、すべて会議体の例です。</p>\n"
+          title: 参加スペースとは？
+    log:
+      value_types:
+        assembly_presenter:
+          not_found: '参加スペースがデータベース上に見つかりませんでした (ID: %{id})'
+        assembly_type_presenter:
+          not_found: '参加スペース種別がデータベース上に見つかりませんでした (ID: %{id})'
+    menu:
+      assemblies: 参加スペース
+    metrics:
+      assemblies:
+        description: 作成された参加スペース数
+        object: 参加スペース
+        title: 参加スペース
+    participatory_processes:
+      show:
+        related_assemblies: 関連する参加スペース
+    statistics:
+      assemblies_count: 参加スペース
+  layouts:
+    decidim:
+      assemblies:
+        assembly:
+          more_info: 詳細情報
+          take_part: 参加する
+        index:
+          promoted_assemblies: ハイライトされた参加スペース
+        metadata:
+          children_item:
+            other: "%{count} 個の参加スペース"
+        order_by_assemblies:
+          assemblies:
+            other: "%{count} 個の参加スペース"
+      assembly_navigation:
+        assembly_member_menu_item: メンバー

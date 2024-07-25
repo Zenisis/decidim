@@ -1,0 +1,64 @@
+pt-BR:
+  activemodel:
+    attributes:
+      dummy_resource:
+        created_at: Criado em
+        decidim_scope_id: Escopo
+        field: Meu campo
+        start_date: Data de início
+        title: Título
+        translatable_text: Texto traduzido
+        updated_at: Atualizado em
+  decidim:
+    components:
+      dummy:
+        settings:
+          global:
+            guided: Entrada guiada
+            guided_help: Texto de ajuda
+            guided_readonly: Entrada desabilitada
+            guided_rich: Entrada de rich text guiada
+            guided_rich_help_html: HTML <strong>ajuda</strong> texto
+            guided_rich_readonly_html: HTML <strong>ajuda</strong> texto para entrada desativada
+            readonly_attribute: Atributo somente leitura
+            test: Teste A
+            test_choices:
+              a: Escolha A
+              b: Escolha B
+              c: Escolha C
+            test_options:
+              bar: Bar
+              baz: Baz
+              foo: Foo
+          step:
+            endorsements_blocked: Endossos bloqueados
+            endorsements_enabled: Endossos habilitados
+            readonly_step_attribute: Atributo passo somente leitura
+            test_options:
+              bar: Bar
+              baz: Baz
+              foo: Foo
+    dummy:
+      admin:
+        exports:
+          dummies: Manequim
+    gamification:
+      badges:
+        test:
+          conditions:
+            - Use um ambiente de teste para decidim.
+          description: Os usuários obtêm esse selo criando testes.
+          description_another: Este usuário criou %{score} testes.
+          description_own: Você criou %{score} testes.
+          name: Testes
+          next_level_in: Crie mais %{score} testes para alcançar o próximo nível!
+          unearned_another: Este participante ainda não criou nenhum teste ainda.
+          unearned_own: Você não criou testes ainda.
+    resource_links:
+      test_link:
+        dummy_resource_dummy: Manequim relacionado
+    statistics:
+      bar: Bar
+      dummies_count_high: Dummies alta
+      dummies_count_medium: Dummies medium
+      foo: Foo

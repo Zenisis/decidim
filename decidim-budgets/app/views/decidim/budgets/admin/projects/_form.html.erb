@@ -1,0 +1,47 @@
+<div class="form__wrapper">
+  <div class="card pt-4">
+    <div class="card-section">
+      <div class="row column">
+        <%= form.translated :text_field, :title, autofocus: true, aria: { label: :title } %>
+      </div>
+
+      <div class="row column">
+        <%= form.translated :editor, :description, aria: { label: :description } %>
+      </div>
+
+      <div class="row column">
+        <%= form.number_field :budget_amount %>
+      </div>
+
+      <% if @form.geocoding_enabled? %>
+        <div class="row column">
+          <%= form.geocoding_field :address %>
+        </div>
+      <% end %>
+
+      <% if current_component.has_subscopes? %>
+        <div class="row column">
+          <%= scopes_select_field form, :decidim_scope_id, root: budget.scope %>
+        </div>
+      <% end %>
+
+      <div class="row column">
+        <%= form.categories_select :decidim_category_id, current_participatory_space.categories, include_blank: true, disable_parents: false %>
+      </div>
+
+    <% if Decidim::Budgets.enable_proposal_linking %>
+      <div class="row column">
+        <%= render partial: "decidim/proposals/proposals/proposals_picker", locals: { form:, field: :proposals } %>
+      </div>
+    <% end %>
+
+      <%= render partial: "decidim/admin/shared/gallery", locals: { form: } %>
+
+      <% if form.object.persisted? %>
+        <div class="row column">
+          <%= form.check_box :selected %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

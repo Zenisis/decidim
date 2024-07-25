@@ -1,0 +1,106 @@
+ru:
+  activemodel:
+    attributes:
+      project:
+        decidim_category_id: Категория
+        decidim_scope_id: Охват
+        description: Описание
+        proposal_ids: Подобные предложения
+        title: Название
+  activerecord:
+    models:
+      decidim/budgets/project:
+        one: Проект
+        few: Проекта
+        many: Проектов
+        other: Проектов
+  decidim:
+    budgets:
+      actions:
+        attachment_collections: Папки
+        attachments: Прикрепленные файлы
+        confirm_destroy: Вы действительно хотите удалить этот проект?
+        destroy: Удалить
+        edit: Редактировать
+        import: Внести в проекты позаимствованные предложения
+        preview: Предпросмотр
+        title: Действия
+      admin:
+        models:
+          project:
+            name: Проект
+        projects:
+          edit:
+            title: Редактировать проект
+            update: Обновить
+          index:
+            finished_orders: Завершенные голосования
+            pending_orders: Текущие голосования
+            title: Проекты
+          new:
+            create: Создать
+            title: Новый проект
+        proposals_imports:
+          new:
+            create: Внести в проекты позаимствованные предложения
+            no_components: В этом пространстве соучастия нет других составляющих предложений, куда можно было бы внести позаимствованные предложения.
+            select_component: Пожалуйста, выберите составляющую
+      admin_log:
+        project:
+          create: "%{user_name} создал проект %{resource_name} в пространстве %{space_name}"
+          delete: "%{user_name} удалил проект %{resource_name} в пространстве %{space_name}"
+          update: "%{user_name} обновил проект %{resource_name} в пространстве %{space_name}"
+      models:
+        project:
+          fields:
+            title: Название
+      projects:
+        budget_confirm:
+          cancel: Отменить
+          confirm: Подтвердить
+          description: Вот те проекты, которые вы выбрали для включения в бюджет.
+          title: Подтвердить голос
+        budget_excess:
+          budget_excess:
+            title: Превышен предельный бюджет
+          ok: Хорошо
+        budget_summary:
+          are_you_sure: Вы действительно хотите отменить свой голос?
+          cancel_order: удалить свой голос и начать все сначала
+          checked_out:
+            title: Голосование по бюджету завершено
+        count:
+          projects_count:
+            one: 1 проект
+            few: "%{count} проекта"
+            many: "%{count} проектов"
+            other: "%{count} проектов"
+        filters:
+          category: Категория
+          scope: Охват
+          search: Поиск
+        project_budget_button:
+          add: Добавить
+          added: Добавлено
+        show:
+          budget: Бюджет
+    components:
+      budgets:
+        actions:
+          vote: Голосовать
+        name: Бюджеты
+        settings:
+          global:
+            announcement: Объявление
+            comments_enabled: Комментарии включены
+            projects_per_page: Проектов на страницу
+            total_budget: Общий бюджет
+            vote_threshold_percent: Минимальный процент бюджета для голосования
+          step:
+            announcement: Объявление
+            comments_blocked: Комментарии отключены
+            show_votes: Показать голоса
+            votes_choices:
+              enabled: Голосование включено
+  index:
+    confirmed_orders_count: Количество голосов

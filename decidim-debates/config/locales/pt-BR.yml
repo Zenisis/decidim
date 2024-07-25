@@ -1,0 +1,216 @@
+pt-BR:
+  activemodel:
+    attributes:
+      debate:
+        category_id: Categoria
+        closed_at: Fechado em
+        conclusions: Conclusões
+        decidim_category_id: Categoria
+        description: Descrição
+        end_time: Termina em
+        information_updates: Atualizações de informações
+        instructions: Instruções para participar
+        scope_id: Escopo
+        start_time: Começa em
+        title: Título
+        user_group_id: Criar debate como
+    models:
+      decidim/debates/close_debate_event: Debate encerrado
+      decidim/debates/create_debate_event: Debate
+      decidim/debates/creation_disabled_event: Debates desativados
+      decidim/debates/creation_enabled_event: Criação de debates ativada
+  activerecord:
+    models:
+      decidim/debates/debate:
+        one: Debate
+        other: Debates
+  decidim:
+    components:
+      debates:
+        actions:
+          comment: Comentário
+          create: Criar
+          endorse: Endossar
+        name: Debates
+        settings:
+          global:
+            announcement: Anúncio
+            comments_enabled: Comentários ativados
+            comments_max_length: Tamanho máximo de comentários (deixe 0 para o valor padrão)
+            scope_id: Escopo
+            scopes_enabled: Escopos habilitados
+          step:
+            announcement: Anúncio
+            comments_blocked: Comentários bloqueados
+            creation_enabled: Os participantes podem criar debates
+            endorsements_blocked: Endossos bloqueados
+            endorsements_enabled: Endossos habilitados
+    debates:
+      actions:
+        close: Fechar
+        confirm_destroy: Você tem certeza?
+        destroy: Excluir
+        edit: Editar
+        new: Novo debate
+        title: Ações
+      admin:
+        debate_closes:
+          edit:
+            close: Fechar
+            title: Fechar debate
+        debates:
+          create:
+            invalid: Houve um problema ao criar o debate.
+            success: Debate criado com sucesso.
+          destroy:
+            success: Debate excluído com sucesso.
+          edit:
+            title: Editar debate
+            update: Atualização do debate
+          form:
+            debate_type: Tipo de debate
+            finite: Finito (com hora de início e fim)
+            open: Abra (Sem horas de início ou fim)
+          index:
+            title: Debates
+          new:
+            create: Criar debate
+            title: Novo debate
+          update:
+            invalid: Ocorreu um problema ao atualizar esse debate.
+            success: Debate atualizado com sucesso.
+        exports:
+          comments: Comentários
+      admin_log:
+        debate:
+          close: "%{user_name} fechou o debate %{resource_name} no espaço %{space_name}"
+          create: "%{user_name} criou o debate %{resource_name} no espaço %{space_name}"
+          update: "%{user_name} atualizou o debate %{resource_name} no espaço %{space_name}"
+      debate_m:
+        commented_time_ago: Comentou há %{time} atrás
+      debates:
+        close:
+          invalid: Houve um problema ao encerrar o debate.
+          success: Debate encerrado com sucesso.
+        close_debate_modal:
+          cancel: Cancelar
+          description: Qual é o resumo ou a conclusão deste debate?
+          send: Fechar debate
+        count:
+          debates_count:
+            one: "%{count} debate"
+            other: "%{count} debates"
+        create:
+          invalid: Houve um problema ao criar o debate.
+          success: Debate criado com sucesso.
+        debates:
+          empty: Não há debates ainda.
+          empty_filters: Não há debates com estes critérios.
+        edit:
+          back: Voltar
+          save: Salvar alterações
+          title: Editar debate
+        filters:
+          activity: Minha atividade
+          all: Todos
+          category: Categoria
+          category_prompt: Selecione uma categoria
+          commented: Comentado
+          my_debates: Meus debates
+          official: Oficial
+          origin: Origem
+          participants: Participantes
+          search: Procurar
+          state: Status
+          state_values:
+            closed: Fechado
+            open: Aberto
+          user_group: Grupos
+        form:
+          select_a_category: Selecione uma categoria
+        index:
+          new_debate: Novo debate
+        new:
+          back: Voltar
+          create: Criar
+          title: Novo debate
+        orders:
+          commented: Mais comentado
+          label: Ordenar debates por
+          random: Ordem aleatória
+          recent: Mais recente
+          updated: Atualizado recentemente
+        show:
+          close_debate: Fechar debate
+          debate_closed: Fechado
+          debate_conclusions_are: 'O debate foi encerrado em %{date} com estas conclusões:'
+          edit_conclusions: Editar conclusões
+          edit_debate: Editar debate
+          groups_count: Grupos
+          open: Debate aberto
+          participants_count: Participantes
+        update:
+          invalid: Ocorreu um problema ao atualizar esse debate.
+          success: Debate atualizado com sucesso.
+      last_activity:
+        debate_updated: 'Debate atualizado:'
+        new_debate: 'Novo debate:'
+      models:
+        debate:
+          fields:
+            end: Fim
+            end_time: Data final
+            official_debate: Debate oficial
+            start: Iniciar
+            start_time: Data de início
+            title: Título
+    events:
+      debates:
+        create_debate_event:
+          user_followers:
+            email_intro: |-
+              Olá,
+              %{author_name} %{author_nickname}, quem você está seguindo, criou um novo debate "%{resource_title}". Confira e contribua:
+            email_outro: Você recebeu esta notificação porque está seguindo %{author_nickname}. Você pode parar de receber notificações após o link anterior.
+            email_subject: Novo debate "%{resource_title}" por %{author_nickname}
+            notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> criou o debate <a href="%{resource_path}">%{resource_title}</a>.
+        creation_disabled:
+          email_intro: 'A criação do debate não está mais ativa em %{participatory_space_title}. Você ainda pode participar de debates abertos nesta página:'
+          email_outro: Você recebeu esta notificação porque está seguindo %{participatory_space_title}. Você pode parar de receber notificações após o link anterior.
+          email_subject: Criação de debate desativada em %{participatory_space_title}
+          notification_title: A criação do debate agora está desativada em <a href="%{participatory_space_url}">%{participatory_space_title}</a>
+        creation_enabled:
+          email_intro: 'Agora você pode iniciar novos debates em %{participatory_space_title}! Comece a participar nesta página:'
+          email_outro: Você recebeu esta notificação porque está seguindo %{participatory_space_title}. Você pode parar de receber notificações após o link anterior.
+          email_subject: Debates agora disponíveis em %{participatory_space_title}
+          notification_title: Agora você pode começar <a href="%{resource_path}">novos debates</a> em <a href="%{participatory_space_url}">%{participatory_space_title}</a>.
+        debate_closed:
+          affected_user:
+            email_intro: 'O debate "%{resource_title}" foi encerrado. Você pode ler as conclusões em sua página:'
+            email_outro: Você recebeu esta notificação porque está seguindo "%{resource_title}". Você pode deixar de segui-lo no link anterior.
+            email_subject: O debate "%{resource_title}" foi encerrado
+            notification_title: O debate <a href="%{resource_path}">%{resource_title}</a> foi encerrado.
+          follower:
+            email_intro: 'O debate "%{resource_title}" foi encerrado. Você pode ler as conclusões em sua página:'
+            email_outro: Você recebeu esta notificação porque está seguindo "%{resource_title}". Você pode deixar de segui-lo no link anterior.
+            email_subject: O debate "%{resource_title}" foi encerrado
+            notification_title: O debate <a href="%{resource_path}">%{resource_title}</a> foi encerrado.
+    gamification:
+      badges:
+        commented_debates:
+          conditions:
+            - Escolha um debate aberto para participar
+          description: Este emblema é concedido quando você participa ativamente nos debates diferentes deixando seus comentários.
+          description_another: Este usuário participou em %{score} debates.
+          description_own: Você participou de %{score} debates.
+          name: Debates
+          next_level_in: Participe em mais %{score} debates para alcançar o próximo nível!
+          unearned_another: Este usuário ainda não participou de nenhum debate.
+          unearned_own: Você ainda não participou de nenhum debate ainda.
+    metrics:
+      debates:
+        description: Número de debates criados
+        object: debates
+        title: Debates
+    statistics:
+      debates_count: Debates

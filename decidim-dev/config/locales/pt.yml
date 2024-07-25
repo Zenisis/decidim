@@ -1,0 +1,57 @@
+pt:
+  activemodel:
+    attributes:
+      dummy_resource:
+        created_at: Criado em
+        decidim_scope_id: Âmbito
+        field: O meu campo
+        start_date: Data de início
+        title: Título
+        translatable_text: Texto traduzível
+        updated_at: Atualizado em
+  decidim:
+    components:
+      dummy:
+        settings:
+          global:
+            readonly_attribute: Atributo só de leitura
+            test: Teste A
+            test_choices:
+              a: Escolha A
+              b: Escolha B
+              c: Escolha C
+            test_options:
+              bar: Barra
+              baz: Bar
+              foo: Foo
+          step:
+            endorsements_blocked: Endossamentos bloqueados
+            endorsements_enabled: Endossamentos ativados
+            readonly_step_attribute: Atributo de passo só de leitura
+            test_options:
+              bar: Barra
+              baz: Bar
+              foo: Foo
+    dummy:
+      admin:
+        exports:
+          dummies: Manequim
+    gamification:
+      badges:
+        test:
+          conditions:
+            - Utilize um ambiente de teste para decidim.
+          description: Os participantes obtêm este distintivo ao criarem testes.
+          description_another: Este participante criou %{score} testes.
+          description_own: Criou %{score} testes.
+          name: Testes
+          next_level_in: Crie mais %{score} testes para alcançar o próximo nível!
+          unearned_own: Ainda não criou qualquer teste.
+    resource_links:
+      test_link:
+        dummy_resource_dummy: Manequim relacionado
+    statistics:
+      bar: Barra
+      dummies_count_high: Fictícias alto
+      dummies_count_medium: Fictícias médio
+      foo: Foo

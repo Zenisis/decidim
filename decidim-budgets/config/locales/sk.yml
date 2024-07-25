@@ -1,0 +1,119 @@
+sk:
+  activemodel:
+    attributes:
+      project:
+        decidim_category_id: Kategória
+        decidim_scope_id: Rozsah
+        description: Popis
+        proposal_ids: Súvisiace návrhy
+        title: Názov
+  activerecord:
+    models:
+      decidim/budgets/project:
+        one: Projekt
+        few: Projekty
+        many: Projekty
+        other: Projekty
+  decidim:
+    budgets:
+      actions:
+        attachment_collections: Priečinky
+        attachments: Prílohy
+        confirm_destroy: Naozaj chcete odstrániť tento projekt?
+        destroy: Odstrániť
+        edit: Upraviť
+        import: Importovať návrhy do projektov
+        preview: Ukážka
+        title: Akcie
+      admin:
+        models:
+          project:
+            name: Projekt
+        projects:
+          edit:
+            title: Upraviť projekt
+            update: Aktualizovať
+          index:
+            finished_orders: Dokončené hlasy
+            pending_orders: Čaká sa na hlasy
+            title: Projekty
+          new:
+            create: Vytvoriť
+            title: Nový projekt
+        proposals_imports:
+          new:
+            create: Importovať návrhy do projektov
+            no_components: V tomto participatívnom priestore nie sú žiadne ďalšie súčasti návrhov pre import návrhov do projektov.
+            select_component: Prosíme, zvoľte súčasť
+      admin_log:
+        project:
+          create: "%{user_name} vytvoril projekt %{resource_name} v priestore %{space_name}"
+          delete: "%{user_name} vymazal projekt %{resource_name} v priestore %{space_name}"
+          update: "%{user_name} aktualizoval projekt %{resource_name} v priestore %{space_name}"
+      models:
+        project:
+          fields:
+            title: Názov
+      order_summary_mailer:
+        order_summary:
+          selected_projects: 'Vybrali ste tieto projekty:'
+          subject: Hlasovali ste na participatívnom priestore %{space_name}
+      projects:
+        budget_confirm:
+          cancel: Zrušiť
+          confirm: Potvrdiť
+          description: Na týchto projektoch ste si zvolili účasť na rozpočte.
+          title: Potvrdiť hlas
+        budget_excess:
+          budget_excess:
+            title: Maximálny rozpočet prekročený
+          ok: OK
+        budget_summary:
+          are_you_sure: Naozaj chcete zrušiť svoj hlas?
+          cancel_order: vymažte svoj hlas a začnite odznova
+          checked_out:
+            title: Hlasovanie o rozpočte dokončené
+        count:
+          projects_count:
+            one: 1 projekt
+            few: "%{count} projekty"
+            many: "%{count} projekty"
+            other: "%{count} projekty"
+        filters:
+          category: Kategória
+          scope: Rozsah
+          search: Hľadať
+        orders:
+          highest_cost: Najvyššie náklady
+          label: Zoradiť projekty podľa
+          lowest_cost: Najnižšie náklady
+          most_voted: Najviac hlasov
+          random: Náhodné poradie
+        project_budget_button:
+          add: Pridať
+          added: Pridané
+        show:
+          budget: Rozpočet
+    components:
+      budgets:
+        actions:
+          vote: Hlasovať
+        name: Rozpočty
+        settings:
+          global:
+            announcement: Oznámenie
+            comments_enabled: Komentáre povolené
+            projects_per_page: Projektov na stránke
+            total_budget: Celkový rozpočet
+            vote_minimum_budget_projects_number: Minimálny počet projektov, za ktoré je možné hlasovať
+            vote_rule_minimum_budget_projects_enabled: 'Povoliť pravidlo: Minimálny počet projektov, za ktoré je možné hlasovať'
+            vote_rule_threshold_percent_enabled: 'Povoliť pravidlo: Minimálne percento rozpočtu'
+            vote_threshold_percent: Limit percenta hlasov
+          step:
+            announcement: Oznámenie
+            comments_blocked: Zablokované komentáre
+            show_votes: Zobraziť hlasy
+            votes_choices:
+              enabled: Hlasovanie povolené
+  index:
+    confirmed_orders_count: Počet hlasov

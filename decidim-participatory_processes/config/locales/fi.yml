@@ -1,0 +1,520 @@
+fi:
+  activemodel:
+    attributes:
+      participatory_process:
+        announcement: Ilmoitus
+        area_id: Alue
+        copy_categories: Kopioi aihepiirit
+        copy_components: Kopioi komponentit
+        copy_steps: Kopioi vaiheet
+        decidim_area_id: Alue
+        description: Kuvaus
+        developer_group: Edistäjäryhmä
+        document: Asiakirja
+        domain: Toimintaympäristö
+        end_date: Päättymispäivä
+        hashtag: Aihetunniste (hashtag)
+        hero_image: Etusivun kuva
+        import_attachments: Tuo liitteitä
+        import_categories: Kopioi aihepiirejä
+        import_components: Tuo komponentteja
+        import_steps: Tuo vaiheita
+        local_area: Järjestöalue
+        meta_scope: Teeman metadata
+        participatory_process_group_id: Prosessiryhmä
+        participatory_process_type_id: Prosessin tyyppi
+        participatory_scope: Mitä päätetään
+        participatory_structure: Miten päätetään
+        private_space: Yksityinen prosessi
+        promoted: Korostettu
+        published_at: Julkaisuaika
+        related_process_ids: Liittyvät prosessit
+        scope_id: Teema
+        scope_type_max_depth_id: Teema-suodattimen syvyys
+        scopes_enabled: Teemat käytössä
+        short_description: Lyhyt kuvaus
+        slug: URL-tunniste
+        start_date: Alkamispäivä
+        subtitle: Alaotsikko
+        target: Kuka osallistuu
+        title: Otsikko
+        weight: Järjestysnumero
+      participatory_process_group:
+        description: Kuvaus
+        developer_group: Edistäjäryhmä
+        group_url: Verkkosivusto
+        hashtag: Aihetunniste (hashtag)
+        hero_image: Kuva
+        local_area: Organisaation alue
+        meta_scope: Teeman metatiedot
+        participatory_process_ids: Liittyvät prosessit
+        participatory_scope: Mitä päätetään
+        participatory_structure: Miten päätetään
+        target: Kuka osallistuu
+        title: Otsikko
+      participatory_process_step:
+        cta_path: Call to Action -polku
+        cta_text: Call to Action -teksti
+        description: Kuvaus
+        end_date: Päättymispäivä
+        short_description: Lyhyt kuvaus
+        start_date: Alkamispäivä
+        title: Otsikko
+      participatory_process_type:
+        title: Otsikko
+      participatory_process_user_role:
+        email: Sähköposti
+        name: Nimi
+        role: Rooli
+    errors:
+      models:
+        participatory_process:
+          attributes:
+            document:
+              allowed_file_content_types: 'Virheellinen tiedostomuoto. Ainoastaan seuraavat tiedostomuodot on sallittu: %{types}'
+    models:
+      decidim/participatory_process_step_activated_event: Vaihe aktivoitu
+      decidim/participatory_process_step_changed_event: Vaihe muutettu
+  activerecord:
+    models:
+      decidim/participatory_process:
+        one: Osallistumisprosessi
+        other: Osallisuusprosessit
+      decidim/participatory_process_group:
+        one: Osallistumisprosessiryhmä
+        other: Osallisuusprosessiryhmät
+      decidim/participatory_process_step:
+        one: Vaihe
+        other: Vaiheet
+  decidim:
+    admin:
+      actions:
+        activate: Aktivoi
+        configure: Asetukset
+        confirm_destroy: Vahvista poistaminen
+        destroy: Poista
+        duplicate: Kopioi
+        edit: Muokkaa
+        import_process: Tuo
+        moderate: Moderoi
+        new_process: Uusi prosessi
+        new_process_group: Uusi prosessiryhmä
+        new_process_step: Uusi vaihe
+        new_process_type: Uusi prosessityyppi
+        new_process_user_role: Uusi prosessin hallintakäyttäjä
+        preview: Esikatsele
+        publish: Julkaise
+        resend_invitation: Lähetä kutsu uudelleen
+        see_process: Näytä prosessi
+        unpublish: Lopeta julkaisu
+      filters:
+        decidim_participatory_process_group_id_eq:
+          label: Prosessiryhmä
+      menu:
+        participatory_process_groups: Prosessiryhmät
+        participatory_process_groups_submenu:
+          info: Tiedot
+          landing_page: Laskeutumissivu
+        participatory_process_types: Prosessityypit
+        participatory_processes: Prosessit
+        participatory_processes_submenu:
+          attachment_collections: Kansiot
+          attachment_files: Tiedostot
+          attachments: Liitteet
+          categories: Aihepiirit
+          components: Komponentit
+          info: Tietoa tästä prosessista
+          landing_page: Laskeutumissivu
+          moderations: Moderoinnit
+          private_users: Yksityiset käyttäjät
+          process_admins: Prosessin hallintakäyttäjät
+          steps: Vaiheet
+      models:
+        participatory_process:
+          fields:
+            actions: Toiminnot
+            created_at: Luonnin ajankohta
+            private: Yksityinen
+            published: Julkaistu
+            title: Otsikko
+          name: Osallistumisprosessi
+        participatory_process_group:
+          fields:
+            title: Otsikko
+          name: Prosessiryhmä
+        participatory_process_step:
+          fields:
+            end_date: Päättymispäivä
+            start_date: Alkamispäivä
+            title: Otsikko
+          name: Osallistumisprosessin vaihe
+        participatory_process_type:
+          fields:
+            created_at: Luontiaika
+            title: Otsikko
+          name: Prosessityyppi
+        participatory_process_user_role:
+          fields:
+            email: Sähköposti
+            name: Nimi
+            role: Rooli
+          name: Osallistumisprosessin käyttäjä
+          roles:
+            admin: Hallintakäyttäjä
+            collaborator: Osallistuva käyttäjä
+            moderator: Moderoija
+            valuator: Arvon arvioija
+        user:
+          fields:
+            invitation_accepted_at: Kutsu hyväksytty
+            invitation_sent_at: Kutsu on
+      participatory_process_copies:
+        new:
+          copy: Kopioi
+          select: Valitse, mitkä tiedot haluat kopioida
+          title: Kopioi osallistumisprosessi
+      participatory_process_groups:
+        destroy:
+          error: Osallistumisprosessien ryhmän poisto epäonnistui.
+          success: Osallistumisprosessien ryhmän poisto onnistui.
+        edit:
+          title: Muokkaa prosessiryhmää
+          update: Päivitä
+        new:
+          create: Luo
+          title: Uusi prosessiryhmä
+        update:
+          error: Osallistumisprosessien ryhmän päivitys epäonnistui.
+          success: Osallistumisprosessien ryhmän päivitys onnistui.
+      participatory_process_imports:
+        create:
+          error: Virhe tuotaessa tätä osallistumisprosessia.
+          success: Osallistumisprosessin tuonti onnistui.
+        new:
+          import: Tuo
+          select: Valitse, mitkä tiedot haluat tuoda
+          title: Tuo osallistumisprosessi
+      participatory_process_publications:
+        create:
+          error: Osallistumisprosessin julkaisu epäonnistui.
+          success: Osallistumisprosessin julkaisu onnistui.
+        destroy:
+          error: Osallistumisprosessin julkaisun lopettaminen epäonnistui.
+          success: Osallistumisprosessin julkaisun lopettaminen onnistui.
+      participatory_process_step_activations:
+        create:
+          error: Osallistumisprosessin vaiheen aktivointi epäonnistui.
+          success: Osallistumisprosessin vaiheen aktivointi onnistui.
+      participatory_process_steps:
+        create:
+          error: Uuden osallistumisprosessin vaiheen luonti epäonnistui.
+          success: Osallistumisprosessin vaiheen luonti onnistui.
+        default_title: Johdanto
+        destroy:
+          error:
+            active_step: Aktiivista vaihetta ei voi poistaa.
+            last_step: Prosessin viimeistä vaihetta ei voi poistaa.
+          success: Osallistumisprosessin vaiheen poisto onnistui.
+        edit:
+          cta_deprecated:
+            body_html: |-
+              Osallistumisprosessin toimintopainike (call to action) on poistettu käytöstä uuden ulkoasun myötä.
+              Voit muuttaa tätä asetusta <b>Laskeutumssivun asetusten kautta</b> käyttämällä sisältölohkoa nimeltä <b>Pääkuva</b>.
+              Asetus on jätetty tähän paikkaan muuttaaksesi toimintopainikkeet (call to action) sellaiseksi kuin haluat. Kentät <i>toimintopainikkeen (call to action) polulle</i> ja <i>toimintopainikkeen (call to action) tekstille</i> poistetaan seuraavassa versiossa.
+            title: Käytöstä poistettu CTA (call to action)
+          title: Muokkaa osallistumisprosessin vaihetta
+          update: Päivitä
+        index:
+          steps_title: Vaiheet
+        new:
+          create: Luo
+          title: Uusi osallistumisprosessin vaihe
+        ordering:
+          error: Osallistumisprosessin vaiheiden järjestäminen epäonnistui.
+        update:
+          error: Osallistumisprosessin vaiheen päivitys epäonnistui.
+          success: Osallistumisprosessin vaiheen päivitys onnistui.
+      participatory_process_types:
+        create:
+          error: Prosessityypin luonti epäonnistui.
+          success: Prosessityypin luonti onnistui.
+        destroy:
+          success: Prosessityypin poisto onnistui.
+        edit:
+          title: Muokkaa prosessityyppiä
+          update: Päivitä
+        new:
+          create: Luo
+          title: Uusi prosessityyppi
+        update:
+          error: Prosessityypin päivitys epäonnistui.
+          success: Prosessityypin päivittäminen onnistui.
+      participatory_process_user_roles:
+        create:
+          error: Osallistumisprosessin käyttäjän lisääminen epäonnistui.
+          success: Käyttäjän lisäys tähän osallistumisprosessiin onnistui.
+        destroy:
+          success: Käyttäjä poistaminen tästä osallistumisprosessista onnistui.
+        edit:
+          title: Päivitä osallistumisprosessin hallintakäyttäjä
+          update: Päivitä
+        index:
+          process_admins_title: Osallistumisprosessin hallintakäyttäjät
+        new:
+          create: Luo
+          title: Uusi osallistumisprosessin hallintakäyttäjä
+        update:
+          error: Tämän osallistumisprosessin hallintakäyttäjän päivitys epäonnistui.
+          success: Osallistumisprosessin hallintakäyttäjän päivitys onnistui.
+      participatory_processes:
+        create:
+          error: Uuden osallistumisprosessin luonti epäonnistui.
+          success: Osallistumisprosessin luonti onnistui. Määritä nyt sen vaiheet.
+        edit:
+          update: Päivitä
+        index:
+          private: Yksityinen
+          public: Julkinen
+          published: Julkaistu
+          unpublished: Julkaisematon
+        new:
+          create: Luo
+          title: Uusi osallistumisprosessi
+        update:
+          error: Osallistumisprosessin päivitys epäonnistui.
+          success: Osallistumisprosessin päivitys onnistui.
+      participatory_processes_copies:
+        create:
+          error: Osallistumisprosessin kopiointi epäonnistui.
+          success: Osallistumisprosessin kopiointi onnistui.
+      participatory_processes_group:
+        create:
+          error: Uuden osallistumisprosessien ryhmän luonti epäonnistui.
+          success: Osallistumisprosessien ryhmän luonti onnistui.
+      titles:
+        participatory_process_groups: Osallistumisprosessiryhmät
+        participatory_process_types: Osallistumisprosessien tyypit
+        participatory_processes: Osallistumisprosessit
+      users:
+        resend_invitation:
+          error: Kutsun uudelleenlähetys epäonnistui.
+          success: Kutsun uudelleenlähetys onnistui.
+    admin_log:
+      participatory_process:
+        create: "%{user_name} loi osallistumisprosessin %{resource_name}"
+        duplicate: "%{user_name} kopioi osallistumisprosessin %{resource_name}"
+        export: "%{user_name} vei osallistumisprosessin %{resource_name}"
+        import: "%{user_name} toi osallistumisprosessin %{resource_name}"
+        publish: "%{user_name} julkaisi osallistumisprosessin %{resource_name}"
+        unpublish: "%{user_name} muutti osallistumisprosessin %{resource_name} julkaisemattomaksi"
+        update: "%{user_name} päivitti osallistumisprosessin %{resource_name}"
+      participatory_process_group:
+        create: "%{user_name} loi osallistumisprosessien ryhmän %{resource_name}"
+        update: "%{user_name} päivitti osallistumisprosessien ryhmää %{resource_name}"
+      participatory_process_step:
+        activate: "%{user_name} aktivoi vaiheen %{resource_name} osallistumisprosessissa %{space_name}"
+        create: "%{user_name} loi vaiheen %{resource_name} osallistumisprosessissa %{space_name}"
+        delete: "%{user_name} poisti vaiheen %{resource_name} osallistumisprosessissa %{space_name}"
+        update: "%{user_name} päivitti vaiheen %{resource_name} osallistumisprosessissa %{space_name}"
+      participatory_process_type:
+        create: "%{user_name} loi prosessityypin %{resource_name}"
+        delete: "%{user_name} poisti prosessityypin %{resource_name}"
+        update: "%{user_name} päivitti prosessityyppiä %{resource_name}"
+      participatory_process_user_role:
+        create: "%{user_name} kutsui käyttäjän %{resource_name} osallistumisprosessiin %{space_name}"
+        delete: "%{user_name} poisti käyttäjän %{resource_name} osallistumisprosessista %{space_name}"
+        update: "%{user_name} muutti käyttäjän %{resource_name} roolia osallistumisprosessissa %{space_name}"
+    events:
+      participatory_process:
+        role_assigned:
+          email_intro: Sinulle on myönnetty rooli %{role} osallistumistilassa "%{resource_title}".
+          email_outro: Tämä viesti on lähetetty sinulle, koska roolisi on %{role} osallistumistilassa "%{resource_title}".
+          email_subject: Sinulle on myönnetty rooli %{role} kohteessa "%{resource_title}".
+          notification_title: Sinulle on myönnetty rooli %{role} osallistumistilassa <a href="%{resource_url}">%{resource_title}</a>.
+        step_activated:
+          email_intro: 'Vaihe %{resource_title} on nyt käytössä kohteessa %{participatory_space_title}. Voit tutustua siihen tältä sivulta:'
+          email_outro: Tämä ilmoitus on lähetetty sinulle, koska seuraat kohdetta %{participatory_space_title}. Voit lopettaa ilmoitusten vastaanottamisen edellä esitetyn linkin kautta.
+          email_subject: Päivitys kohteessa %{participatory_space_title}
+          notification_title: Vaihe %{resource_title} on nyt käytössä kohteessa <a href="%{resource_path}">%{participatory_space_title}</a>
+        step_changed:
+          email_intro: 'Vaiheen %{resource_title} päivämäärät kohteessa %{participatory_space_title} on päivitetty. Voit tutustua siihen tältä sivulta:'
+          email_outro: Tämä ilmoitus on lähetetty sinulle, koska seuraat kohdetta %{participatory_space_title}. Voit lopettaa ilmoitusten vastaanottamisen edellä esitetyn linkin kautta.
+          email_subject: Päivitys kohteessa %{participatory_space_title}
+          notification_title: Päivämäärät on päivitetty vaiheelle <a href="%{resource_path}">%{resource_title}</a> osallistumistilassa <a href="%{participatory_space_url}">%{participatory_space_title}</a>.
+    help:
+      participatory_spaces:
+        participatory_processes:
+          contextual: "<p><strong>Osallistumisprosessi</strong> on osallistumistoimien sarja (esim. täytä ensin kysely, tee sitten ehdotuksia, keskustele niistä kasvokkain tai virtuaalisissa tapaamisissa ja lopuksi priorisoi ne), tavoitteena päättää tietystä aiheesta.</p> <p>Esimerkkejä osallisuusprosesseista ovat komitean jäsenten valintamenettely (jossa ensin esitetään ehdokkaat, sitten keskustellaan ja lopulta valitaan jäsenet), osallistuva budjetointi (joissa tehdään ehdotuksia, arvioidaan niiden toteutushinta ja äänestetään niistä budjetoitujen varojen puitteissa) strateginen suunnitteluprosessi ja asetuksen, säädöksen, kaupunkisuunnitelman tai julkisen toimintasuunnitelman laatimisen yhteistyöstäminen.</p>\n"
+          page: "<p><strong>Osallistumisprosessi</strong> on osallistumistoimien sarja (esim. täytä ensin kysely, tee sitten ehdotuksia, keskustele niistä kasvokkain tai virtuaalisissa tapaamisissa ja lopuksi priorisoi ne), tavoitteena päättää tietystä aiheesta.</p> <p>Esimerkkejä osallisuusprosesseista ovat komitean jäsenten valintamenettely (jossa ensin esitetään ehdokkaat, sitten keskustellaan ja lopulta valitaan jäsenet), osallistuva budjetointi (joissa tehdään ehdotuksia, arvioidaan niiden toteutushinta ja äänestetään niistä budjetoitujen varojen puitteissa) strateginen suunnitteluprosessi ja asetuksen, säädöksen, kaupunkisuunnitelman tai julkisen toimintasuunnitelman laatimisen yhteistyöstäminen.</p>\n"
+          title: Mikä on osallistumisprosessi?
+    log:
+      value_types:
+        participatory_process_type_presenter:
+          not_found: 'Prosessityyppiä ei löytynyt tietokannasta (ID: %{id}).'
+    menu:
+      processes: Prosessit
+    metrics:
+      participatory_processes:
+        description: Osallistumisprosessien määrä tässä organisaatiossa
+        object: osallistumisprosessit
+        title: Osallistumisprosessit
+    participatory_process_groups:
+      content_blocks:
+        extra_data:
+          developer_group: Edistäjäryhmä
+          name: Metatiedot
+          participatory_scope: Mitä päätetään
+          participatory_structure: Miten päätetään
+          target: Kuka osallistuu
+        html:
+          name: HTML-lohko
+        html_1:
+          name: Ensimmäinen HTML-osio
+        html_2:
+          name: Toinen HTML-osio
+        html_3:
+          name: Kolmas HTML-osio
+        main_data:
+          name: Otsikko ja kuvaus
+        participatory_processes:
+          active: Aktiiviset osallistumisprosessit
+          name: Osallistumisprosessit
+        stats:
+          name: Tilastot
+        title:
+          meta_scope: Teema
+          participatory_processes:
+            one: 1 prosessi
+            other: "%{count} prosessia"
+      show:
+        title: Osallistumisprosessiryhmät
+    participatory_process_steps:
+      index:
+        process_steps: Prosessin vaiheet
+    participatory_processes:
+      admin:
+        content_blocks:
+          highlighted_processes:
+            active: Aktiiviset
+            all: Kaikki
+            max_results: Näytettävien elementtien enimmäismäärä
+            selection_criteria: Valintakriteerit
+        new_import:
+          accepted_types:
+            json: JSON
+        participatory_process_copies:
+          form:
+            slug_help_html: 'URL-tunnisteita käytetään tuottamaan URL-osoitteet, jotka viittaavat tähän prosessiin. Hyväksyy vain kirjaimet, numerot ja viivat. Arvon on alettava kirjaimella. Esimerkki: %{url}'
+        participatory_process_groups:
+          form:
+            metadata: Metatiedot
+            title: Tietoa tästä prosessista
+            visibility: Näkyvyys
+        participatory_process_imports:
+          form:
+            document_legend: Lisää asiakirja
+            slug_help_html: 'URL-tunnisteita käytetään tuottamaan URL-osoitteet, jotka viittaavat tähän prosessiin. Hyväksyy vain kirjaimet, numerot ja viivat. Arvon on alettava kirjaimella. Esimerkki: %{url}'
+        participatory_process_steps:
+          form:
+            cta_path_help_html: 'Käytä osittaisia ​​polkuja, ei kokonaisia URL-osoitteita. Hyväksyy kirjaimet, numerot, väliviivat ja kauttaviivat. Arvon täytyy alkaa kirjaimella. Jos asetusta ei ole asetettu, painiketta ei näytetä. Esimerkki: %{url}'
+            cta_text_help: Jos asetusta ei ole asetettu, painiketta ei näytetä.
+        participatory_processes:
+          form:
+            announcement_help: Tähän kirjoitettu teksti näkyy käyttäjälle heti prosessitietojen alapuolella.
+            duration: Kesto
+            filters: Suodattimet
+            images: Kuvat
+            metadata: Metatiedot
+            other: Muut
+            related_processes: Liittyvät prosessit
+            scope_type_max_depth_help: Rajaa teemasuodattimen syvyyttä; suodatin näyttää yleisestä teemasta valittuun teematyyppiin saakka.
+            select_an_area: Valitse alue
+            select_participatory_process_type: Valitse prosessityyppi
+            select_process_group: Valitse prosessiryhmä
+            slug_help_html: 'URL-tunnisteita käytetään tuottamaan URL-osoitteet, jotka viittaavat tähän prosessiin. Hyväksyy vain kirjaimet, numerot ja viivat. Arvon on alettava kirjaimella. Esimerkki: %{url}'
+            title: Yleistä tietoa
+            visibility: Näkyvyys
+      content_blocks:
+        extra_data:
+          name: Vaihe ja kesto
+        hero:
+          name: Pääkuva ja CTA-painike (call to action)
+        highlighted_processes:
+          name: Tärkeimmät prosessit
+        related_processes:
+          name: Liittyvät prosessit
+      index:
+        title: Osallistumisprosessit
+      last_activity:
+        new_participatory_process: Uusi osallistumisprosessi
+      pages:
+        home:
+          highlighted_processes:
+            active_spaces: Aktiiviset prosessit
+            see_all_spaces: Näytä kaikki prosessit
+      participatory_process_steps:
+        index:
+          back_to_process: Takaisin prosessin sivulle
+      participatory_processes:
+        description:
+          area_name: Alue
+          data: Prosessin tiedot
+          developer_group: Edistäjäryhmä
+          local_area: Organisaatioalue
+          meta_scope: Teema
+          participatory_scope: Mitä päätetään
+          participatory_structure: Miten päätetään
+          target: Kuka osallistuu
+          title: Tietoa tästä prosessista
+        filters:
+          all_types: Kaikki tyypit
+          counters:
+            active:
+              one: 1 aktiivinen prosessi
+              other: "%{count} aktiivista prosessia"
+            all:
+              one: 1 prosessi
+              other: "%{count} prosessia"
+            past:
+              one: 1 aikaisempi prosessi
+              other: "%{count} aikaisempaa prosessia"
+            upcoming:
+              one: 1 tuleva prosessi
+              other: "%{count} tulevaa prosessia"
+          date: Päivämäärä
+          explanations:
+            no_active: Ei aktiivisia prosesseja.
+            no_active_nor_upcoming: Ei aktiivisia tai tulevia prosesseja.
+            no_active_nor_upcoming_callout: Ei ole olemassa aktiivisia tai tulevia prosesseja. Tässä on luettelo menneistä.
+          filter_by: Näytä
+          names:
+            active: Aktiiviset
+            all: Kaikki
+            past: Menneet
+            upcoming: Tulevat
+          see: Näytä
+          type: Tyyppi
+        show:
+          title: Tietoa tästä prosessista
+      show:
+        belongs_to_group: Tämä prosessi kuuluu ryhmään
+        private_space: Tämä on yksityinen prosessi
+        related_processes: Liittyvät prosessit
+    statistics:
+      processes_count: Prosessia
+  layouts:
+    decidim:
+      participatory_process_groups:
+        participatory_process_group:
+          browse: Selaa
+          browse_resource: Selaa prosessiryhmää %{resource_name}
+          processes_count: 'Prosessit:'
+      participatory_processes:
+        index:
+          promoted_processes: Tärkeät prosessit
+        participatory_process:
+          active_step: Aktiivinen vaihe
+          more_info: Lisätietoja
+          more_info_about: Lisätietoja prosessista %{resource_name}
+          take_part: Osallistu
+          take_part_in: Osallistu prosessiin %{resource_name}

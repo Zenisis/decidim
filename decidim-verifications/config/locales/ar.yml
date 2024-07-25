@@ -1,0 +1,169 @@
+ar:
+  activemodel:
+    attributes:
+      config:
+        available_methods: الطرق المتاحة
+        offline: غير متصل على الانترنت
+        offline_explanation: تعليمات للتحقق حاليا
+        online: عبر الانترنت
+      id_document_information:
+        document_number: رقم الوثيقة (مع خطاب)
+        document_type: نوع المستند
+      id_document_upload:
+        document_number: رقم الوثيقة (مع خطاب)
+        document_type: نوع المستند الخاص بك
+        user: مشارك
+        verification_attachment: نسخة ممسوحة ضوئيًا من المستند
+      offline_confirmation:
+        email: البريد الإلكتروني المشارك
+      postal_letter_address:
+        full_address: العنوان الكامل
+      postal_letter_confirmation:
+        verification_code: شيفرة التأكيد
+      postal_letter_postage:
+        full_address: العنوان الكامل
+        verification_code: شيفرة التأكيد
+  decidim:
+    authorization_handlers:
+      admin:
+        id_documents:
+          help:
+            - يقوم المستخدمون بملء معلومات هويتهم وتحميل نسخة من وثيقتهم.
+            - يمكنك ملء المعلومات الموجودة في الصورة التي تم تحميلها.
+            - يجب أن تتطابق المعلومات مع كل ما قام المستخدم بملئه.
+            - 
+        postal_letter:
+          help:
+            - يطلب المشاركون إرسال رمز التحقق إلى عنوانهم.
+            - يمكنك إرسال الرسالة إلى عنوانهم مع رمز التحقق.
+            - يمكنك وضع علامة على الرسالة كما تم إرسالها.
+            - بمجرد وضع علامة على الرسالة على أنها مرسلة ، سيتمكن المشارك من تقديم الرمز والتحقق منه.
+      csv_census:
+        name: تعداد المنظمة
+      direct: مباشرة
+      help: المساعدة
+      id_documents:
+        name: وثائق الهوية
+      multistep: متعدد الخطوة
+      name: اسم
+      postal_letter:
+        name: رمز عن طريق البريد
+    verifications:
+      authorizations:
+        create:
+          error: كانت هناك مشكلة في إنشاء الترخيص.
+          unconfirmed: تحتاج إلى تأكيد بريدك الإلكتروني من أجل تفويض نفسك.
+        first_login:
+          actions:
+            another_dummy_authorization_handler: تحقق من مثال آخر على معالج التخويل
+            csv_census: تحقق من تعداد المنظمة
+            dummy_authorization_handler: تحقق من مقابل معالج التخويل
+            dummy_authorization_workflow: تحقق من سير عمل تخويل المثال
+            id_documents: الحصول على التحقق عن طريق تحميل وثيقة الهوية الخاصة بك
+            postal_letter: الحصول على التحقق من خلال تلقي رمز التحقق عبر البريد العادي
+          title: تحقق من هويتك
+          verify_with_these_options: 'هذه هي الخيارات المتاحة للتحقق من هويتك:'
+        new:
+          authorize: إرسال
+          authorize_with: تحقق مع %{authorizer}
+        renew_modal:
+          cancel: إلغاء
+        skip_verification: يمكنك تخطي هذا الآن و %{link}
+        start_exploring: البدء في استكشاف
+      csv_census:
+        admin:
+          census:
+            create:
+              error: حدث خطأ أثناء استيراد التعداد.
+          destroy:
+            title: احذف جميع بيانات التعداد
+          index:
+            empty: لا توجد بيانات التعداد. استخدم النموذج أدناه لاستيراده باستخدام ملف CSV.
+            title: بيانات التعداد الحالية
+          instructions:
+            body: للقيام بذلك ، يجب عليك إدخال إدارة النظام وإضافة تصاريح csv_census إلى المؤسسة
+          new:
+            file: ".csv ملف مع بيانات رسائل البريد الإلكتروني"
+            submit: رفع ملف
+            title: تحميل إحصاء جديد
+        authorizations:
+          new:
+            error: لم نتمكن من التحقق من حسابك أو لم تكن في تعداد المنظمة.
+            success: تم التحقق من حسابك بنجاح.
+      dummy_authorization:
+        extra_explanation:
+          postal_codes:
+            zero: 'تقتصر المشاركة على المشاركين الذين لديهم أي من الرموز البريدية التالية: %{postal_codes}.'
+            one: تقتصر المشاركة على المشاركين الذين لديهم الرمز البريدي %{postal_codes}.
+            two: 'تقتصر المشاركة على المشاركين الذين لديهم أي من الرموز البريدية التالية: %{postal_codes}.'
+            few: 'تقتصر المشاركة على المشاركين الذين لديهم أي من الرموز البريدية التالية: %{postal_codes}.'
+            many: 'تقتصر المشاركة على المشاركين الذين لديهم أي من الرموز البريدية التالية: %{postal_codes}.'
+            other: 'تقتصر المشاركة على المشاركين الذين لديهم أي من الرموز البريدية التالية: %{postal_codes}.'
+      id_documents:
+        admin:
+          config:
+            edit:
+              title: تكوين وثائق الهوية
+              update: تحديث
+            update:
+              error: حدثت مشكلة أثناء تحديث التكوين.
+          confirmations:
+            new:
+              introduce_user_data: إدخال البيانات في الصورة
+              reject: رفض
+              verify: التحقق
+          offline_confirmations:
+            new:
+              cancel: إلغاء
+              introduce_user_data: تقديم البريد الإلكتروني المشارك وبيانات الوثيقة
+              verify: التحقق
+          pending_authorizations:
+            index:
+              config: التكوين
+              offline_verification: التحقق حاليا
+              title: في انتظار التحقق عبر الإنترنت
+              verification_number: 'التحقق #%{n}'
+        authorizations:
+          choose:
+            choose_a_type: 'الرجاء تحديد الطريقة التي تريد التحقق منها:'
+            offline: غير متصل على الانترنت
+            online: عبر الانترنت
+            title: تحقق من نفسك باستخدام مستند هويتك
+          edit:
+            offline: استخدم التحقق بلا اتصال
+            online: استخدام التحقق عبر الإنترنت
+            send: طلب التحقق مرة أخرى
+          new:
+            send: طلب التحقق
+            title: قم بتحميل مستند هويتك
+        passport: جواز سفر
+      postal_letter:
+        admin:
+          pending_authorizations:
+            index:
+              address: عنوان
+              letter_sent_at: رسالة أرسلت في
+              mark_as_sent: بمناسبة إرسالها
+              not_yet_sent: لم ترسل بعد
+              title: التحقق المستمر
+              username: الاسم المستعار
+              verification_code: شيفرة التأكيد
+        authorizations:
+          edit:
+            send: تؤكد
+          new:
+            send: ارسل لي خطاب
+            title: اطلب رمز التحقق
+      sms:
+        authorizations:
+          edit:
+            confirm_destroy: هل أنت متأكد من أنك تريد إعادة تعيين رمز التحقق؟
+            destroy: إعادة تعيين رمز التحقق
+            send: تؤكد
+            title: قدم رمز التحقق الذي تلقيته
+          new:
+            send: ارسل لي رسالة
+            title: اطلب رمز التحقق
+  errors:
+    messages:
+      uppercase_only_letters_numbers: يجب أن تكون جميعها كبيرة وتحتوي فقط على أحرف و / أو أرقام

@@ -1,0 +1,223 @@
+de:
+  activemodel:
+    attributes:
+      debate:
+        category_id: Kategorie
+        closed_at: Geschlossen am
+        conclusions: Zusammenfassung
+        decidim_category_id: Kategorie
+        description: Beschreibung
+        end_time: Endet am
+        information_updates: Informationsaktualisierungen
+        instructions: Anweisungen zur Teilnahme
+        scope_id: Themenbereich
+        start_time: Startet um
+        title: Titel
+        user_group_id: Debatte erstellen als
+    models:
+      decidim/debates/close_debate_event: Debatte beendet
+      decidim/debates/create_debate_event: Debatte
+      decidim/debates/creation_disabled_event: Debatten deaktiviert
+      decidim/debates/creation_enabled_event: Erstellung von Debatten aktiviert
+  activerecord:
+    models:
+      decidim/debates/debate:
+        one: Debatte
+        other: Debatten
+  decidim:
+    components:
+      debates:
+        actions:
+          comment: Kommentar
+          create: Erstellen
+          endorse: Bestätigen
+        name: Debatten
+        settings:
+          global:
+            announcement: Ankündigung
+            comments_enabled: Kommentare aktiviert
+            comments_max_length: Maximale Länge der Kommentare (0 für Standardwert)
+            scope_id: Bereich
+            scopes_enabled: Bereiche aktiviert
+          step:
+            announcement: Ankündigung
+            comments_blocked: Kommentare blockiert
+            creation_enabled: Teilnehmer können Debatten erstellen
+            endorsements_blocked: Bestätigungen blockiert
+            endorsements_enabled: Bestätigungen aktiviert
+    debates:
+      actions:
+        close: Schließen
+        confirm_destroy: Sind Sie sich sicher?
+        destroy: Löschen
+        edit: Bearbeiten
+        new: Neue Debatte
+        title: Aktionen
+      admin:
+        debate_closes:
+          edit:
+            close: Schließen
+            title: Debatte schließen
+        debates:
+          create:
+            invalid: Es gab ein Problem beim Erstellen der Debatte.
+            success: Diskussion erfolgreich erstellt
+          destroy:
+            success: Die Diskussion wurde erfolgreich gelöscht.
+          edit:
+            title: Debatte bearbeiten
+            update: Debatte aktualisieren
+          form:
+            debate_type: Debatten-Typ
+            finite: Zeitlich begrenzt (mit Start- und Endzeit)
+            open: Offen (keine Start- und Endzeit)
+          index:
+            title: Debatten
+          new:
+            create: Erstelle eine Debatte
+            title: Neue Debatte
+          update:
+            invalid: Bei der Aktualisierung dieser Debatte ist ein Problem aufgetreten.
+            success: Die Diskussion wurde erfolgreich aktualisiert.
+        exports:
+          comments: Kommentare
+      admin_log:
+        debate:
+          close: "%{user_name} hat die Debatte %{resource_name} in %{space_name} geschlossen"
+          create: "%{user_name} hat die Debatte %{resource_name} in %{space_name} erstellt"
+          update: "%{user_name} hat die Debatte %{resource_name} in %{space_name} aktualisiert"
+      debate_m:
+        commented_time_ago: Vor %{time} kommentiert
+      debates:
+        close:
+          invalid: Beim Beenden der Debatte ist ein Problem aufgetreten.
+          success: Debatte erfolgreich beendet.
+        close_debate_modal:
+          cancel: Abbrechen
+          description: Wie lautet die Zusammenfassung oder Schlussfolgerung dieser Debatte?
+          send: Debatte schließen
+        count:
+          debates_count:
+            one: "%{count} Debatte"
+            other: "%{count} Debatten"
+        create:
+          invalid: Es gab ein Problem beim Erstellen der Debatte.
+          success: Diskussion erfolgreich erstellt
+        debates:
+          empty: Es gibt noch keine Debatten.
+          empty_filters: Es liegen noch keine Debatten mit diesen Kriterien vor.
+        edit:
+          back: Zurück
+          save: Änderungen speichern
+          title: Debatte bearbeiten
+        filters:
+          activity: Meine Aktivität
+          all: Alle
+          category: Kategorie
+          category_prompt: Wählen Sie eine Kategorie
+          commented: Kommentiert
+          my_debates: Meine Debatten
+          official: Offiziell
+          origin: Ursprung
+          participants: Teilnehmer
+          search: Suche
+          state: Status
+          state_values:
+            closed: Geschlossen
+            open: Offen
+          user_group: Gruppen
+        form:
+          select_a_category: Bitte wählen sie eine Kategorie
+        index:
+          new_debate: Neue Debatte
+        new:
+          back: Zurück
+          create: Erstellen
+          title: Neue Debatte
+        orders:
+          commented: Am meisten kommentiert
+          label: Debatten sortieren nach
+          random: Zufällige Reihenfolge
+          recent: Neueste zuerst
+          updated: Kürzlich aktualisiert
+        show:
+          close_debate: Debatte schließen
+          debate_closed: Geschlossen
+          debate_conclusions_are: 'Die Debatte wurde am %{date} mit diesen Ergebnissen geschlossen:'
+          edit_conclusions: Schlussfolgerungen bearbeiten
+          edit_debate: Debatte bearbeiten
+          groups_count: Gruppen
+          open: Offene Debatte
+          participants_count: Teilnehmer
+        update:
+          invalid: Es gab ein Problem bei der Aktualisierung der Aussprache.
+          success: Debatte erfolgreich aktualisiert.
+      last_activity:
+        debate_updated: 'Debatte aktualisiert:'
+        new_debate: 'Neue Debatte:'
+      models:
+        debate:
+          fields:
+            end: Ende
+            end_time: Endtermin
+            official_debate: Offizielle Debatte
+            start: Start
+            start_time: Anfangsdatum
+            title: Titel
+    events:
+      debates:
+        create_debate_event:
+          space_followers:
+            email_intro: |-
+              Guten Tag,
+              Eine neue Debatte "%{resource_title}" wurde auf %{participatory_space_title} eröffnet. Jetzt anschauen und mitdiskutieren unter:
+            email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie %{participatory_space_title} folgen. Falls Sie keine solchen Benachrichtigungen mehr erhalten möchten, besuchen Sie den obigen Link.
+            email_subject: Neue Debatte "%{resource_title}" in %{participatory_space_title}
+            notification_title: Die Debatte <a href="%{resource_path}">%{resource_title}</a> wurde auf <a href="%{participatory_space_url}">%{participatory_space_title}</a> erstellt.
+          user_followers:
+            email_intro: |-
+              Hallo,
+              %{author_name} %{author_nickname}, dem Sie folgen, hat eine neue Debatte "%{resource_title}" erstellt. Sehen Sie es sich an und reden Sie mit:
+            email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie %{author_nickname} folgen. Falls Sie keine solchen Benachrichtigungen mehr erhalten möchten, besuchen Sie den obigen Link.
+            email_subject: Neue Debatte "%{resource_title}" von %{author_nickname}
+            notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> hat die Debatte <a href="%{resource_path}">%{resource_title}</a> erstellt.
+        creation_disabled:
+          email_intro: 'Die Erstellung von Debatten ist in %{participatory_space_title} nicht mehr aktiviert. Sie können weiterhin an offenen Debatten teilnehmen:'
+          email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie %{participatory_space_title} folgen. Falls Sie keine solchen Benachrichtigungen mehr erhalten möchten, besuchen Sie den obigen Link.
+          email_subject: Die Erstellung von Debatten wurde in %{participatory_space_title} deaktiviert
+          notification_title: Die Erstellung von Debatten ist jetzt in <a href="%{participatory_space_url}">%{participatory_space_title}</a> deaktiviert
+        creation_enabled:
+          email_intro: 'Sie können jetzt neue Debatten in %{participatory_space_title} eröffnen! Beteiligen Sie sich auf dieser Seite:'
+          email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie %{participatory_space_title} folgen. Falls Sie keine solchen Benachrichtigungen mehr erhalten möchten, besuchen Sie den obigen Link.
+          email_subject: Debatten jetzt in %{participatory_space_title} verfügbar
+          notification_title: Sie können jetzt <a href="%{resource_path}">neue Debatten</a> in <a href="%{participatory_space_url}">%{participatory_space_title}</a> starten.
+        debate_closed:
+          affected_user:
+            email_intro: 'Die Debatte "%{resource_title}" wurde beendet. Sie können die Resultate auf dieser Seite lesen:'
+            email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie der Debatte "%{resource_title}" folgen. Falls Sie keine solchen Benachrichtigungen mehr erhalten möchten, besuchen Sie den obigen Link.
+            email_subject: Die "%{resource_title}" Debatte wurde beendet
+            notification_title: Die Debatte <a href="%{resource_path}">%{resource_title}</a> wurde beendet.
+          follower:
+            email_intro: 'Die Debatte "%{resource_title}" wurde beendet. Sie können die Resultate auf dieser Seite lesen:'
+            email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie der Debatte "%{resource_title}" folgen. Falls Sie keine solchen Benachrichtigungen mehr erhalten möchten, besuchen Sie den obigen Link.
+            email_subject: Die "%{resource_title}" Debatte wurde beendet
+            notification_title: Die Debatte <a href="%{resource_path}">%{resource_title}</a> wurde beendet.
+    gamification:
+      badges:
+        commented_debates:
+          conditions:
+            - Wählen Sie eine offene Debatte, an der Sie teilnehmen können
+          description: Dieses Abzeichen wird gewährt, wenn Sie aktiv an den verschiedenen Debatten teilnehmen, indem Sie Ihre Kommentare hinterlassen.
+          description_another: Dieser Benutzer hat an %{score} Debatten teilgenommen.
+          description_own: Sie haben an %{score} Debatten teilgenommen.
+          name: Debatten
+          next_level_in: Nehmen Sie an %{score} weiteren Debatten teil, um das nächste Level zu erreichen!
+          unearned_another: Dieser Benutzer hat noch keine Diskussionen geführt.
+          unearned_own: Sie haben bisher an keiner Debatte teilgenommen.
+    metrics:
+      debates:
+        description: Anzahl der erstellten Debatten
+        object: Debatten
+        title: Debatten
+    statistics:
+      debates_count: Debatten

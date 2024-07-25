@@ -1,0 +1,97 @@
+id:
+  activemodel:
+    attributes:
+      project:
+        decidim_category_id: Kategori
+        decidim_scope_id: Cakupan
+        description: Deskripsi
+        proposal_ids: Proposal terkait
+        title: Judul
+  activerecord:
+    models:
+      decidim/budgets/project:
+        other: Proyek
+  decidim:
+    budgets:
+      actions:
+        attachment_collections: Folder
+        attachments: Lampiran
+        confirm_destroy: Anda yakin ingin menghapus proyek ini?
+        destroy: Menghapus
+        edit: Edit
+        import: Impor proposal ke proyek
+        preview: Pratinjau
+        title: Tindakan
+      admin:
+        models:
+          project:
+            name: Proyek
+        projects:
+          edit:
+            title: Edit proyek
+            update: Memperbarui
+          index:
+            finished_orders: Suara jadi
+            pending_orders: Suara yang tertunda
+            title: Proyek
+          new:
+            create: Membuat
+            title: Proyek baru
+        proposals_imports:
+          new:
+            create: Impor proposal ke proyek
+            no_components: Tidak ada komponen proposal lain dalam ruang partisipatif ini untuk mengimpor proposal ke proyek.
+            select_component: Silakan pilih satu komponen
+      admin_log:
+        project:
+          create: "%{user_name} menciptakan proyek %{resource_name} dalam %{space_name} ruang"
+          delete: "%{user_name} menghapus %{resource_name} proyek di %{space_name} ruang"
+          update: "%{user_name} memperbarui proyek %{resource_name} di ruang %{space_name}"
+      models:
+        project:
+          fields:
+            title: Judul
+      projects:
+        budget_confirm:
+          cancel: Membatalkan
+          confirm: Memastikan
+          description: Ini adalah proyek yang Anda pilih untuk menjadi bagian dari anggaran.
+          title: Konfirmasikan suara
+        budget_excess:
+          budget_excess:
+            title: Anggaran maksimum terlampaui
+          ok: baik
+        budget_summary:
+          are_you_sure: Anda yakin ingin membatalkan suara?
+          cancel_order: hapus suara Anda dan mulai lagi dari awal
+          checked_out:
+            title: Suara anggaran selesai
+        count:
+          projects_count:
+            other: "%{count} proyek"
+        filters:
+          category: Kategori
+          scope: Cakupan
+          search: Pencarian
+        show:
+          budget: Anggaran
+    components:
+      budgets:
+        actions:
+          vote: Memilih
+        name: Anggaran
+        settings:
+          global:
+            announcement: Pengumuman
+            comments_enabled: Komentar diaktifkan
+            projects_per_page: Proyek per halaman
+            total_budget: Total anggaran
+            vote_threshold_percent: Batas ambang persentase suara
+          step:
+            announcement: Pengumuman
+            comments_blocked: Komentar diblokir
+            show_votes: Tampilkan suara
+            votes_choices:
+              enabled: Voting diaktifkan
+  index:
+    confirmed_orders_count: Votes dihitung

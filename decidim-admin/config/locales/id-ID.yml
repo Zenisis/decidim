@@ -1,0 +1,611 @@
+id:
+  activemodel:
+    attributes:
+      area:
+        area_type: Tipe area
+        name: Nama
+        organization: Organisasi
+      area_type:
+        name: Nama
+        organization: Organisasi
+        plural: Jamak
+      attachment:
+        attachment_collection_id: Map
+        description: Deskripsi
+        file: Mengajukan
+      attachment_collection:
+        description: Deskripsi
+        name: Nama
+      category:
+        description: Deskripsi
+        name: Nama
+        parent_id: Induk
+      component:
+        name: Nama
+        published_at: Diterbitkan di
+      id: ID
+      newsletter:
+        body: Tubuh
+        subject: Subyek
+      organization:
+        alert_color: Waspada
+        badges_enabled: Aktifkan lencana
+        cta_button_path: Jalur tombol Call To Action
+        cta_button_text: Teks tombol Call To Action
+        default_locale: Lokal default
+        description: Deskripsi
+        enable_omnipresent_banner: Tampilkan spanduk di mana-mana
+        facebook_handler: Penangan Facebook
+        favicon: Ikon
+        github_handler: GitHub handler
+        header_snippets: Cuplikan header
+        highlighted_content_banner_action_subtitle: Subjudul tombol tindakan
+        highlighted_content_banner_action_title: Judul tombol aksi
+        highlighted_content_banner_action_url: URL tombol tindakan
+        highlighted_content_banner_enabled: Tampilkan spanduk konten yang disorot
+        highlighted_content_banner_image: Gambar
+        highlighted_content_banner_short_description: Deskripsi Singkat
+        highlighted_content_banner_title: Judul
+        instagram_handler: Pengatur Instagram
+        logo: Logo
+        name: Nama
+        official_img_footer: Footer logo resmi
+        official_url: URL organisasi resmi
+        omnipresent_banner_short_description: Deskripsi Singkat
+        omnipresent_banner_title: Judul
+        omnipresent_banner_url: URL
+        primary_color: Utama
+        reference_prefix: Awalan referensi
+        secondary_color: Sekunder
+        success_color: Keberhasilan
+        tos_version: Versi persyaratan layanan
+        user_groups_enabled: Aktifkan grup pengguna
+        warning_color: Peringatan
+        youtube_handler: Penangan YouTube
+      scope:
+        code: Kode
+        name: Nama
+        organization: Organisasi
+        parent_id: Induk
+        scope_type: Tipe cakupan
+        scope_type_id: Tipe cakupan
+      scope_type:
+        name: Nama
+        organization: Organisasi
+        plural: Jamak
+      static_page:
+        changed_notably: Ada perubahan nyata.
+        content: Konten
+        organization: Organisasi
+        show_in_footer: Tunjukkan di footer
+        slug: Siput URL
+        title: Judul
+      static_page_topic:
+        description: Deskripsi
+        show_in_footer: Tunjukkan di footer
+        title: Judul
+      user_group_csv_verification:
+        file: Mengajukan
+    errors:
+      models:
+        organization:
+          attributes:
+            official_img_footer:
+              allowed_file_content_types: File gambar tidak valid
+  activerecord:
+    attributes:
+      decidim/static_page:
+        content: Konten
+        slug: Siput URL
+        title: Judul
+      doorkeeper/application:
+        authorize_url: Otorisasi URL
+        client_id: ID Klien
+        client_secret: Rahasia Klien
+        organization_name: Nama Organisasi
+        organization_url: URL Organisasi
+        redirect_uri: Alihkan URI
+        site: Situs web
+  decidim:
+    admin:
+      actions:
+        add: Menambahkan
+        browse: Jelajahi
+        manage: Mengelola
+        permissions: Izin
+        reject: Menolak
+        verify: Memeriksa
+      area_types:
+        create:
+          error: Terjadi kesalahan saat membuat jenis area baru.
+          success: Tipe area berhasil dibuat.
+        edit:
+          title: Edit jenis area
+          update: Memperbarui
+        new:
+          create: Buat tipe area
+          title: Tipe area baru
+        update:
+          error: Terjadi kesalahan saat memperbarui jenis area ini.
+      areas:
+        create:
+          error: Terjadi kesalahan saat membuat area baru.
+          success: Area berhasil dibuat.
+        edit:
+          title: Edit area
+          update: Memperbarui
+        new:
+          create: Buat area
+          title: Area baru
+        no_areas: Tanpa Area
+        update:
+          error: Ada kesalahan saat memperbarui area ini.
+      attachment_collections:
+        create:
+          error: Ada kesalahan saat membuat folder baru.
+          success: Folder berhasil dibuat.
+        destroy:
+          success: Folder berhasil dihancurkan.
+        edit:
+          title: Edit folder
+          update: Memperbarui
+        index:
+          attachment_collections_title: Folder lampiran
+        new:
+          create: Membuat
+          title: Folder baru
+        update:
+          error: Ada kesalahan saat memperbarui folder ini.
+          success: Folder berhasil diperbarui.
+      attachments:
+        create:
+          error: Terjadi kesalahan saat membuat lampiran baru.
+          success: Attachment berhasil dibuat.
+        destroy:
+          success: Lampiran berhasil dihancurkan.
+        edit:
+          title: Edit lampiran
+          update: Memperbarui
+        index:
+          attachments_title: Lampiran
+        new:
+          create: Buat lampiran
+          title: Lampiran baru
+        update:
+          error: Ada kesalahan saat memperbarui lampiran ini.
+          success: Lampiran berhasil diperbarui.
+      autocomplete:
+        no_results: Tidak ada hasil yang ditemukan
+      categories:
+        create:
+          error: Terjadi kesalahan saat membuat kategori ini.
+          success: Kategori berhasil dibuat.
+        destroy:
+          error: Terjadi kesalahan saat menghapus kategori ini. Hapus subkategori terlebih dahulu, pastikan tidak ada entitas lain yang termasuk dalam kategori ini dan coba lagi.
+          success: Kategori berhasil dihapus.
+        edit:
+          title: Edit kategori
+          update: Memperbarui
+        index:
+          categories_title: Kategori
+        new:
+          create: Buat kategori
+          title: Kategori baru
+        update:
+          error: Terjadi kesalahan saat memperbarui kategori ini.
+          success: Kategori berhasil diperbarui.
+      component_permissions:
+        update:
+          success: Izin berhasil diperbarui.
+      components:
+        create:
+          error: Terjadi kesalahan saat membuat komponen ini.
+          success: Komponen berhasil dibuat.
+        destroy:
+          error: Terjadi kesalahan saat merusak komponen ini.
+          success: Komponen berhasil dihapus.
+        edit:
+          title: Edit komponen
+          update: Memperbarui
+        form:
+          default_step_settings: Pengaturan langkah default
+          global_settings: Pengaturan global
+          step_settings: Pengaturan langkah
+        index:
+          add: Tambahkan komponen
+          headers:
+            actions: Tindakan
+            name: Nama komponen
+            type: Jenis komponen
+        new:
+          add: Tambahkan komponen
+          title: 'Tambahkan komponen: %{name}'
+        publish:
+          success: Komponen telah berhasil dipublikasikan.
+        title: Komponen
+        unpublish:
+          success: Komponen telah berhasil tidak dipublikasikan.
+        update:
+          error: Terjadi kesalahan saat memperbarui komponen ini.
+          success: Komponen berhasil diperbarui.
+      dashboard:
+        show:
+          view_more_logs: Lihat lebih banyak log
+      exports:
+        export_as: "%{name} sebagai %{export_format}"
+      filters:
+        category_id_eq:
+          label: Kategori
+        officialized_at_null:
+          label: Negara
+          values:
+            'false': Diresmikan
+            'true': Tidak resmi
+        search_label: Pencarian
+      help_sections:
+        form:
+          save: Menyimpan
+      impersonatable_users:
+        index:
+          filter:
+            all: Semua
+            managed: Dikelola
+            not_managed: Tidak dikelola
+          impersonate: Menirukan
+          impersonate_new_managed_user: Meniru pengguna yang dikelola baru
+          managed: Dikelola
+          name: Nama
+          needs_authorization_warning: Anda memerlukan setidaknya satu otorisasi diaktifkan untuk organisasi ini.
+          not_managed: Tidak dikelola
+          promote: Memajukan
+          search: Pencarian
+          status: Status
+          view_logs: Lihat log
+      impersonations:
+        close_session:
+          error: Terjadi kesalahan saat menutup sesi peniruan saat ini.
+          success: Sesi peniruan saat ini telah berhasil berakhir.
+        create:
+          error: Terjadi kesalahan saat meniru identitas pengguna.
+          success: Pengguna yang dikelola telah berhasil dibuat.
+        form:
+          authorization_method: Metode otorisasi
+          name: Nama
+          reason: Alasan
+        new:
+          impersonate: Menirukan
+          impersonate_existing_managed_user: Meniru pengguna terkelola "%{name}"
+          impersonate_existing_user: Meniru pengguna "%{name}"
+          impersonate_new_managed_user: Meniru pengguna yang dikelola baru
+      managed_users:
+        promotion:
+          error: Terjadi kesalahan saat mempromosikan pengguna yang dikelola.
+          success: Pengguna yang dikelola telah berhasil dipromosikan.
+        promotions:
+          new:
+            explanation: Pengguna yang dikelola dapat dipromosikan ke pengguna standar. Ini berarti mereka akan diundang ke aplikasi dan Anda tidak akan dapat meniru mereka lagi. Pengguna yang diundang akan menerima email untuk menerima undangan Anda.
+            new_managed_user_promotion: Promosi pengguna terkelola baru
+            promote: Memajukan
+      menu:
+        admin_log: Log aktivitas admin
+        admins: Admin
+        appearance: Penampilan
+        area_types: Tipe area
+        areas: Area
+        configuration: Konfigurasi
+        help_sections: Bagian bantuan
+        homepage: Homepage
+        impersonations: Peniruan identitas
+        manage: Mengelola
+        newsletters: Nawala
+        participants: Peserta
+        scope_types: Tipe lingkup
+        scopes: Scopes
+        settings: Pengaturan
+        static_pages: Halaman
+        user_groups: Grup Pengguna
+        users: Pengguna
+      models:
+        area:
+          fields:
+            area_type: Tipe area
+            name: Nama
+        area_type:
+          fields:
+            name: Nama
+            plural: Jamak
+        attachment:
+          fields:
+            collection: Map
+            content_type: Mengetik
+            file_size: Ukuran
+            title: Judul
+          name: Lampiran
+        attachment_collection:
+          name: Map
+        category:
+          name: Kategori
+        impersonation_log:
+          fields:
+            admin: Admin
+            ended_at: Berakhir pada
+            expired_at: Kedaluwarsa pada
+            reason: Alasan
+            started_at: Dimulai pada
+            user: Pengguna
+        newsletter:
+          fields:
+            created_at: Dibuat di
+            progress: Kemajuan
+            sent_at: Dikirim pada
+            subject: Subyek
+          name: Newsletter
+        participatory_space_private_user:
+          name: Ruang partisipatif pengguna pribadi
+        scope:
+          fields:
+            name: Nama
+            scope_type: Tipe cakupan
+        scope_type:
+          fields:
+            name: Nama
+            plural: Jamak
+        static_page:
+          fields:
+            created_at: Dibuat di
+            title: Judul
+        user:
+          fields:
+            created_at: Tanggal pembuatan
+            email: E-mail
+            name: Nama
+            role: Peran
+            roles:
+              admin: Admin
+              user_manager: Pengelola pengguna
+          name: Pengguna
+        user_group:
+          fields:
+            actions: Tindakan
+            created_at: Dibuat di
+            document_number: Nomor dokumen
+            name: Nama
+            phone: Telepon
+            state: Negara
+            users_count: Jumlah pengguna
+      moderations:
+        report:
+          reasons:
+            does_not_belong: Bukan milik
+            offensive: Serangan
+            spam: Spam
+      newsletter_templates:
+        index:
+          preview_template: Preview
+      newsletters:
+        create:
+          error: Terjadi kesalahan saat membuat buletin ini.
+        deliver:
+          error: Terjadi kesalahan saat mengirim buletin ini.
+          success: Nawala berhasil dikirim.
+        destroy:
+          error_already_sent: 'Tidak dapat menghancurkan nawala: Sudah dikirim.'
+          success: Buletin berhasil dihancurkan.
+        edit:
+          save_and_preview: Simpan dan pratinjau
+          title: Edit buletin
+        index:
+          confirm_delete: Anda yakin ingin menghapus buletin ini?
+          title: Nawala
+        new:
+          save: Menyimpan
+          title: Newsletter baru
+        select_recipients_to_deliver:
+          confirm_deliver: Anda yakin ingin menyampaikan buletin ini? Tindakan ini tidak bisa dibatalkan.
+          deliver: Kirimkan buletin
+        show:
+          preview: Preview
+          subject: Subyek
+        update:
+          error: Terjadi kesalahan saat memperbarui buletin ini.
+          success: Buletin berhasil diperbarui. Harap tinjau sebelum mengirim.
+      officializations:
+        index:
+          actions: Tindakan
+          badge: Lencana
+          created_at: Dibuat di
+          name: Nama
+          nickname: Nama panggilan
+          not_officialized: Tidak resmi
+          officialize: Resmi
+          officialized: Diresmikan
+          reofficialize: Lakukan pengesahan ulang
+          status: Status
+          unofficialize: Tidak resmi
+        new:
+          badge: Lencana resmi
+          officialize: Resmi
+          title: Beri otorisasi kepada pengguna "%{name}"
+      organization:
+        edit:
+          title: Edit organisasi
+          update: Memperbarui
+        form:
+          facebook: Facebook
+          github: GitHub
+          instagram: Instagram
+          social_handlers: Sosial
+          youtube: Youtube
+        update:
+          error: Terjadi kesalahan saat memperbarui organisasi ini.
+          success: Organisasi berhasil diperbarui.
+      organization_appearance:
+        edit:
+          update: Memperbarui
+        form:
+          colors:
+            colors_title: Warna organisasi
+          cta_button_text_help: Anda dapat menimpa teks tombol Ajakan Bertindak di beranda untuk setiap bahasa yang tersedia di organisasi Anda. Jika tidak disetel, nilai default akan digunakan. Tombol Ajakan Bertindak ditampilkan di homepage antara teks selamat datang dan deskripsi.
+          homepage_appearance_title: Edit tampilan homepage
+          homepage_highlighted_content_banner_title: Spanduk konten berkecepatan tinggi
+          images:
+            layout_appearance_title: Edit tampilan tata letak
+          omnipresent_banner_appearance_title: Edit spanduk yang ada di mana-mana
+      participatory_space_private_users:
+        create:
+          error: Terjadi kesalahan saat menambahkan pengguna pribadi untuk ruang partisipatif ini.
+          success: Ruang partisipatif akses pengguna pribadi berhasil dibuat.
+        destroy:
+          error: Terjadi kesalahan saat menghapus pengguna pribadi untuk ruang partisipatif ini.
+          success: Akses pribadi pengguna ruang partisipatif berhasil dihancurkan.
+        index:
+          title: Ruang partisipatif pengguna pribadi
+        new:
+          create: Membuat
+          title: Pengguna Pribadi Ruang Partisipatif Baru.
+      resource_permissions:
+        edit:
+          submit: Menyerahkan
+          title: Edit izin
+        update:
+          success: Izin berhasil diperbarui.
+      scope_types:
+        create:
+          error: Terjadi kesalahan saat membuat jenis cakupan baru.
+          success: Tipe lingkup berhasil dibuat.
+        destroy:
+          success: Tipe cakupan berhasil dihancurkan
+        edit:
+          title: Edit jenis cakupan
+          update: Memperbarui
+        new:
+          create: Buat jenis cakupan
+          title: Ruang lingkup baru
+        update:
+          error: Ada kesalahan saat memperbarui jenis ruang lingkup ini.
+          success: Tipe lingkup berhasil diperbarui
+      scopes:
+        create:
+          error: Terjadi kesalahan saat membuat cakupan baru.
+          success: Lingkup berhasil dibuat.
+        edit:
+          title: Sunting cakupan
+          update: Memperbarui
+        new:
+          create: Buat cakupan
+          title: Ruang lingkup baru
+        no_scopes: Tidak ada cakupan pada level ini.
+        update:
+          error: Ada kesalahan saat memperbarui ruang lingkup ini.
+          success: Lingkup berhasil diperbarui
+      static_page_topics:
+        create:
+          error: Ada kesalahan saat membuat topik baru.
+          success: Topik berhasil dibuat.
+        edit:
+          title: Edit topik
+          update: Perbarui topik
+        new:
+          create: Buat topik
+          title: Topik baru
+        update:
+          error: Ada kesalahan saat memperbarui topik ini.
+          success: Topik berhasil diperbarui
+      static_pages:
+        actions:
+          view: Lihat halaman publik
+        create:
+          error: Ada kesalahan saat membuat halaman baru.
+          success: Halaman berhasil dibuat.
+        destroy:
+          success: Halaman berhasil dihancurkan
+        edit:
+          title: Edit halaman
+          update: Memperbarui
+        form:
+          none: Tidak ada
+        index:
+          last_notable_change: Perubahan penting terakhir
+        new:
+          create: Membuat halaman
+          title: Halaman baru
+        topic:
+          without_topic: Halaman tanpa topik
+        update:
+          error: Terjadi kesalahan saat memperbarui halaman ini.
+      titles:
+        admin_log: Log admin
+        area_types: Tipe area
+        areas: Area
+        authorization_workflows: Metode verifikasi
+        dashboard: Dasbor
+        impersonatable_users: Pengguna yang dikelola
+        impersonations: Manajemen pengguna
+        participants: Pengguna
+        scope_types: Tipe lingkup
+        scopes: Scopes
+        user_groups: Grup Pengguna
+      user_group:
+        csv_verify:
+          invalid: Ada kesalahan saat membaca file CSV.
+        reject:
+          invalid: Ada kesalahan saat menolak grup pengguna ini.
+        verify:
+          invalid: Ada kesalahan saat memverifikasi grup pengguna ini.
+      user_groups:
+        index:
+          state:
+            pending: Menunggu keputusan
+            rejected: Ditolak
+            verified: Diverifikasi
+          verify_via_csv: Verifikasi melalui CSV
+      user_groups_csv_verifications:
+        new:
+          explanation: Unggah file CSV Anda. Itu harus memiliki email resmi dari kelompok pengguna di organisasi Anda di kolom pertama file, tanpa header. Hanya grup pengguna yang telah mengkonfirmasi email mereka dan yang memiliki email yang muncul dalam file CSV akan divalidasi.
+          title: Unggah file CSV Anda
+          upload: Unggah
+      users:
+        create:
+          error: Terjadi kesalahan saat mengundang pengguna ini.
+          success: Pengguna berhasil diundang.
+        destroy:
+          error: Terjadi kesalahan saat mencoba menghapus pengguna ini.
+          success: Pengguna bukan lagi administrator.
+        form:
+          email: E-mail
+          name: Nama
+          role: Peran
+        new:
+          create: Undang
+      users_statistics:
+        users_count:
+          admins: Admin
+          participants: Peserta
+    moderations:
+      actions:
+        hidden: Tersembunyi
+        hide: Menyembunyikan
+        not_hidden: tidak tersembunyi
+        title: Tindakan
+        unhide: Tidak terlihat
+        unreport: Unreport
+      admin:
+        reportable:
+          hide:
+            invalid: Ada masalah menyembunyikan sumber daya.
+            success: Sumber daya berhasil disembunyikan.
+          unhide:
+            invalid: Terjadi masalah saat menyembunyikan sumber daya.
+            success: Sumber daya berhasil tanpa hambatan.
+          unreport:
+            invalid: Sudah ada masalah yang tidak melaporkan sumber daya.
+            success: Sumber daya berhasil tidak dilaporkan.
+      models:
+        moderation:
+          fields:
+            hidden_at: Tersembunyi di
+            reported_content_url: URL konten yang dilaporkan
+            visit_url: Kunjungi URL
+  errors:
+    messages:
+      invalid_json: JSON tidak valid

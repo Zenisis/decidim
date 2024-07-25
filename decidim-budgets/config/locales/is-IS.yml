@@ -1,0 +1,84 @@
+is-IS:
+  activemodel:
+    attributes:
+      project:
+        decidim_category_id: Flokkur
+        decidim_scope_id: Umfang
+        description: Lýsing
+        proposal_ids: Tengdar tillögur
+        title: Titill
+  decidim:
+    budgets:
+      actions:
+        attachments: Viðhengi
+        confirm_destroy: Ertu viss um að þú viljir eyða þessu verkefni?
+        destroy: Eyða
+        edit: Breyta
+        preview: Preview
+        title: Aðgerðir
+      admin:
+        models:
+          project:
+            name: Verkefni
+        projects:
+          edit:
+            title: Breyta verkefnum
+            update: Uppfæra
+          index:
+            finished_orders: Lokið atkvæði
+            pending_orders: Víkjandi atkvæði
+            title: Verkefni
+          new:
+            create: Búa til
+      admin_log:
+        project:
+          create: "%{user_name} búið til %{resource_name} verkefnið í %{space_name} rúminu"
+          delete: "%{user_name} eyddi %{resource_name} verkefninu í %{space_name} rúminu"
+          update: "%{user_name} uppfært %{resource_name} verkefnið í %{space_name} rúminu"
+      models:
+        project:
+          fields:
+            title: Titill
+      projects:
+        budget_confirm:
+          cancel: Hætta við
+          confirm: Staðfesta
+          description: Þetta eru þau verkefni sem þú hefur valið að vera hluti af fjárhagsáætluninni.
+          title: Staðfestu atkvæði
+        budget_excess:
+          budget_excess:
+            title: Hámarks fjárhagsáætlun yfir
+          ok: Allt í lagi
+        budget_summary:
+          are_you_sure: Ertu viss um að þú viljir hætta við atkvæði þitt?
+          cancel_order: Eyðu atkvæðagreiðslunni og farðu yfir
+          checked_out:
+            title: Fjárhagsleg atkvæði lokið
+        count:
+          projects_count:
+            one: 1 verkefni
+            other: "%{count} verkefni"
+        filters:
+          category: Flokkur
+          scope: Umfang
+          search: Leita
+        show:
+          budget: Fjárhagsáætlun
+    components:
+      budgets:
+        actions:
+          vote: Kjósa
+        name: Fjárveitingar
+        settings:
+          global:
+            announcement: Tilkynning
+            comments_enabled: Athugasemdir virkt
+            projects_per_page: Verkefni á síðu
+            total_budget: Samtals fjárhagsáætlun
+            vote_threshold_percent: Kjósa þrjú prósent
+          step:
+            announcement: Tilkynning
+            comments_blocked: Athugasemdir læst
+            show_votes: Sýna atkvæði
+  index:
+    confirmed_orders_count: Atkvæðagreiðsla telja

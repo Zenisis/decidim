@@ -1,0 +1,7 @@
+<%= render "layouts/decidim/application" do %>
+  <%= render layout:"layouts/decidim/shared/layout_center", locals: { main_enabled: false } do %>
+    <%= render partial: "layouts/decidim/initiative_signature_creation_header" %>
+    <%= yield %>
+    <%= append_javascript_pack_tag "decidim_initiatives" %>
+  <% end %>
+<% end %>

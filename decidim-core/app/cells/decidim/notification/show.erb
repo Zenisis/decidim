@@ -1,0 +1,20 @@
+<div class="notification" data-notification>
+  <div class="notification__wrapper">
+    <div class="notification__time" title="<%= l(notification.created_at) %>"> <%= notification.created_at_in_words %></div>
+    <div class="notification__snippet">
+      <span class="notification__snippet-title"><%= notification_title %></span>
+      <% if notification.display_resource_text? %>
+        <div class="editor-content"><%= notification.resource_text %></div>
+      <% end %>
+      <% if action_cell %>
+        <div class="notification__snippet-actions">
+          <%= cell(action_cell, model) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to model, remote: true, method: :delete, class: "notification__button", data: { "notification-read": "" } do %>
+    <span class="sr-only md:not-sr-only"><%= t("mark_as_read", scope: "layouts.decidim.notifications_dashboard") %></span>
+    <%= icon "check-line", class: "fill-current" %>
+  <% end %>
+</div>

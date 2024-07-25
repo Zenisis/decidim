@@ -1,0 +1,54 @@
+= Authorizations
+
+Decidim offers several methods for allowing participants to get authorization to perform certain privileged actions. This module implements several of those methods and also offers a way for installation to implement their custom verification methods.
+
+There are several use cases for this, such as
+
+* Sending a SMS code to users to verify that their have a valid cellphone
+* Allowing users to upload a photo or scanned image of their identity document
+* Sending users a code through postal code
+* Allowing users to go to to a physical office and check their documentation
+* Checking some information through other systems (as a Municipal Census on the case of Municipalities, Cities or Towns)
+* Having a list of valid users emails
+
+Currently Decidim supports only a few of these cases, but we have an internal API where you can program your own kind of authorizations.
+
+== Introduction
+
+Each Decidim instance is in full control of its authorizations, and can customize:
+
+* The different methods to be used by users to get verified. For example, through a census, by uploading their identity documents, or by receiving a verification home at their address.
+* The different actions in decidim that require authorization, and which authorization method they require. For example, a decidim instance might choose to require census authorization to create proposals, but a fully verified address via a verification code sent by postal mail for voting on proposals.
+
+See https://github.com/decidim/decidim/blob/develop/decidim-verifications/README.md[decidim-verifications's README] and https://decidim.org/modules[Decidim's Modules page].
+
+The default Decidim application comes pre-configured with some example authorization strategies that you can test to get familiar with the system. If you want to verify yourself with these strategies, please follow these instructions:
+
+- For the "Example authorization" strategy, use a document number ended with "X". Other details can be as you wish.
+- For the "Another example authorization", use a passport number starting with "A". Other details can be as you wish.
+
+== Examples
+
+Here are some examples:
+
+- https://github.com/AjuntamentdeBarcelona/decidim-barcelona/blob/master/app/services/census_authorization_handler.rb[Barcelona (City)]
+- https://github.com/AjuntamentdeCalafell/decidim-calafell/blob/master/app/services/census_authorization_handler.rb[Calafell]
+- https://github.com/diputacioBCN/decidim-diba/blob/master/decidim-diba_census_api/app/services/diba_census_api_authorization_handler.rb[DIBA (Barcelona Province)]
+- https://github.com/AjuntamentDeGava/decidim-gava/blob/master/app/services/census_authorization_handler.rb[Gavà]
+- https://github.com/HospitaletDeLlobregat/decidim-hospitalet/blob/master/app/services/census_authorization_handler.rb[Hospitalet de Llobregat]
+- https://github.com/AjMalgrat/decidim-malgrat/blob/master/app/services/carpetaciutada_handler.rb[Malgrat de Mar]
+- https://github.com/AjuntamentDeMataro/decidimmataro.cat/blob/master/app/services/census_authorization_handler.rb[Mataró]
+- https://github.com/ErabakiPamplona/erabaki/blob/master/app/services/census_authorization_handler.rb[Pamplona]
+- https://github.com/AjuntamentdeReus/decidim/blob/master/app/services/census_authorization_handler.rb[Reus]
+- https://github.com/AjuntamentDeSabadell/decidim-sabadell/blob/master/app/services/census_authorization_handler.rb[Sabadell]
+- https://github.com/AjuntamentdeSantCugat/decidim-sant_cugat/blob/master/app/services/census_authorization_handler.rb[Sant Cugat]
+- https://github.com/AjuntamentDeTerrassa/decidim-terrassa/blob/master/app/services/census_authorization_handler.rb[Terrassa]
+- https://github.com/vilanovailageltru/decidim-vilanova/blob/master/app/services/vilanova_authorization_handler.rb[Vilanova i la Geltrú]
+
+Other special verifications:
+
+- https://github.com/podemos-info/participa2/tree/master/decidim-module-census_connector[Podemos]
+- https://github.com/ElectricThings/fund_action/blob/master/app/services/anybody_authorization_handler.rb[FundAction]
+- https://github.com/CodiTramuntana/decidim-verifications-csv_emails[CSV emails]
+- https://github.com/mainio/decidim-module-access_requests[Access Requests]
+

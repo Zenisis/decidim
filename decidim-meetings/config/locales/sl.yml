@@ -1,0 +1,23 @@
+sl:
+  activemodel:
+    models:
+      decidim/meetings/create_meeting_event: Sestanek
+  decidim:
+    components:
+      meetings:
+        name: Sestanki
+    meetings:
+      admin:
+        exports:
+          meetings: Sestanki
+        meetings:
+          index:
+            title: Sestanki
+      directory:
+        meetings:
+          index:
+            meetings: Sestanki
+    metrics:
+      meetings:
+        object: sestanki
+        title: Sestanki

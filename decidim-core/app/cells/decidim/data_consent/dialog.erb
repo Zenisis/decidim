@@ -1,0 +1,25 @@
+<div id="dc-dialog-wrapper" class="cookies__container" data-nosnippet role="region" hidden>
+  <div class="cookies">
+    <div class="cookies__left">
+      <div>
+        <div class="h5">
+          <%= t("layouts.decidim.data_consent.dialog.title") %>
+        </div>
+        <p>
+          <%= t("layouts.decidim.data_consent.dialog.description") %>
+        </p>
+      </div>
+    </div>
+    <div class="cookies__right">
+      <button id="dc-dialog-accept" class="button button__sm button__secondary">
+        <%= t("layouts.decidim.data_consent.dialog.accept_all") %>
+      </button>
+      <button id="dc-dialog-reject" class="button button__sm button__transparent-secondary">
+        <%= t("layouts.decidim.data_consent.dialog.accept_only_essential") %>
+      </button>
+      <button id="dc-dialog-settings" class="button button__sm button__transparent-secondary" data-dialog-open="dc-modal">
+        <%= t("layouts.decidim.data_consent.dialog.settings") %>
+      </button>
+    </div>
+  </div>
+</div>

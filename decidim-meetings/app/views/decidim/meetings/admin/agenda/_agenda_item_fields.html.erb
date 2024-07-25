@@ -1,0 +1,19 @@
+<div class="grid-x">
+  <div class="cell">
+    <%= form.translated :text_field, :title, tabs_id:, aria: { label: :title } %>
+  </div>
+  <div class="cell">
+    <%= form.number_field :duration, tabs_id:, min: 0 %>
+  </div>
+</div>
+
+<div class="grid-x">
+  <div class="cell">
+    <%= form.translated :editor, :description, tabs_id:, rows: 6, aria: { label: :description } %>
+  </div>
+</div>
+
+<%= form.hidden_field :id %>
+<%= form.hidden_field :parent_id %>
+<%= form.hidden_field :position, value: agenda_item.position || 0 %>
+<%= form.hidden_field :deleted %>

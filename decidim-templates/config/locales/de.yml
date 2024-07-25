@@ -1,0 +1,113 @@
+de:
+  activemodel:
+    attributes:
+      questionnaire:
+        title: Titel
+      template:
+        description: Beschreibung
+        name: Name
+  decidim:
+    admin:
+      menu:
+        templates: Vorlagen
+      templates:
+        actions:
+          new_template: Neue Vorlage
+        apply:
+          error: Es gab ein Problem beim Anwenden dieser Vorlage.
+          success: Vorlage erfolgreich angewendet.
+        copy:
+          error: Beim Kopieren dieser Vorlage ist ein Problem aufgetreten.
+          success: Vorlage erfolgreich kopiert.
+        create:
+          error: Es gab ein Problem beim Erstellen dieser Vorlage.
+          success: Vorlage erfolgreich erstellt.
+        destroy:
+          success: Vorlage erfolgreich gelöscht.
+        empty: Es gibt noch keine Vorlagen.
+        fetch:
+          error: Diese Vorlage konnte nicht gefunden werden. Bitte Seite neu laden.
+        missing_resource: "(fehlende Ressource)"
+        update:
+          error: Bei der Aktualisierung dieser Vorlage ist ein Problem aufgetreten.
+          success: Vorlage erfolgreich aktualisiert.
+      titles:
+        template_types:
+          questionnaires: Fragebogenvorlagen
+        templates: Vorlagen
+    models:
+      questionnaire_template:
+        fields:
+          questions: Anzahl der Fragen
+          title: Fragebogenname
+      template:
+        fields:
+          created_at: Erstellt am
+        name: Vorlage
+    templates:
+      admin:
+        block_user_templates:
+          edit:
+            title: Vorlage für Nachricht an zu blockierende Nutzende bearbeiten
+          form:
+            save: Speichern
+          index:
+            confirm_delete: Möchten Sie diese Vorlage wirklich löschen?
+            title: Nachrichten blockieren
+          new:
+            title: Neue Vorlage für Nachricht an zu blockierende Nutzende
+          template_chooser:
+            select_template: Wählen Sie eine Antwortvorlage aus
+        proposal_answer_templates:
+          edit:
+            title: Vorlage für Vorschlagsantworten bearbeiten
+          form:
+            component_constraint_help: Beachten Sie, dass nur partizipative Räume mit Komponenten des Typs "Vorschlag" aufgelistet werden.
+            hint1_html: "<strong>%{organization}</strong> wird durch den Namen der Organisation ersetzt"
+            hint2_html: "<strong>%{name}</strong> wird durch den Namen des Autors ersetzt"
+            hint3_html: "<strong>%{admin}</strong> wird durch den Namen des Admins ersetzt, der den Vorschlag beantwortet"
+            hint_html: "<strong>Tipp:</strong> Sie können diese Variablen überall in der Antwortvorlage verwenden. Sie werden bei der Verwendung der Vorlage ersetzt"
+            save: Speichern
+          index:
+            component_constraint: Einschränkung hinzufügen
+            confirm_delete: Möchten Sie diese Vorlage wirklich löschen?
+            missing_state: Fehlender Status
+            proposal_state_id: Interner Status
+            title: Vorschlagsantworten
+          new:
+            title: Neue Vorlage für Vorschlagsantworten
+          template_chooser:
+            select_template: Antwortvorlage auswählen
+        questionnaire_templates:
+          choose:
+            create_from_template: Aus Vorlage erstellen
+            description: Sie sind im Begriff, einen neuen Fragebogen zu erstellen. Sie können eine vordefinierte Vorlage auswählen und sie anschließend ändern.
+            label: Vorlage auswählen
+            placeholder: Vorlage auswählen
+            skip_template: Überspringen
+          edit:
+            edit: Bearbeiten
+            empty: Es gibt noch keine Fragen.
+            questionnaire: Fragebogen
+            title: Formular-Vorlage bearbeiten
+          form:
+            title: Fragebogenvorlage %{questionnaire_for}
+          index:
+            confirm_delete: Möchten Sie diese Vorlage wirklich löschen?
+            title: Fragebogenvorlagen
+          new:
+            title: Neue Formular-Vorlage
+          preview:
+            current_step: Schritt %{step}
+            of_total_steps: von %{total_steps}
+            tos_agreement: Mit der Teilnahme stimmen Sie den Nutzungsbedingungen zu
+      admin_log:
+        template:
+          create: "%{user_name} hat die Umfragevorlage %{resource_name} erstellt"
+          delete: "%{user_name} hat die Umfragevorlage %{resource_name} gelöscht"
+          duplicate: "%{user_name} hat die Umfragevorlage %{resource_name} dupliziert"
+          update: "%{user_name} hat die Umfragevorlage %{resource_name} aktualisiert"
+      template_types:
+        block_user: Nachrichten blockieren
+        proposal_answer_templates: Vorschlagsantworten
+        questionnaires: Fragebögen

@@ -1,0 +1,185 @@
+el:
+  activemodel:
+    attributes:
+      config:
+        available_methods: Διαθέσιμες μέθοδοι
+        offline: Εκτός σύνδεσης
+        offline_explanation: Οδηγίες για επαλήθευση εκτός σύνδεσης
+        online: Ηλεκτρονική
+      id_document_information:
+        document_number: Αριθμός εγγράφου (με γράμμα)
+        document_type: Τύπος του εγγράφου
+      id_document_upload:
+        document_number: Αριθμός εγγράφου (με γράμμα)
+        document_type: Τύπος του εγγράφου σας
+        user: Συμμετέχων
+        verification_attachment: Σαρωμένο αντίγραφο του εγγράφου σας
+      offline_confirmation:
+        email: Διεύθυνση email συμμετέχοντα
+      postal_letter_address:
+        full_address: Πλήρης διεύθυνση
+      postal_letter_confirmation:
+        verification_code: Κωδικός επαλήθευσης
+      postal_letter_postage:
+        full_address: Πλήρης διεύθυνση
+        verification_code: Κωδικός επαλήθευσης
+  decidim:
+    admin:
+      menu:
+        authorization_revocation:
+          before_date_info: Χρήσιμο εάν η διαδικασία έχει ήδη ξεκινήσει και θέλετε να ανακαλέσετε τα δικαιώματα της προηγούμενης διαδικασίας.
+          button: Ανάκληση όλων
+          button_before: Ανάκληση πριν από την ημερομηνία
+          info: Υπάρχουν συνολικά %{count} επαληθευμένοι συμμετέχοντες.
+    authorization_handlers:
+      admin:
+        id_documents:
+          help:
+            - Οι χρήστες συμπληρώνουν τα στοιχεία της ταυτότητάς τους και πραγματοποιούν αποστολή ενός αντιγράφου του εγγράφου τους.
+            - Συμπληρώνετε τις πληροφορίες που υπάρχουν στη μεταφορτωμένη εικόνα.
+            - Οι πληροφορίες πρέπει να ταιριάζουν με τα στοιχεία που έχει συμπληρώσει ο χρήστης.
+            - 
+        postal_letter:
+          help:
+            - Οι συμμετέχοντες ζητούν να σταλεί ένας κωδικός επαλήθευσης στη διεύθυνσή τους.
+            - Στέλνετε την επιστολή στη διεύθυνσή τους με τον κωδικό επαλήθευσης.
+            - Επισημαίνετε την επιστολή ως απεσταλμένη.
+            - Μόλις επισημάνετε την επιστολή ως απεσταλμένη, ο συμμετέχων θα μπορεί να εισαγάγει τον κωδικό και να επαληθευτεί.
+      csv_census:
+        name: Απογραφή οργανισμού
+      direct: Άμεση
+      help: Βοήθεια
+      id_documents:
+        name: Έγγραφα ταυτότητας
+      multistep: Πολλαπλά βήματα
+      name: Όνομα
+      postal_letter:
+        name: Κωδικός μέσω ταχυδρομικής επιστολής
+    verifications:
+      authorizations:
+        authorization_metadata:
+          info: 'Αυτά είναι τα δεδομένα της τρέχουσας επαλήθευσης:'
+          no_data_stored: Δεν υπάρχουν αποθηκευμένα δεδομένα.
+        create:
+          error: Υπήρξε ένα πρόβλημα κατά τη δημιουργία της εξουσιοδότησης.
+          unconfirmed: Πρέπει να επιβεβαιώσετε τη διεύθυνση email σας για να εξουσιοδοτήσετε τον εαυτό σας.
+        destroy:
+          error: Υπήρξε ένα πρόβλημα κατά τη διαγραφή της εξουσιοδότησης.
+        first_login:
+          actions:
+            another_dummy_authorization_handler: Επαλήθευση έναντι άλλου παραδείγματος προγράμματος χειρισμού εξουσιοδότησης
+            csv_census: Επαλήθευση έναντι της απογραφής του οργανισμού
+            dummy_authorization_handler: Επαλήθευση έναντι του παραδείγματος προγράμματος χειρισμού εξουσιοδότησης
+            dummy_authorization_workflow: Επαλήθευση έναντι του παραδείγματος ροής εργασιών εξουσιοδότησης
+            id_documents: Επαληθευτείτε αποστέλλοντας το έγγραφο ταυτότητάς σας
+            postal_letter: Επαληθευτείτε λαμβάνοντας έναν κωδικό επαλήθευσης μέσω ταχυδρομείου
+            sms: Επαληθευτείτε λαμβάνοντας έναν κωδικό επαλήθευσης μέσω SMS
+          title: Επαληθεύστε την ταυτότητά σας
+          verify_with_these_options: 'Αυτές είναι οι διαθέσιμες επιλογές για την επαλήθευση της ταυτότητάς σας:'
+        index:
+          expired_verification: Η επαλήθευση έληξε
+          pending_verification: Εκκρεμεί επαλήθευση
+          show_renew_info: Κάντε κλικ για ανανέωση της επαλήθευσης
+        new:
+          authorize: Αποστολή
+          authorize_with: Επαλήθευση με %{authorizer}
+        renew_modal:
+          cancel: Ακύρωση
+          continue: Συνέχεια
+          title: Ανανέωση επαλήθευσης
+        skip_verification: Μπορείτε να την παραλείψετε για τώρα και %{link}
+        start_exploring: ξεκινήστε την εξερεύνηση
+      csv_census:
+        admin:
+          census:
+            create:
+              error: Παρουσιάστηκε σφάλμα κατά την εισαγωγή απογραφής.
+          destroy:
+            title: Διαγραφή όλων των δεδομένων απογραφής
+          index:
+            empty: Δεν υπάρχουν δεδομένα απογραφής. Χρησιμοποιήστε την παρακάτω φόρμα για να τα εισαγάγετε χρησιμοποιώντας ένα αρχείο CSV.
+            title: Τρέχοντα δεδομένα απογραφής
+          instructions:
+            body: Για να το κάνετε αυτό, πρέπει να εισαγάγετε τη διαχείριση συστήματος και να προσθέσετε τις εξουσιοδοτήσεις csv_census στον οργανισμό
+          new:
+            file: "Αρχείο .csv με δεδομένα διευθύνσεων email"
+            info: 'Πρέπει να είναι αρχείο σε μορφή CSV με μόνο μία στήλη με τη διεύθυνση email:'
+            submit: Αποστολή αρχείου
+            title: Αποστολή νέας απογραφής
+        authorizations:
+          new:
+            error: Δεν ήταν δυνατή η επαλήθευση του λογαριασμού σας ή δεν περιλαμβάνεστε στην απογραφή του οργανισμού.
+            success: Ο λογαριασμός σας επαληθεύτηκε με επιτυχία.
+      dummy_authorization:
+        extra_explanation:
+          postal_codes:
+            one: Participation is restricted to participants with the postal code %{postal_codes}.
+            other: 'Participation is restricted to participants with any of the following postal codes: %{postal_codes}.'
+      id_documents:
+        admin:
+          config:
+            edit:
+              title: Διαμόρφωση εγγράφων ταυτότητας
+              update: Ενημέρωση
+            update:
+              error: Υπήρξε ένα πρόβλημα κατά την ενημέρωση της διαμόρφωσης.
+          confirmations:
+            new:
+              introduce_user_data: Εισαγάγετε τα δεδομένα στην εικόνα
+              reject: Απόρριψη
+              verify: Επαλήθευση
+          offline_confirmations:
+            new:
+              cancel: Ακύρωση
+              introduce_user_data: Εισαγάγετε τη διεύθυνση email του συμμετέχοντα και τα δεδομένα εγγράφου
+              verify: Επαλήθευση
+          pending_authorizations:
+            index:
+              config: Διαμόρφωση
+              offline_verification: Επαλήθευση εκτός σύνδεσης
+              title: Ηλεκτρονικές επαληθεύσεις που εκκρεμούν
+              verification_number: 'Αρ. επαλήθευσης %{n}'
+        authorizations:
+          choose:
+            choose_a_type: 'Επιλέξτε τον τρόπο επαλήθευσης:'
+            offline: Εκτός σύνδεσης
+            online: Ηλεκτρονική
+            title: Επαληθεύστε τον εαυτό σας χρησιμοποιώντας το έγγραφο ταυτότητάς σας
+          edit:
+            offline: Χρήση επαλήθευσης εκτός σύνδεσης
+            online: Χρήση ηλεκτρονικής επαλήθευσης
+            send: Ζητήστε ξανά επαλήθευση
+          new:
+            send: Αίτημα επαλήθευσης
+            title: Πραγματοποιήστε αποστολή του εγγράφου ταυτότητάς σας
+        passport: Διαβατήριο
+      postal_letter:
+        admin:
+          pending_authorizations:
+            index:
+              address: Διεύθυνση
+              letter_sent_at: Η επιστολή στάλθηκε σε
+              mark_as_sent: Σήμανση ως απεσταλμένης
+              not_yet_sent: Δεν στάλθηκε ακόμη
+              title: Επαληθεύσεις σε εξέλιξη
+              username: Ψευδώνυμο
+              verification_code: Κωδικός επαλήθευσης
+        authorizations:
+          edit:
+            send: Επιβεβαίωση
+          new:
+            send: Στείλτε μου επιστολή
+            title: Ζητήστε τον κωδικό επαλήθευσής σας
+      sms:
+        authorizations:
+          edit:
+            confirm_destroy: Είστε βέβαιοι ότι θέλετε να επαναφέρετε τον κωδικό επαλήθευσης;
+            destroy: Επαναφορά κωδικού επαλήθευσης
+            send: Επιβεβαίωση
+            title: Εισαγάγετε τον κωδικό επαλήθευσης που λάβατε
+          new:
+            send: Αποστολή SMS σε μένα
+            title: Ζητήστε τον κωδικό επαλήθευσής σας
+  errors:
+    messages:
+      uppercase_only_letters_numbers: πρέπει να είναι όλα κεφαλαία και να περιέχει μόνο γράμματα ή/και αριθμούς

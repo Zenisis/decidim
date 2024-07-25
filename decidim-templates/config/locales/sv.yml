@@ -1,0 +1,40 @@
+sv:
+  activemodel:
+    attributes:
+      questionnaire:
+        title: Titel
+      template:
+        description: Beskrivning
+        name: Namn
+  decidim:
+    admin:
+      menu:
+        templates: Mallar
+      titles:
+        templates: Mallar
+    models:
+      template:
+        fields:
+          created_at: Skapad den
+        name: Mall
+    templates:
+      admin:
+        block_user_templates:
+          form:
+            save: Spara
+        proposal_answer_templates:
+          form:
+            save: Spara
+        questionnaire_templates:
+          choose:
+            label: Välj mall
+            placeholder: Välj mall
+            skip_template: Hoppa över
+          edit:
+            edit: Redigera
+            questionnaire: Enkät
+          preview:
+            current_step: Steg %{step} av
+            of_total_steps: av %{total_steps}
+      template_types:
+        questionnaires: Enkäter

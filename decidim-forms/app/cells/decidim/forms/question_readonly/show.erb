@@ -1,0 +1,19 @@
+<li class="answer-questionnaire__question" data-question-readonly>
+  <p class="answer-questionnaire__question-label" data-answer-idx="<%= position %>">
+    <%= decidim_escape_translated(model.body) %>
+  </p>
+
+  <p class="answer-questionnaire__question-description">
+    <em><%= t(model.question_type, scope: "decidim.forms.question_types") %></em>
+  </p>
+
+  <% if model.multiple_choice? %>
+    <ul class="answer-questionnaire__question-description space-y-4">
+      <% if model.matrix? %>
+        <%= cell("decidim/forms/matrix_readonly", collection: model.matrix_rows) %>
+      <% else %>
+        <%= cell("decidim/forms/answer_readonly", collection: model.answer_options) %>
+      <% end %>
+    </ul>
+  <% end %>
+</li>

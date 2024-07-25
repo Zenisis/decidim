@@ -1,0 +1,701 @@
+ro:
+  activemodel:
+    attributes:
+      collaborative_draft:
+        address: Adresa
+        body: Conținut
+        category_id: Categorie
+        decidim_scope_id: Domeniu de interes
+        has_address: Are adresă
+        scope_id: Domeniu de interes
+        state: Stadiu
+        title: Titlu
+        user_group_id: Creează ciornă colaborativă ca
+      proposal:
+        address: Adresa
+        answer: Răspuns
+        answered_at: Răspuns la
+        automatic_hashtags: Hashtag-uri adăugate automat
+        body: Conținut
+        category_id: Categorie
+        decidim_scope_id: Domeniu de interes
+        has_address: Are adresă
+        scope_id: Domeniu de interes
+        state: Stadiu
+        suggested_hashtags: Hashtag-uri sugerate
+        title: Titlu
+        user_group_id: Creați propunerea ca
+      proposal_answer:
+        answer: Răspuns
+        cost: Cost
+        cost_report: Raport de cost
+        execution_period: Perioada de execuție
+      proposals_copy:
+        origin_component_id: Componentă de la care se copiază propunerile
+      proposals_import:
+        import_proposals: Importă propuneri
+        keep_answers: Păstrează starea și răspunsurile
+        keep_authors: Păstrează autorii originali
+      valuation_assignment:
+        admin_log:
+          valuator_role_id: Numele evaluatorului
+    errors:
+      models:
+        proposal:
+          attributes:
+            add_documents:
+              needs_to_be_reattached: Trebuie să fie reatașate
+            add_photos:
+              needs_to_be_reattached: Trebuie să fie reatașate
+            body:
+              cant_be_equal_to_template: nu poate fi egal cu modelul
+              identical: Nici titlul nu poate fi identic
+            title:
+              identical: Nici conținutul nu poate fi identic
+        proposals_merge:
+          attributes:
+            base:
+              not_official: Nu sunt oficiale
+        proposals_split:
+          attributes:
+            base:
+              not_official: Nu sunt oficiale
+    models:
+      decidim/proposals/admin/update_proposal_category_event: Categorie de propunere modificată
+      decidim/proposals/admin/update_proposal_scope_event: Domeniu de interes al propunerii modificat
+      decidim/proposals/creation_enabled_event: Crearea de propuneri este activată
+      decidim/proposals/endorsing_enabled_event: Susținerea propunerii este activată
+      decidim/proposals/proposal_mentioned_event: Propunere menționată
+      decidim/proposals/publish_proposal_event: Propunere publicată
+      decidim/proposals/voting_enabled_event: Votare propunerii este activată
+  activerecord:
+    models:
+      decidim/proposals/collaborative_draft:
+        one: Ciornă colaborativă
+        few: Ciorne colaborative
+        other: Ciorne colaborative
+      decidim/proposals/proposal:
+        one: Propunere
+        few: Propuneri
+        other: Propuneri
+      decidim/proposals/proposal_note:
+        one: Notă
+        few: Note
+        other: Note
+  decidim:
+    admin:
+      filters:
+        proposals:
+          category_id_eq:
+            label: Categorie
+          is_emendation_true:
+            label: Tip
+            values:
+              'false': Propuneri
+              'true': Amendamente
+          scope_id_eq:
+            label: Domeniu de interes
+          state_eq:
+            label: Stadiu
+            values:
+              accepted: Acceptat
+              evaluating: În evaluare
+              published: Publicat
+              rejected: Respins
+              validating: Validarea tehnică
+              withdrawn: Retras
+          valuator_role_ids_has:
+            label: Atribuit evaluatorului
+        search_placeholder:
+          id_string_or_title_cont: Caută %{collection} după ID sau titlu.
+    components:
+      proposals:
+        actions:
+          amend: Trimite un amendament
+          comment: Comentează
+          create: Creează
+          endorse: Susține
+          vote_comment: Votează comentariul
+          withdraw: Retrage
+        name: Propuneri
+        settings:
+          global:
+            amendments_enabled: Trimiterea de amendamente este activată
+            amendments_enabled_help: Dacă este activă, configurațI funcționalitățile aferente amendamentelor pentru fiecare pas.
+            amendments_wizard_help_text: Text de ajutor pentru amendamente
+            announcement: Anunţ
+            attachments_allowed: Permite atașamente
+            collaborative_drafts_enabled: Ciornele colaborative au fost activate
+            comments_enabled: Comentariile au fost activate
+            comments_max_length: Număr maxim de caractere a comentariilor (păstrează 0 pentru valoarea implicită)
+            default_sort_order: Mod implicit de sortare a propunerilor
+            default_sort_order_options:
+              most_commented: Cele mai comentate
+              most_endorsed: Cele mai susținute
+              most_followed: Cele mai urmărite
+              random: Aleator
+              recent: Recente
+              with_more_authors: Cu mai mulți autori
+            geocoding_enabled: Geocodarea a fost activată
+            new_proposal_body_template: Model de conținut pentru o propunere nouă
+            new_proposal_body_template_help: Poți defini textul precompletat pe care îl vor avea noile propuneri
+            new_proposal_help_text: Text de ajutor pentru propunere nouă
+            official_proposals_enabled: Modulul propuneri oficiale a fost activat
+            participatory_texts_enabled: Modulul texte participative a fost activat
+            participatory_texts_enabled_readonly: Nu se poate interacționa cu această setare dacă există deja propuneri. Te rugăm, creează o nouă componenta 'Propuneri' dacă dorești să activezi această funcționalitate. Dacă vrei să o dezactivezi mergi în meniul `Texte participative`și renunță la toate propunerile importate.
+            proposal_answering_enabled: Modulul de răspuns pentru propuneri a fost activat
+            proposal_edit_before_minutes: Propunerile pot fi editate de către autori până la expirarea termenului definit mai jos în minute
+            proposal_edit_time: Durata editării propunerii
+            proposal_edit_time_choices:
+              infinite: Permite editarea propunerilor pentru o perioadă infinită de timp
+              limited: Permite editarea propunerilor într-un anumit interval de timp
+            proposal_length: Lungimea maximă în caractere a conținutului propunerii
+            proposal_limit: Limită de propuneri pe participant
+            proposal_wizard_step_1_help_text: Text de ajutor pentru pasul „Creează” din crearea unei propuneri
+            proposal_wizard_step_2_help_text: Text de ajutor pentru pasul „Publică” din crearea unei propuneri
+            resources_permissions_enabled: Pentru fiecare propunere pot fi setate drepturi pentru acțiuni
+            scope_id: Domeniu de interes
+            scopes_enabled: Domeniile de interes au fost activate
+            threshold_per_proposal: Prag per propunere
+          step:
+            amendment_creation_enabled: Crearea de amendamente a fost activată
+            amendment_creation_enabled_help: Participantul poate face amendamente la propuneri.
+            amendment_promotion_enabled: Opțiunea de a promova amendamente a fost activată
+            amendment_promotion_enabled_help: Autorii amendamentelor vor putea promova drept propunere amendamentul respins.
+            amendment_reaction_enabled: Opțiunea de reacții la amendamente a fost activată
+            amendment_reaction_enabled_help: Autorii propunerii vor putea accepta sau respinge amendamentele participanților.
+            amendments_visibility: Vizibilitatea amendamentelor
+            amendments_visibility_choices:
+              all: Amendamentele sunt vizibile pentru toţi
+              participants: Amendamentele sunt vizibile doar autorilor acestora
+            amendments_visibility_help: Dacă este selectată opţiunea "Amendamentele sunt vizibile doar autorilor lor", participantul trebuie să fie conectat pe platformă pentru a vedea amendamentele primite.
+            announcement: Anunţ
+            answers_with_costs: Activează opțiunea de cost în răspunsurile la propuneri
+            automatic_hashtags: Hashtag-uri adăugate la toate propunerile
+            comments_blocked: Comentarii blocate
+            creation_enabled: Participantul poate crea propuneri
+            default_sort_order: Mod implicit de sortare a propunerilor
+            default_sort_order_options:
+              most_commented: Cele mai comentate
+              most_endorsed: Cele mai susținute
+              most_followed: Cele mai urmărite
+              random: Aleator
+              recent: Recente
+              with_more_authors: Cu mai mulți autori
+            endorsements_blocked: Susțineri blocate
+            endorsements_enabled: Susțineri activate
+            proposal_answering_enabled: Modulul de răspuns pentru propuneri a fost activat
+            publish_answers_immediately: Publică imediat răspunsurile la propunere
+            suggested_hashtags: Hashtag-uri sugerate participanţilor pentru noi propuneri
+    events:
+      proposals:
+        admin:
+          proposal_note_created:
+            email_outro: Ai primit această notificare pentru a putea evalua propunerea.
+            email_subject: Cineva a trimis o notă la propunerea %{resource_title}.
+        collaborative_draft_access_accepted:
+          email_subject: "Utilizatorul %{requester_name} a fost acceptat drept colaborator pentru %{resource_title}."
+          notification_title: <a href="%{requester_path}">%{requester_name} %{requester_nickname}</a> a fost <strong>acceptat drept colaborator</strong> pentru ciorna colaborativă <a href="%{resource_path}">%{resource_title}</a>.
+        collaborative_draft_access_rejected:
+          email_subject: "%{requester_name} a fost respins drept colaborator pentru ciorna colaborativă %{resource_title}."
+          notification_title: <a href="%{requester_path}">%{requester_name} %{requester_nickname}</a> a fost <strong>respins drept colaborator</strong> pentru ciorna colaborativă <a href="%{resource_path}">%{resource_title}</a>.
+        collaborative_draft_access_requested:
+          email_subject: "%{requester_name} a solicitat acces pentru a contribui la %{resource_title}."
+          notification_title: <a href="%{requester_path}">%{requester_name} %{requester_nickname}</a> a solicitat acces pentru a contribui la ciorna colaborativă <a href="%{resource_path}">%{resource_title}</a>. Te rugăm <strong>acceptă sau respinge cererea</strong>.
+        collaborative_draft_access_requester_accepted:
+          email_subject: Ai fost acceptat drept colaborator pentru %{resource_title}.
+          notification_title: Ai fost <strong>acceptat drept colaborator</strong> pentru ciorna colaborativă <a href="%{resource_path}">%{resource_title}</a>.
+        collaborative_draft_access_requester_rejected:
+          email_subject: Ai fost respins drept colaborator pentru %{resource_title}.
+          notification_title: Ai fost <strong>respins drept colaborator</strong> pentru ciorna colaborativă <a href="%{resource_path}">%{resource_title}</a>.
+        collaborative_draft_withdrawn:
+          email_subject: "%{author_name} %{author_nickname} a retras ciorna colaborativă %{resource_title}."
+          notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> <strong>a retras</strong> ciorna colaborativă <a href="%{resource_path}">%{resource_title}</a>.
+        creation_enabled:
+          email_intro: 'Acum poți crea propuneri noi pentru %{participatory_space_title}! Participă acum la această pagină:'
+          email_outro: Ai primit această notificare deoarece urmărești %{participatory_space_title}. Poți anula aceste notificări de la link-ul anterior.
+          email_subject: Propunerile sunt acum disponibile pentru %{participatory_space_title}
+        endorsing_enabled:
+          email_intro: 'Poți susține propuneri pentru %{participatory_space_title}! Participă acum la această pagină:'
+          email_outro: Ai primit această notificare deoarece urmărești %{participatory_space_title}. Poți anula aceste notificări de la link-ul anterior.
+          email_subject: Poți acum susține propunerile primite pentru %{participatory_space_title}
+        proposal_mentioned:
+          email_intro: Propunerea ta "%{mentioned_proposal_title}" a fost menționată <a href="%{resource_url}">în acest spațiu</a> în comentarii.
+          email_outro: Ai primit această notificare deoarece ești autor al propunerii "%{resource_title}".
+          email_subject: Propunerea ta „%{mentioned_proposal_title}” a fost menționată
+          notification_title: Propunerea ta "%{mentioned_proposal_title}" a fost menționată <a href="%{resource_path}">în acest spațiu</a> în comentarii.
+        proposal_published:
+          email_intro: '%{author_name} %{author_nickname}, pe care îl urmărești, a publicat o nouă propunere denumită "%{resource_title}". Verifică propunerea și colaborează:'
+          email_outro: Ai primit această notificare deoarece urmărești %{author_nickname}. Poți înceta să primești notificări urmând linkul anterior.
+          email_subject: O nouă propunere "%{resource_title}" de la %{author_nickname}
+          notification_title: Propunerea <a href="%{resource_path}">%{resource_title}</a> a fost publicată de <a href="%{author_path}">%{author_name} %{author_nickname}</a>.
+        proposal_published_for_space:
+          email_intro: Propunerea "%{resource_title}" a fost adăugată la "%{participatory_space_title}", spațiu participativ pe care îl urmărești.
+          email_outro: Ai primit această notificare deoarece urmărești „%{participatory_space_title}”. Poți anula aceste notificări de la link-ul anterior.
+          email_subject: O nouă propunere "%{resource_title}" a fost adăugată la %{participatory_space_title}
+        proposal_update_category:
+          email_intro: 'Un administrator a actualizat categoria propunerii tale „%{resource_title}", verifică modificarea în această pagină:'
+          email_outro: Ai primit această notificare deoarece ești autorul acestei propuneri.
+          email_subject: Categoria propunerii %{resource_title} a fost actualizată
+          notification_title: Categoria propunerii <a href="%{resource_path}">%{resource_title}</a> a fost actualizată de către un administrator.
+        proposal_update_scope:
+          email_intro: 'Un administrator a actualizat domeniul de interes al propunerii tale „%{resource_title}”, verifică modificarea în această pagină:'
+          email_outro: Ai primit această notificare deoarece ești autorul acestei propuneri.
+          email_subject: Domeniul de interes al propunerii %{resource_title} a fost actualizat
+          notification_title: Domeniul de interes al propunerii <a href="%{resource_path}">%{resource_title}</a> a fost actualizat de către un administrator.
+        voting_enabled:
+          email_outro: Ai primit această notificare deoarece urmărești %{participatory_space_title}. Poți anula aceste notificări de la link-ul anterior.
+    gamification:
+      badges:
+        accepted_proposals:
+          conditions:
+            - Alege spațiul de participare unde e activă opțiunea de a trimite propuneri conform domeniului tău de interes
+            - Încercă să faci propuneri care pot fi implementate. Astfel crește probabilitatea ca acestea să fie acceptate.
+          description: Această insignă este acordată atunci când participi activ cu noi propuneri, iar acestea sunt acceptate.
+          description_another: Acest participant are %{score} propuneri acceptate.
+          description_own: Ai %{score} propuneri acceptate.
+          name: Propuneri acceptate
+          next_level_in: Obține încă %{score} propuneri acceptate pentru a atinge următorul nivel!
+          unearned_another: Acest participant nu are încă nicio propunere acceptată.
+          unearned_own: Încă nu ai nicio propunere acceptată.
+        proposal_votes:
+          conditions:
+            - Răsfoiește paginile și petrece puțin timp citind propunerile altora
+            - 
+        proposals:
+          conditions:
+            - Alege spațiul de participare unde e activă opțiunea de a trimite propuneri conform domeniului tău de interes
+            - Creează o nouă propunere
+          description: Această insignă este acordată atunci când participi activ cu noi propuneri.
+          description_another: Acest participant a creat %{score} propuneri.
+          description_own: Ai creat %{score} propuneri.
+          name: Propuneri
+          next_level_in: Creează încă %{score} propuneri pentru a atinge nivelul următor!
+          unearned_own: Nu ai creat încă nicio propunere.
+    metrics:
+      accepted_proposals:
+        description: Numărul de propuneri acceptate
+        object: propuneri
+        title: Propuneri acceptate
+      endorsements:
+        description: Numărul de susțineri ale propunerilor
+        object: susțineri
+        title: Susțineri
+      proposals:
+        description: Număr de propuneri
+        object: propuneri
+        title: Propuneri
+    participatory_spaces:
+      highlighted_proposals:
+        see_all: Afișează toate propunerile (%{count})
+    proposals:
+      actions:
+        answer_proposal: Răspundeți la propunere
+        edit_proposal: Editează propunerea
+        import: Importă propuneri din altă componentă
+        new: Propunere nouă
+        participatory_texts: Texte participative
+        show: Afișează propunerea
+        title: Acțiuni
+      admin:
+        actions:
+          preview: Previzualizează
+        exports:
+          proposal_comments: Comentarii
+          proposals: Propuneri
+        imports:
+          label:
+            answers: Importă răspunsuri dintr-un fişier
+            proposals: Importă propuneri dintr-un fişier
+          resources:
+            answers:
+              one: răspuns la propunere
+              few: răspunsuri la propunere
+              other: răspunsuri la propunere
+            proposals:
+              one: propunere
+              few: propuneri
+              other: propuneri
+        models:
+          proposal:
+            name: Propunere
+        participatory_texts:
+          bulk-actions:
+            are_you_sure: Sigur dorești să renunți la întrega ciornă de text participativ?
+            discard_all: Renunță la toate
+            import_doc: Importă documentul
+          discard:
+            success: Toate ciornele de text participativ au fost șterse.
+          import:
+            invalid: Formularul nu este valid!
+            invalid_file: Fişierul conţine o eroare, te rugăm să încerci să editezi conţinutul fişierului şi să-l reîncărci.
+            success: Felicitări, următoarele secțiuni au fost convertite în propuneri. Acum le poți revizui și ajusta înainte de a le publica.
+          index:
+            info_1: Următoarele secțiuni au fost convertite în propuneri. Acum le poți revizui și ajusta înainte de a le publica.
+            publish_document: Publică documentul
+            save_draft: Salvează ciorna
+            title: Pevizualizează textul participativ
+          new_import:
+            accepted_mime_types:
+              md: Markdown
+              odt: ODT
+            bottom_hint: "(Vei putea previzualiza şi sorta secţiuni din document)"
+            title: Adaugă document
+            upload_document: Încărcă document
+          sections:
+            article: "<em>Articolul</em>"
+            section: "<em>Secțiunea:</em> <strong>%{title}</strong>"
+            sub-section: "<em>Subsecțiunea:</em> %{title}"
+          update:
+            success: Textul participativ a fost actualizat cu succes.
+        proposal_answers:
+          form:
+            answer_proposal: Răspunse
+            title: Răspuns pentru propunerea %{title}
+        proposal_notes:
+          form:
+            note: Notă
+            submit: Trimite
+          leave_your_note: Lasă-ți nota
+          title: Note private
+        proposals:
+          edit:
+            title: Actualizează propunerea
+            update: Actualizează
+          form:
+            attachment_legend: "(Opțional) Adaugă un atașament"
+            created_in_meeting: Această propunere provine dintr-o întâlnire
+            delete_attachment: Șterge atașamentul
+            select_a_category: Selectează o categorie
+            select_a_meeting: Selectează o întâlnire
+          index:
+            actions: Acțiuni
+            assign_to_valuator: Atribuie evaluatorului
+            assign_to_valuator_button: Atribuie
+            cancel: Anulează
+            change_category: Schimbă categoria
+            change_scope: Schimbă domeniul
+            merge: Combină într-o propunere nouă
+            merge_button: Combină
+            publish: Publică
+            publish_answers: Publică răspunsuri
+            select_component: Selectează o componentă
+            selected: selectate
+            split: Împarte propuneri
+            split_button: Împarte
+            title: Propuneri
+            unassign_from_valuator: Atribuire către evaluator anulată
+            unassign_from_valuator_button: Neatribuit
+            update: Actualizează
+            update_scope_button: Actualizează domeniu
+          new:
+            create: Creează
+            title: Creează propunere
+          show:
+            amendments_count: Număr de amendamente
+            assigned_valuators: Evaluatori atribuiți
+            body: Conținut
+            comments_count: Număr de comentarii
+            documents: Documente
+            endorsements_count: Număr de susțineri
+            endorsers: Susţinători
+            n_more_endorsers:
+              one: și încă 1
+              few: și încă %{count}
+              other: și încă %{count}
+            photos: Imagini
+            ranking: "%{ranking} din %{total}"
+            related_meetings: Întâlniri similare
+            remove_assignment: Elimină atribuirea
+            remove_assignment_confirmation: Sigur dorești să elimini evaluatorul din această propunere?
+            valuators: Evaluatori
+          update_category:
+            invalid: 'Aceste propuneri aveau deja categoria %{subject_name} : %{proposals}.'
+            success: 'Propuneri actualizate cu succes la categoria %{subject_name} : %{proposals}.'
+          update_scope:
+            invalid: 'Aceste propuneri aveau deja domeniul %{subject_name} : %{proposals}.'
+            success: 'Propuneri actualizate cu succes în domeniul %{subject_name} : %{proposals}.'
+        proposals_imports:
+          new:
+            create: Importă propuneri
+            no_components: Nu există alte componente de propunere în acest spațiu participativ din care să se importe propunerile.
+            select_component: Te rugăm selectează o componentă
+            select_states: Verifică stadiul propunerilor de importat
+        proposals_merges:
+          create:
+            invalid: 'A apărut o problemă la combinarea propunerilor selectate, deoarece unele dintre ele:'
+            success: Propunerile au fost combinate cu succes într-o propunere nouă.
+        proposals_splits:
+          create:
+            invalid: 'A apărut o problemă la împărțirea propunerilor selectate, deoarece unele dintre ele:'
+            success: Propunerile au fost împărțite cu succes în altele noi.
+      admin_log:
+        proposal:
+          answer: "%{user_name} a răspuns la propunerea %{resource_name} pentru spațiul %{space_name}"
+          create: "%{user_name} a creat propunerea %{resource_name} pentru spațiul %{space_name} drept propunere oficială"
+          publish_answer: "%{user_name} a publicat răspunsul la propunerea de %{resource_name} privind spațiul %{space_name}"
+          update: "%{user_name} a actualizat propunerea oficială %{resource_name} pentru spațiul %{space_name}"
+        proposal_note:
+          create: "%{user_name} a lăsat o notă privată despre propunerea %{resource_name} pentru spațiul %{space_name}"
+        valuation_assignment:
+          create: "%{user_name} a atribuit propunerea %{resource_name} unui evaluator"
+          delete: "%{user_name} a anulat atribuirea către un evaluator pentru propunerea %{proposal_title}"
+      answers:
+        accepted: Acceptate
+        evaluating: În evaluare
+        not_answered: Fără răspuns
+        rejected: Respinse
+        withdrawn: Retrase
+      application_helper:
+        filter_origin_values:
+          all: Toate
+          meetings: Întâlniri
+          official: Oficial
+          participants: Participanți
+          user_groups: Grupuri
+        filter_state_values:
+          all: Toate
+          not_answered: Fără răspuns
+        filter_type_values:
+          all: Toate
+          amendments: Amendamente
+          proposals: Propuneri
+      collaborative_drafts:
+        collaborative_draft:
+          publish:
+            error: A apărut o problemă la publicarea ciornei colaborative.
+            irreversible_action_modal:
+              cancel: Anulează
+              ok: Publică drept propunere
+              title: Următoarea acţiune este ireversibilă
+            success: Ciorna colaborativă a fost publicată cu succes drept propunere.
+          withdraw:
+            error: A apărut o problemă la închiderea ciornei colaborative.
+            irreversible_action_modal:
+              cancel: Anulează
+              ok: Retrage ciorna colaborativă
+              title: Următoarea acţiune este ireversibilă
+            success: Ciorna colaborativă a fost retrasă cu succes.
+        create:
+          success: Ciorna colaborativă a fost creată cu succes.
+        edit:
+          attachment_legend: "(Opțional) Adaugă un atașament"
+          back: Înapoi
+          select_a_category: Te rugăm selectează o categorie
+          send: Trimite
+          title: Editează ciorna colaborativă
+        filters:
+          all: Toate
+          amendment: Amendamente
+          category: Categorie
+          open: Deschise
+          published: Publicate
+          related_to: Asociate cu
+          scope: Domeniu de interes
+          search: Caută
+          state: Stadiu
+          withdrawn: Retrase
+        filters_small_view:
+          close_modal: Închide fereastra
+          filter: Filtrează
+          filter_by: Filtrează după
+          unfold: Extinde
+        index:
+          count:
+            one: "%{count} ciornă colaborativă"
+            few: "%{count} ciorne colaborative"
+            other: "%{count} ciorne colaborative"
+        new:
+          send: Continuă
+        new_collaborative_draft_button:
+          new_collaborative_draft: Ciornă nouă colaborativă
+        orders:
+          label: 'Ordonează ciornele după:'
+          most_contributed: Cu cele mai multe colaborări
+          random: Aleatoriu
+          recent: Recente
+        requests:
+          accepted_request:
+            error: Nu ai putut fi acceptat drept colaborator, te rugăm să încerci din nou mai târziu.
+          access_requested:
+            error: Cererea ta nu a putut fi finalizată, te rugăm să încerci din nou mai târziu.
+          collaboration_requests:
+            accept_request: Acceptă
+            reject_request: Respinge
+            title: Cereri de colaborare
+          rejected_request:
+            error: Nu ai putut fi respins drept colaborator, te rugăm să încerci din nou mai târziu.
+        show:
+          edit: Editează ciorna colaborativă
+          final_proposal: propunere finală
+          final_proposal_help_text: Această ciornă este finalizată. Verifică propunerea finală
+          hidden_authors_count:
+            one: și încă %{count} persoană
+            few: și încă %{count} persoane
+            other: și încă %{count} persoane
+          publish: Publică
+          publish_info: Publică această versiune a ciornei sau
+          published_proposal: propunere publicată
+          request_access: Cere acces
+          requested_access: Acces solicitat
+          withdraw: retrage ciorna
+        states:
+          open: Deschise
+          published: Publicate
+          withdrawn: Retrase
+        update:
+          error: A apărut o problemă la salvarea ciornei colaborative.
+          success: Ciorna colaborativă a fost actualizată cu succes.
+        wizard_aside:
+          back_from_collaborative_draft: Înapoi la ciorne colaborative
+        wizard_header:
+          title: Creează ciorna ta colaborativă
+      create:
+        error: A apărut o problemă la salvarea propunerii.
+        success: Propunere creată cu succes. Salvată drept ciornă.
+      destroy_draft:
+        error: A apărut o eroare la ștergerea ciornei colaborative.
+        success: Ciorna de propunere a fost ştearsă cu succes.
+      models:
+        proposal:
+          fields:
+            category: Categorie
+            comments: Comentarii
+            id: ID
+            notes: Note
+            official_proposal: Propunere oficială
+            published_answer: Răspuns publicat
+            published_at: Publicat la
+            scope: Domeniu de interes
+            state: Stadiu
+            title: Titlu
+            valuator: Evaluator
+            valuators: Evaluatori
+            votes: Voturi
+      participatory_text_proposal:
+        alternative_title: Nu există niciun text participativ în acest moment
+        buttons:
+          amend: Trimite un amendament
+          comment: Comentariu
+      proposals:
+        dynamic_map_instructions:
+          description: Coordonatele vor fi actualizate când apeși pe butonul 'previzualizează'. Cu toate acestea, adresa nu se schimbă.
+          instructions: Poți muta punctul de pe hartă.
+        edit:
+          attachment_legend: "(Opțional) Adaugă un atașament"
+          back: Înapoi
+          select_a_category: Te rugăm selectează o categorie
+          send: Trimite
+          title: Editează propunerea
+        edit_draft:
+          discard: Renunță la această ciornă
+          discard_confirmation: Sigur dorești să renunți la această ciornă de propunere?
+          send: Previzualizează
+          title: Editează ciorna de propunere
+        edit_form_fields:
+          marker_added: Marker adăugat pe hartă.
+        filters:
+          activity: Activitatea mea
+          all: Toate
+          amendment_type: Tip
+          category: Categorie
+          my_proposals: Propunerile mele
+          origin: Origine
+          related_to: Asociate cu
+          scope: Domeniu de interes
+          search: Caută
+          state: Stadiu
+          type: Tip
+        index:
+          click_here: Afișează toate propunerile
+          collaborative_drafts_list: Accesează ciorne colaborative
+          count:
+            one: "%{count} propunere"
+            few: "%{count} propuneri"
+            other: "%{count} propuneri"
+          new_proposal: Propunere nouă
+          see_all: Afișează toate propunerile
+          see_all_withdrawn: Afișează toate propunerile retrase
+          text_banner: Vizualizezi lista de propuneri retrase de autorii lor. %{go_back_link}.
+        new:
+          send: Continuă
+        orders:
+          label: 'Ordonează propunerile după:'
+          most_commented: Cele mai comentate
+          most_endorsed: Cele mai susținute
+          most_followed: Cele mai urmărite
+          random: Aleatoriu
+          recent: Recente
+          with_more_authors: Cu mai mulți autori
+        placeholder:
+          address: B-dul C. D. Loga, nr. 1, cod postal 300030
+        preview:
+          announcement_body: Propunerea ta a fost salvată drept ciornă. Aceasta trebuie să fie publicată pentru a apărea pe site.
+          announcement_title: Propunerea ta nu a fost încă publicată
+          modify: Modifică propunerea
+          proposal_edit_before_minutes:
+            one: Vei putea edita această propunere în primul minut de la publicarea sa. După trecerea acestei perioade nu vei mai putea edita propunerea.
+            few: Vei putea edita această propunere în primele %{count} minute după publicarea sa. După trecerea acestei perioade nu vei mai putea edita propunerea.
+            other: Vei putea edita această propunere în primele %{count} minute după publicarea sa. După trecerea acestei perioade nu vei mai putea edita propunerea.
+          publish: Publică
+          title: Publică propunerea ta
+        show:
+          answer: Răspuns
+          changes_at_title: Amendament pentru „%{title}”
+          edit_proposal: Editează propunerea
+          estimated_cost: Cost estimat
+          hidden_endorsers_count:
+            one: și încă %{count} persoană
+            few: și încă %{count} persoane
+            other: și încă %{count} persoane
+          link_to_collaborative_draft_help_text: Această propunere este rezultatul unei ciorne colaborative. Revizuiește istoricul colaborării
+          link_to_collaborative_draft_text: Vezi ciorna colaborativă
+          link_to_promoted_emendation_help_text: Această propunere este un amendament promovat
+          link_to_promoted_emendation_text: Vizualizează amendamentul respins.
+          link_to_proposal_from_emendation_help_text: Acesta este un amendament respins
+          link_to_proposal_from_emendation_text: Vezi propunerea
+          proposal_accepted_reason: 'Această propunere a fost acceptată deoarece:'
+          proposal_in_evaluation_reason: Această propunere este în curs de evaluare
+          proposal_rejected_reason: 'Această propunere a fost respinsă deoarece:'
+          withdraw_confirmation_html: Sigur dorești să retragi această propunere?<br><br><strong>Această acțiune nu poate fi anulată!</strong>
+          withdraw_proposal: Retrage propunerea
+        update:
+          title: Actualizează propunerea
+        voting_rules:
+          proposal_limit:
+            description: Poți crea până la %{limit} propuneri.
+        wizard_aside:
+          back: Înapoi
+          back_from_step_1: Înapoi la propuneri
+        wizard_steps:
+          current_step: Pasul curent
+          step_1: Creează propunerea ta
+          title: Etapele creării propunerii
+      proposals_picker:
+        choose_proposals: Alege propuneri
+      publish:
+        error: A apărut o problemă la publicarea propunerii.
+        success: Propunerea a fost publicată cu succes.
+      publish_answers:
+        success: Răspunsurile pentru propuneri au fost publicate cu succes.
+      update:
+        error: A apărut o problemă la salvarea propunerii.
+        success: Propunerea a fost actualizată cu succes.
+      update_draft:
+        error: A apărut o problemă la salvarea ciornei colaborative.
+        success: Ciorna colaborativă a fost actualizată cu succes.
+      versions:
+        index:
+          title: Versiuni
+    resource_links:
+      copied_from_component:
+        proposal_proposal: Propuneri asociate
+      included_projects:
+        project_result: 'Rezultatele care apar în acest proiect:'
+      included_proposals:
+        proposal_project: 'Propunere care apare în aceste proiecte:'
+        proposal_result: 'Propunere care apare în aceste rezultate:'
+    statistics:
+      proposals_accepted: Propuneri acceptate
+      proposals_count: Propuneri
+      votes_count: Voturi

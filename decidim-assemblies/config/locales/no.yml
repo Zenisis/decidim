@@ -1,0 +1,373 @@
+"no":
+  activemodel:
+    attributes:
+      assembly:
+        area_id: Område
+        assembly_type: Forsamlingstype
+        assembly_type_other: Forsamlingstype annet
+        banner_image: Bannerafbeelding
+        closing_date: Lukkings dato
+        closing_date_reason: Lukkings dato begrunnelse
+        composition: Sammensetning
+        copy_categories: Kopier kategorier
+        copy_components: Kopier komponenter
+        copy_features: Kopier funksjoner
+        created_by: Opprettet av
+        created_by_other: Opprettet av annet
+        creation_date: Dato opprettet
+        decidim_area_id: Område
+        decidim_assemblies_type_id: Forsamlingstype
+        decidim_scope_id: Tema
+        description: Beskrivelse
+        developer_group: Prosessen styres av
+        domain: Domene
+        duration: Varighet
+        facebook: Facebook
+        github: GitHub
+        hashtag: Hastag
+        hero_image: Hjem bilde
+        included_at: Inkludert på
+        instagram: Instagram
+        internal_organisation: Intern organisasjon
+        is_transparent: Er transparent
+        local_area: Organisasjonsområde
+        meta_scope: Tema metadata
+        parent_id: Foreldre forsamling
+        participatory_processes_ids: Relaterte deltakerprosesser
+        participatory_scope: Hva er bestemt
+        participatory_structure: Hvordan blir det bestemt
+        private_space: Privat området
+        promoted: Fremhevet
+        published_at: Publisert på
+        purpose_of_action: Formål
+        scope_id: Tema
+        scopes_enabled: Temaer aktivert
+        short_description: Kort beskrivelse
+        slug: URL slug
+        special_features: Spesialfunksjoner
+        subtitle: Undertittel
+        target: Hvem deltar
+        title: Tittel
+        weight: Prioritert rekkefølge
+        youtube: YouTube
+      assembly_member:
+        birthday: Fødselsdag
+        birthplace: Fødested
+        ceased_date: Opphørt dato
+        designation_date: Valgdato
+        full_name: Fullt navn
+        gender: Kjønn
+        non_user_avatar: Profilbilde
+        position: Stilling
+        user_id: Bruker eller gruppe
+      assembly_user_role:
+        email: Epost
+        name: Navn
+        role: Rolle
+  activerecord:
+    models:
+      decidim/assembly:
+        one: Forsamling
+        other: Forsamlinger
+      decidim/assembly_member:
+        one: Forsamlings medlem
+        other: Forsamlings medlemmer
+      decidim/assembly_user_role:
+        one: Forsamlings bruker rolle
+        other: Forsamlings bruker roller
+  decidim:
+    admin:
+      actions:
+        import_assembly: Importer
+        new_assembly: Ny forsamling
+        new_assembly_type: Ny forsamlingstype
+      assemblies:
+        create:
+          error: Det oppstod et problem med å lage en ny forsamling.
+          success: Forsamling ble opprettet.
+        edit:
+          update: Oppdater
+        index:
+          private: Privat
+          public: Offentlig
+          published: Publisert
+        new:
+          create: Opprett
+          title: Ny forsamling
+        update:
+          error: Det oppstod et problem med å oppdatere denne forsamlingen.
+          success: Forsamlingen ble oppdatert.
+      assemblies_copies:
+        create:
+          error: Det oppstod et problem med å publisere denne forsamlingen.
+          success: Forsamlingen ble duplisert.
+      assemblies_types:
+        create:
+          error: Det oppstod et problem med å lage en ny forsamlingstype.
+          success: Forsamlingtypen ble opprettet.
+        destroy:
+          success: Forsamlingstypen ble slettet.
+        new:
+          create: Opprett
+          title: Ny forsamlingstype
+        update:
+          error: Det oppsto et problem med å oppdatere denne forsamlingstypen.
+          success: Forsamlingstypen ble oppdatert.
+      assembly_copies:
+        new:
+          copy: Kopier
+          select: Velg hvilke data du vil duplisere
+          title: Dupliser forsamling
+      assembly_imports:
+        create:
+          error: Det oppstod et problem med å importere denne forsamlingen.
+          success: Forsamlingen ble vellykket importert.
+        new:
+          import: Importer
+          select: Velg hvilke data du vil importere
+          title: Importer forsamling
+      assembly_members:
+        create:
+          error: Det oppstod et problem med å legge til et medlem for denne forsamlingen.
+          success: Medlem ble opprettet for denne forsamlingen.
+        destroy:
+          success: Medlem ble slettet for denne forsamlingen.
+        edit:
+          update: Oppdater
+        index:
+          assembly_members_title: Forsamlings medlemmer
+        new:
+          create: Opprett
+        update:
+          error: Det oppstod et problem med å oppdatere medlemmet for denne forsamlingen.
+          success: Medlem ble oppdatert for denne forsamlingen.
+      assembly_publications:
+        create:
+          error: Det oppstod et problem med å publisere denne forsamlingen.
+          success: Forsamlingen ble publisert.
+        destroy:
+          error: Det oppstod et problem med å avpublisere denne forsamlingen.
+          success: Forsamlingen ble avpublisert.
+      assembly_user_roles:
+        create:
+          error: Det oppstod et problem med å legge til en administrator for denne forsamlingen.
+          success: Admin ble lagt til i denne forsamlingen.
+        destroy:
+          success: Admin slettet fra denne forsamlingen.
+        edit:
+          update: Oppdater
+        index:
+          assembly_admins_title: Forsamlings adminer
+        new:
+          create: Opprett
+        update:
+          error: Det oppstod et problem med å oppdatere en administrator for denne forsamlingen.
+          success: Admin ble oppdatert for denne forsamlingen.
+      filters:
+        decidim_assemblies_type_id_eq:
+          label: Forsamlingstype
+      menu:
+        assemblies: Forsamlinger
+        assemblies_submenu:
+          assembly_admins: Forsamlings adminer
+          assembly_members: Medlemmer
+          attachment_collections: Mapper
+          attachment_files: Filer
+          attachments: Vedlegg
+          categories: Kategorier
+          components: Komponenter
+          moderations: Moderering
+        assemblies_types: Forsamlingstyper
+      models:
+        assemblies_types:
+          fields:
+            created_at: Opprettet på
+            title: Tittel
+        assembly:
+          fields:
+            created_at: Opprettet på
+            private: Privat
+            promoted: Fremhevet
+            published: Publisert
+            title: Tittel
+          name: Forsamling
+        assembly_member:
+          fields:
+            ceased_date: Opphørt dato
+            designation_date: Valgdato
+            full_name: Navn
+            position: Stilling
+          name: Medlem
+          positions:
+            other: Annet
+            president: Leder
+            secretary: Sekretær
+            vice_president: Nestleder
+        assembly_user_role:
+          fields:
+            email: Epost
+            name: Navn
+            role: Rolle
+          name: Forsamlings admin
+          roles:
+            admin: Administrator
+            collaborator: Samarbeidspartner
+            moderator: Moderator
+            valuator: Verdivurdering
+      titles:
+        assemblies: Forsamlinger
+        assemblies_types: Forsamlingstyper
+    admin_log:
+      assembly:
+        create: "%{user_name} opprettet %{resource_name} forsamlingen"
+        publish: "%{user_name} publiserte %{resource_name} forsamlingen"
+        unpublish: "%{user_name} avpubliserte %{resource_name} forsamlingen"
+        update: "%{user_name} oppdaterte %{resource_name} forsamlingen"
+      assembly_member:
+        create: "%{user_name} opprettet %{resource_name} medlemmet i %{space_name} samlingen"
+        delete: "%{user_name} fjernet %{resource_name} medlemmet fra %{space_name} forsamlingen"
+        update: "%{user_name} oppdaterte %{resource_name} medlemmet i %{space_name} samlingen"
+      assembly_setting:
+        update: "%{user_name} oppdaterte forsamlingens innstillinger"
+      assembly_type:
+        create: "%{user_name} opprettet %{resource_name} forsamlingstypen"
+        delete: "%{user_name} fjernet forsamlingstypen %{resource_name}"
+        publish: "%{user_name} publiserte %{resource_name} forsamlingstypen"
+        unpublish: "%{user_name} avpubliserte %{resource_name} forsamlingstypen"
+        update: "%{user_name} oppdaterte %{resource_name} forsamlingstypen"
+      assembly_user_role:
+        create: "%{user_name} inviterte %{resource_name} til %{space_name} forsamlingen"
+        delete: "%{user_name} fjernet deltakeren %{resource_name} fra %{space_name} forsamlingen"
+        update: "%{user_name} endret rollen av %{resource_name} i %{space_name} forsamlingen"
+    assemblies:
+      admin:
+        assemblies:
+          form:
+            announcement_help: Teksten du skriver her vil bli vist til brukeren rett under forsamlingsinformasjonen.
+            duration: Varighet
+            duration_help: Hvis varigheten av denne forsamlingen er limitert, velg en sluttdato. Hvis ikke, vil den vises som ubestemt.
+            filters: Filter
+            images: Bilder
+            metadata: Metadata
+            other: Annet
+            select_a_created_by: Velg en opprettet av
+            select_an_area: Velg et Område
+            select_an_assembly_type: Velg en forsamlingstype
+            select_parent_assembly: Velg foreldre-forsamling
+            social_handlers: Sosial
+            title: Generell Informasjon
+        assemblies_types:
+          form:
+            title: Tittel
+        assembly_members:
+          form:
+            existing_user: Eksisterende deltaker
+            explanation: 'Veiledning for bilde:'
+            non_user: Ingen deltakende
+            non_user_avatar_help: Du bør få samtykke fra personene før du offentliggjør dem som medlem.
+            select_a_position: Velg en posisjon
+            select_user: Velg en deltaker
+            user_type: Deltakertype
+        content_blocks:
+          highlighted_assemblies:
+            max_results: Maksimal mengde elementer som skal vises
+        new_import:
+          accepted_types:
+            json: JSON
+      assemblies:
+        filters:
+          names:
+            all: Alle
+      assembly_members:
+        index:
+          members: Medlemmer
+      assembly_types:
+        commission: Kommisjon
+        consultative_advisory: Rådgivende
+        executive: Overordnet
+        government: Myndighetene
+        others: Andre
+        participatory: Deltakende
+        working_group: Arbeidsgruppe
+      content_blocks:
+        highlighted_assemblies:
+          name: Fremhevede forsamlinger
+      created_by:
+        city_council: Byrådet
+        others: Andre
+        public: Offentlig
+      filter:
+        all: Alle typer
+        commission: Kommisjon
+        consultative_advisory: Rådgivende
+        executive: Overordnet
+        government: Myndighetene
+        help: 'Vis:'
+        others: Andre
+        participatory: Deltakende
+        working_group: Arbeidsgruppe
+      index:
+        title: Forsamlinger
+      pages:
+        user_profile:
+          member_of:
+            member_of: Medlem av
+      show:
+        assembly_type: Forsamlingstype
+        duration: Varighet
+        private_space: Dette er en privat forsamling
+    assembly_members:
+      assembly_member:
+        designated_on: Utpekt på
+      index:
+        title: Medlemmer
+    events:
+      assemblies:
+        create_assembly_member:
+          email_intro: En administrator av <a href="%{resource_url}">%{resource_name}</a> forsamlingen har lagt deg til som en av dets medlemmer.
+          email_subject: Du har blitt invitert til å være medlem av forsamlingen %{resource_name}!
+          notification_title: Du har blitt registrert som medlem av forsamling <a href="%{resource_path}">%{resource_name}</a>. Sjekk <a href="%{resource_path}">forsamlingssiden</a> for å bidra!
+      assembly:
+        role_assigned:
+          email_intro: Du har blitt tildelt som %{role} for forsamling "%{resource_title}".
+          email_outro: Du har mottatt dette varselet fordi du er %{role} av forsamlingen "%{resource_title}".
+          email_subject: Du er tildelt som %{role} i "%{resource_title}".
+          notification_title: Du er tildelt som %{role} for forsamlingen <a href="%{resource_url}">%{resource_title}</a>.
+    help:
+      participatory_spaces:
+        assemblies:
+          contextual: "<p> En <strong>forsamling</strong> er en gruppe medlemmer av en organisasjon som møtes med jevne mellomrom for å ta beslutninger om et spesifikt område eller omfang av organisasjonen.</p> <p>Forsamlinger holder møter, noen er private og noen er åpne. Hvis de er åpne, er det mulig å delta dem (for eksempel: delta på om kapasiteten tillater det, legge punkter til dagsordenen eller kommentere forslagene og beslutningene som er tatt av dette organet).</p> <p>Eksempler: En generalforsamling (som møtes en gang i året for å definere organisasjonens hovedhandlingslinjer i tillegg til dens overordnede organer ved avstemning), et råd for likestillingsråd (som møtes annenhver måned for å komme med forslag til hvordan man kan forbedre kjønnsrelasjoner i organisasjon), en evaluering kommisjon (som møtes hver måned for å overvåke en prosess) eller et garantiorgan (som samler hendelser, missbruk eller forslag for å forbedre beslutningsprosessene) er alle eksempler på forsamlinger.</p>\n"
+          page: "<p>En <strong>forsamling</strong> er en gruppe medlemmer av en organisasjon som møtes med jevne mellomrom for å ta beslutninger om et spesifikt område eller omfang av organisasjonen.</p> <p>Forsamlinger holder møter, noen er private og noen er åpne. Hvis de er åpne, er det mulig å delta dem (for eksempel: delta på om kapasiteten tillater det, legge punkter til dagsordenen eller kommentere forslagene og beslutningene som er tatt av dette organet).</p> <p>Eksempler: En generalforsamling (som møtes en gang i året for å definere organisasjonens hovedhandlingslinjer i tillegg til dens overordnede organer ved avstemning), et råd for likestillingsråd (som møtes annenhver måned for å komme med forslag til hvordan man kan forbedre kjønnsrelasjoner i organisasjon), en evaluering kommisjon (som møtes hver måned for å overvåke en prosess) eller et garantiorgan (som samler hendelser, missbruk eller forslag for å forbedre beslutningsprosessene) er alle eksempler på forsamlinger.</p>\n"
+          title: Hva er forsamlinger?
+    log:
+      value_types:
+        assembly_presenter:
+          not_found: 'Forsamlingen ble ikke funnet i databasen (ID: %{id})'
+        assembly_type_presenter:
+          not_found: 'Forsamlingstypen ble ikke funnet i databasen (ID: %{id})'
+    menu:
+      assemblies: Forsamlinger
+    metrics:
+      assemblies:
+        description: Antall forsmalinger opprettet
+        object: forsamlinger
+        title: Forsamlinger
+    participatory_processes:
+      show:
+        related_assemblies: Relaterte forsamlinger
+    statistics:
+      assemblies_count: Forsamlinger
+  layouts:
+    decidim:
+      assemblies:
+        assembly:
+          more_info: Mer info
+          take_part: Delta
+        index:
+          promoted_assemblies: Fremhevede forsamlinger
+        order_by_assemblies:
+          assemblies:
+            one: "%{count} forsamling"
+            other: "%{count} forsamlinger"
+      assembly_navigation:
+        assembly_member_menu_item: Medlemmer

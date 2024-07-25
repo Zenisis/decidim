@@ -1,0 +1,97 @@
+eu:
+  activemodel:
+    attributes:
+      post:
+        body: Gorputza
+        decidim_author_id: Egilea
+        published_at: Argitaratze-data
+        title: Izenburua
+    models:
+      decidim/blogs/create_post_event: Blogeko beste argitalpen bat
+  activerecord:
+    models:
+      decidim/blogs/post:
+        one: Argitalpena
+        other: Argitalpenak
+  decidim:
+    blogs:
+      actions:
+        author_id: Sortu argitalpena hau bezala
+        confirm_destroy: Ziur zaude post hau argitalpen ezabatu nahi duzula?
+        destroy: Ezabatu
+        edit: Editatu
+        new: Beste argitalpen bat
+        title: Ekintzak
+      admin:
+        posts:
+          create:
+            invalid: Arazo bat egon da argitalpen hau sortzean.
+            success: Argitalpena zuzen sortua.
+          destroy:
+            success: Argitalpena behar bezala ezabatua.
+          edit:
+            save: Eguneratu
+            title: Editatu argitalpena
+          index:
+            not_published_yet: Oraindik argitaratu gabe.
+            title: Argitalpenak
+          new:
+            create: Sortu
+            title: Sortu argitalpena
+          update:
+            invalid: Arazo bat egon da argitalpena gordetzean.
+            success: Argitalpena zuzen gordea.
+      admin_log:
+        post:
+          create: "%{user_name} k %{resource_name} blogeko argitalpena sortu du %{space_name} espazioan"
+          delete: "%{user_name} k %{resource_name} blogeko argitalpena ezabatu du %{space_name} espazioan"
+          update: "%{user_name} k %{resource_name} blogeko argitalpena eguneratu egin da %{space_name} espazioan"
+      content_blocks:
+        highlighted_posts:
+          last_published: Azken argitarapena
+          name: Argitalpenak
+          see_all: Ikusi argitalpen guztiak
+      last_activity:
+        new_post: 'Beste argitalpen bat blogean:'
+      models:
+        post:
+          fields:
+            author: Egilea
+            body: Gorputza
+            official_blog_post: Argitalpen ofiziala
+            published_at: Argitaratze-data
+            title: Izenburua
+      posts:
+        index:
+          count:
+            one: "%{count} argitalpen"
+            other: "%{count} edukin"
+          empty: Oraindik ez dago argitalpenik.
+    components:
+      blogs:
+        actions:
+          comment: Iruzkindu
+          create: Sortu
+          destroy: Ezabatu
+          endorse: Atxiki
+          update: Eguneratu
+        name: Bloga
+        settings:
+          global:
+            announcement: Iragarpena
+            comments_enabled: Iruzkinak gaituta
+            comments_max_length: Iruzkinen gehieneko luzera (utzi 0 lehenetsitako konfigurazioari eutsi nahi badiozu)
+          step:
+            announcement: Iragarpena
+            comments_blocked: Iruzkinak blokeatuta
+            endorsements_blocked: Atxikimenduak blokeatuta
+            endorsements_enabled: Atxikimenduak gaituta
+    events:
+      blogs:
+        post_created:
+          email_intro: '"%{resource_title}" argitalpena jarraitzen ari zaren "%{participatory_space_title}" espazioan argitaratu da.'
+          email_outro: Jakinarazpena jaso duzu "%{participatory_space_title}" jarraitzen ari zarelako. Aurreko estekan utzi ahal diozu jarraitzeari.
+          email_subject: Argitalpen berria %{participatory_space_title} espazioan
+          notification_title: <a href="%{resource_path}">%{resource_title}</a> posta %{participatory_space_title} argitaratu da
+    statistics:
+      posts_count: Argitalpenak

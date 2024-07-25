@@ -1,0 +1,156 @@
+.component__show {
+  &_header {
+    @apply flex items-center pb-4 border-b border-gray mb-4 gap-x-2;
+
+    &-title {
+      @apply text-xl font-bold inline-block;
+    }
+  }
+
+  &_nav {
+    @apply flex items-center mb-8;
+
+    &-circle {
+      @apply w-10 h-10 rounded-full relative border-2 border-white bg-background;
+
+      svg {
+        @apply w-6 h-6 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 fill-secondary;
+      }
+    }
+
+    &-author {
+      @apply flex items-center gap-x-4;
+
+      &-title {
+        @apply font-semibold text-gray-2 text-md list-none;
+      }
+
+      &-date {
+        @apply text-gray-2 text-xs;
+      }
+    }
+  }
+
+  &-title {
+    @apply font-semibold text-gray-2 text-xs;
+  }
+
+  &-text {
+    @apply text-gray-2 text-md;
+  }
+
+  .card-section {
+    @apply rounded p-4;
+  }
+
+  &_grid {
+    @apply grid grid-cols-[75%_25%] gap-x-4;
+
+    &-item {
+      .card-section:not(:last-child) {
+        @apply mb-4;
+      }
+
+      .component__show-icon-text {
+        @apply text-gray-2 text-sm;
+      }
+
+      svg {
+        @apply w-3.5 h-3.5 fill-gray;
+      }
+    }
+  }
+
+  &_notes {
+    .comment,
+    .comment-reply {
+      @apply mt-4 p-4 rounded w-full border border-gray-3 space-y-2;
+
+      background-color: rgba(255, 252, 238, 1);
+    }
+
+    .comment-reply {
+      @apply bg-white;
+    }
+
+    .comment__content {
+      @apply space-y-4;
+
+      a {
+        @apply text-secondary;
+      }
+    }
+
+    .comment-actions {
+      @apply flex items-center gap-4;
+
+      .button[aria-expanded="false"] {
+        svg:first-of-type {
+          @apply block;
+        }
+
+        svg:last-of-type {
+          @apply hidden;
+        }
+
+        span:first-of-type {
+          @apply block;
+        }
+
+        span:last-of-type {
+          @apply hidden;
+        }
+      }
+
+      .button[aria-expanded="true"] {
+        svg:first-of-type {
+          @apply hidden;
+        }
+
+        svg:last-of-type {
+          @apply block;
+        }
+
+        span:first-of-type {
+          @apply hidden;
+        }
+
+        span:last-of-type {
+          @apply block;
+        }
+      }
+    }
+
+    .form__wrapper {
+      @apply pb-4;
+
+      label {
+        @apply text-gray-2 text-sm;
+      }
+
+      textarea {
+        @apply mt-2;
+      }
+    }
+  }
+
+  .card-divider-button {
+    @apply flex-none flex items-center justify-start w-full;
+
+    svg {
+      @apply inline-block w-6 h-6;
+    }
+
+    &[aria-expanded="true"] {
+      @apply border-solid border-b border-gray w-full rounded-none pb-3;
+
+      svg {
+        @apply rotate-90 transition-transform;
+      }
+    }
+  }
+
+  .card-title {
+    @apply font-semibold text-md text-left inline-block text-secondary;
+  }
+}

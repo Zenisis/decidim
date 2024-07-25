@@ -1,0 +1,101 @@
+cs:
+  activemodel:
+    attributes:
+      post:
+        body: Tělo zprávy
+        decidim_author_id: Autor
+        published_at: Čas zveřejnění
+        title: Název
+    models:
+      decidim/blogs/create_post_event: Nový blogový příspěvek
+  activerecord:
+    models:
+      decidim/blogs/post:
+        one: Pošta
+        few: Příspěvky
+        many: Příspěvky
+        other: Příspěvky
+  decidim:
+    blogs:
+      actions:
+        author_id: Vytvořit příspěvek jako
+        confirm_destroy: Opravdu chcete tento příspěvek smazat?
+        destroy: Smazat
+        edit: Upravit
+        new: Nový příspěvek
+        title: Akce
+      admin:
+        posts:
+          create:
+            invalid: Při vytváření tohoto příspěvku nastal problém.
+            success: Příspěvek byl úspěšně vytvořen.
+          destroy:
+            success: Příspěvek byl úspěšně smazán.
+          edit:
+            save: Aktualizovat
+            title: Upravit příspěvek
+          index:
+            not_published_yet: Zatím nezveřejněno.
+            title: Příspěvky
+          new:
+            create: Vytvořit
+            title: Vytvořit příspěvek
+          update:
+            invalid: Při ukládání příspěvku došlo k chybám.
+            success: Příspěvek byl úspěšně uložen.
+      admin_log:
+        post:
+          create: "%{user_name} vytvořil příspěvek %{resource_name} v %{space_name}"
+          delete: "%{user_name} odstranil příspěvek %{resource_name} z %{space_name}"
+          update: "%{user_name} aktualizoval příspěvek %{resource_name} v %{space_name}"
+      content_blocks:
+        highlighted_posts:
+          last_published: Naposledy publikováno
+          name: Příspěvky
+          see_all: Zobrazit všechny příspěvky
+      last_activity:
+        new_post: 'Nový příspěvek:'
+      models:
+        post:
+          fields:
+            author: Autor
+            body: Tělo
+            official_blog_post: Oficiální příspěvek
+            published_at: Čas zveřejnění
+            title: Název
+      posts:
+        index:
+          count:
+            one: "%{count} příspěvek"
+            few: "%{count} příspěvky"
+            many: "%{count} příspěvků"
+            other: "%{count} příspěvků"
+          empty: Zatím nejsou žádné příspěvky.
+    components:
+      blogs:
+        actions:
+          comment: Komentář
+          create: Vytvořit
+          destroy: Smazat
+          endorse: Schválit
+          update: Aktualizovat
+        name: Blog
+        settings:
+          global:
+            announcement: Oznámení
+            comments_enabled: Komentáře povoleny
+            comments_max_length: Maximální délka komentáře (ponechte 0 pro výchozí hodnotu)
+          step:
+            announcement: Oznámení
+            comments_blocked: Komentáře byly blokovány
+            endorsements_blocked: Schvalování blokováno
+            endorsements_enabled: Schvalování povoleno
+    events:
+      blogs:
+        post_created:
+          email_intro: Příspěvek "%{resource_title}" byl zveřejněn v "%{participatory_space_title}", který sledujete.
+          email_outro: Obdrželi jste toto oznámení, protože sledujete "%{participatory_space_title}". Můžete ho zrušit z předchozího odkazu.
+          email_subject: Nový příspěvek publikován v %{participatory_space_title}
+          notification_title: Příspěvek <a href="%{resource_path}">%{resource_title}</a> byl zveřejněn ve %{participatory_space_title}
+    statistics:
+      posts_count: Příspěvky

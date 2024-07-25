@@ -1,0 +1,209 @@
+tr:
+  activemodel:
+    attributes:
+      budget:
+        decidim_scope_id: Kapsam
+        description: Açıklama
+        title: Başlık
+        total_budget: Toplam bütçe
+      project:
+        budget_amount: Bütçe tutarı
+        decidim_category_id: Kategori
+        decidim_scope_id: Kapsam
+        description: Açıklama
+        proposal_ids: İlgili teklifler
+        selected: Uygulama için seçildi
+        title: Başlık
+  activerecord:
+    models:
+      decidim/budgets/project:
+        one: Proje
+        other: Projeler
+  decidim:
+    budgets:
+      actions:
+        attachment_collections: Klasörler
+        attachments: Ekler
+        confirm_destroy: Bu projeyi silmek istediğinize emin misiniz?
+        destroy: Sil
+        edit: Düzenle
+        edit_projects: Projeleri Yönet
+        import: Teklifleri projelere aktarın
+        new_budget: Yeni Bütçe
+        new_project: Yeni proje
+        preview: Önizleme
+        title: Eylemler
+      admin:
+        budgets:
+          edit:
+            title: Bütçeyi düzenle
+            update: Bütçeyi güncelle
+          index:
+            title: Bütçeler
+          new:
+            create: Bütçe oluştur
+            title: Yeni bütçe
+        exports:
+          projects: Projeler
+        models:
+          budget:
+            name: Bütçe
+          project:
+            name: proje
+        projects:
+          edit:
+            title: Projeyi düzenle
+            update: Güncelle
+          index:
+            finished_orders: Tamamlanan oylar
+            pending_orders: Bekleyen oylar
+            selected: Seçili
+            title: Projeler
+          new:
+            create: Oluştur
+            title: Yeni proje
+        proposals_imports:
+          new:
+            create: Teklifleri projelere aktarın
+            no_components: Bu katılımcı alanda teklifleri projelere aktarmak için başka bir teklif bileşeni yoktur.
+            select_component: Lütfen bir bileşen seçin
+      admin_log:
+        budget:
+          create: "%{user_name}, %{space_name} alanında %{resource_name} bütçesini oluşturdu"
+          delete: "%{user_name}, %{space_name} alanında %{resource_name} bütçesini sildi"
+          update: "%{user_name}, %{space_name} alanında %{resource_name} bütçesini güncelledi"
+        project:
+          create: "%{user_name}, %{space_name} alanında %{resource_name} proje yarattı"
+          delete: "%{user_name}, %{space_name} alanında %{resource_name} projeyi sildi"
+          update: "%{user_name}, %{space_name} alanında %{resource_name} projesini güncellendi"
+      budget_information_modal:
+        back_to: '%{component_name} öğesine geri dön'
+        close_modal: Pencereyi kapat
+        continue: Devam et
+      budgets_list:
+        cancel_order:
+          more_than_one: '%{name} üzerindeki oyunuzu silin ve baştan başlayın'
+          only_one: oyunuzu silin ve baştan başlayın.
+        highlighted_cta: '%{name} için oy verin'
+        orders:
+          highest_cost: En Yüksek Maliyet
+          label: Bütçeleri Sıralama
+          lowest_cost: En Düşük Maliyet
+          random: Rastgele Sıralama
+      limit_announcement:
+        limit_reached: '%{links} alanında aktif oylarınız var. Bu bütçeye oy vermek için <a href="%{landing_path}"> oyunuzu silmeli ve baştan başlamalısınız </a>.'
+      models:
+        budget:
+          fields:
+            name: Adı
+            projects_count: Proje sayısı
+            total_budget: Toplam bütçe
+        project:
+          fields:
+            title: Başlık
+      order_summary_mailer:
+        order_summary:
+          selected_projects: 'Seçtiğiniz projeler şunlardır:'
+          subject: '%{space_name} katılımcı alanına oy verdiniz'
+          voted_on_space: '%{space_name} katılımcı alanı için %{budget_name} bütçesine oy verdiniz.'
+          voted_on_space_with_scope: '%{scope_name} (%{scope_type}) kapsamındaki %{space_name} katılımcı alanı için %{budget_name} bütçesine oy verdiniz.'
+      projects:
+        budget_confirm:
+          are_you_sure: Fikrinizi değiştirirseniz, oyunuzu daha sonra değiştirebilirsiniz.
+          cancel: İptal Et
+          confirm: Onayla
+          description: Bunlar bütçenin bir parçası olmak için seçtiğiniz projeler.
+          title: Oyu onayla
+        budget_excess:
+          budget_excess:
+            title: Maksimum bütçe aşıldı
+          ok: TAMAM
+          projects_excess:
+            title: Maksimum proje sınırını aştı
+        budget_summary:
+          are_you_sure: Oyunuzu iptal etmek istediğinizden emin misiniz?
+          cancel_order: oyunuzu silin ve baştan başlayın
+          checked_out:
+            title: Bütçe oyu tamamlandı
+        count:
+          projects_count:
+            one: 1 proje
+            other: "%{count} proje"
+        filters:
+          category: Kategori
+          scope: Kapsam
+          search: Arama
+          status: Durum
+          status_values:
+            all: Tümü
+            not_selected: Seçili değil
+            selected: Seçili
+        orders:
+          highest_cost: En yüksek maliyet
+          label: Projeleri buna göre sırala
+          lowest_cost: En düşük maliyet
+          most_voted: En çok oylanan
+          random: Rasgele sırala
+          selected: Seçili
+        project:
+          selected: Seçili
+          votes:
+            one: oy
+            other: oylar
+        project_budget_button:
+          add: Oyunuza ekleyin
+          added: Oyunuza eklendi
+        projects_for: '%{name} için projeler'
+        show:
+          budget: Bütçe
+    components:
+      budgets:
+        actions:
+          vote: Oy
+        name: Bütçeler
+        settings:
+          global:
+            announcement: Duyurular
+            comments_enabled: Yorumlar etkin
+            comments_max_length: Maksimum yorum uzunluğu (Varsayılan değer için 0 bırakın)
+            landing_page_content: Bütçeler ana sayfası
+            more_information_modal: Daha fazla bilgi
+            projects_per_page: Sayfa başına projeler
+            resources_permissions_enabled: Her proje için eylem izinleri ayarlanabilir
+            scope_id: Kapsam
+            scopes_enabled: Kapsamlar etkinleştirildi
+            title: Başlık
+            total_budget: Toplam bütçe
+            vote_minimum_budget_projects_number: Oy verilecek minimum proje sayısı
+            vote_rule_minimum_budget_projects_enabled: 'Kuralı etkinleştir: Oylanacak minimum proje sayısı'
+            vote_rule_threshold_percent_enabled: 'Kuralı etkinleştir: Minimum bütçe yüzdesi'
+            vote_selected_projects_maximum: Seçilecek maksimum proje sayısı
+            vote_selected_projects_minimum: Seçilecek minimum proje sayısı
+            vote_threshold_percent: Oy eşiği yüzde
+            workflow: İş Akışı
+            workflow_choices:
+              all: 'Hepsinde oy ver: Katılımcıların tüm bütçelerde oy kullanmasına olanak tanır.'
+              one: 'Birinde oy verin: Katılımcıların herhangi bir bütçede, ancak yalnızca bir bütçede oy kullanmasına izin verir.'
+          step:
+            announcement: Duyuru
+            comments_blocked: Yorumlar engellendi
+            highlighted_heading: Vurgulanan başlık
+            landing_page_content: Bütçeler ana sayfası
+            list_heading: Liste başlığı
+            more_information_modal: Daha fazla bilgi
+            show_votes: Oyları göster
+            title: Başlık
+            votes: Oylama
+            votes_choices:
+              disabled: Oylama devre dışı
+              enabled: Oylama etkin
+              finished: Oylama bitti
+    events:
+      budgets:
+        budget_published:
+          email_intro: '%{resource_title} bütçesi artık %{participatory_space_title} için aktif. Bu sayfadan görebilirsiniz:'
+          email_outro: Bu bildirimi, %{participatory_space_title} adlı kişiyi takip ettiğiniz için aldınız. Önceki bağlantıyı izleyerek bildirim almayı durdurabilirsiniz.
+          email_subject: '%{resource_title} bütçesi artık %{participatory_space_title} için aktif.'
+          notification_title: <a href="%{resource_path}">%{resource_title} </a> bütçesi artık %{participatory_space_title} için aktif.
+  index:
+    confirmed_orders_count: Oy sayısı

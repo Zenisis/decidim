@@ -1,0 +1,199 @@
+nl:
+  activemodel:
+    attributes:
+      config:
+        available_methods: Beschikbare methoden
+        offline: offline
+        offline_explanation: Instructies voor offline verificatie
+        online: Online
+      id_document_information:
+        document_number: Documentnummer (met letter)
+        document_type: Type van het document
+      id_document_upload:
+        document_number: Documentnummer (met letter)
+        document_type: Type van uw document
+        user: Deelnemer
+        verification_attachment: Gescande kopie van uw document
+      offline_confirmation:
+        email: E-mailadres deelnemer
+      postal_letter_address:
+        full_address: Volledig adres
+      postal_letter_confirmation:
+        verification_code: Verificatiecode
+      postal_letter_postage:
+        full_address: Volledig adres
+        verification_code: Verificatiecode
+  decidim:
+    admin:
+      menu:
+        authorization_revocation:
+          before_date_info: Nuttig als het proces al is begonnen en u de machtigingen van het vorige proces wilt intrekken.
+          button: Alles intrekken
+          button_before: Intrekken voor datum
+          destroy_ok: Alle overeenkomstige autorisaties zijn ingetrokken.
+          info: Er zijn een totaal van %{count} geverifieerde deelnemers.
+          title: Autorisaties intrekken
+        authorization_workflows: Authorisaties
+    admin_log:
+      organization:
+        update_id_documents_config: "%{user_name} heeft de configuratie voor de authorisatie van identiteitsdocumenten bijgewerkt"
+      user:
+        grant_id_documents_offline_verification: "%{user_name} heeft %{resource_name} gecontroleerd aan de hand van offline verificatie van identiteitsdocumenten"
+    authorization_handlers:
+      admin:
+        id_documents:
+          help:
+            - Gebruikers vullen hun identiteitsinformatie in en uploaden een kopie van hun document.
+            - U vult de informatie in die in de geüploade afbeelding aanwezig is.
+            - De informatie moet overeenkomen met wat de gebruiker heeft ingevuld.
+            - 
+        postal_letter:
+          help:
+            - Deelnemers vragen een verificatiecode op te sturen naar hun adres.
+            - U stuurt de brief naar hun adres met de verificatiecode.
+            - U markeert de brief zoals verzonden.
+            - Nadat u de brief hebt gemarkeerd als verzonden, kan de gebruiker de code invoeren en geverifieerd worden.
+      csv_census:
+        name: De ledenadministratie van de organisatie
+      direct: direct
+      help: Help
+      id_documents:
+        name: Identiteitsdocumenten
+      multistep: Multi-Step
+      name: Naam
+      postal_letter:
+        name: Code per post brief
+    verifications:
+      authorizations:
+        authorization_metadata:
+          info: 'Dit zijn de gegevens van de huidige verificatie:'
+          no_data_stored: Geen gegevens opgeslagen.
+        create:
+          error: Er is een fout opgetreden bij het maken van de autorisatie.
+          unconfirmed: U moet uw e-mail bevestigen om uzelf te autoriseren.
+        destroy:
+          error: Er is een probleem opgetreden bij het verwijderen van de autorisatie.
+        first_login:
+          actions:
+            another_dummy_authorization_handler: Controleer tegen een ander voorbeeld van autorisatieaanduiding
+            csv_census: Controleer aan de hand van de ledenadministratie van de organisatie
+            dummy_authorization_handler: Verifieer met het voorbeeld van de autorisatieaanduiding
+            dummy_authorization_workflow: Controleer aan de hand van het machtigingsworkflow voorbeeld
+            id_documents: Wordt geverifieerd door uw identiteitsdocument te uploaden
+            postal_letter: Wordt geverifieerd door een verificatiecode te ontvangen via de post
+            sms: Wordt geverifieerd door een SMS-verificatiecode te ontvangen
+          title: Verifieer uw identiteit
+          verify_with_these_options: 'Dit zijn de beschikbare opties om uw identiteit te verifiëren:'
+        index:
+          expired_verification: Verificatie verlopen
+          pending_verification: Verificatie in behandeling
+          show_renew_info: Klik om de verificatie te vernieuwen
+        new:
+          authorize: Verzenden
+          authorize_with: Verifieer met %{authorizer}
+        renew_modal:
+          cancel: annuleren
+          continue: Doorgaan
+          title: Verleng verificatie
+        skip_verification: U kunt dit overslaan voor nu en %{link}
+        start_exploring: begin met verkennen
+      csv_census:
+        admin:
+          census:
+            create:
+              error: Er is een fout opgetreden bij het importeren van census.
+          destroy:
+            title: Verwijder alle censusgegevens
+          index:
+            empty: Er zijn geen censusgegevens. Gebruik het onderstaande formulier om het te importeren met behulp van een CSV-bestand.
+            title: Huidige censusgegevens
+          instructions:
+            body: Hiervoor moet u het systeembeheer invoeren en de csv_census-autorisaties toevoegen aan de organisatie
+            title: Je moet de CSV-census voor deze organisatie activeren
+          new:
+            file: ".csv-bestand met e-mailgegevens"
+            info: 'Moet een bestand zijn in CSV formaat met slechts één kolom met het e-mailadres:'
+            submit: Upload bestand
+            title: Upload een nieuwe census
+        authorizations:
+          new:
+            error: We kunnen uw account niet verifiëren of u staat niet in de ledenadministratie van de organisatie.
+            success: Uw account is succesvol geverifieerd.
+      dummy_authorization:
+        extra_explanation:
+          postal_codes:
+            one: Deelname is beperkt tot gebruikers met postcode %{postal_codes}.
+            other: 'Deelname is beperkt tot gebruikers met een van de volgende postcodes: %{postal_codes}.'
+          scope: Deelname is beperkt tot deelnemers met bereik %{scope_name}.
+          user_postal_codes:
+            one: Deelname is beperkt tot deelnemers met postcode %{postal_codes}, en jouw postcode is %{user_postal_code}.
+            other: 'Deelname is beperkt tot gebruikers met geen van volgende postcodes: %{postal_codes}. Jouw postcode is %{user_postal_code}.'
+          user_scope: Deelname is beperkt tot deelnemers met scope %{scope_name}, en jij hebt %{user_scope_name} als scope.
+      id_documents:
+        admin:
+          config:
+            edit:
+              title: Configuratie van identiteitsdocumenten
+              update: Bijwerken
+            update:
+              error: Er is een fout opgetreden bij het bijwerken van de configuratie.
+          confirmations:
+            new:
+              introduce_user_data: Introduceer de gegevens in de afbeelding
+              reject: Weigeren
+              verify: Verifiëren
+          offline_confirmations:
+            new:
+              cancel: annuleren
+              introduce_user_data: Voer de e-mail van de deelnemer en de documentgegevens in
+              verify: Verifiëren
+          pending_authorizations:
+            index:
+              config: config
+              offline_verification: Offline verificatie
+              title: In afwachting van online verificaties
+              verification_number: 'Verificatie # %{n}'
+        authorizations:
+          choose:
+            choose_a_type: 'Selecteer alstublieft hoe u wilt worden geverifieerd:'
+            offline: offline
+            online: Online
+            title: Verifieer jezelf met je identiteitsdocument
+          edit:
+            offline: Gebruik offline verificatie
+            online: Gebruik online verificatie
+            send: Vraag opnieuw verificatie aan
+          new:
+            send: Verzoek om verificatie
+            title: Upload uw identiteitsdocument
+        passport: Paspoort
+      postal_letter:
+        admin:
+          pending_authorizations:
+            index:
+              address: Adres
+              letter_sent_at: Brief verzonden op
+              mark_as_sent: Markeren als verzonden
+              not_yet_sent: nog niet verstuurd
+              title: Doorlopende verificaties
+              username: Gebruikersnaam
+              verification_code: Verificatie code
+        authorizations:
+          edit:
+            send: Bevestigen
+          new:
+            send: Stuur me een brief
+            title: Vraag uw verificatiecode aan
+      sms:
+        authorizations:
+          edit:
+            confirm_destroy: Weet je zeker dat je de verificatiecode opnieuw wilt instellen?
+            destroy: Verificatiecode opnieuw instellen
+            send: Bevestigen
+            title: Voer de verificatiecode in die u heeft ontvangen
+          new:
+            send: Stuur me een sms
+            title: Vraag uw verificatiecode aan
+  errors:
+    messages:
+      uppercase_only_letters_numbers: moet allemaal in hoofdletters zijn en alleen letters en / of cijfers bevatten

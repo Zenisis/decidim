@@ -1,0 +1,60 @@
+tr:
+  activemodel:
+    attributes:
+      post:
+        body: Vücut
+        decidim_author_id: Yazar
+        published_at: Yayın zamanı
+        title: Başlik / Unvani 
+    models:
+      decidim/blogs/create_post_event: Yeni blog yazısı
+  activerecord:
+    models:
+      decidim/blogs/post:
+        one: posta
+        other: Mesajlar
+  decidim:
+    blogs:
+      actions:
+        confirm_destroy: Bu yayını silmek istediğinize emin misiniz?
+        destroy: silmek
+        edit: Düzenle
+        new: Yeni posta
+        title: Eylemler
+      admin:
+        posts:
+          edit:
+            save: Güncelleştirme
+            title: Gönderiyi düzenle
+          index:
+            title: Mesajlar
+          new:
+            create: yaratmak
+            title: Gönderi oluştur
+          update:
+            invalid: Gönderiyi kaydederken bir sorun oluştu.
+      models:
+        post:
+          fields:
+            author: Yazar
+            body: Vücut
+    components:
+      blogs:
+        name: Blog
+        settings:
+          global:
+            announcement: duyuru
+            comments_enabled: Yorumlar etkin
+            comments_max_length: Maksimum yorum uzunluğu (Varsayılan değer için 0 bırakın)
+          step:
+            announcement: duyuru
+            comments_blocked: Yorumlar engellendi
+            endorsements_blocked: Yorumlar engellendi
+            endorsements_enabled: Yorumlar etkin
+    events:
+      blogs:
+        post_created:
+          email_intro: '"%{resource_title}" yazısı, takip ettiğiniz "%{participatory_space_title}" harfinde yayınlandı.'
+          email_outro: Bu bildirimi aldınız çünkü "%{participatory_space_title}" u takip ediyorsun. Bunu önceki linkten takip edebilirsiniz.
+          email_subject: '%{participatory_space_title}yayınlanan yeni gönderi'
+          notification_title: <a href="%{resource_path}">%{resource_title}</a> sonrası %{participatory_space_title}olarak yayınlandı.

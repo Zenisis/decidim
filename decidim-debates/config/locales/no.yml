@@ -1,0 +1,202 @@
+"no":
+  activemodel:
+    attributes:
+      debate:
+        category_id: Kategori
+        closed_at: Stengt
+        conclusions: Konklusjoner
+        decidim_category_id: Kategori
+        description: Beskrivelse
+        end_time: Avsluttes den
+        information_updates: Oppdateringer
+        instructions: Instruksjoner for å delta
+        start_time: Starter den
+        title: Tittel
+        user_group_id: Opprett innspillstråd som
+    models:
+      decidim/debates/close_debate_event: Innspillstråden er stengt
+      decidim/debates/create_debate_event: Innspillstråd
+      decidim/debates/creation_disabled_event: Innspillstråder deaktivert
+      decidim/debates/creation_enabled_event: Opprettelse debatter aktivert
+  activerecord:
+    models:
+      decidim/debates/debate:
+        one: Innspillstråd
+        other: Innspillstråder
+  decidim:
+    components:
+      debates:
+        actions:
+          comment: Kommenter
+          create: Opprett
+          endorse: Påtegne
+        name: Innspillstråder
+        settings:
+          global:
+            announcement: Kunngjøring
+            comments_enabled: Kommentarer er aktivert
+            comments_max_length: Maks kommentarlengde
+            scope_id: Tema
+            scopes_enabled: Aktiverte temaer
+          step:
+            announcement: Kunngjøring
+            comments_blocked: Kommentarer er blokkert
+            creation_enabled: Deltakere kan opprette debatter
+            endorsements_blocked: Påtegnelser blokkert
+            endorsements_enabled: Påtegnelser aktivert
+    debates:
+      actions:
+        close: Lukk
+        confirm_destroy: Er du sikker?
+        destroy: Slett
+        edit: Rediger
+        title: Handling
+      admin:
+        debate_closes:
+          edit:
+            close: Lukk
+            title: Lukk innspillstråd
+        debates:
+          create:
+            invalid: Det oppstod et problem med å opprette innspillstråden.
+            success: Innspillstråden ble opprettet.
+          destroy:
+            success: Innspillstråden ble slettet.
+          edit:
+            title: Rediger innspillstråd
+            update: Oppdater innspillstråd
+          form:
+            debate_type: Type debatt
+            finite: Avgrenset (med start og slutt-tid)
+            open: Åpne (Ingen start eller sluttider)
+          index:
+            title: Innspillstråder
+          new:
+            create: Opprett innspillstråd
+            title: Ny innspillstråd
+          update:
+            invalid: Det oppstod et problem med å oppdatere denne innspillstråden.
+            success: Innspillstråden ble oppdatert.
+        exports:
+          comments: Kommentarer
+      admin_log:
+        debate:
+          close: "%{user_name} lukket tråden %{resource_name} under området %{space_name}"
+          create: "%{user_name} opprettet tråden %{resource_name} under området %{space_name}"
+          update: "%{user_name} oppdaterte tråden %{resource_name} under området %{space_name}"
+      debate_m:
+        commented_time_ago: Kommenterte %{time} siden
+      debates:
+        close:
+          invalid: Det oppstod et problem med å stenge innspillstråden.
+          success: Innspillstråden ble avsluttet.
+        close_debate_modal:
+          description: Hva er oppsummeringen fra denne innspillstråden?
+          send: Lukk innspillstråd
+        count:
+          debates_count:
+            one: "%{count} innspillstråd"
+            other: "%{count} innspillstråder"
+        create:
+          invalid: Det oppstod et problem med å opprette innspillstråden.
+          success: Innspillstråden ble opprettet.
+        edit:
+          back: Tilbake
+          save: Lagre endringer
+          title: Rediger innspillstråd
+        filters:
+          activity: Min aktivitet
+          all: Alle
+          category: Kategori
+          category_prompt: Velg en kategori
+          commented: Kommentert
+          my_debates: Mine debatter
+          official: Offentlig
+          origin: Opprinnelse
+          participants: Deltakere
+          search: Søk
+          state: Status
+          state_values:
+            closed: Lukket
+            open: Åpen
+        form:
+          select_a_category: Velg en kategori
+        index:
+          new_debate: Ny innspillstråd
+        new:
+          back: Tilbake
+          create: Opprett
+          title: Ny innspillstråd
+        orders:
+          commented: Mest kommentert
+          label: Ranger debatter etter
+          random: Tilfeldig rekkefølge
+          recent: Nyeste
+          updated: Sist oppdatert
+        show:
+          close_debate: Avslutt innspillstråd
+          debate_closed: Lukket
+          debate_conclusions_are: 'Innspillstråden er avsluttet den %{date}, med denne oppsummeringen:'
+          edit_conclusions: Rediger oppsummering
+          edit_debate: Rediger innspillstråd
+          groups_count: Grupper
+          open: Åpen debatt
+          participants_count: Deltakere
+        update:
+          invalid: Det oppsto et problem med å oppdatere innspillstråden.
+          success: Innspillstråden ble oppdatert.
+      models:
+        debate:
+          fields:
+            end_time: Sluttdato
+            official_debate: Offentlig tråd
+            start_time: Startdato
+            title: Innlegg
+    events:
+      debates:
+        create_debate_event:
+          user_followers:
+            email_intro: |-
+              Hei,
+              %{author_name} %{author_nickname}, som du følger, har opprettet en ny innspillstråd "%{resource_title}". Sjekk det ut og bidra:
+            email_outro: Du har mottatt denne varslingen fordi du følger %{author_nickname}. Du kan slutte å motta varsler hvis du følger den vedlagte lenken.
+            email_subject: Ny innspillstråd "%{resource_title}" av %{author_nickname}
+            notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> opprettet innspillstråden <a href="%{resource_path}">%{resource_title}</a>.
+        creation_disabled:
+          email_intro: 'Opprettelse av innspillstråder er ikke lenger aktivt i %{participatory_space_title} Du kan fortsatt delta i åpne innspillstråder på denne siden:'
+          email_outro: Du har mottatt denne varslingen fordi du følger %{participatory_space_title}. Du kan slutte å motta varsler hvis du følger den vedlagte lenken.
+          email_subject: Oppretting av innspillstråder deaktivert i %{participatory_space_title}
+          notification_title: Oppretting av innspillstråder er nå deaktivert i <a href="%{participatory_space_url}">%{participatory_space_title}</a>
+        creation_enabled:
+          email_intro: 'Du kan nå starte nye innspillstråder i %{participatory_space_title}! Begynn å delta på denne siden:'
+          email_outro: Du har mottatt denne varslingen fordi du følger %{participatory_space_title}. Du kan slutte å motta varsler hvis du følger den vedlagte lenken.
+          email_subject: Innspillstråder nå tilgjengelig i %{participatory_space_title}
+        debate_closed:
+          affected_user:
+            email_intro: 'Innspillstråden %{resource_title} er avsluttet. Du kan lese oppsummeringen på denne siden:'
+            email_outro: Du har mottatt denne varslingen fordi du følger innspillstråden "%{resource_title}". Du kan slutte å følge den ved å trykke på linken over.
+            email_subject: Innspillstråden %{resource_title} er avsluttet
+            notification_title: Innspillstråden <a href="%{resource_path}">%{resource_title}</a> er avsluttet.
+          follower:
+            email_intro: 'Innspillstråden %{resource_title} er avsluttet. Du kan lese oppsummeringen på denne siden:'
+            email_outro: Du har mottatt denne varslingen fordi du følger innspillstråden "%{resource_title}". Du kan slutte å følge den ved å trykke på linken over.
+            email_subject: Innspillstråden %{resource_title} er avsluttet
+            notification_title: Innspillstråden <a href="%{resource_path}">%{resource_title}</a> er avsluttet.
+    gamification:
+      badges:
+        commented_debates:
+          conditions:
+            - Velg en åpen innspillstråd å delta i
+          description: Dette merket tildeles når du aktivt deltar i de forskjellige innspillstrådene ved å legge inn dine innspill.
+          description_another: Denne deltakeren har deltatt i %{score} innspillstråder.
+          description_own: Du har deltatt i %{score} innspillstråder.
+          name: Innspillstråder
+          next_level_in: Delta i %{score} flere innspillstråder for å nå neste nivå!
+          unearned_another: Denne deltakeren har ikke deltatt i noen innspillstråder ennå.
+    metrics:
+      debates:
+        description: Antall innspillstråder opprettet
+        object: innspillstråder
+        title: Innspillstråder
+    statistics:
+      debates_count: Debatter

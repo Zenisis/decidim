@@ -1,0 +1,31 @@
+ro:
+  activerecord:
+    models:
+      decidim/pages/page:
+        one: Pagină
+        few: Pagini
+        other: Pagini
+  decidim:
+    admin_log:
+      page:
+        update: "%{user_name} a actualizat pagina %{resource_name} în %{space_name}"
+    components:
+      pages:
+        name: Pagina
+        settings:
+          global:
+            announcement: Anunţ
+          step:
+            announcement: Anunţ
+    pages:
+      admin:
+        models:
+          components:
+            body: Conținut
+        pages:
+          edit:
+            save: Actualizează
+            title: Editează pagina
+          update:
+            invalid: A apărut o eroare la salvarea paginii.
+            success: Pagina a fost salvată cu succes.

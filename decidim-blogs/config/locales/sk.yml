@@ -1,0 +1,54 @@
+sk:
+  activemodel:
+    models:
+      decidim/blogs/create_post_event: Nový príspevok na blogu
+  activerecord:
+    models:
+      decidim/blogs/post:
+        one: Príspevok
+        few: Príspevky
+        many: Príspevky
+        other: Príspevky
+  decidim:
+    blogs:
+      actions:
+        confirm_destroy: Naozaj chcete odstrániť tento príspevok?
+        destroy: Odstrániť
+        edit: Upraviť
+        new: Nový príspevok
+        title: Akcie
+      admin:
+        posts:
+          edit:
+            save: Aktualizovať
+          index:
+            title: Príspevky
+          new:
+            create: Vytvoriť
+            title: Vytvort príspevok
+          update:
+            invalid: Vyskytol sa problém s ukladaním príspevku.
+      models:
+        post:
+          fields:
+            author: Autor
+            body: Telo textu
+    components:
+      blogs:
+        name: Blog
+        settings:
+          global:
+            announcement: Oznámenie
+            comments_enabled: Komentáre povolené
+          step:
+            announcement: Oznámenie
+            comments_blocked: Zablokované komentáre
+            endorsements_blocked: Zablokované schválenia
+            endorsements_enabled: Povolené schválenia
+    events:
+      blogs:
+        post_created:
+          email_intro: Príspevok "%{resource_title}" bol publikovaný v priestore "%{participatory_space_title}", ktorý sledujete.
+          email_outro: Túto notifikáciu ste dostali, pretože sledujete priestor "%{participatory_space_title}". Notifikácie môžete zrušiť po kliknutí na predchádzajúci odkaz.
+          email_subject: Nový príspevok publikovaný v %{participatory_space_title}
+          notification_title: Príspevok <a href="%{resource_path}">%{resource_title}</a> bol publikovaný v %{participatory_space_title}

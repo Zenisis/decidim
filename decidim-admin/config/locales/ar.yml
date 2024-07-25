@@ -1,0 +1,882 @@
+ar:
+  activemodel:
+    attributes:
+      area:
+        area_type: نوع المنطقة
+        name: الاسم
+        organization: المنظمة
+      area_type:
+        name: الاسم
+        organization: المنظمة
+        plural: صيغة الجمع
+      attachment:
+        attachment_collection_id: الحافظة
+        description: الوصف
+        file: ملف
+        title: المُرفق أو اسم الصورة
+        weight: موضع الطلب
+      attachment_collection:
+        description: الوصف
+        name: اسم
+        weight: موضع الطلب
+      category:
+        description: الوصف
+        name: اسم
+        parent_id: الأصل
+        weight: موضع الطلب
+      component:
+        name: اسم
+        published_at: نشر في
+        weight: موضع الطلب
+      external_domain:
+        value: القيمة
+      help_section:
+        content: المحتوى
+      id: المعرف ID
+      import:
+        user_group_id: إنشاء الاستيرادات ك
+      newsletter:
+        body: النص
+        subject: الموضوع
+      organization:
+        alert_color: تنبيه
+        available_authorizations: التراخيص المتاحة
+        badges_enabled: تمكين الشارات
+        comments_max_length: الحد الأقصى لطول التعليقات (اترك 0 لاستعمال القيمة الافتراضية)
+        cta_button_path: مسار زر دعوة إلى العمل call to action
+        cta_button_text: نص زر Call To Action
+        customize_welcome_notification: تخصيص إشعار الترحيب
+        default_locale: اللغة الافتراضية
+        description: الوصف
+        enable_omnipresent_banner: عرض لافتة في كل مكان
+        enable_participatory_space_filters: تفعيل أختيارات فرز الفضاء التشاركي
+        facebook_handler: مُعرّف حساب فيسبوك
+        favicon: أيقونة
+        github_handler: مُعرّف حساب غِت هَب
+        header_snippets: قصاصات رأس
+        highlight_color: تظليل
+        highlighted_content_banner_action_subtitle: نص زر الإجراء
+        highlighted_content_banner_action_title: عنوان زر الإجراء
+        highlighted_content_banner_action_url: عنوان URL لزر الإجراء
+        highlighted_content_banner_enabled: إظهار شعار المحتوى المميز
+        highlighted_content_banner_image: الصورة
+        highlighted_content_banner_short_description: وصف مختصر
+        highlighted_content_banner_title: العنوان
+        host: المضيف
+        instagram_handler: مُعرّف حساب استجرام
+        logo: الشعار
+        machine_translation_display_priority: أولوية عرض الترجمة الآلية
+        machine_translation_display_priority_original: النص الأصلي أولاً
+        machine_translation_display_priority_translation: النص المترجم أولاً
+        name: اسم
+        official_img_footer: تذييل الشعار الرسمي
+        official_url: عنوان URL الرسمي للمنظمة
+        omnipresent_banner_short_description: وصف قصير
+        omnipresent_banner_title: العنوان
+        omnipresent_banner_url: العنوان الشبكي
+        organization_admin_email: بريد مشرف المنظمة
+        organization_admin_name: اسم مشرف المنظمة
+        organization_locales: لغات المنظمة
+        primary_color: ابتدائي
+        reference_prefix: بادئة المرجع
+        rich_text_editor_in_public_views: إتاحة محرر النص الغني للمشارِكين
+        secondary_color: ثانوي
+        secondary_hosts: المستضيفين الثانويين
+        send_welcome_notification: إرسال إشعار بالترحيب
+        success_color: نجاح
+        time_zone: المنطقة الزمنية
+        tos_version: شروط وأحكام الخدمة
+        user_groups_enabled: تمكين المجموعات
+        warning_color: تحذير
+        welcome_notification_body: محتوى إشعار الترحيب
+        welcome_notification_subject: موضوع إشعار الترحيب
+        youtube_handler: مُعرّف حساب يوتيوب
+      participatory_space_private_user:
+        email: البريد الإلكتروني
+        name: الإسم
+      scope:
+        code: الشفرة
+        name: الاسم
+        organization: المنظمة
+        parent_id: الأبوين
+        scope_type: نوع المجال
+        scope_type_id: نوع المجال
+      scope_type:
+        name: الاسم
+        organization: المنظمة
+        plural: جمع
+      settings:
+        scope_id: المجال
+      static_page:
+        changed_notably: كانت هناك تغييرات ملحوظة.
+        content: المحتوى
+        organization: المنظمة
+        show_in_footer: تظهر في تذييل الصفحة
+        slug: سبيكة العنوان الشبكي
+        title: العنوان
+      static_page_topic:
+        description: وصف
+        show_in_footer: تظهر في تذييل الصفحة
+        title: العنوان
+      user_group_csv_verification:
+        file: ملف
+    errors:
+      models:
+        organization:
+          attributes:
+            official_img_footer:
+              allowed_file_content_types: ملف صورة غير صالح
+  activerecord:
+    attributes:
+      decidim/static_page:
+        content: المحتوى
+        slug: سبيكة العنوان الشبكي
+        title: العنوان
+      doorkeeper/application:
+        authorize_url: تفويض العنوان الشبكي
+        client_id: معرف العميل
+        client_secret: سر العميل
+        organization_name: اسم المنظمة
+        organization_url: العنوان الشبكي للمنظمة
+        redirect_uri: إعادة توجيه URI
+        site: موقع الويب
+  decidim:
+    admin:
+      actions:
+        add: إضافة
+        browse: تصفح
+        category:
+          new: فئة جديدة
+        export: تصدير الكل
+        import: استيراد
+        manage: تدبير
+        newsletter:
+          new: رسالة إخبارية جديدة
+        per_page: في كل صفحة
+        permissions: تصريحات
+        reject: رفض
+        share: مشاركة
+        user:
+          new: مدير جديد
+        verify: التحقق
+      admin_terms_of_service:
+        actions:
+          accept: أوافق على هذه الشروط
+      area_types:
+        create:
+          error: حدثت مشكلة أثناء إنشاء نوع منطقة جديد.
+          success: تم إنشاء نوع المنطقة بنجاح.
+        edit:
+          title: تحرير نوع المنطقة
+          update: تحديث
+        new:
+          create: إنشاء نوع المنطقة
+          title: نوع منطقة جديدة
+        update:
+          error: حدثت مشكلة أثناء تحديث هذا النوع من المناطق.
+      areas:
+        create:
+          error: كانت هناك مشكلة في إنشاء منطقة جديدة.
+          success: تم إنشاء المنطقة بنجاح.
+        edit:
+          title: تحرير المنطقة
+          update: تحديث
+        new:
+          create: إنشاء منطقة
+          title: منطقة جديدة
+        no_areas: لا توجد مناطق
+        update:
+          error: حدثت مشكلة أثناء تحديث هذا المجال.
+      attachment_collections:
+        create:
+          error: حدثت مشكلة أثناء إنشاء مجلد جديد.
+          success: تم إنشاء المجلد بنجاح.
+        destroy:
+          success: تم تدمير المجلد بنجاح.
+        edit:
+          title: تحرير المجلد
+          update: تحديث
+        index:
+          attachment_collections_title: مجلدات المرفقات
+        new:
+          create: إنشاء
+          title: مجلد جديد
+        update:
+          error: حدثت مشكلة أثناء تحديث هذا المجلد.
+          success: تم تحديث المجلد بنجاح.
+      attachments:
+        create:
+          error: حدثت مشكلة أثناء إنشاء مرفق جديد.
+          success: تم إنشاء المرفق بنجاح.
+        destroy:
+          success: تم تدمير المرفق بنجاح.
+        edit:
+          title: تحرير المرفق
+          update: تحديث
+        index:
+          attachments_title: المرفقات
+        new:
+          create: إنشاء مرفق
+          title: مرفق جديد
+        update:
+          error: حدثت مشكلة أثناء تحديث هذا المرفق.
+          success: تم تحديث المرفق بنجاح.
+      autocomplete:
+        no_results: لا توجد نتائج
+      block_user:
+        new:
+          justification: المبرر
+          title: حظر المستخدم %{name}
+      categories:
+        create:
+          error: كانت هناك مشكلة في إنشاء هذه الفئة.
+          success: تم إنشاء الفئة بنجاح.
+        destroy:
+          error: حدثت مشكلة في حذف هذه الفئة. يرجى حذف أي فئة فرعية أولاً ، تأكد من عدم وجود كيان آخر ينتمي إلى هذه الفئة وحاول مرة أخرى.
+          success: تم حذف الفئة بنجاح.
+        edit:
+          title: تحرير الفئة
+          update: تحديث
+        index:
+          categories_title: الاقسام
+        new:
+          create: إنشاء فئة
+          title: فئة جديدة
+        update:
+          error: حدثت مشكلة أثناء تحديث هذه الفئة.
+          success: تم تحديث الفئة بنجاح.
+      component_permissions:
+        update:
+          success: تم تحديث الأذونات بنجاح.
+      components:
+        create:
+          error: حدثت مشكلة أثناء إنشاء هذا المكون.
+          success: مكون تم إنشاؤه بنجاح.
+        destroy:
+          error: حدثت مشكلة أثناء تدمير هذا المكون.
+          success: تم حذف المكون بنجاح.
+        edit:
+          title: تحرير المكون
+          update: تحديث
+        form:
+          default_step_settings: إعدادات الخطوة الافتراضية
+          global_settings: الاعدادات العامة
+          step_settings: إعدادات الخطوة
+        index:
+          add: إضافة عنصر
+          headers:
+            actions: أفعال
+            name: اسم المكون
+            scope: مجال المكون
+            type: نوع المكون
+        new:
+          add: إضافة عنصر
+          title: 'إضافة مكون: %{name}'
+        publish:
+          success: تم نشر المكون بنجاح.
+        title: المكونات
+        unpublish:
+          success: تم إلغاء نشر المكون بنجاح.
+        update:
+          error: حدثت مشكلة أثناء تحديث هذا المكون.
+          success: تم تحديث المكون بنجاح.
+      conflicts:
+        attempts: المحاولات
+        'false': 'لا'
+        managed_user_name: المستخدم المُدار
+        solved: تم حلها
+        title: تضارب التحقق
+        transfer:
+          email: البريد الإلكتروني
+          name: الإسم
+          reason: السبب
+          success: قد اكتمل النقل الحالي بنجاح.
+          title: نقل
+        'true': 'نعم'
+        user_name: المستخدم
+      dashboard:
+        show:
+          view_more_logs: عرض المزيد من السجلات
+      exports:
+        export_as: "%{name} ك %{export_format}"
+        formats:
+          CSV: ملف (CSV)
+          Excel: مِلَفّ إكسيل Excel
+          FormPDF: ملف (PDF)
+          JSON: ملفات بصيغة (JSON)
+      filters:
+        category_id_eq:
+          label: الفئة
+        filter_label: تصفية
+        invitation_accepted_at_present:
+          label: تم قبول الدعوة
+          values:
+            'false': 'لا'
+            'true': 'نعم'
+        last_sign_in_at_present:
+          label: لم يتم تسجيل دخولهم
+          values:
+            'false': 'لا'
+            'true': 'نعم'
+        moderated_users:
+          reports_reason_eq:
+            label: سبب الابلاغ
+            values:
+              does_not_belong: لا ينتمي
+              offensive: مسيء
+              spam: محتوى مزعج و احتيال
+        moderations:
+          reportable_type_string_eq:
+            label: النوع
+        officialized_at_null:
+          label: حالة
+          values:
+            'false': Officialized
+            'true': غير رسمي
+        participatory_space_private_users:
+          user_invitation_accepted_at_not_null:
+            label: تم قبول الدعوة
+            values:
+              'false': لم يتم القبول
+              'true': تم قبوله
+          user_invitation_sent_at_not_null:
+            label: تم إرسال الدعوة
+            values:
+              'false': لم يتم الارسال
+              'true': تم الإرسال
+        private_space_eq:
+          label: خاص
+          values:
+            'false': علني
+            'true': خاص
+        published_at_null:
+          label: تم نشره
+          values:
+            'false': تم نشره
+            'true': لم يُنشَر
+        scope_id_eq:
+          label: المجال
+        search_label: بحث
+        search_placeholder:
+          name_or_nickname_or_email_cont: البحث عن %{collection} بحسب عنوان البريد الإكتروني أو الإسم أو الإسم المستعار.
+          report_count_eq: عدد التقارير يساوى
+          reported_id_string_or_reported_content_cont: البحث عن %{collection} بواسطة رقم-مُعرف أو بالمحتوى.
+          title_cont: البحث عن %{collection} بحسب العنوان.
+          user_name_or_user_nickname_or_user_email_cont: البحث عن %{collection} بحسب عنوان البريد الإكتروني أو الإسم أو الإسم المستعار.
+        state_eq:
+          label: الحالة
+          values:
+            all: الكل
+            pending: قيد الانتظار
+            rejected: تم رفضه
+            verified: تم التحقق
+      forms:
+        file_help:
+          import:
+            explanation: 'إرشادات الملف:'
+            message_1: ملفات CSV, JSON و Excel (.xlsx) مدعومة
+            message_2: بالنسبة لملفات CSV ، يجب أن يكون هناك فاصل بين الأعمدة بفاصلة منقوطة (";")
+      help_sections:
+        form:
+          save: حفظ
+      impersonatable_users:
+        index:
+          filter:
+            all: الكل
+            managed: تمكن
+            not_managed: غير مُدار
+          impersonate: انتحال
+          impersonate_new_managed_user: إدارة مشارك جديد
+          managed: تمكن
+          name: اسم
+          needs_authorization_warning: تحتاج إلى تمكين تفويض واحد على الأقل لهذه المؤسسة.
+          not_managed: غير مُدار
+          promote: تروج \ يشجع \ يعزز \ ينمى \ يطور
+          search: بحث
+          status: الحالة
+          view_logs: عرض السجلات
+      impersonations:
+        close_session:
+          error: حدثت مشكلة أثناء إغلاق جلسة إدارة المشاركين الحالية.
+          success: تم إنهاء جلسة التمثيل الحالية بنجاح.
+        create:
+          error: كانت هناك مشكلة في إدارة المشارك.
+          success: تم إنشاء المشارك المُدار بنجاح.
+        form:
+          authorization_method: طريقة الترخيص
+          name: اسم
+          reason: السبب
+        new:
+          impersonate: انتحال
+          impersonate_existing_managed_user: إدارة المشارك "%{name}"
+          impersonate_existing_user: إدارة المشارك "%{name}"
+          impersonate_new_managed_user: إدارة مشارك جديد
+      imports:
+        and: و
+        data_errors:
+          duplicate_headers:
+            detail: الرجاء التحقق من أن المِلَفّ يحتوي على أعمدة أو رؤوس مطلوبه لمرة واحدة فقط.
+          missing_headers:
+            detail: برجاء التحقق من أن الملف يحتوي على الأعمدة المطلوبة.
+        new:
+          accepted_mime_types:
+            csv: ملف (CSV)
+            json: ملفات بصيغة (JSON)
+            xlsx: ملف إكسل (.xlsx)
+          actions:
+            back: العودة
+          download_example: تنزيل المثال
+          download_example_format: مثال كـ %{name}
+          file_legend: إضافة ملف استيراد سيتم تحليله.
+          import: استيراد
+      managed_users:
+        promotion:
+          error: كانت هناك مشكلة في تعزيز المشارك المُدار.
+          success: تمت ترقية المشارك المُدار بنجاح.
+        promotions:
+          new:
+            explanation: يمكن ترقية المشاركين المدارين إلى مشاركين عاديين. يعني ذلك أنه سيتم دعوتهم إلى التطبيق ولن تتمكن من إدارته مرة أخرى. سيتلقى المشارك المدعو رسالة بريد إلكتروني لقبول دعوتك.
+            new_managed_user_promotion: ترويج مشارك جديد مُدار
+            promote: تروج \ يشجع \ يعزز \ ينمى \ يطور
+      menu:
+        admin_log: سجل نشاط المسؤول
+        admins: المدراء
+        appearance: المظهر
+        area_types: أنواع المناطق
+        areas: المناطق
+        configuration: الإعدادات
+        help_sections: أقسام المساعدة
+        homepage: الصفحة الرئيسية
+        impersonations: التقليد
+        manage: تدبير
+        newsletters: الرسائل الإخبارية
+        participants: المشاركون
+        scope_types: أنواع المجال
+        scopes: مجالات
+        settings: الإعدادات
+        static_page_topics: المواضيع
+        static_pages: صفحات
+        user_groups: المجموعات
+        users: المشاركون
+      models:
+        area:
+          fields:
+            area_type: نوع المنطقة
+            name: اسم
+        area_type:
+          fields:
+            name: اسم
+            plural: جمع
+        attachment:
+          fields:
+            collection: مجلد
+            content_type: نوع
+            file_size: الحجم
+            title: العنوان
+          name: المرفق
+        attachment_collection:
+          name: مجلد
+        category:
+          name: الفئة
+        impersonation_log:
+          fields:
+            admin: المُدير
+            ended_at: انتهى في
+            expired_at: انتهت في
+            reason: السبب
+            started_at: بدأت في
+            user: مشارك
+        newsletter:
+          fields:
+            created_at: أنشئت في
+            progress: تقدم
+            sent_at: أرسلت في
+            sent_to: أُرسِلت إلى
+            subject: موضوع
+          name: النشرة الإخبارية
+        participatory_space_private_user:
+          name: المشاركة الفضاء المشارك الخاص
+        scope:
+          fields:
+            name: اسم
+            scope_type: نوع المجال
+        scope_type:
+          fields:
+            name: اسم
+            plural: جمع
+        share_token:
+          fields:
+            expires_at: تنتهي صلاحيته في
+            token: رمز التشفير - Token
+            user: تم الإنشاء بواسطة
+        static_page:
+          fields:
+            created_at: أنشئت في
+            title: العنوان
+        user:
+          fields:
+            created_at: تاريخ الإنشاء
+            email: البريد الإلكتروني
+            name: اسم
+            role: وظيفة
+            roles:
+              admin: مشرف
+              user_manager: مدير مشارك
+          name: مشارك
+        user_group:
+          fields:
+            actions: أفعال
+            created_at: أنشئت في
+            document_number: رقم المستند
+            name: اسم
+            nickname: الاسم المستعار
+            phone: هاتف
+            state: حالة
+            users_count: عدد المشاركين
+      moderated_users:
+        index:
+          actions:
+            block: حظر مستخدم
+            title: الإجراءات
+            unblock: إلغاء حظر المستخدم
+            unreport: إلغاء التبليغ
+          name: الإسم
+          nickname: الاسم المستعار
+          reason: السبب
+          reports: عدد الإبلاغات
+        report:
+          reasons:
+            offensive: مسيء
+            spam: مزعج
+        tabs:
+          blocked: محظور
+      moderations:
+        report:
+          reasons:
+            does_not_belong: لا ينتمي
+            offensive: هجومي
+            spam: بريد مؤذي
+        reports:
+          index:
+            content_original_language: لغة المحتوى الأصلية
+            participatory_space: المساحة التشاركية
+            reported_content: محتوى تم الإبلاغ عنه
+          show:
+            report_reason: السبب
+      newsletter_templates:
+        index:
+          preview_template: معاينة
+          title: نماذج النشرة الإخبارية
+      newsletters:
+        create:
+          error: كانت هناك مشكلة في إنشاء هذه الرسالة الإخبارية.
+        deliver:
+          error: كانت هناك مشكلة في توصيل هذه الرسالة الإخبارية.
+          success: تم تسليم النشرة الإخبارية بنجاح.
+        destroy:
+          error_already_sent: 'لا يمكن تدمير الرسالة الإخبارية: لقد تم إرسالها بالفعل.'
+          success: النشرة الإخبارية دمرت بنجاح.
+        edit:
+          save_and_preview: حفظ والمعاينة
+          title: تحرير النشرة الإخبارية
+        index:
+          all: الكل
+          all_users: 'كافة المستخدمين '
+          and: 'و '
+          confirm_delete: هل أنت متأكد من أنك تريد حذف هذه الرسالة الإخبارية؟
+          followers: 'مُتابِعون '
+          has_been_sent_to: 'تم إرسالها إلى: '
+          no_scopes: لا توجد مجالات
+          not_sent: غير مرسَلة
+          participants: 'مشاركون '
+          segmented_to: 'مقسمه إلى %{subject}: '
+          subscribed_count: 'مُشترِك:'
+          title: الرسائل الإخبارية
+        new:
+          save: حفظ
+          title: رسالة إخبارية جديدة
+        select_recipients_to_deliver:
+          all_spaces: الكل
+          confirm_deliver: هل أنت متأكد من أنك تريد تسليم هذه الرسالة الإخبارية؟ لا يمكن التراجع عن هذا الإجراء.
+          deliver: تسليم النشرة الإخبارية
+          none: لا شَيْء
+          scopes_help: إرسال النشرة الإخبارية للمستخدمين الذين لديهم أي من المجالات المحددة تم تفعيله في إعدادات "اهتماماتي" لحسابهم.
+          select_scopes: أختر للمستخدمين الذين فعلوا أي مجال محدد في إعدادات أهتماماتي لحساباتهم.
+          title: حدد المستلمين للإرسال اليهم
+          warning: "<strong>تنبيه:</strong> سيتم إرسال هذه النشرة الإخبارية فقط للمستخدمين الذين فعلوا <em>أريد تلقي النشرات الإخبارية</em> في إعدادات الإشعارات الخاصة بهم."
+        show:
+          preview: معاينة
+          select_recipients_to_deliver: حدد المستلمين للإرسال اليهم
+          subject: الموضوع
+        update:
+          error: حدثت مشكلة أثناء تحديث هذه الرسالة الإخبارية.
+          success: تم تحديث النشرة الإخبارية بنجاح. يرجى مراجعته قبل الإرسال.
+      officializations:
+        index:
+          actions: أفعال
+          badge: شارة
+          block: حظر مستخدم
+          created_at: أنشئت في
+          name: اسم
+          nickname: كنية
+          not_officialized: غير رسمي
+          officialize: الصفة الرسمية
+          officialized: Officialized
+          reofficialize: Reofficialize
+          reports: التقارير
+          show_email: إظهار عنوان البريد الإلكتروني
+          status: الحالة
+          unblock: إلغاء حظر المستخدم
+          unofficialize: Unofficialize
+        new:
+          badge: شارة رسمية
+          officialize: الصفة الرسمية
+          title: إضفاء الطابع الرسمي على المشارك "%{name}"
+        show_email_modal:
+          description: إذا كنت بحاجة إلى الاتصال بأحد المشاركين مباشرة، يمكنك النقر على زر العرض لرؤية عنوان بريده الإلكتروني. سيتم تسجيل هذا الإجراء.
+          email_address: عنوان البريد الإلكتروني
+          full_name: الاسم الكامل
+          hidden: مخفي
+          show: إظهار
+          title: إظهار عنوان البريد الإلكتروني للمشترك
+      organization:
+        edit:
+          title: تحرير المنظمة
+          update: تحديث
+        form:
+          facebook: فيسبوك
+          github: غِت‌ هَب
+          instagram: إينستاجرام
+          social_handlers: التواصل الاجتماعي
+          twitter: X
+          url: عنوان الرابط
+          youtube: يوتيوب
+        update:
+          error: حدثت مشكلة أثناء تحديث هذه المؤسسة.
+          success: تم تحديث المنظمة بنجاح.
+      organization_appearance:
+        edit:
+          update: تحديث
+        form:
+          colors:
+            colors_title: ألوان المنظمة
+          cta_button_text_help: يمكنك الكتابة فوق نص زر Call To Action في الصفحة الرئيسية لكل لغة متاحة في مؤسستك. إذا لم يتم تعيينها ، سيتم استخدام القيمة الافتراضية. يظهر زر Call To Action في الصفحة الرئيسية بين نص الترحيب والوصف.
+          homepage_appearance_title: تحرير مظهر الصفحة الرئيسية
+          homepage_highlighted_content_banner_title: لافتة المحتوى الراقي
+          images:
+            layout_appearance_title: تحرير مظهر التخطيط
+            preview: معاينة
+          omnipresent_banner_appearance_title: تحرير لافتة في كل مكان
+      participatory_space_private_users:
+        create:
+          error: حدثت مشكلة أثناء إضافة مشارك خاص لهذه المساحة التشاركية.
+          success: المشاركة الفضاء الفضاء المشترك وصول خلق بنجاح.
+        destroy:
+          error: حدثت مشكلة في حذف مشارك خاص لهذه المساحة التشاركية.
+          success: المشاركة الفضاء الفضاء وصول المشاركين دمرت بنجاح.
+        index:
+          title: المشاركة الفضاء المشارك الخاص
+        new:
+          create: إنشاء
+          title: مشارك جديد الفضاء الخاص المشارك.
+      participatory_space_private_users_csv_imports:
+        new:
+          destroy:
+            button: حذف جميع المشاركين الخاصين
+            empty: ليس لديك أي مشاركين خاصين.
+            explanation: لديك %{count} مشاركين خاصين.
+            title: حذف جميع المشاركين الخاصين
+          upload: حمّل
+      reminders:
+        new:
+          submit: إرسال
+      resource_permissions:
+        edit:
+          submit: خضع
+          title: تعديل الترخيصات
+        update:
+          success: تم تحديث الأذونات بنجاح.
+      resources:
+        index:
+          headers:
+            scope: المجال
+      scope_types:
+        create:
+          error: حدثت مشكلة أثناء إنشاء نوع مجال جديد.
+          success: تم إنشاء نوع النطاق بنجاح.
+        destroy:
+          success: تم تدمير نوع المجال بنجاح
+        edit:
+          title: تحرير نوع المجال
+          update: تحديث
+        new:
+          create: إنشاء نوع المجال
+          title: مجال جديد
+        update:
+          error: حدثت مشكلة أثناء تحديث نوع المجال هذا.
+          success: تم تحديث نوع المجال بنجاح
+      scopes:
+        create:
+          error: كانت هناك مشكلة في إنشاء مجال جديد.
+          success: تم إنشاء النطاق بنجاح.
+        edit:
+          title: تحرير المجال
+          update: تحديث
+        new:
+          create: إنشاء مجال
+          title: مجال جديد
+        no_scopes: لا مجالات على هذا المستوى.
+        update:
+          error: حدثت مشكلة أثناء تحديث هذا النطاق.
+          success: تم تحديث المجال بنجاح
+      share_tokens:
+        actions:
+          destroy: حذف
+          share: مشاركة
+      shared:
+        gallery:
+          add_images: إضافة صور
+          edit_images: تعديل الصورة
+      static_page_topics:
+        create:
+          error: كانت هناك مشكلة في إنشاء موضوع جديد.
+          success: تم إنشاء الموضوع بنجاح.
+        edit:
+          title: تحرير الموضوع
+          update: تحديث الموضوع
+        new:
+          create: إنشاء موضوع
+          title: موضوع جديد
+        update:
+          error: حدثت مشكلة أثناء تحديث هذا الموضوع.
+          success: تم تحديث الموضوع بنجاح
+      static_pages:
+        actions:
+          view: عرض الصفحة العامة
+        create:
+          error: كانت هناك مشكلة في إنشاء صفحة جديدة.
+          success: تم إنشاء الصفحة بنجاح.
+        destroy:
+          success: تم تدمير الصفحة بنجاح
+        edit:
+          title: تعديل الصفحة
+          update: تحديث
+        form:
+          none: لا شيء
+        index:
+          last_notable_change: آخر تغيير ملحوظ
+        new:
+          create: إنشاء صفحة
+          title: صفحة جديدة
+        topic:
+          without_topic: صفحات بدون موضوع
+        update:
+          error: حدثت مشكلة أثناء تحديث هذه الصفحة.
+      titles:
+        admin_log: سجل المسؤول
+        area_types: أنواع المناطق
+        areas: المناطق
+        authorization_workflows: طرق التحقق
+        dashboard: لوحة القيادة
+        edit_organization_appearance: تعديل مظهر الصفحة الرئيسية
+        impersonatable_users: المشاركون في الإدارة
+        impersonations: إدارة المشاركين
+        menu: القائمة الرئيسية
+        pages: الصفحات
+        panel: مدير
+        participants: المشاركين
+        scope_types: أنواع النطاق
+        scopes: مجالات
+        statistics: النشاط
+        user_groups: المجموعات
+        users: المدراء
+      user_group:
+        csv_verify:
+          invalid: حدثت مشكلة في قراءة ملف CSV.
+        reject:
+          invalid: حدثت مشكلة في رفض هذه المجموعة.
+        verify:
+          invalid: حدثت مشكلة أثناء التحقق من هذه المجموعة.
+      user_groups:
+        index:
+          state:
+            pending: قيد الانتظار
+            rejected: مرفوض
+            verified: التحقق
+          verify_via_csv: تحقق عبر CSV
+      user_groups_csv_verifications:
+        new:
+          explanation: قم بتحميل ملف CSV الخاص بك. يجب أن يحتوي على رسائل البريد الإلكتروني الرسمية للمجموعات في مؤسستك في العمود الأول من الملف ، بدون رؤوس. سيتم التحقق من صحة المجموعات التي أكدت بريدها الإلكتروني والتي تحتوي على بريد إلكتروني ظاهر في ملف CSV.
+          title: قم بتحميل ملف CSV الخاص بك
+          upload: رفع
+      users:
+        create:
+          error: كانت هناك مشكلة في دعوة هذا المشرف.
+          success: تمت دعوة المشارك بنجاح.
+        destroy:
+          error: حدثت مشكلة أثناء محاولة حذف هذا المشرف.
+          success: المشارك لم يعد مسؤول.
+        form:
+          email: البريد الإلكتروني
+          name: اسم
+          role: وظيفة
+        new:
+          create: دعا
+          title: دعوة مدير جديد
+      users_statistics:
+        users_count:
+          admins: المدراء
+          last_day: بالأمس
+          last_month: الشهر الماضي
+          last_week: الأسبوع الماضي
+          participants: المشاركون
+    metrics:
+      blocked_users:
+        title: المستخدمين المحظورين
+      reported_users:
+        object: المستخدمين المبلغ عنهم
+        title: المستخدمون المبلغ عنهم
+      user_reports:
+        object: تقارير المستخدم
+        title: تقارير المستخدم
+    moderations:
+      actions:
+        hidden: مخفي
+        hide: إخفاء
+        not_hidden: غير مخفي
+        title: أفعال
+        unhide: إظهار
+        unreport: Unreport
+      admin:
+        reportable:
+          hide:
+            invalid: حدثت مشكلة في إخفاء المورد.
+            success: الموارد خفية بنجاح.
+          unhide:
+            invalid: حدثت مشكلة أثناء إخفاء المورد.
+            success: المورد غير مخفي بنجاح.
+          unreport:
+            invalid: حدثت مشكلة أثناء الإبلاغ عن المورد.
+            success: المورد لم يتم الإبلاغ عنه بنجاح.
+      models:
+        moderation:
+          fields:
+            hidden_at: مخبأة في
+            participatory_space: الفضاء التشاركي
+            reportable_type: النوع
+            reported_content_url: تم الإبلاغ عن عنوان URL للمحتوى
+            reports: السبب
+            visit_url: زيارة العنوان الشبكي
+        report:
+          fields:
+            details: تفاصيل السبب
+            locale: اللغة
+            reason: السبب
+  errors:
+    messages:
+      invalid_json: JSON غير صالح
+  layouts:
+    decidim:
+      admin:
+        global_moderations:
+          title: مُشرف عام

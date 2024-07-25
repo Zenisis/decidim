@@ -1,0 +1,104 @@
+uk:
+  activemodel:
+    attributes:
+      id_document_information:
+        document_number: Номер документа (з літерою)
+        document_type: Різновид документу
+      id_document_upload:
+        document_number: Номер документа (з літерою)
+        document_type: Різновид вашого документу
+        user: Учасник
+        verification_attachment: Сканована копія вашого документа
+      postal_letter_address:
+        full_address: Повна адреса
+      postal_letter_confirmation:
+        verification_code: Перевірочний код
+      postal_letter_postage:
+        full_address: Повна адреса
+        verification_code: Перевірочний код
+  decidim:
+    authorization_handlers:
+      admin:
+        id_documents:
+          help:
+            - Учасники вводять свої особисті відомості та завантажують світлину свого документа.
+            - Введіть відомості з завантаженої вами світлини.
+            - Відомості повинні відповідати тим, які надав учасник.
+            - 
+        postal_letter:
+          help:
+            - Учасники подають запит на надсилання перевірочного коду на їх адресу.
+            - Ви надсилаєте листа з перевірочним кодом на їх адресу.
+            - Ви позначаєте лист як надісланий.
+            - Після позначення вами листа як відправленого, учасник зможе ввести код та підтвердити свою особу.
+      direct: Пряме
+      help: Допомога
+      id_documents:
+        name: Особисті документи
+      multistep: Багатокроковий
+      name: Ім'я
+      postal_letter:
+        name: Код паперовою поштою
+    verifications:
+      authorizations:
+        create:
+          error: При спробі створити підтвердження особи сталася помилка.
+        first_login:
+          actions:
+            another_dummy_authorization_handler: Підтвердьте, порівнявши з іншим прикладом підтвердження своєї особи
+            dummy_authorization_handler: Підтвердьте, порівнявши з прикладом підтвердження своєї особи
+            dummy_authorization_workflow: Підтвердьте, порівнявши з прикладом підтвердження своєї особи
+            id_documents: Підтвердіть особу, завантаживши ваш документ
+            postal_letter: Підтвердьте особу, отримавши перевірочний код паперовим поштовим листом
+          title: Підтвердьте свою особу
+          verify_with_these_options: 'Наявні такі способи підтвердити вашу особу:'
+        new:
+          authorize: Надіслати
+          authorize_with: Підтвердити особу за допомогою %{authorizer}
+        skip_verification: Ви можете поки що пропустити це і %{link}
+        start_exploring: почати досліджувати
+      dummy_authorization:
+        extra_explanation:
+          postal_codes:
+            one: Участь обмежується лише учасниками з поштовим кодом %{postal_codes}.
+            few: 'Участь обмежується лише учасниками з поштовими кодами %{postal_codes}.'
+            many: 'Участь обмежується лише учасниками з поштовими кодами %{postal_codes}.'
+            other: 'Участь обмежується лише учасниками з поштовими кодами %{postal_codes}.'
+      id_documents:
+        admin:
+          confirmations:
+            new:
+              introduce_user_data: Введіть відомості на картинці
+              reject: Відхилити
+              verify: Підтвердити
+          pending_authorizations:
+            index:
+              title: Підтвердження, які очікують на розгляд
+              verification_number: 'Підтвердження #%{n}'
+        authorizations:
+          edit:
+            send: Знову подати запит на підтвердження особи
+          new:
+            send: Подати запит на підтвердження особи
+            title: Завантажте документ, що засвідчує вашу особу
+        passport: Паспорт
+      postal_letter:
+        admin:
+          pending_authorizations:
+            index:
+              address: Адреса
+              letter_sent_at: 'Лист відправлено на адресу:'
+              mark_as_sent: Позначити як надіслане
+              not_yet_sent: Ще не відправлено
+              title: Поточні перевірки особи
+              username: Ім'я учасника
+              verification_code: Перевірочний код
+        authorizations:
+          edit:
+            send: Підтвердити
+          new:
+            send: Надішліть мені листа
+            title: Подати запит на перевірочний код
+  errors:
+    messages:
+      uppercase_only_letters_numbers: повинен містити лише титульні літери та цифри

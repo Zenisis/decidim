@@ -1,0 +1,135 @@
+@import "tom-select/dist/scss/tom-select";
+
+.proposal-list {
+  &__aside {
+    &__button-container {
+      @apply flex flex-col gap-4 md:gap-10 w-full;
+    }
+  }
+
+  &__map {
+    /* negative main padding values */
+    @apply md:-ml-16 -mt-6 md:-mt-12 aspect-square md:aspect-[21/9] [&>*]:h-full [&+*]:mt-6 md:[&+*]:mt-12;
+  }
+}
+
+.proposal {
+  &__cost {
+    @apply space-y-3 bg-background rounded p-4 text-black;
+
+    &-period {
+      @apply text-gray-2 uppercase text-sm;
+    }
+  }
+
+  &__aside {
+    &-vote {
+      @apply flex flex-row-reverse md:flex-col gap-4 items-center md:items-stretch justify-around md:last:[&>*]:w-auto;
+    }
+  }
+
+  &__container {
+    [data-decidim-map] {
+      @apply aspect-[5/1];
+    }
+  }
+}
+
+.proposal-participatory {
+  &__heading {
+    @apply pb-6 border-b-4 border-background font-sans font-semibold text-xl md:text-3xl;
+  }
+
+  &__section {
+    @apply p-4 rounded hover:bg-background-4 space-y-4 transition;
+  }
+
+  &__section + &__section {
+    @apply mt-2;
+  }
+
+  &__title {
+    @apply block font-semibold text-xl text-secondary;
+  }
+
+  &__text {
+    @apply text-md text-gray-2;
+  }
+
+  &__button {
+    @apply inline-flex items-center gap-1 px-0 md:px-6 border-gray-3 border-0 md:border-r first:pl-0 last:pr-0 last:border-r-0 text-sm text-secondary;
+
+    & > span {
+      @apply underline;
+    }
+
+    & > svg {
+      @apply w-3.5 h-3.5 fill-current text-gray;
+    }
+  }
+
+  &__section:hover &__title {
+    @apply underline;
+  }
+
+  &__section:hover .label {
+    @apply text-white bg-secondary;
+  }
+}
+
+#proposals {
+  .view-layout__links {
+    @apply flex gap-4 items-center;
+
+    svg {
+      @apply inline-block w-5 h-5;
+
+      &.view-icon--disabled {
+        @apply fill-gray;
+      }
+    }
+  }
+}
+
+.card {
+  &__proposal-placeholder-g {
+    @apply w-full h-full fill-primary;
+
+    g {
+      path {
+        @apply fill-primary;
+      }
+    }
+  }
+
+  &__grid-text-title {
+    @apply flex justify-between flex-row md:flex-col md:items-start lg:flex-row lg:items-center;
+
+    .label {
+      @apply md:mt-2;
+    }
+  }
+
+  &__list-metadata {
+    @apply md:flex md:flex-row md:items-center md:gap-4;
+  }
+}
+
+/* overwrite tom-select defaults */
+.ts {
+  &-control {
+    @apply border-gray text-md min-h-[40px];
+
+    input {
+      @apply font-normal text-black text-md;
+    }
+  }
+
+  &-dropdown {
+    @apply text-md text-gray-2 font-normal;
+
+    .active {
+      @apply text-white bg-secondary;
+    }
+  }
+}

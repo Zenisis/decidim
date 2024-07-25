@@ -1,0 +1,16 @@
+<%= decidim_modal id: "budget-modal-info" do %>
+  <div data-dialog-container>
+    <%= icon "information-line" %>
+    <h3 class="h3" id="dialog-title-budget-modal-info" tabindex="-1" data-dialog-title>
+      <%= decidim_sanitize(component_name) %>
+    </h3>
+    <p id="dialog-desc-budget-modal-info">
+      <%= content_tag(:p, more_information) if more_information %>
+    </p>
+  </div>
+  <div data-dialog-actions>
+    <button class="button button__sm md:button__lg button__secondary" data-dialog-close="budget-modal-info">
+      <%= t("continue", scope: "decidim.budgets.budget_information_modal") %>
+    </button>
+  </div>
+<% end %>

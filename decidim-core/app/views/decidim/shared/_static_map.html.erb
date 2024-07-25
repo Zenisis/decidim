@@ -1,0 +1,6 @@
+<% if geolocalizable.address.present? %>
+  <%= cell("decidim/address", geolocalizable) %>
+  <% if Decidim::Map.available?(:static) || Decidim::Map.available?(:dynamic) %>
+    <%= static_map_link(geolocalizable) %>
+  <% end %>
+<% end %>

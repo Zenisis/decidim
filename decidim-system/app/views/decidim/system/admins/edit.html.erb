@@ -1,0 +1,13 @@
+<% add_decidim_page_title(t(".title")) %>
+
+<% provide :title do %>
+  <h1 class="h1"><%= t ".title" %></h1>
+<% end %>
+
+<%= decidim_form_for(@form) do |f| %>
+  <%= render partial: "form", object: f %>
+
+  <div class="form__wrapper-block">
+    <%= f.submit t(".update"), class: "button button__sm md:button__lg button__primary" %>
+  </div>
+<% end %>

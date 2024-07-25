@@ -1,0 +1,285 @@
+ja:
+  activemodel:
+    attributes:
+      oauth_application:
+        name: OAuthアプリケーション名
+        organization_logo: 組織のロゴ (正方形)
+        organization_name: 組織
+        organization_url: 組織のURL
+        redirect_uri: リダイレクトURI
+      organization:
+        address: SMTPホスト名
+        from_email: メールアドレス
+        from_label: 送信者名
+        password: パスワード
+        port: ポート番号
+        user_name: ユーザー名
+      organization_file_uploads:
+        allowed_content_types:
+          admin: 管理者が使えるMIMEタイプ
+          default: 規定のMIMEタイプ
+        allowed_file_extensions:
+          admin: 管理者が使えるファイル拡張子
+          default: 既定のファイル拡張子
+          image: 画像ファイルの拡張子
+        maximum_file_size:
+          avatar: アバターの画像サイズ
+          default: 既定のファイルサイズ
+    errors:
+      models:
+        oauth_application:
+          attributes:
+            redirect_uri:
+              must_be_ssl: リダイレクト URI は SSL が有効な URI でなければなりません
+        organization:
+          attributes:
+            password:
+              secret_key: このフィールドを保存するには、環境変数 SECRET_KEY_BASE を定義する必要があります
+  decidim:
+    system:
+      actions:
+        confirm_destroy: 削除してもよろしいですか？
+        destroy: 削除
+        edit: 編集
+        new_admin: 新しい管理者
+        new_oauth_application: 新しいOAUTHアプリケーション
+        new_organization: 新しい組織
+        save: 保存
+        title: アクション
+      admins:
+        create:
+          error: 新しい管理者の作成中に問題が発生しました。
+          success: 管理者が正常に作成されました。
+        destroy:
+          success: 管理者を削除しました。
+        edit:
+          title: 管理者を編集
+          update: 更新
+        index:
+          title: 管理者
+        new:
+          create: 作成
+          title: 新しい管理者
+        update:
+          error: 管理者の更新中に問題が発生しました。
+          success: 管理者が正常に更新されました。
+      dashboard:
+        show:
+          admins: 管理者
+          current_organizations: 現在の組織
+          system_checks: システムチェック
+      default_pages:
+        placeholders:
+          content: 管理ダッシュボードの %{page} 静的ページに意味のあるコンテンツを追加してください。
+          summary: 管理者ダッシュボードの静的ページ %{page} に意味のある概要を追加してください。
+          title: '%{page} のデフォルトのタイトル'
+        terms-of-service: 利用規約
+      devise:
+        passwords:
+          edit:
+            change_your_password: パスワードの変更
+            minimum_characters: "(%{minimum} 文字以上)"
+          new:
+            forgot_your_password: パスワード再発行
+            send_me_reset_password_instructions: パスワードリセット手順の送信
+        shared:
+          links:
+            did_not_receive_confirmation_instructions?: 確認メールを受信できませんでしたか？
+            did_not_receive_unlock_instructions?: ロック解除メールを受信できませんでしたか？
+            forgot_your_password?: パスワードをお忘れですか？
+            log_in: ログイン
+            sign_up: アカウントを作成
+      menu:
+        admins: 管理者
+        dashboard: ダッシュボード
+        oauth_applications: OAuthアプリケーション
+        organizations: 組織
+      models:
+        admin:
+          fields:
+            created_at: 作成日時
+            email: Eメールアドレス
+          validations:
+            email_uniqueness: 同じメールアドレスを持つ別の管理者が既に存在します
+        oauth_application:
+          fields:
+            created_at: 作成日時
+            name: OAuthアプリケーション名
+            organization_name: 組織
+        organization:
+          actions:
+            save_and_invite: 組織を作成して管理者を招待する
+          fields:
+            content_security_policy: コンテンツセキュリティポリシー
+            created_at: 作成日時
+            file_upload_settings: ファイルアップロードの設定
+            name: 名前
+            omniauth_settings: Omniauth 設定
+            smtp_settings: SMTP設定
+      oauth_applications:
+        create:
+          error: このアプリケーションの作成中に問題が発生しました。
+          success: アプリケーションの作成に成功しました。
+        destroy:
+          error: このアプリケーションを削除する際に問題が発生しました。
+          success: アプリケーションが正常に削除されました。
+        edit:
+          save: 保存
+          title: アプリケーションを編集
+        form:
+          select_organization: 組織を選択
+        index:
+          confirm_delete: このアプリケーションを削除してもよろしいですか？
+          title: OAuthアプリケーション
+        new:
+          save: 保存
+          title: 新しいアプリケーション
+        update:
+          error: このアプリケーションの更新に問題がありました。
+          success: アプリケーションが更新されました。
+      organizations:
+        advanced_settings:
+          hide: 詳細設定を隠す
+          show: 詳細設定を表示
+        create:
+          error: 新しい組織を作成する際に問題が発生しました。
+          error_invitation: 新しい組織を作成する際に問題が発生しました。組織の管理者名を確認してください。
+          success_html: |
+            <p>
+              組織を作成しました。
+            </p>
+            <ol>
+              <li>アプリケーションのコードを更新する必要があるかもしれません。%{host}へのリクエストを許可するには、環境設定 (例: <code>config/environment/production.rb</code>) または <code>config/application.rb</code> に以下を追加する必要があります：
+                <p> config.hosts << "%{host}" </p>
+              </li>
+              <li>
+                これが完了すると、<a href="http://%{host}">http://%{host}</a> からプラットフォームにアクセスできるようになります。
+              </li>
+              <li>
+                <b>%{email}</b>宛にメールを送信しましたので、ご確認ください。
+              </li>
+            </ol>
+        csp_settings:
+          connect_src: Connect src
+          connect_src_hint: |
+            connect-srcディレクティブは、<script>要素を使用して読み込むURLを制限します。Decidimは'self'を追加しますが、他の設定を追加することも可能です。よく分からない場合は、空白のままにしておいてください。
+          default_src: Default src
+          default_src_hint: |
+            default-srcディレクティブは、JavaScript、画像、CSS、フォント、AJAXリクエスト、フレーム、HTML5メディアなどのコンテンツを読み込むためのデフォルトポリシーです。
+            Decidimは"'self' 'unsafe-inline'"を追加しますが、他の設定を指定することも可能です。よく分からない場合は、空白のままにしておいてください。
+          font_src: Font src
+          font_src_hint: |
+            font-srcディレクティブは、@font-faceを使用して読み込むURLを制限します。
+            Decidimは'self'を追加しますが、他の設定を指定することも可能です。よく分からない場合は、空白のままにしておいてください。
+          frame_src: Frame src
+          frame_src_hint: |
+            frame-srcディレクティブは、<frame>、<iframe>、および<object>要素を使用して読み込むURLを制限します。
+            Decidimは'self'を追加しますが、他の設定を指定することも可能です。よく分からない場合は、空白のままにしておいてください。
+          img_src: Img src
+          img_src_hint: |
+            img-srcディレクティブは、<img>、<image>、<picture>、および<svg>要素を使用して読み込むURLを制限します。
+            Decidimは'self'を追加しますが、他の設定を指定することも可能です。よく分からない場合は、空白のままにしておいてください。
+          media_src: Media src
+          media_src_hint: |
+            media-srcディレクティブは、<video>、<audio>、および<source>要素を使用して読み込めるURLを制限します。
+            Decidimは'self'を追加しますが、他の設定を指定することも可能です。よく分からない場合は、空白のままにしておいてください。
+          script_src: Script src
+          script_src_hint: |
+            script-srcディレクティブは、<script>要素を使用して読み込むURLを制限します。
+            Decidimは"'self' 'unsafe-inline' 'unsafe-eval'"を追加しますが、他の設定を指定することも可能です。よく分からない場合は、空白のままにしておいてください。
+          style_src: Style src
+          style_src_hint: |
+            style-srcディレクティブは、<style>要素を使用して読み込むURLを制限します。
+            Decidimは"'self' 'unsafe-inline'"を追加しますが、他の設定を指定することも可能です。よく分からない場合は、空白のままにしておいてください。
+        edit:
+          confirm_resend_invitation: 招待を再送信してもよろしいですか？
+          resend_invitation: 招待を再送信する
+          secondary_hosts_hint: 新しい行にそれぞれ入力してください
+          title: 組織の編集
+        file_upload_settings:
+          content_types:
+            admin_hint: これらの MIME タイプは、管理者セクションのアップロードで許可されています。 管理者ユーザーは、ドキュメント形式をアップロードする際のリスクを認識している必要があります。 ファイルのアップロードに注意を払う必要があります
+            default_hint: これらの MIME タイプは、デフォルトですべてのユーザに対して許可されます。
+            intro_html: 'MIME タイプのアスタリスク文字を使ってワイルドカードを追加します。例: <code>image/*</code>.'
+            title: 許可されたMIMEタイプ
+          file_extensions:
+            admin_hint: これらの拡張子は管理者セクションのアップロードで許可されています。 管理者ユーザーは、ドキュメント形式をアップロードする際のリスクを認識している必要があります。 ファイルのアップロードに注意を払う必要があります
+            default_hint: これらの拡張子は、デフォルトですべてのユーザーに許可されています。
+            image_hint: これらのファイル拡張子は、あらゆる種類の画像アップロードに対して許可されています。
+            title: 許可されたファイル拡張子
+          file_sizes:
+            avatar_hint: メガバイト (MB) 。このファイルサイズ制限は、アバター画像のアップロードに使用されます。
+            default_hint: メガバイト (MB) 。このファイルサイズ制限は、特に指定されていない限り、すべてのファイルアップロードに使用されるデフォルトの制限です。
+            title: 最大ファイルサイズ
+          intro: |
+            これらの設定を変更する場合は、余分に注意してください。許可する数が少ないほど好ましいです。
+            特定のファイル拡張子や MIME タイプを許可することは、システムユーザーをセキュリティリスクにさらす可能性があり、ウェブサイトのアクセシビリティにも影響を与える可能性があります。
+        index:
+          title: 組織
+        new:
+          default: デフォルト?
+          enabled: 有効
+          locale: 地域
+          organization_admin_email_hint: このアドレスにメールを送信しますので、ご確認の上、パスワードを設定してください。
+          reference_prefix_hint: 参照プレフィックスは、すべての組織をまたがってリソースを一意に識別するために使用されます。
+          secondary_hosts_hint: 新しい行にそれぞれ入力します。
+          title: 新しい組織
+        omniauth_settings:
+          decidim:
+            client_id: クライアント ID
+            client_secret: クライアントシークレット
+            site_url: サイト URL
+          enabled: 有効
+          enabled_by_default: このプロバイダはデフォルトで有効になっています。編集はできますが無効にはできません。
+          facebook:
+            app_id: アプリ ID
+            app_secret: アプリのシークレット
+          google_oauth2:
+            client_id: クライアント ID
+            client_secret: クライアントシークレット
+          icon: アイコン
+          icon_path: アイコンのパス
+          twitter:
+            api_key: API キー
+            api_secret: APIシークレット
+        resend_invitation:
+          error: 招待の送信中に問題が発生しました。
+          success: 招待を送信しました。
+        smtp_settings:
+          fieldsets:
+            sender: 送信者
+          instructions:
+            from_label: 'メール送信者は "your-organization-name <your-organization@example.org>" になります。空白の場合、組織に定義された名前と同じ名前を使用します。'
+          placeholder:
+            from_email: your-organization@example.org
+            from_label: 組織名
+        update:
+          error: この組織の更新に問題がありました。
+          success: 組織が更新されました。
+        users_registration_mode:
+          disabled: 外部アカウントでのみアクセスできます
+          enabled: 参加者がアカウントを作成してログインできるようにする
+          existing: 参加者が新しくアカウントを作成することはできませんが、既存の参加者はログインできるようにします
+      shared:
+        notices:
+          no_organization_warning_html: 開始するには組織を作成する必要があります。先に進む前に %{guide} を読んでください。
+          our_getting_started_guide: 入門ガイド
+        organizations_list:
+          confirm_resend_invitation: 招待を再送信してもよろしいですか？
+          resend_invitation: 招待を再送信する
+      system_checks:
+        active_job_queue:
+          decidim_documentation: Decidimドキュメント
+          error: ActiveJob キューが設定されていません。これは本番環境では推奨されるセットアップではありません。詳細は %{error_extra} をご覧ください。
+          success: ActiveJob キューが正しく設定されています。
+        secret_key:
+          error: 'シークレットキーが正しく定義されていません。環境変数 SECRET_KEY_BASE に保存し、サーバーを再起動してください: %{error_extra}'
+          success: 秘密鍵が正しく設定されています。
+      titles:
+        dashboard: ダッシュボード
+        decidim: Decidim
+  layouts:
+    decidim:
+      system:
+        login_items:
+          logout: ログアウト

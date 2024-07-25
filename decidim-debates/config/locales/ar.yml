@@ -1,0 +1,144 @@
+ar:
+  activemodel:
+    attributes:
+      debate:
+        category_id: الفئة
+        closed_at: تم إغلاقه في
+        decidim_category_id: الفئة
+        description: وصف
+        end_time: ينتهي عند
+        information_updates: تحديثات المعلومات
+        instructions: تعليمات للمشاركة
+        start_time: يبدأ عند
+        title: عنوان
+        user_group_id: إنشاء النقاش كما
+    models:
+      decidim/debates/create_debate_event: النقاش
+      decidim/debates/creation_disabled_event: تم تعطيل المناقشات
+  activerecord:
+    models:
+      decidim/debates/debate:
+        zero: المناقشات
+        one: النقاش
+        two: المناقشات
+        few: المناقشات
+        many: المناقشات
+        other: المناقشات
+  decidim:
+    components:
+      debates:
+        actions:
+          create: إنشاء
+        name: المناقشات
+        settings:
+          global:
+            announcement: إعلان
+            comments_enabled: تم تمكين التعليقات
+          step:
+            announcement: إعلان
+            comments_blocked: تم حظر التعليقات
+    debates:
+      actions:
+        confirm_destroy: هل أنت واثق؟
+        destroy: حذف
+        edit: تعديل
+        title: أفعال
+      admin:
+        debates:
+          create:
+            invalid: كانت هناك مشكلة في خلق النقاش.
+            success: تم إنشاء النقاش بنجاح.
+          destroy:
+            success: تم حذف المناقشة بنجاح.
+          edit:
+            title: تحرير النقاش
+            update: تحديث النقاش
+          index:
+            title: المناقشات
+          new:
+            create: إنشاء نقاش
+            title: نقاش جديد
+          update:
+            invalid: كانت هناك مشكلة في تحديث هذا النقاش.
+            success: تم تحديث المناقشة بنجاح.
+      admin_log:
+        debate:
+          create: "%{user_name} خلق النقاش %{resource_name} على الفضاء %{space_name}"
+          update: "%{user_name} تحديث المناقشة %{resource_name} على %{space_name} الفضاء"
+      debates:
+        count:
+          debates_count:
+            zero: "%{count} النقاشات"
+            one: "%{count} النقاش"
+            two: "%{count} النقاشات"
+            few: "%{count} النقاشات"
+            many: "%{count} النقاشات"
+            other: "%{count} النقاشات"
+        create:
+          invalid: كانت هناك مشكلة في خلق النقاش.
+          success: تم إنشاء النقاش بنجاح.
+        filters:
+          activity: نشاطي
+          all: الكل
+          category: الفئة
+          category_prompt: اختر تصنيف
+          my_debates: مناقشاتي
+          official: الرسمية
+          origin: الأصل
+          participants: المشاركون
+          search: بحث
+        form:
+          select_a_category: الرجاء تحديد الفئة
+        index:
+          new_debate: نقاش جديد
+        new:
+          back: الى الخلف
+          create: إنشاء
+          title: نقاش جديد
+        show:
+          groups_count: الفِرَق
+          participants_count: المشاركون
+      models:
+        debate:
+          fields:
+            end_time: تاريخ الانتهاء
+            official_debate: النقاش الرسمي
+            start_time: تاريخ البدء
+            title: عنوان
+    events:
+      debates:
+        create_debate_event:
+          user_followers:
+            email_intro: |-
+              مرحبًا ،
+              %{author_name} %{author_nickname}، الذي تتابعه ، أنشأ نقاشًا جديدًا "%{resource_title}". التحقق من ذلك والمساهمة:
+            email_outro: لقد تلقيت هذا الإشعار لأنك تتابع %{author_nickname}. يمكنك إيقاف تلقي الإخطارات باتباع الرابط السابق.
+            email_subject: نقاش جديد "%{resource_title}" بنسبة %{author_nickname}
+            notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> أنشأ النقاش <a href="%{resource_path}">%{resource_title}</a>.
+        creation_disabled:
+          email_intro: 'إنشاء النقاش لم يعد نشطًا في %{participatory_space_title}. لا يزال بإمكانك المشاركة في المناقشات المفتوحة من هذه الصفحة:'
+          email_outro: لقد تلقيت هذا الإشعار لأنك تتابع %{participatory_space_title}. يمكنك إيقاف تلقي الإخطارات باتباع الرابط السابق.
+          email_subject: تم تعطيل إنشاء المناقشة في %{participatory_space_title}
+          notification_title: تم إنشاء إنشاء النقاش الآن في <a href="%{participatory_space_url}">%{participatory_space_title}</a>
+        creation_enabled:
+          email_intro: 'يمكنك الآن بدء مناقشات جديدة في %{participatory_space_title}! ابدأ المشاركة في هذه الصفحة:'
+          email_outro: لقد تلقيت هذا الإشعار لأنك تتابع %{participatory_space_title}. يمكنك إيقاف تلقي الإخطارات باتباع الرابط السابق.
+          email_subject: المناقشات المتاحة الآن في %{participatory_space_title}
+    gamification:
+      badges:
+        commented_debates:
+          conditions:
+            - اختر نقاشًا مفتوحًا للمشاركة فيه
+          description: تُمنح هذه الشارة عندما تشارك بنشاط في المناقشات المختلفة من خلال ترك تعليقاتك.
+          description_another: شارك هذا المشارك في %{score} مناقشات.
+          description_own: لقد شاركت في %{score} مناقشات.
+          name: المناقشات
+          next_level_in: شارك في %{score} مناقشات أخرى للوصول إلى المستوى التالي!
+          unearned_another: هذا المشارك لم يشارك بعد في أي نقاش.
+    metrics:
+      debates:
+        description: عدد المناقشات التي تم إنشاؤها
+        object: المناقشات
+        title: المناقشات
+    statistics:
+      debates_count: المناقشات

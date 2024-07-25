@@ -1,0 +1,97 @@
+fi:
+  activemodel:
+    attributes:
+      post:
+        body: Sisältöteksti
+        decidim_author_id: Laatija
+        published_at: Julkaisuaika
+        title: Otsikko
+    models:
+      decidim/blogs/create_post_event: Uusi blogiartikkeli
+  activerecord:
+    models:
+      decidim/blogs/post:
+        one: Artikkeli
+        other: Artikkelia
+  decidim:
+    blogs:
+      actions:
+        author_id: Luo artikkeli käyttäjänä
+        confirm_destroy: Haluatko varmasti poistaa tämän artikkelin?
+        destroy: Poista
+        edit: Muokkaa
+        new: Uusi artikkeli
+        title: Toiminnot
+      admin:
+        posts:
+          create:
+            invalid: Artikkelin luonti epäonnistui.
+            success: Artikkelin luonti onnistui.
+          destroy:
+            success: Artikkelin poisto onnistui.
+          edit:
+            save: Päivitä
+            title: Muokkaa artikkelia
+          index:
+            not_published_yet: Ei vielä julkaistu.
+            title: Artikkelit
+          new:
+            create: Luo
+            title: Luo artikkeli
+          update:
+            invalid: Artikkelin tallennus epäonnistui.
+            success: Artikkelin tallennus onnistui.
+      admin_log:
+        post:
+          create: "%{user_name} loi blogikirjoituksen %{resource_name} tilassa %{space_name}"
+          delete: "%{user_name} poisti blogikirjoituksen %{resource_name} tilasta %{space_name}"
+          update: "%{user_name} päivitti blogikirjoitusta %{resource_name} tilassa %{space_name}"
+      content_blocks:
+        highlighted_posts:
+          last_published: Viimeksi julkaistu
+          name: Artikkelit
+          see_all: Näytä kaikki kirjoitukset
+      last_activity:
+        new_post: 'Uusi artikkeli:'
+      models:
+        post:
+          fields:
+            author: Laatija
+            body: Leipäteksti
+            official_blog_post: Virallinen artikkeli
+            published_at: Julkaisuaika
+            title: Otsikko
+      posts:
+        index:
+          count:
+            one: "%{count} artikkeli"
+            other: "%{count} artikkelia"
+          empty: Ei yhtään artikkelia.
+    components:
+      blogs:
+        actions:
+          comment: Kommentointi
+          create: Luo
+          destroy: Poista
+          endorse: Suosittelu
+          update: Päivitä
+        name: Blogi
+        settings:
+          global:
+            announcement: Ilmoitus
+            comments_enabled: Kommentointi käytössä
+            comments_max_length: Kommenttien maksimipituus (jätä arvoksi 0 käyttääksesi oletusarvoa)
+          step:
+            announcement: Ilmoitus
+            comments_blocked: Kommentointi estetty
+            endorsements_blocked: Suositukset estetty
+            endorsements_enabled: Suositukset käytössä
+    events:
+      blogs:
+        post_created:
+          email_intro: Seuraamassasi kohteessa "%{participatory_space_title}" on julkaistu artikkeli "%{resource_title}".
+          email_outro: Tämä ilmoitus on lähetetty sinulle, koska seuraat kohdetta "%{participatory_space_title}". Voit lopettaa seuraamisen edellä esitetyn linkin kautta.
+          email_subject: Uusi artikkeli julkaistiin osallistumistilassa %{participatory_space_title}
+          notification_title: Kohteessa %{participatory_space_title} on julkaistu artikkeli <a href="%{resource_path}">%{resource_title}</a>
+    statistics:
+      posts_count: Artikkelia

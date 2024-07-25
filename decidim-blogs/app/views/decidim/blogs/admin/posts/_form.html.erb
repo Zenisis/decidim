@@ -1,0 +1,22 @@
+<div class="form__wrapper">
+  <div class="card pt-4">
+    <div class="card-section">
+      <div class="row column">
+          <%= post_author_select_field form, :decidim_author_id, label: t("decidim.blogs.actions.author_id") %>
+      </div>
+
+      <div class="row column">
+        <%= form.translated :text_field, :title, autofocus: true, aria: { label: :title } %>
+      </div>
+      <div class="row column">
+        <%= form.translated :editor, :body, lines: 30, aria: { label: :body } %>
+      </div>
+      <div class="row">
+        <div class="columns">
+          <%= form.datetime_field :published_at %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

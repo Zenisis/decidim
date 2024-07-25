@@ -1,0 +1,61 @@
+gl:
+  activemodel:
+    models:
+      decidim/blogs/create_post_event: Nova publicación no blog
+  activerecord:
+    models:
+      decidim/blogs/post:
+        one: Publicación
+        other: Publicacións
+  decidim:
+    blogs:
+      actions:
+        author_id: Crear publicación como
+        confirm_destroy: Tes a certeza de querer eliminar esta publicación?
+        destroy: Eliminar
+        edit: Editar
+        new: Nova publicación
+        title: Accións
+      admin:
+        posts:
+          edit:
+            save: Actualizar
+            title: Editar publicación
+          index:
+            title: Publicacións
+          new:
+            create: Crear
+            title: Crear unha publicación
+          update:
+            invalid: Produciuse un erro ao gardar a publicación.
+      models:
+        post:
+          fields:
+            author: Autor
+            body: Corpo
+    components:
+      blogs:
+        actions:
+          create: Crear
+          destroy: Eliminar
+          update: Actualizar
+        name: Blog
+        settings:
+          global:
+            announcement: Anuncio
+            comments_enabled: Comentarios habilitados
+            comments_max_length: Lonxitude máxima dos comentarios (0 para valor predefinido)
+          step:
+            announcement: Anuncio
+            comments_blocked: Comentarios bloqueados
+            endorsements_blocked: Adhesións bloqueadas
+            endorsements_enabled: Adhesións habilitadas
+    events:
+      blogs:
+        post_created:
+          email_intro: A publicación "%{resource_title}" publicouse en "%{participatory_space_title}" que estás seguindo.
+          email_outro: Recibiches esta notificación porque estás seguindo "%{participatory_space_title}". Podes deixar de seguir dende a ligazón anterior.
+          email_subject: Nova publicación publicada en %{participatory_space_title}
+          notification_title: A publicación <a href="%{resource_path}">%{resource_title}</a> publicouse en %{participatory_space_title}
+    statistics:
+      posts_count: Publicacións

@@ -1,0 +1,62 @@
+"no":
+  activemodel:
+    attributes:
+      questionnaire:
+        title: Tittel
+      template:
+        description: Beskrivelse
+        name: Navn
+  decidim:
+    admin:
+      menu:
+        templates: Maler
+      templates:
+        apply:
+          error: Det oppstod et problem med å bruke denne malen.
+        copy:
+          error: Det oppstod et problem under kopiering av denne malen.
+        create:
+          error: Det oppstod et problem under oppretting av malen.
+        empty: Det finnes ingen maler enda.
+      titles:
+        template_types:
+          questionnaires: Maler for spørreskjema
+        templates: Maler
+    models:
+      questionnaire_template:
+        fields:
+          questions: Antall spørsmål
+          title: Tittel på spørreskjema
+      template:
+        fields:
+          created_at: Opprettet
+        name: Mal
+    templates:
+      admin:
+        block_user_templates:
+          form:
+            save: Lagre
+        proposal_answer_templates:
+          form:
+            save: Lagre
+        questionnaire_templates:
+          choose:
+            create_from_template: Opprett fra mal
+            description: Du holder på å opprette et nytt spørreskjema. Du kan velge en forhåndsdefinert mal og endre den etterpå.
+            label: Velg mal
+            placeholder: Velg mal
+            skip_template: Hopp over
+          edit:
+            edit: Rediger
+            questionnaire: Spørreskjema
+          form:
+            title: Spørreskjema mal %{questionnaire_for}
+          index:
+            confirm_delete: Er du sikker på at du vil slette denne malen?
+            title: Spørreskjema maler
+          preview:
+            current_step: Trinn %{step}
+            of_total_steps: av %{total_steps}
+            tos_agreement: Ved å delta godtar du bruksvilkårene
+      template_types:
+        questionnaires: Spørreskjema

@@ -1,0 +1,5 @@
+var $initiatives = $('#initiatives');
+var $orderFilterInput = $('.order_filter');
+
+$initiatives.html('<%= j(render partial: "initiatives") %>');
+$orderFilterInput.val('<%= order %>');

@@ -1,0 +1,1148 @@
+fi:
+  activemodel:
+    attributes:
+      area:
+        area_type: Alueen tyyppi
+        name: Nimi
+        organization: Organisaatio
+      area_type:
+        name: Nimi
+        organization: Organisaatio
+        plural: Monikko
+      attachment:
+        attachment_collection_id: Kansio
+        description: Kuvaus
+        file: Tiedosto
+        title: Liitetiedoston tai kuvan nimi
+        weight: Järjestysnumero
+      attachment_collection:
+        description: Kuvaus
+        name: Nimi
+        weight: Järjestysnumero
+      category:
+        description: Kuvaus
+        name: Nimi
+        parent_id: Yläaihepiiri
+        weight: Järjestysnumero
+      component:
+        name: Nimi
+        published_at: Julkaistu osoitteessa
+        weight: Järjestysnumero
+      external_domain:
+        value: Arvo
+      help_section:
+        content: Sisältö
+      id: ID
+      import:
+        user_group_id: Tuo käyttäjänä
+      newsletter:
+        body: Runko
+        send_to_all_users: Lähetä kaikille käyttäjille
+        send_to_followers: Lähetä seuraajille
+        send_to_participants: Lähetä osallistujille
+        subject: Otsikko
+      organization:
+        admin_terms_of_service_body: Hallintakäyttäjien käyttöehtojen sisältöteksti
+        alert_color: Virhe
+        available_authorizations: Käytettävissä olevat tunnistautumistavat
+        badges_enabled: Ota kunniamerkit käyttöön
+        comments_max_length: Kommenttien maksimipituus (jätä arvoksi 0 käyttääksesi oletusarvoa)
+        cta_button_path: Call To Action -painikkeen polku
+        cta_button_text: Call To Action -painikkeen teksti
+        customize_welcome_notification: Muokkaa tervetuloilmoitusta
+        default_locale: Oletuskieli
+        description: Kuvaus
+        enable_omnipresent_banner: Näytä kaikkialla näkyvä banneri
+        enable_participatory_space_filters: Ota käyttöön osallistumistilan suodattimet
+        facebook_handler: Facebook-käsittelijä
+        favicon: Kuvake
+        force_authentication: Kirjautuminen vaaditaan
+        force_users_to_authenticate_before_access_organization: Pakota käyttäjät kirjautumaan ennen organisaatioon pääsyä
+        from: Lähettäjän sähköpostiosoite
+        github_handler: GitHub-käsittelijä
+        header_snippets: Yläosion koodipätkät
+        highlight_alternative_color: Korostusväri, vaihtoehtoinen
+        highlight_color: Korostusväri
+        highlighted_content_banner_action_subtitle: Toimintapainikkeen alaotsikko
+        highlighted_content_banner_action_title: Toimintapainikkeen otsikko
+        highlighted_content_banner_action_url: Toimintapainikkeen URL-osoite
+        highlighted_content_banner_enabled: Näytä tärkeä sisältöbanneri
+        highlighted_content_banner_image: Kuva
+        highlighted_content_banner_short_description: Lyhyt kuvaus
+        highlighted_content_banner_title: Otsikko
+        host: Osoite
+        instagram_handler: Instagram-käsittelijä
+        logo: Logo
+        machine_translation_display_priority: Koneellisen käännöksen prioriteetti
+        machine_translation_display_priority_original: Alkuperäinen teksti ensin
+        machine_translation_display_priority_translation: Käännetty teksti ensin
+        name: Nimi
+        official_img_footer: Virallinen logo alapalkissa
+        official_url: Organisaation virallinen URL-osoite
+        omnipresent_banner_short_description: Lyhyt kuvaus
+        omnipresent_banner_title: Otsikko
+        omnipresent_banner_url: URL
+        organization_admin_email: Organisaation hallintakäyttäjän sähköposti
+        organization_admin_name: Organisaation hallintakäyttäjän nimi
+        organization_locales: Organisaation kielet
+        primary_color: Ensisijainen
+        reference_prefix: Viitteen etuliite
+        rich_text_editor_in_public_views: Ota käyttöön rikas tekstieditori osallistujille
+        secondary_color: Toissijainen
+        secondary_hosts: Toissijaiset osoitteet
+        send_welcome_notification: Lähetä tervetuloilmoitus
+        success_color: Onnistuminen
+        tertiary_color: Kolmiasteinen värimääritys
+        time_zone: Aikavyöhyke
+        tos_version: Käyttöehtojen versio
+        twitter_handler: X käsittelijä
+        user_groups_enabled: Ota käyttäjäryhmät käyttöön
+        users_registration_mode: Käyttäjien rekisteröintitila
+        warning_color: Varoitus
+        welcome_notification_body: Tervetuloilmoituksen runko
+        welcome_notification_subject: Tervetuloilmoituksen otsikko
+        youtube_handler: YouTube-käsittelijä
+      participatory_space_private_user:
+        email: Sähköpostiosoite
+        name: Nimi
+      scope:
+        code: Koodi
+        name: Nimi
+        organization: Organisaatio
+        parent_id: Vanhempi
+        scope_type: Teeman tyyppi
+        scope_type_id: Teeman tyyppi
+      scope_type:
+        name: Nimi
+        organization: Organisaatio
+        plural: Monikko
+      settings:
+        scope_id: Teema
+      static_page:
+        allow_public_access: Salli pääsy ilman kirjautumista
+        changed_notably: On tapahtunut huomattavia muutoksia.
+        content: Sisältö
+        organization: Organisaatio
+        show_in_footer: Näytä alatunnisteessa
+        slug: URL-tunniste
+        title: Otsikko
+        topic_id: Aihe
+        weight: Järjestysnumero
+      static_page_topic:
+        description: Kuvaus
+        name: Aiheen nimi
+        show_in_footer: Näytä alatunnisteessa
+        title: Otsikko
+        weight: Järjestysnumero
+      user_group_csv_verification:
+        file: Tiedosto
+    errors:
+      models:
+        newsletter:
+          attributes:
+            base:
+              at_least_one_space: Valitse vähintään yksi osallistumistila.
+        organization:
+          attributes:
+            official_img_footer:
+              allowed_file_content_types: Virheellinen kuvatiedosto
+        participatory_space_private_user_csv_import:
+          attributes:
+            file:
+              malformed: Virheellinen tuontitiedosto, lue ohjeet huolellisesti ja varmista, että tiedosto on UTF-8 muodossa.
+        user_group_csv_verification:
+          attributes:
+            file:
+              malformed: Virheellinen tuontitiedosto, lue ohjeet huolellisesti ja varmista, että tiedosto on UTF-8 muodossa.
+      new_import:
+        attributes:
+          file:
+            invalid_file: Antamasi tiedosto on virheellinen. Tarkasta, että tiedosto on muotoiltu oikein.
+            invalid_mime_type: Virheellinen MIME-tyyppi.
+  activerecord:
+    attributes:
+      decidim/static_page:
+        content: Sisältö
+        slug: URL-tunniste
+        title: Otsikko
+      doorkeeper/application:
+        authorize_url: Varmenna URL-osoite
+        client_id: Asiakkaan tunniste (ID)
+        client_secret: Asiakkaan salausavain (secret)
+        organization_name: Organisaation nimi
+        organization_url: Organisaation URL-osoite
+        redirect_uri: Uudelleenohjausosoite (URI)
+        site: Verkkosivusto
+  decidim:
+    admin:
+      actions:
+        add: Lisää
+        attachment:
+          new: Uusi liite
+        attachment_collection:
+          new: Uusi kansio
+        browse: Selaa
+        category:
+          new: Uusi aihepiiri
+        export: Vie kaikki
+        export-selection: Vie valitut
+        import: Tuo
+        manage: Hallitse
+        newsletter:
+          new: Uusi uutiskirje
+        participatory_space_private_user:
+          new: Uusi osallistumistilan yksityinen käyttäjä
+        per_page: Per sivu
+        permissions: Oikeudet
+        reject: Hylkää
+        send_me_a_test_email: Lähetä minulle testisähköposti
+        share: Jaa
+        user:
+          new: Uusi hallintakäyttäjä
+        verify: Vahvista
+      admin_terms_of_service:
+        accept:
+          error: Hallintakäyttäjän ehtojen hyväksyminen epäonnistui.
+          success: Hienoa! Olet hyväksynyt hallintakäyttäjän ehdot.
+        actions:
+          accept: Hyväksyn ehdot
+          are_you_sure: Oletko varma, että haluat kieltäytyä hyväksymästä hallintakäyttäjien käyttöehtoja?
+          refuse: Kieltäydy hyväksymästä hallintakäyttäjän ehtoja
+          title: Käyttöehtojen hyväksyntä
+        required_review:
+          alert: 'Vaadittu: tutustu hallintakäyttäjän ehtoihimme'
+          callout: Ole hyvä ja tutustu hallintakäyttäjän käyttöehtoihin. Ehtojen hyväksyminen vaaditaan, jotta saat oikeudet järjestelmän hallintatoimintoihin.
+          cta: Tutustu nyt.
+        title: Hallintakäyttäjän käyttöehdot
+      area_types:
+        create:
+          error: Uuden aluetyypin luonti epäonnistui.
+          success: Aluetyypin luonti onnistui.
+        destroy:
+          success: Aluetyypin poisto onnistui.
+        edit:
+          title: Muokkaa aluetyyppiä
+          update: Päivitä
+        new:
+          create: Luo aluetyyppi
+          title: Uusi aluetyyppi
+        update:
+          error: Aluetyyppiä päivitys epäonnistui.
+          success: Aluetyypin päivitys onnistui.
+      areas:
+        create:
+          error: Uuden alueen luonti epäonnistui.
+          success: Alueen luonti onnistui.
+        destroy:
+          has_spaces: Tällä alueella on riippuvia osallistumistiloja. Tarkasta huolellisesti, että alueella ei ole yhtään riippuuvuuksia osallistumistiloihin ennen sen poistoa.
+          success: Alueen poisto onnistui.
+        edit:
+          title: Muokkaa aluetta
+          update: Päivitä
+        new:
+          create: Luo alue
+          title: Uusi alue
+        no_areas: Ei alueita
+        update:
+          error: Alueen päivitys epäonnistui.
+          success: Alueen päivitys onnistui.
+      attachment_collections:
+        create:
+          error: Uuden kansion luonti epäonnistui.
+          success: Kansion luonti onnistui.
+        destroy:
+          success: Kansion tuhoaminen onnistui.
+        edit:
+          title: Muokkaa kansiota
+          update: Päivitä
+        index:
+          attachment_collections_title: Liitetiedostojen kansiot
+        new:
+          create: Luo
+          title: Uusi kansio
+        update:
+          error: Kansion päivitys epäonnistui.
+          success: Kansion päivitys onnistui.
+      attachments:
+        create:
+          error: Uuden liitteen luonti epäonnistui.
+          success: Liitteen luonti onnistui.
+        destroy:
+          success: Liitteen tuhoaminen onnistui.
+        edit:
+          title: Muokkaa liitettä
+          update: Päivitä
+        index:
+          attachments_title: Liitteet
+        new:
+          create: Luo liite
+          title: Uusi liite
+        update:
+          error: Liitteen päivitys epäonnistui.
+          success: Liitteen luonti onnistui.
+      attachments_privacy_warning:
+        message: Ole varovainen, kun työskentelet liitetiedostojen kanssa yksityisessä tilassa. Kuka tahansa osallistuja voi jakaa tämän asiakirjan muille.
+      autocomplete:
+        no_results: Ei tuloksia
+        search_prompt: Kirjoita vähintään kolme merkkiä hakeaksesi.
+      block_user:
+        new:
+          action: Estä tili ja lähetä perustelut
+          already_reported_html: Tämä toiminto piilottaa myös kaiken sisällön, jonka kyseinen osallistuja on luonut.
+          description: Estämällä käyttäjän estät kyseisen käyttäjän pääsyn hänen omalle tililleen. Voit antaa perusteluissasi ja ohjeistuksissasi tietoa siitä, mitä kyseinen käyttäjä voi tehdä palauttaakseen pääsyn tililleen.
+          justification: Perustelut
+          title: Estä käyttäjä %{name}
+      categories:
+        create:
+          error: Aihepiirin luonti epäonnistui.
+          success: Aihepiirin luonti onnistui.
+        destroy:
+          error: Tämän aihepiirin poistaminen epäonnistui. Poista ensin kaikki sen ala-aihepiirit ja varmista, että mikään muu kohde ei liity tähän aihepiiriin. Kokeile sen jälkeen uudestaan.
+          success: Aihepiirin poistaminen onnistui.
+        edit:
+          title: Muokkaa aihepiiriä
+          update: Päivitä
+        index:
+          categories_title: Aihepiirit
+        new:
+          create: Luo aihepiiri
+          title: Uusi aihepiiri
+        update:
+          error: Aihepiirin päivitys epäonnistui.
+          success: Aihepiirin päivitys onnistui.
+      component_permissions:
+        update:
+          error: Komponentin oikeuksien päivitys epäonnistui.
+          success: Käyttöoikeuksien päivitys onnistui.
+      components:
+        create:
+          error: Komponentin luonti epäonnistui.
+          success: Komponentin luonti onnistui.
+          success_landing_page: Komponentti luotu onnistuneesti. Voit lisätä sisältölohkon tälle komponentille osallistumistilan etusivulle. Siirry <a href="%{landing_page_path}">Laskeutumissivu-osioon</a> lisätäksesi komponentin osallistumistilan etusivulle.
+        destroy:
+          error: Komponentin tuhoaminen epäonnistui.
+          success: Komponentin poisto onnistui.
+        edit:
+          title: Muokkaa komponenttia
+          update: Päivitä
+        form:
+          default_step_settings: Vaiheiden oletusasetukset
+          global_settings: Yleiset asetukset
+          step_settings: Vaiheiden asetukset
+        index:
+          add: Lisää komponentti
+          headers:
+            actions: Toiminnot
+            name: Komponentin nimi
+            scope: Komponentin teema
+            type: Komponentin tyyppi
+        new:
+          add: Lisää komponentti
+          title: 'Lisää komponentti: %{name}'
+        publish:
+          success: Komponentin julkaisu onnistui.
+        title: Komponentit
+        unpublish:
+          success: Komponentin julkaisun lopettaminen onnistui.
+        update:
+          error: Komponentin päivitys epäonnistui.
+          success: Komponentin päivitys onnistui.
+      conflicts:
+        attempts: Yritykset
+        'false': 'Ei'
+        managed_user_name: Hallittu käyttäjä
+        solved: Ratkaistu
+        title: Vahvistusten ristiriidat
+        transfer:
+          email: Sähköposti
+          error: Nykyisen käyttäjän siirto hallituksi käyttäjäksi epäonnistui.
+          name: Nimi
+          reason: Syy
+          success: Siirto onnistui.
+          title: Siirrä
+        'true': 'Kyllä'
+        user_name: Käyttäjä
+      content_blocks:
+        create:
+          error: Sisältölohkon luonti epäonnistui.
+          success: Sisältölohkon luonti onnistui.
+        destroy:
+          error: Sisältölohkon poisto epäonnistui.
+          success: Sisältölohkon poisto onnistui.
+        edit:
+          active_content_blocks: Aktiiviset sisältölohkot
+          add: Lisää sisältölohko
+          destroy_confirmation: Haluatko varmasti poistaa tämän sisältölohkon?
+          inactive_content_blocks: Käytöstä poistetut sisältölohkot
+          title: Sivun sisältö
+          update: Päivitä
+      dashboard:
+        pending_moderations:
+          announcement:
+            one: Yksi moderointi odottaa käsittelyä
+            other: '%{count} moderointia odottavat käsittelyä'
+          goto_moderation: Siirry yleisiin moderointeihin
+          title: Odottavat moderoinnit
+        show:
+          dropdown: Alasvetovalikko
+          view_more_logs: Näytä lisää lokitietoja
+      domain_allowlist:
+        form:
+          domain_too_short: Verkkotunnus on liian lyhyt
+        update:
+          error: Sallittujen ulkoisten verkkotunnusten luettelon päivittäminen epäonnistui
+          success: Sallittujen ulkoisten verkkotunnusten luettelon päivittäminen onnistui.
+      exports:
+        export_as: "%{name} muodossa %{export_format}"
+        formats:
+          CSV: CSV
+          Excel: Excel
+          FormPDF: PDF
+          JSON: JSON
+        notice: Tietojen vienti on käynnissä. Saat sähköpostiviestin, kun se valmistuu.
+      filters:
+        category_id_eq:
+          label: Aihepiiri
+        filter_label: Suodata
+        invitation_accepted_at_present:
+          label: Kutsu hyväksytty
+          values:
+            'false': 'Ei'
+            'true': 'Kyllä'
+        last_sign_in_at_present:
+          label: Kirjautunut sisään koskaan
+          values:
+            'false': 'Ei'
+            'true': 'Kyllä'
+        moderated_users:
+          reports_reason_eq:
+            label: Ilmoituksen syy
+            values:
+              does_not_belong: Ei kuulu joukkoon
+              offensive: Loukkaava
+              spam: Roskapostittaja
+        moderations:
+          reportable_type_string_eq:
+            label: Tyyppi
+        officialized_at_null:
+          label: Tila
+          values:
+            'false': Virallistettu
+            'true': Ei virallistettu
+        participatory_space_private_users:
+          user_invitation_accepted_at_not_null:
+            label: Kutsu hyväksytty
+            values:
+              'false': Ei hyäksytty
+              'true': Hyväksytty
+          user_invitation_sent_at_not_null:
+            label: Kutsu lähetetty
+            values:
+              'false': Ei lähetetty
+              'true': Lähetetty
+        private_space_eq:
+          label: Yksityinen
+          values:
+            'false': Julkinen
+            'true': Yksityinen
+        published_at_null:
+          label: Julkaistu
+          values:
+            'false': Julkaistu
+            'true': Julkaisematon
+        remove_all: Poista kaikki
+        scope_id_eq:
+          label: Teema
+        search_label: Hae
+        search_placeholder:
+          name_or_nickname_or_email_cont: '%{collection}: Hae sähköpostilla, nimellä tai nimimerkillä'
+          report_count_eq: Ilmoitusten määrä
+          reported_id_string_or_reported_content_cont: Etsi kohteista %{collection} raportoitavan kohteen ID:n tai sisällön perusteella.
+          title_cont: '%{collection}: Hae otsikon perusteella'
+          user_name_or_user_nickname_or_user_email_cont: Etsi kohteita %{collection} sähköpostiosoitteen, nimen tai nimimerkin perusteella.
+        state_eq:
+          label: Tila
+          values:
+            all: Kaikki
+            pending: Odottavat
+            rejected: Hylätyt
+            verified: Vahvistetut
+      forms:
+        file_help:
+          import:
+            explanation: 'Tiedoston ohjeistus:'
+            message_1: CSV-, JSON- ja Excel-tiedostoja (.xlsx) tuetaan
+            message_2: CSV-tiedostoissa sarake-erottimen on oltava puolipiste (";")
+      help_sections:
+        error: Ohjeosioiden päivitys epäonnistui.
+        form:
+          save: Tallenna
+        success: Ohjeosioiden päivitys onnistui.
+      impersonatable_users:
+        index:
+          filter:
+            all: Kaikki
+            managed: Hallittu
+            not_managed: Ei hallittu
+          impersonate: Esiinny käyttäjänä
+          impersonate_new_managed_user: Esiinny uutena hallittuna käyttäjänä
+          managed: Hallittu
+          name: Nimi
+          needs_authorization_warning: Tällä organisaatiolla tulee olla vähintään yksi vahvistustapa käytössä.
+          not_managed: Ei hallittu
+          promote: Korota tasoa
+          search: Hae
+          status: Tila
+          view_logs: Näytä lokitiedot
+      impersonations:
+        close_session:
+          error: Esitetyn käyttäjän istunnon sulkeminen epäonnistui.
+          success: Toisena käyttäjänä esiintymisen istunnon päättäminen onnistui.
+        create:
+          error: Käyttäjänä esiintyminen epäonnistui.
+          success: Hallitun käyttäjän luonti onnistui.
+        form:
+          authorization_method: Vahvistustapa
+          name: Nimi
+          reason: Syy
+        new:
+          impersonate: Esiinny käyttäjänä
+          impersonate_existing_managed_user: Esiinny hallittuna käyttäjänä "%{name}"
+          impersonate_existing_user: Esiinny käyttäjänä "%{name}"
+          impersonate_new_managed_user: Esiinny uutena hallittuna käyttäjänä
+      imports:
+        and: ja
+        data_errors:
+          duplicate_headers:
+            detail: Tarkasta, että tiedosto sisältää jokaisen vaaditun sarakenimen ainoastaan yhden kerran.
+            message:
+              one: Sarake %{columns} esiintyy kahdesti.
+              other: Sarakkeet %{columns} esiintyvät kahdesti.
+          invalid_indexes:
+            lines:
+              detail: Tarkista, että nämä rivit on muotoiltu oikein ja sisältävät ohjeistettuja tietoja.
+              message:
+                one: Tuontitiedostosta löytyi virhe riviltä %{indexes}.
+                other: Tuontitiedostosta löytyi virheitä riveiltä %{indexes}.
+            records:
+              detail: Tarkasta, että nämä tietueet muotoiltu oikein ja sisältävät ohjeistettuja tietoja.
+              message:
+                one: Tuontitiedostosta löytyi virhe tietueesta järjestysnumerolla %{indexes}.
+                other: Tuontitiedostosta löytyi virhe tietueista järjestysnumeroilla %{indexes}.
+          missing_headers:
+            detail: Tarkasta, että tiedosto sisältää vaaditut sarakkeet.
+            message:
+              one: Puuttuva sarake %{columns}.
+              other: Puuttuvia sarakkeita %{columns}.
+        error: Tuonti epäonnistui.
+        example_error: Esimerkin luonti valitulle tiedostotyypille epäonnistui.
+        new:
+          accepted_mime_types:
+            csv: CSV
+            json: JSON
+            xlsx: Excel (.xlsx)
+          actions:
+            back: Takaisin
+          download_example: Lataa esimerkki
+          download_example_format: Esimerkki muodossa %{name}
+          file_legend: Lisää tuontitiedosto, josta tiedot luetaan.
+          import: Tuo
+        notice: "%{count} kpl kohteita %{resource_name} tuotu onnistuneesti."
+      logs:
+        filters:
+          participatory_space: Etsi osallistumistila
+          text: Etsi käyttäjän sähköpostin, nimen tai nimimerkin perusteella.
+          user: Käyttäjä
+        logs_list:
+          no_logs_yet: Ei vielä lokitietoja.
+          no_matching_logs: Lokitietoja ei löytynyt annetuilla hakukriteereillä. Yritä muuttaa hakua ja kokeile uudestaan.
+      managed_users:
+        promotion:
+          error: Hallitun käyttäjän oikeuksien korotus epäonnistui.
+          success: Hallitun käyttäjän oikeuksien korotus onnistui.
+        promotions:
+          new:
+            explanation: Hallituille käyttäjille voidaan myöntää normaalien käyttäjien oikeudet. Tämä tarkoittaa, että heille lähetetään rekisteröitymiskutsu alustalle ja rekisteröitymisen jälkeen kyseisinä käyttäjinä ei voi enää esiintyä. Kutsutulle käyttäjälle lähetetään sähköposti, jonka avulla he voivat hyväksyä kutsusi.
+            new_managed_user_promotion: Uusi käyttäjätason korotus hallinnoidulle käyttäjälle
+            promote: Korota oikeudet
+      menu:
+        admin_log: Hallintatoimintojen tapahtumaloki
+        admins: Ylläpitäjät
+        appearance: Ulkoasu
+        area_types: Aluetyypit
+        areas: Alueet
+        components: Komponentit
+        configuration: Asetukset
+        content: Ilmoitettu sisältö
+        external_domain_allowlist: Sallitut ulkoiset verkko-osoitteet
+        help_sections: Ohjeosiot
+        homepage: Kotisivu
+        impersonations: Esiintymiset toisena käyttäjänä
+        manage: Hallitse
+        moderation: Yleiset moderoinnit
+        newsletters: Uutiskirjeet
+        participants: Osallistujat
+        reported_users: Ilmoitetut osallistujat
+        scope_types: Teematyypit
+        scopes: Teemat
+        see_site: Näytä sivusto
+        settings: Asetukset
+        static_page_topics: Aiheet
+        static_pages: Sivut
+        user_groups: Käyttäjäryhmät
+        users: Käyttäjät
+      metrics:
+        metrics:
+          see_more_metrics: Näytä lisää tilastomittareita
+      models:
+        area:
+          fields:
+            area_type: Aluetyyppi
+            name: Nimi
+        area_type:
+          fields:
+            name: Nimi
+            plural: Monikko
+        attachment:
+          fields:
+            collection: Kansio
+            content_type: Tyyppi
+            file_size: Koko
+            title: Otsikko
+          name: Liite
+        attachment_collection:
+          name: Kansio
+        category:
+          name: Aihepiiri
+        impersonation_log:
+          fields:
+            admin: Ylläpitäjä
+            ended_at: Päättynyt
+            expired_at: Vanhentunut
+            reason: Syy
+            started_at: Aloitettu
+            user: Käyttäjä
+        newsletter:
+          fields:
+            created_at: Luonnin ajankohta
+            progress: Edistyminen
+            sent_at: Lähetyksen ajankohta
+            sent_to: Vastaanottajat
+            subject: Otsikko
+          name: Uutiskirje
+        participatory_space_private_user:
+          name: Osallistumistilan yksityinen käyttäjä
+        scope:
+          fields:
+            name: Nimi
+            scope_type: Teeman tyyppi
+        scope_type:
+          fields:
+            name: Nimi
+            plural: Monikko
+        share_token:
+          fields:
+            created_at: Luontiaika
+            expires_at: Vanhentumisaika
+            last_used_at: Viimeinen käyttöaika
+            times_used: Käyttökertojen määrä
+            token: Tunniste
+            user: Tekijä
+        static_page:
+          fields:
+            created_at: Luonnin ajankohta
+            title: Otsikko
+        user:
+          fields:
+            created_at: Luontipäivämäärä
+            email: Sähköposti
+            last_sign_in_at: Viimeinen sisäänkirjautumispäivä
+            name: Nimi
+            role: Rooli
+            roles:
+              admin: Ylläpitäjä
+              user_manager: Käyttäjien hallinnoija
+          name: Käyttäjä
+        user_group:
+          fields:
+            actions: Toiminnot
+            created_at: Luonnin ajankohta
+            document_number: Dokumentin numero
+            name: Nimi
+            nickname: Nimimerkki
+            phone: Puhelinnumero
+            state: Tila
+            users_count: Käyttäjämäärä
+      moderated_users:
+        index:
+          actions:
+            block: Estä käyttäjä
+            title: Toiminnot
+            unblock: Poista käyttäjän esto
+            unreport: Poista ilmoitus
+          name: Nimi
+          nickname: Nimimerkki
+          reason: Syy
+          reports: Ilmoitusten määrä
+          title: Ilmoitetut osallistujat
+        report:
+          reasons:
+            does_not_belong: Ei kuulu
+            offensive: Loukkaava
+            spam: Roskaposti
+        tabs:
+          blocked: Estetty
+          unblocked: Ei estetty
+      moderations:
+        index:
+          title: Ilmoitettu sisältö
+        report:
+          reasons:
+            does_not_belong: Ei kuulu
+            hidden_during_block: Piilotettu käyttäjän piilotuksen yhteydessä
+            offensive: Loukkaava
+            spam: Roskaposti
+        reports:
+          index:
+            author: Tekijä(t)
+            callout_html: Sisältö tulee näkyviin moderointinäkymään, kun joku käyttäjä (kuka tahansa käyttäjä, jolla on tili alustalla) on ilmoittanut sisällön painamalla sisällön yhteydessä näkyvää %{icon} lippukuvaketta.
+            content_original_language: Sisällön alkuperäinen kieli
+            participatory_space: Osallistumistila
+            reported_content: Ilmoitettu sisältö
+            see_current: Näytä nykyinen
+            see_original: Näytä alkuperäinen
+            title: Moderointi-ilmoitukset
+          show:
+            report_details: Syyn lisätiedot
+            report_language: Ilmoituksen kieli
+            report_reason: Syy
+            title: Ilmoituksen lisätiedot
+      newsletter_templates:
+        index:
+          preview_template: Esikatsele
+          title: Uutiskirjeiden pohjat
+          use_template: Käytä tätä pohjaa
+        show:
+          preview: 'Esikatsele pohjaa: %{template_name}'
+          use_template: Käytä tätä pohjaa
+      newsletters:
+        create:
+          error: Uutiskirjeen luonti epäonnistui.
+          success: Uutiskirje luotu onnistuneesti. Tarkasta se ennen lähetystä.
+        deliver:
+          error: Uutiskirjeen toimitus epäonnistui.
+          success: Uutiskirjeen toimitus onnistui.
+        destroy:
+          error_already_sent: 'Uutiskirjettä ei voi tuhota: se on jo lähetetty.'
+          success: Uutiskirjeen tuhoaminen onnistui.
+        edit:
+          save_and_preview: Tallenna ja esikatsele
+          title: Muokkaa uutiskirjettä
+        index:
+          all: kaikki
+          all_users: 'Kaikki käyttäjät '
+          and: 'ja '
+          confirm_delete: Haluatko varmasti poistaa tämän uutiskirjeen?
+          followers: 'seuraajat '
+          has_been_sent_to: 'Lähetettiin vastaanottajille: '
+          no_scopes: Ei teemoja
+          not_sent: Ei lähetetty
+          participants: 'osallistujat '
+          segmented_to: 'Kohdennettu vastaanottajille %{subject}: '
+          subscribed_count: 'Tilaukset:'
+          title: Uutiskirjeet
+        new:
+          save: Tallenna
+          title: Uusi uutiskirje
+        select_recipients_to_deliver:
+          all_spaces: Kaikki
+          all_users_help: Lähetä uutiskirje kaikille vahvistetuille käyttäjille.
+          confirm_deliver: Haluatko varmasti toimittaa tämän uutiskirjeen? Tätä toimintoa ei voi peruuttaa.
+          deliver: Toimita uutiskirje
+          followers_help: Lähetä uutiskirje kaikille vahvistetuille käyttäjille, jotka seuraavat jotain listan osallistumistiloista.
+          none: Ei kenellekään
+          participants_help: Lähetä uutiskirje kaikille vahvistetuille käyttäjille, jotka ovat osallistuneet jossain listan valituista osallistumistiloista.
+          recipients_count: Tämä uutiskirje lähetetään <strong id='recipients_count'>%{count}</strong>:lle käyttäjälle.
+          scopes_help: Lähetä uutiskirje käyttäjille, jotka ovat valinneet minkä tahansa teeman heidän tilinsä "Kiinnostuksen kohteet" -asetuksesta.
+          select_scopes: Suodata käyttäjiä, jotka ovat valinneet minkä tahansa teeman tilinsä "Kiinnostuksen kohteet" -asetuksesta.
+          select_spaces: Valitse tilat, joille haluat kohdistaa uutiskirjeen
+          select_users: Valitse käyttäjät, joille haluat lähettää uutiskirjeen
+          title: Valitse vastaanottajat
+          warning: "<strong>Huomio:</strong> Tämä uutiskirje lähetetään ainoastaan käyttäjille, jotka ovat valinneet asetuksen <em>Haluan vastaanottaa uutiskirjeitä</em> tilinsä ilmoitusasetuksista."
+        send:
+          no_recipients: Ei yhtään vastaanottajaa valituille rajauksille.
+        send_to_user:
+          sent_successfully: Uutiskirjeen lähetys osoitteeseen %{email} onnistui
+        show:
+          preview: Esikatsele
+          select_recipients_to_deliver: Valitse vastaanottajat
+          send_me_a_test_email: Lähetä minulle testisähköposti
+          subject: Otsikko
+        update:
+          error: Uutiskirjeen päivitys epäonnistui.
+          success: Uutiskirjeen päivitys onnistui. Tarkasta se läpi ennen lähetystä.
+      officializations:
+        block:
+          error: Osallistujan estäminen epäonnistui.
+          success: Osallistujan estäminen onnistui.
+        create:
+          success: Osallistujan virallistaminen onnistui.
+        destroy:
+          success: Osallistujan virallistamisen peruuttaminen onnistui.
+        index:
+          actions: Toiminnot
+          badge: Kunniamerkki
+          block: Estä käyttäjä
+          created_at: Luontihetki
+          name: Nimi
+          nickname: Nimimerkki
+          not_officialized: Ei virallistettu
+          officialize: Virallista
+          officialized: Virallistettu
+          reofficialize: Virallista uudestaan
+          reports: Ilmoitukset
+          show_email: Näytä sähköpostiosoite
+          status: Tila
+          unblock: Poista käyttäjän esto
+          unofficialize: Poista virallistaminen
+        new:
+          badge: Virallistamismerkki
+          officialize: Virallista
+          title: Virallista käyttäjä "%{name}"
+        show_email_modal:
+          description: Jos haluat ottaa suoraan yhteyttä osallistujaan, voit klikata Näytä-painiketta nähdäksesi hänen sähköpostiosoitteensa. Tästä toiminnosta jää jälki lokiin.
+          email_address: Sähköpostiosoite
+          full_name: Koko nimi
+          hidden: piilotettu
+          show: Näytä
+          title: Näytä osallistujan sähköpostiosoite
+        unblock:
+          error: Käyttäjän eston peruuttaminen epäonnistui.
+          success: Käyttäjän eston peruuttaminen onnistui.
+      organization:
+        edit:
+          title: Muokkaa organisaatiota
+          update: Päivitä
+        form:
+          facebook: Facebook
+          github: GitHub
+          instagram: Instagram
+          rich_text_editor_in_public_views_help: Joissain tekstikentissä osallistujat voivat syöttää tiettyjä HTML-elementtejä rikkaan tekstieditorin kautta.
+          social_handlers: Sosiaalinen media
+          twitter: X
+          url: URL
+          youtube: YouTube
+        update:
+          error: Organisaation päivitys epäonnistui.
+          success: Organisaation päivitys onnistui.
+      organization_appearance:
+        edit:
+          update: Päivitä
+        form:
+          colors:
+            choose_color: Valitse ensisijainen väri
+            colors_title: Organisaation värit
+            colors_warning_html: Varoitus! Näiden värien muuttaminen voi rikkoa palvelun saavutettavuuden vaatimat kontrastiarvot. Voit tarkastaa kontrastiarvot valitsemillesi väreille <a href="https://webaim.org/resources/contrastchecker">WebAIM kontrastintarkastustyökalulla</a> tai muilla vastaavilla työkaluilla.
+            explanation: Tämä työkalu auttaa sinua valitsemaan värimaailman, joka koostuu tasaisesti valituista väriympyrän sävyistä. Näitä värejä käytetään verkkosivuston värimäärityksissä.
+            legend_html: Pääsovelluksen värit valitaan <a href="https://www.color-meanings.com/triadic-colors/">kolmiasteisella algoritmilla (triadic)</a>. <i>Toissijainen</i> väri lasketaan automaattisesti ensisijaisen värin ja valitsemasi värikylläisyysarvon perusteella.
+            saturation: Värikylläisyys
+            title: Värin valinta
+            update_suggested_colors: Päivitä ehdotetut värit
+          cta_button_path_help_html: 'Voit määrittää, mihin kotisivun toimintopainike (Call To Action) linkkaa. Käytä tässä osoitepolkuja, ei kokonaisia URL-osoitteita. Hyväksyy kirjaimet, numerot, viivat ja kauttaviivat. Arvon on alettava kirjaimella. Toimintopainike näytetään kotisivulla Tervetuloa-tekstin ja kuvauksen välissä. Esimerkki: %{url}'
+          cta_button_text_help: Voit korvata toimintopainikkeen (Call to Action) tekstin kotisivulla jokaiselle organisaatiosi kielelle. Mikäli tätä ei ole asetettu, oletusarvoa käytetään. Toimintopainike näytetään kotisivulla Tervetuloa-tekstin ja kuvauksen välissä.
+          header_snippets:
+            header_snippets_help_html: Käytä tätä kenttää lisätäksesi uusia HTML-otsakkeita. Yleisin käyttötarkoitus on kolmannen osapuolen palveluiden integrointi, missä tarvitaan ylimääräisiä JavaScript- tai CSS-tiedostoja. Voit myös käyttää asetusta lisätäksesi uusia meta-merkintöjä HTML:ään. Huomaa, että tämä asetus pätee vain osallistujille suunnatuilla julkisilla sivuilla, ei hallintakäyttäjien osiossa. Jos koodi on vuorovaikutuksessa ulkoisten sovellusrajapintojen kanssa tai se ei ole sovelluksen turvallisuusohjeiden mukainen, sisällön turvallisuuskäytäntöä (CSP) tulee muuttaa. Lue lisää <a href="https://docs.decidim.org/develop/en/customize/content_security_policy">dokumentaatiosivustolta</a>.
+            title: Yläosion HTML-koodipätkät
+          homepage_appearance_title: Muokkaa kotisivun ulkoasua
+          homepage_highlighted_content_banner_title: Tärkeä sisältöbanneri
+          images:
+            layout_appearance_title: Muokkaa sivupohjan ulkoasua
+            preview: Esikatsele
+          omnipresent_banner_appearance_title: Muokkaa kaikkialla näkyvää banneria
+      organization_external_domain_allowlist:
+        edit:
+          update: Päivitä
+        external_domain:
+          down: Alas
+          external_domain: Ulkoinen verkkotunnus
+          remove: Poista
+          up: Ylös
+        form:
+          add: Lisää sallittujen listalle
+          title: Sallitut ulkoiset verkko-osoitteet
+      participatory_space_private_users:
+        create:
+          error: Yksityisen käyttäjän lisääminen tähän osallistumistilaan epäonnistui.
+          success: Osallistumistilaa koskeva yksityisen käyttäjän käyttöoikeuden lisäys onnistui.
+        destroy:
+          error: Osallistumistilan yksityisen käyttäjän poistaminen epäonnistui.
+          success: Osallistumistilaa koskeva yksityisen käyttäjän käyttöoikeuden tuhoaminen onnistui.
+        index:
+          import_via_csv: Tuo CSV-tiedostosta
+          title: Osallistumistilan yksityinen käyttäjä
+        new:
+          create: Luo
+          title: Uusi osallistumistilan yksityinen käyttäjä.
+      participatory_space_private_users_csv_imports:
+        create:
+          invalid: CSV-tiedoston lukeminen epäonnistui. Tarkasta, että olet seurannut esitettyjä ohjeita.
+          success: CSV-tiedosto ladattu onnistuneesti. Lähetämme kutsusähköpostin osallistujille. Tämä voi kestää hetken.
+        new:
+          csv_upload:
+            title: Lataa CSV-tiedosto
+          destroy:
+            button: Poista kaikki yksityiset osallistujat
+            confirm: Oletko varma, että haluat poistaa kaikki yksityiset osallistujat? Tätä toimintoa ei voi peruuttaa ja poistettuja osallistujia ei voi palauttaa.
+            empty: Tässä osallistumistilassa ei ole yksityisiä osallistujia.
+            explanation: Tässä osallistumistilassa on %{count} yksityistä osallistujaa.
+            title: Poista kaikki yksityiset osallistujat
+          example_file: 'Esimerkkitiedosto:'
+          explanation: 'Lataa CSV-tiedosto. Tiedostossa on oltava kaksi saraketta ilman otsikkoriviä. Ensimmäiseen sarakkeeseen asetetaan käyttäjän sähköpostiosoite ja toiseen sarakkeeseen käyttäjän nimi, alkaen ensimmäiseltä riviltä. Jokaisesta rivistä luodaan uusi osallistumistilan käyttäjä. Vältä erikoismerkkejä nimessä, kuten `<>?%&^*#@()[]=+:;"{}\|`.'
+          explanation_example: |
+            matti.meikalainen@esimerkki.fi%{csv_col_sep}Matti Meikäläinen
+            minna.meikalainen@esimerkki.fi%{csv_col_sep}Minna Meikäläinen
+          title: Tuo yksityisiä osallistujia CSV-tiedostosta
+          upload: Lataa
+      reminders:
+        create:
+          error: Muistutusten luonti epäonnistui.
+          success:
+            one: "%{count} käyttäjää muistutetaan."
+            other: "%{count} käyttäjää muistutetaan."
+        new:
+          submit: Lähetä
+      resource_permissions:
+        edit:
+          submit: Lähetä
+          title: Muokkaa käyttöoikeuksia
+        update:
+          success: Käyttöoikeuksien päivitys onnistui.
+      resources:
+        index:
+          headers:
+            scope: Teema
+      scope_types:
+        create:
+          error: Uuden teematyypin luonti epäonnistui.
+          success: Teematyypin luonti onnistui.
+        destroy:
+          success: Teematyypin tuhoaminen onnistui
+        edit:
+          title: Muokkaa teematyyppiä
+          update: Päivitä
+        new:
+          create: Luo teematyyppi
+          title: Uusi teematyyppi
+        update:
+          error: Teematyyppin päivitys epäonnistui.
+          success: Teematyypin päivitys onnistui
+      scopes:
+        create:
+          error: Uuden teeman luonti epäonnistui.
+          success: Teeman luonti onnistui.
+        destroy:
+          success: Teeman tuhoaminen onnistui.
+        edit:
+          title: Muokkaa teemaa
+          update: Päivitä
+        new:
+          create: Luo teema
+          title: Uusi teema
+        no_scopes: Tällä tasolla ei ole teemoja.
+        update:
+          error: Teeman päivitys epäonnistui.
+          success: Teeman päivitys onnistui
+      share_tokens:
+        actions:
+          confirm_destroy: Haluatko varmasti poistaa tämän tunnisteen?
+          destroy: Poista
+          share: Jaa
+        destroy:
+          error: Tunnisteen poistaminen epäonnistui.
+          success: Tunnisteen poistaminen onnistui.
+        share_tokens:
+          empty: Aktiivisia tunnisteita ei ole tällä hetkellä.
+          help: Näitä tunnisteita käytetään jaettaessa tätä julkaisematonta kohdetta muille käyttäjille. Ne piilotetaan, kun kohde julkaistaan. Klikkaa tunnisteen jakokuvaketta vieraillaksesi jaettavassa URL-osoitteessa.
+          title: Jakotunnisteet
+      shared:
+        adjacent_navigation:
+          next: Seuraava
+          next_title: Seuraava kohde
+          previous: Edellinen
+          previous_title: Edellinen kohde
+        gallery:
+          add_images: Lisää kuvia
+          edit_images: Muokkaa kuvia
+          gallery_legend: Lisää kuvagalleria (valinnainen)
+      static_page_topics:
+        create:
+          error: Uuden aiheen luonti epäonnistui.
+          success: Aiheen luonti onnistui.
+        destroy:
+          success: Aiheen poistaminen onnistui.
+        edit:
+          title: Muokkaa aihetta
+          update: Päivitä aihe
+        new:
+          create: Luo aihe
+          title: Uusi aihe
+        update:
+          error: Aiheen päivitys epäonnistui.
+          success: Aiheen päivitys onnistui
+      static_pages:
+        actions:
+          view: Näytä julkinen sivu
+        create:
+          error: Uuden sivun luonti epäonnistui.
+          success: Sivun luonti onnistui.
+        destroy:
+          success: Sivun tuhoaminen onnistui
+        edit:
+          changed_notably_help: Jos valitset tämän, käyttäjiä pyydetään hyväksymään päivitetyt käyttöehdot.
+          last_notable_change: 'Viimeisin merkittävä muutos: %{tos_version_formatted}'
+          title: Muokkaa sivua
+          update: Päivitä
+        form:
+          none: Ei mitään
+          slug_help_html: 'Käytä tässä osoitepolkuja, ei koko URL-osoitteita. Hyväksyy kirjaimia, numeroita, viivoja ja kauttaviivoja. Arvo on aloitettava kirjaimella. Esimerkki: %{url}'
+        index:
+          last_notable_change: Viimeinen huomattava muutos
+        new:
+          create: Luo sivu
+          title: Uusi sivu
+        topic:
+          empty: Tämän aiheen alla ei ole sivuja.
+          without_topic: Sivut ilman aihetta
+        update:
+          error: Sivun päivitys epäonnistui.
+          success: Sivun päivitys onnistui.
+      titles:
+        admin_log: Hallintatoimintojen lokitiedot
+        area_types: Aluetyypit
+        areas: Alueet
+        authorization_workflows: Vahvistustavat
+        dashboard: Hallintapaneeli
+        edit_external_domains: Sallitut ulkoiset verkko-osoitteet
+        edit_landing_page: Sivun sisältö
+        edit_organization_appearance: Muokkaa kotisivun ulkoasua
+        impersonatable_users: Hallittavat käyttäjät
+        impersonations: Käyttäjien hallinta
+        menu: Valikko
+        metrics: Tilastomittarit
+        page_topics: Aiheet
+        pages: Sivut
+        panel: Hallintakäyttäjä
+        participants: Käyttäjät
+        scope_types: Teematyypit
+        scopes: Teemat
+        statistics: Toiminta
+        user_groups: Käyttäjäryhmät
+        users: Hallintakäyttäjät
+      user_group:
+        csv_verify:
+          invalid: CSV-tiedoston käsittely epäonnistui.
+          success: CSV-tiedosto on ladattu onnistuneesti. Vahvistamme kriteerien mukaiset käyttäjäryhmät. Tämä voi kestää hetken.
+        reject:
+          invalid: Käyttäjäryhmän hylkäys epäonnistui.
+          success: Käyttäjäryhmän hylkäys onnistui.
+        verify:
+          invalid: Käyttäjäryhmän vahvistus epäonnistui.
+          success: Käyttäjäryhmän vahvistaminen onnistui.
+      user_groups:
+        index:
+          state:
+            pending: Odottaa
+            rejected: Hylätty
+            verified: Vahvistettu
+          verify_via_csv: Vahvista CSV-tiedoston avulla
+      user_groups_csv_verifications:
+        new:
+          example_file: 'Esimerkkitiedosto:'
+          explanation: Lataa CSV-tiedosto. Siinä on oltava organisaatiosi käyttäjäryhmien viralliset sähköpostit tiedoston ensimmäisessä sarakkeessa ilman otsikkoriviä. Ainoastaan käyttäjäryhmät, jotka ovat vahvistaneet sähköpostiosoitteensa ja joiden sähköpostiosoitteesi näkyvät CSV-tiedostossa, vahvistetaan.
+          explanation_example: |
+            acme@esimerkki.fi
+            bubba.gump@esimerkki.fi
+          title: Lataa CSV-tiedosto
+          upload: Lähetä
+      users:
+        create:
+          error: Hallintakäyttäjän kutsuminen epäonnistui.
+          success: Käyttäjän kutsuminen onnistui.
+        destroy:
+          error: Hallintakäyttäjän poisto epäonnistui.
+          success: Käyttäjä ei ole enää hallintakäyttäjä.
+        form:
+          email: Sähköposti
+          name: Nimi
+          role: Rooli
+        new:
+          create: Kutsu
+          title: Luo uusi hallintakäyttäjä
+      users_statistics:
+        users_count:
+          admins: Ylläpitäjät
+          last_day: Viimeinen päivä
+          last_month: Viimeinen kuukausi
+          last_week: Viimeinen viikko
+          no_users_count_statistics_yet: Käyttäjämäärätilastoja ei vielä ole.
+          participants: Osallistujat
+    forms:
+      errors:
+        impersonate_user:
+          reason: Sinun on annettava syy, kun hallitset osallistujaa, joka ei ole hallittu osallistuja.
+    metrics:
+      blocked_users:
+        object: estetyt käyttäjät
+        title: Estetyt käyttäjät
+      reported_users:
+        object: ilmoitetut käyttäjät
+        title: Ilmoitetut käyttäjät
+      user_reports:
+        object: ilmoitukset käyttäjistä
+        title: Ilmoitukset käyttäjistä
+    moderations:
+      actions:
+        expand: Avaa
+        hidden: Piilotettu
+        hide: Piilota
+        not_hidden: Näkyvillä
+        title: Toiminnot
+        unhide: Poista piilotus
+        unreport: Poista ilmoitus
+      admin:
+        reportable:
+          hide:
+            invalid: Kohteen piilotus epäonnistui.
+            success: Resurssin piilotus onnistui.
+          unhide:
+            invalid: Kohteen piilotuksen poisto epäonnistui.
+            success: Resurssin piilotuksen poistaminen onnistui.
+          unreport:
+            invalid: Kohteen ilmoituksen poisto epäonnistui.
+            success: Resurssin ilmoituksen poisto onnistui.
+      models:
+        moderation:
+          fields:
+            created_at: Ilmoituksen ajankohta
+            deleted_resource: Poistettu tietue
+            hidden_at: Piilotuksen ajankohta
+            participatory_space: Osallistumistila
+            report_count: Ilmoitusten määrä
+            reportable_id: ID
+            reportable_type: Tyyppi
+            reported_content_url: Raportoidun sisällön URL
+            reports: Syy
+            visit_url: Vieraile URL-osoitteessa
+        report:
+          fields:
+            details: Syyn lisätiedot
+            locale: Kieli
+            reason: Syy
+  errors:
+    messages:
+      invalid_json: Virheellinen JSON
+  layouts:
+    decidim:
+      admin:
+        global_moderations:
+          title: Yleiset moderoinnit

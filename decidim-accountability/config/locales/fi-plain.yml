@@ -1,0 +1,291 @@
+fi-pl:
+  activemodel:
+    attributes:
+      result:
+        decidim_accountability_status_id: Tila
+        decidim_category_id: Aihepiiri
+        decidim_scope_id: Teema
+        description: Kuvaus
+        end_date: Päättymispäivä
+        meetings_ids: Sisällytetyt tapaamiset
+        progress: Edistyminen
+        project_ids: Liitetyt suunnitelmat
+        proposals: Sisällytetyt ehdotukset
+        start_date: Alkamispäivä
+        subresults: Alitulokset
+        title: Otsikko
+        updated_at: Päivitysaika
+      status:
+        description: Kuvaus
+        key: Tunniste
+        name: Nimi
+        progress: Edistyminen
+      timeline_entry:
+        description: Kuvaus
+        entry_date: Päivämäärä
+        title: Otsikko
+    models:
+      decidim/accountability/proposal_linked_event: Ehdotus sisältyy tulokseen
+      decidim/accountability/result_progress_updated_event: Tuloksen edistyminen päivitetty
+  activerecord:
+    models:
+      decidim/accountability/result:
+        one: Tulos
+        other: Tulokset
+  decidim:
+    accountability:
+      actions:
+        attachment_collections: Kansiot
+        attachments: Liitteet
+        confirm_destroy: Oletko varma, että haluat poistaa tämän tuloksen?
+        destroy: Poista
+        edit: Muokkaa
+        import: Tuo hankkeita toisesta komponentista
+        import_csv: Tuo tulokset CSV-tiedostosta
+        new_result: Uusi tulos
+        new_status: Uusi tila
+        new_timeline_entry: Uusi aikajanan merkintä
+        preview: Esikatsele
+        timeline_entries: Projektin edistyminen
+        title: Toiminnot
+      admin:
+        exports:
+          result_comments: Kommentit
+          results: Tulokset
+        import_results:
+          new:
+            download_export: Lataa vientitiedosto CSV-muodossa
+            import: Tuo
+            info: |
+              <p>Suorittelemme tekemään seuraavat toimenpiteet suorittaaksesi tuonnin onnistuneesti:</p>
+              <ol>
+              <li><a href='%{link_new_status}' target='_blank'>Luo tilat tuloksille</a></li>
+              <li><a href='%{link_new_result}' target='_blank'>Luo vähintään yksi tulos käsin</a> hallintapaneelin kautta ennen tuontia, jotta ymmärrät paremmin, miltä tuontitiedoston tulee näyttää.</li>
+              <li>%{link_export_csv}</li>
+              <li>Tee tiedostoon muutoksia tietokoneellasi. Voit muuttaa ainoastaan seuraavia sarakkeita CSV-tiedostossa:
+                <ul>
+                <li><b>category/id:</b> Aihepiirin ID-tunniste</li>
+                <li><b>scope/id:</b> Teeman ID-tunniste</li>
+                <li><b>parent/id:</b> Tuloksen isännän ID-tunniste. Vapaaehtoinen</li>
+                <li><b>title/fi:</b> Otsikko suomeksi. Tämän sarakkeen nimi riippuu alustalle määritetyistä kielistä.</li>
+                <li><b>description/fi:</b> Kuvaus suomeksi. Tämän sarakkeen nimi riippuu alustalle määritetyistä kielistä.</li>
+                <li><b>start_date:</b> Tuloksen toteuttamisen aloituspäivämäärä (muodossa YYYY-MM-DD)</li>
+                <li><b>end_date:</b> Tuloksen toteuttamisen päättymispäivämäärä (muodossa YYYY-MM-DD)</li>
+                <li><b>status/id:</b> Tuloksen tilan ID-tunniste</li>
+                <li><b>progress:</b> Tuloksen toteutuksen prosentuaalisen etenemisen tila (välillä 0-100)</li>
+                <li><b>proposals_ids:</b> Liittyvien ehdotusten ID-numerot (pilkulla eroteltuna). Nämä muutetaan automaattisesti <span class='attribute-name'>proposal_url</span></li>
+                </ul>
+              </li>
+              </ol>
+            title: Tuo tulokset CSV-tiedostosta
+        imports:
+          create:
+            invalid: Tulosten tuonti epäonnistui.
+            success: Tiedoston tuominen on aloitettu. Saat muutaman minuutin kuluttua sähköpostin, jossa ilmoitetaan tuonnin lopputulos.
+        models:
+          result:
+            name: Tulos
+          status:
+            name: Tila
+        projects_import:
+          create:
+            invalid: Hankkeiden tuominen tuloksiin epäonnistui, seuraa ohjeita tarkasti ja tarkasta, että olet valinnut hankkeita toteutukseen.
+          new:
+            create: Tuo
+            import_all_selected_projects: Tuo kaikki toteutukseen valitut hankkeet
+            new_items:
+              one: 1 toteutukseen valittu hanke tuodaan
+              other: "%{count} toteutukseen valittua hanketta tuodaan"
+            no_components: Tässä osallistumistilassa ei ole yhtään budjetointikomponenttia, josta hankkeet voitaisiin tuoda tuloksiksi.
+            origin_component_id: Lähdekomponentti
+            select_component: Valitse komponentti
+            success:
+              one: 1 hanke on lisätty jonoon tuotavaksi. Sinulle ilmoitetaan sähköpostitse, kun tuonti valmistuu.
+              other: "%{count} hanketta on lisätty jonoon tuotavaksi. Sinulle ilmoitetaan sähköpostitse, kun tuonti valmistuu."
+            title: Tuo hankkeita toisesta komponentista
+        results:
+          create:
+            invalid: Tuloksen luonti epäonnistui.
+            success: Tuloksen luonti onnistui.
+          destroy:
+            success: Tuloksen poisto onnistui.
+          edit:
+            title: Muokkaa tulosta
+            update: Päivitä tulos
+          index:
+            title: Tulokset
+          new:
+            create: Luo tulos
+            title: Uusi tulos
+          update:
+            invalid: Tuloksen päivitys epäonnistui.
+            success: Tuloksen päivitys onnistui.
+        shared:
+          subnav:
+            statuses: Tilat
+        statuses:
+          create:
+            invalid: Tilan luonti epäonnistui.
+            success: Tilan luonti onnistui.
+          destroy:
+            success: Tilan poisto onnistui.
+          edit:
+            title: Muokkaa tilaa
+            update: Päivitä tila
+          index:
+            title: Tilat
+          new:
+            create: Luo tila
+            title: Uusi tila
+          update:
+            invalid: Tilan päivitys epäonnistui.
+            success: Tilan päivitys onnistui.
+        timeline_entries:
+          create:
+            invalid: Merkinnän luonti epäonnistui.
+            success: Merkinnän luonti onnistui.
+          destroy:
+            success: Merkinnän poisto onnistui.
+          edit:
+            title: Muokkaa merkintää
+            update: Päivitä merkintä
+          index:
+            title: Projektin aikajanan merkinnät
+          new:
+            create: Luo merkintä
+            title: Uusi merkintä
+          update:
+            invalid: Merkinnän päivitys epäonnistui.
+            success: Merkinnän päivitys onnistui.
+      admin_log:
+        result:
+          create: "%{user_name} loi tuloksen %{resource_name} tilassa %{space_name}"
+          delete: "%{user_name} poisti tuloksen %{resource_name} tilassa %{space_name}"
+          update: "%{user_name} päivitti tuloksen %{resource_name} tilassa %{space_name}"
+        status:
+          create: "%{user_name} loi tilan %{resource_name}"
+          delete: "%{user_name} poisti tilan %{resource_name}"
+          update: "%{user_name} päivitti tilaa %{resource_name}"
+        timeline_entry:
+          create: "%{user_name} loi aikajanan merkinnän %{resource_name}"
+          delete: "%{user_name} poisti aikajanan merkinnän %{resource_name}"
+          update: "%{user_name} päivitti aikajanan merkintää %{resource_name}"
+        value_types:
+          parent_presenter:
+            not_found: 'Pääelementtiä ei löytynyt tietokannasta (ID: %{id})'
+      content_blocks:
+        highlighted_results:
+          results: Tulokset
+      import_mailer:
+        import:
+          errors: Virheet
+          errors_present: Tulosten tuonti epäonnistui.
+          row_number: Rivi
+          subject: Tulosten tuonti onnistui
+          success: Tulosten tuonti onnistui. Voit katsoa tulokset hallintapaneelista.
+      import_projects_mailer:
+        import:
+          added_projects:
+            one: Yksi tulos tuotiin hankkeista.
+            other: "%{count} tulosta tuotiin hankkeista."
+          subject: Tulosten tuonti onnistui
+          success: Hankkeiden tuonti tuloksiksi %{component_name} -komponentista onnistui. Voit tarkastaa tuonnin tulokset hallintapaneelista.
+      last_activity:
+        new_result: 'Uusi tulos:'
+      models:
+        result:
+          fields:
+            category: Aihepiiri
+            created_at: Luontiaika
+            end_date: Päättymispäivä
+            id: ID
+            progress: Edistyminen
+            scope: Teema
+            start_date: Alkamispäivä
+            status: Tila
+            title: Otsikko
+        status:
+          fields:
+            description: Kuvaus
+            key: Tunniste
+            name: Nimi
+            progress: Edistyminen
+        timeline_entry:
+          fields:
+            entry_date: Päivämäärä
+            title: Otsikko
+      results:
+        count:
+          results_count:
+            one: 1 tulos
+            other: "%{count} tulosta"
+        filters:
+          all: Kaikki
+        home:
+          categories_label: Aihepiirit
+          empty: Ei yhtään tulosta.
+          empty_filters: Tuloksia ei löytynyt annetuilla hakuehdoilla.
+          subcategories_label: Ala-aihepiiri
+        home_header:
+          global_status: Yleisen toteutuksen tila
+        nav_breadcrumb:
+          global: Yleinen toteutus
+        no_results: Hankkeita ei ole saatavilla
+        search:
+          search: Hae toimintoja
+        show:
+          stats:
+            back_to_resource: Palaa tulokseen
+        timeline:
+          title: Projektin kehitys
+    admin:
+      filters:
+        results:
+          category_id_eq:
+            label: Aihepiiri
+          scope_id_eq:
+            label: Teema
+          status_id_eq:
+            label: Tila
+    components:
+      accountability:
+        actions:
+          comment: Kommentoi
+        name: Vastuullisuus
+        settings:
+          global:
+            comments_enabled: Kommentointi käytössä
+            comments_max_length: Kommenttien maksimipituus (jätä arvoksi 0 käyttääksesi oletusarvoa)
+            display_progress_enabled: Näytä edistyminen
+            intro: Esittelyteksti
+            scope_id: Teema
+            scopes_enabled: Teemat käytössä
+          step:
+            comments_blocked: Kommentointi estetty
+    events:
+      accountability:
+        proposal_linked:
+          email_intro: 'Ehdotus "%{proposal_title}" on sisällytetty tulokseen. Voit nähdä sen tällä sivulla:'
+          email_outro: Tämä ilmoitus on lähetetty sinulle, koska seuraat "%{proposal_title}". Voit lopettaa ilmoitusten vastaanottamisen edellä esitetyn linkin kautta.
+          email_subject: Päivitys kohtaan %{proposal_title}
+          notification_title: Ehdotus <a href="%{proposal_path}">%{proposal_title}</a> on sisällytetty tulokseen <a href="%{resource_path}">%{resource_title}</a>.
+        result_progress_updated:
+          email_intro: 'Tulos "%{resource_title}", joka sisältää ehdotuksen "%{proposal_title}", on nyt %{progress}% valmis. Voit nähdä sen tällä sivulla:'
+          email_outro: Saat tämän ilmoituksen, koska seuraat ehdotusta "%{proposal_title}" ja se sisältyy tulokseen "%{resource_title}". Voit lopettaa ilmoitusten vastaanottamisen edellä esitetyn linkin kautta.
+          email_subject: Päivitys kohteen %{resource_title} edistykseen
+          notification_title: Tulos <a href="%{resource_path}">%{resource_title}</a>, joka sisältää ehdotuksen <a href="%{proposal_path}">%{proposal_title}</a>, on nyt %{progress}% valmis.
+    metrics:
+      results:
+        description: Luotujen tulosten lukumäärä
+        object: tulokset
+        title: Tulokset
+    participatory_spaces:
+      highlighted_results:
+        see_all: Näytä kaikki (%{count} kpl)
+    resource_links:
+      included_projects:
+        result_project: Tähän tulokseen liittyvät suunnitelmat
+      included_proposals:
+        result_proposal: Tähän tulokseen liittyvät ehdotukset
+    statistics:
+      results_count: Tulosta

@@ -1,0 +1,12 @@
+<% if validation_messages.present? %>
+  <% validation_messages.each do |validation| %>
+    <%= cell("decidim/announcement", validation) %>
+  <% end %>
+<% else %>
+  <div class="profile__user-grid">
+    <% followers.each do |follower| %>
+      <%= card_for follower %>
+    <% end %>
+  </div>
+  <%= decidim_paginate followers %>
+<% end %>

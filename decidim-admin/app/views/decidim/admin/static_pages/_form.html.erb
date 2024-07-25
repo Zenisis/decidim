@@ -1,0 +1,45 @@
+<div class="form__wrapper">
+  <div class="card pt-4">
+    <div class="card-section">
+      <div class="row column">
+        <%= form.translated :text_field, :title, autofocus: true, aria: { label: :title } %>
+      </div>
+
+      <% if allowed_to? :update_slug, :static_page, static_page: form.object %>
+        <div class="row column slug">
+          <div>
+            <%= form.label :slug %>
+          </div>
+          <%= form.text_field :slug, label: false, help_text: t(".slug_help_html", url: decidim_form_slug_url("pages", form.object.slug)) %>
+        </div>
+      <% end %>
+
+      <div class="row column mt-2">
+        <%= form.translated :editor, :content, aria: { label: :content } %>
+      </div>
+
+      <div class="row column">
+        <div>
+          <%= form.label :topic %>
+        </div>
+        <%= form.select :topic_id, form.object.topics.map { |topic| [translated_attribute(topic.title), topic.id] }, include_blank: t(".none"), label: false %>
+      </div>
+
+      <%= render partial: "form_notable_changes", locals: { form: } %>
+
+      <div class="row column">
+        <div>
+          <%= form.label :weight %>
+        </div>
+        <%= form.number_field :weight, label: false %>
+      </div>
+
+      <% if form.object.control_public_access? %>
+        <div class="row column">
+          <%= form.check_box :allow_public_access %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<%= display_flash_messages %>
+
+<% if Decidim::Organization.none? %>
+  <% guide = link_to t(".our_getting_started_guide"),
+                     "https://docs.decidim.org/",
+                     target: :blank %>
+
+  <%= cell "decidim/announcement", t(".no_organization_warning_html", guide:), callout_class: "warning" %>
+<% end %>

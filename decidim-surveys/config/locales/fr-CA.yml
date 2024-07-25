@@ -1,0 +1,76 @@
+fr-CA:
+  activemodel:
+    models:
+      decidim/surveys/closed_survey_event: Enquête terminée
+      decidim/surveys/opened_survey_event: Enquête commencée
+  activerecord:
+    models:
+      decidim/surveys/survey:
+        one: Enquête
+        other: Enquêtes
+      decidim/surveys/survey_answer:
+        one: Réponse
+        other: Réponses
+  decidim:
+    components:
+      surveys:
+        actions:
+          answer: Réponse
+        name: Enquête
+        settings:
+          global:
+            announcement: Annonce
+            clean_after_publish: Supprimer les réponses lors de la publication du sondage
+            ends_at: Réponses acceptées jusqu'au
+            ends_at_help: Laisser vide si aucune date spécifique
+            scope_id: Secteur
+            scopes_enabled: Secteurs activés
+            starts_at: Réponses acceptées du
+            starts_at_help: Laisser vide si aucune date spécifique
+          step:
+            allow_answers: Autoriser les réponses
+            allow_unregistered: Autoriser les utilisateurs non inscrits à répondre à l'enquête
+            allow_unregistered_help: Si activé, aucun login ne sera requis pour répondre à l'enquête. Cela peut conduire à des données médiocres ou peu fiables et sera plus vulnérable aux attaques automatisées. A utiliser avec précaution! Rappelez-vous qu'un participant pourrait répondre à la même enquête plusieurs fois, en utilisant différents navigateurs ou la fonction de "navigation privée" de son navigateur Web.
+            announcement: Annonce
+    events:
+      surveys:
+        survey_closed:
+          email_intro: L'enquête %{resource_title} proposée dans %{participatory_space_title} est maintenant terminée.
+          email_outro: Vous venez de recevoir une notification venant de %{participatory_space_title}. Vous pouvez à tout moment arrêter de recevoir des notifications en suivant le lien précédent.
+          email_subject: L'enquête de l'espace participatif %{participatory_space_title} est terminée
+          notification_title: L'enquête <a href="%{resource_path}">%{resource_title}</a> ouverte dans <a href="%{participatory_space_url}">%{participatory_space_title}</a> est terminée.
+        survey_opened:
+          email_intro: 'L''enquête %{resource_title} est désormais ouverte dans l''espace participatif %{participatory_space_title}. Vous pouvez y participer depuis la page suivante :'
+          email_outro: Vous avez reçu cette notification car vous suivez l'espace participatif %{participatory_space_title}. Vous pouvez arrêter de recevoir ces notifications à partir du lien précédent.
+          email_subject: Une nouvelle enquête a été créée dans %{participatory_space_title}
+          notification_title: 'L''enquête <a href="%{resource_path}">%{resource_title}</a> est ouverte. Vous pouvez y participer en vous rendant sur le lien suivant : <a href="%{participatory_space_url}">%{participatory_space_title}</a>.'
+    metrics:
+      survey_answers:
+        description: Nombre d'enquêtes auxquelles ont répondu les utilisateurs
+        object: réponses aux enquêtes
+        title: Réponses aux enquêtes
+    statistics:
+      answers_count: Réponses
+    surveys:
+      admin:
+        component:
+          actions:
+            answers_alert: Si vous publiez la fonctionnalité, toutes les réponses existantes seront supprimées.
+        exports:
+          survey_user_answers: Réponses des participants à l'enquête
+        surveys:
+          update:
+            invalid: Erreurs lors de la sauvegarde de l'enquête.
+            success: Enquête enregistrée avec succès.
+      last_activity:
+        new_survey: 'Nouvelle enquête :'
+      survey_confirmation_mailer:
+        confirmation:
+          body: Vous avez répondu avec succès à l'enquête %{questionnaire_title} dans %{participatory_space}
+          subject: Vous avez bien répondu au questionnaire %{questionnaire_title}
+        export_name: Réponses au questionnaire
+      surveys:
+        answer:
+          invalid: Votre réponse à l'enquête comporte des erreurs.
+          spam_detected: Une erreur est survenue lorsque vous avez répondu au questionnaire. Pouvez-vous réessayer ?
+          success: Votre réponse à l'enquête a bien été enregistrée.

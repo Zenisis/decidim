@@ -1,0 +1,147 @@
+da:
+  activemodel:
+    attributes:
+      result:
+        decidim_accountability_status_id: Status
+        decidim_category_id: Kategori
+        decidim_scope_id: Anvendelsesområde
+        description: Beskrivelse
+        end_date: Slutdato
+        progress: Fremskridt
+        project_ids: Inkluderede projekter
+        proposals: Inkluderede projekter
+        start_date: Start dato
+        title: Titel
+        updated_at: Opdateret
+      status:
+        description: Beskrivelse
+        key: Nøgle
+        name: Navn
+        progress: Fremskridt
+      timeline_entry:
+        description: Beskrivelse
+        entry_date: Dato
+    models:
+      decidim/accountability/proposal_linked_event: Projekter, der indgår i dette resultat
+      decidim/accountability/result_progress_updated_event: Resultatstatus opdateret
+  activerecord:
+    models:
+      decidim/accountability/result:
+        one: Resultat
+        other: Resultater
+  decidim:
+    accountability:
+      actions:
+        confirm_destroy: Er du sikker på, at du vil slette dette %{name}?
+        destroy: Slet
+        edit: Rediger
+        preview: Eksempelvisning
+        timeline_entries: Projektudvikling
+        title: Handlinger
+      admin:
+        exports:
+          results: Resultater
+        import_results:
+          new:
+            import: Import
+        models:
+          result:
+            name: Resultat
+          status:
+            name: Status
+        results:
+          edit:
+            title: Rediger resultat
+            update: Opdater resultat
+          index:
+            title: Resultater
+          new:
+            create: Opret resultat
+            title: Nyt resultat
+        shared:
+          subnav:
+            statuses: Statusser
+        statuses:
+          edit:
+            title: Rediger status
+            update: Opdater status
+          index:
+            title: Statusser
+          new:
+            create: Opret status
+            title: Ny status
+        timeline_entries:
+          edit:
+            title: Rediger Indlæg
+            update: Opdater indlæg
+          index:
+            title: Projekt tidslinje indlæg
+          new:
+            create: Opret indlæg
+            title: Nyt indlæg
+      admin_log:
+        result:
+          create: "%{user_name} oprettede resultat %{resource_name} i %{space_name}"
+          delete: "%{user_name} slettede %{resource_name} resultatet i %{space_name}"
+          update: "%{user_name} opdaterede resultat %{resource_name} i %{space_name}"
+        value_types:
+          parent_presenter:
+            not_found: 'Forældretypen blev ikke fundet i databasen (ID: %{id})'
+      import_mailer:
+        import:
+          errors: Fejl
+          row_number: Række
+          subject: Succesfuld import af resultater
+          success: Succesfuld import af resultater. Du kan gennemgå resultaterne i administrator interfacet.
+      models:
+        result:
+          fields:
+            end_date: Slutdato
+            progress: Fremskridt
+            start_date: Start dato
+            status: Status
+            title: Titel
+        status:
+          fields:
+            description: Beskrivelse
+            key: Nøgle
+            name: Navn
+            progress: Fremskridt
+        timeline_entry:
+          fields:
+            entry_date: Dato
+      results:
+        count:
+          results_count:
+            one: 1 resultat
+            other: "%{count} resultater"
+        filters:
+          all: Alle
+        home:
+          categories_label: Kategorier
+          subcategories_label: Underkategorier
+        home_header:
+          global_status: Samlet gennemførelsesstatus
+        nav_breadcrumb:
+          global: Samlet udførelse
+        search:
+          search: Søg efter handlinger
+        show:
+          stats:
+            back_to_resource: Tilbage til resultater
+        timeline:
+          title: Projektets udvikling
+    components:
+      accountability:
+        name: Ansvarlighed
+        settings:
+          global:
+            comments_enabled: Kommentarer aktiveret
+            comments_max_length: Kommentarer maks. længde (Leave 0 for standardværdi)
+            display_progress_enabled: Vis fremskridt
+            intro: Intro
+            scope_id: Omfang
+            scopes_enabled: Omfang aktiveret
+    resource_links:
+      included_proposals:
+        result_proposal: Forslag i dette resultat

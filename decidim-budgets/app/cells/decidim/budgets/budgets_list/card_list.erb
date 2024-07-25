@@ -1,0 +1,13 @@
+<% if highlighted.any? %>
+  <% reordered_highlighted_budgets.each do |budget| %>
+    <%= cell("decidim/budgets/budget_list_item", budget) %>
+  <% end %>
+<% end %>
+
+<% non_highlighted = reorder(budgets).where.not(id: (highlighted + voted).map(&:id)) %>
+
+<% if non_highlighted.exists? %>
+  <% non_highlighted.each do |budget| %>
+    <%= cell("decidim/budgets/budget_list_item", budget) %>
+  <% end %>
+<% end %>

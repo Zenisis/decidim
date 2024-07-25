@@ -1,0 +1,39 @@
+.conference__program {
+  @apply mb-16 md:mb-36;
+
+  &-selector {
+    @apply grid grid-cols-2 md:flex gap-4 md:gap-1 justify-end [&~*]:mt-6 [&_button]:w-full;
+  }
+
+  &-item {
+    @apply grid grid-cols-12 gap-2 items-start first:[&>*]:col-span-12 md:first:[&>*]:col-span-2 last:[&>*]:col-span-12 md:last:[&>*]:col-span-10;
+  }
+
+  &-time {
+    @apply h-10 grid place-items-center border-b-2 border-tertiary text-center text-xl text-gray-2 font-semibold;
+  }
+
+  &-category {
+    @apply h-10 w-full bg-background-4 border-b-2 border-secondary text-center text-secondary font-semibold text-md truncate leading-10;
+
+    &-container {
+      @apply flex gap-2 [&>*]:grow [&>*]:min-w-0;
+    }
+
+    &-content {
+      @apply [&>a]:block [&>a]:py-4;
+    }
+  }
+
+  &-attribute {
+    @apply flex items-center gap-2 last:[&>*]:flex last:[&>*]:flex-wrap last:[&>*]:items-center last:[&>*]:gap-2 md:last:[&>*]:gap-6;
+
+    &-container {
+      @apply py-6 border-t border-background space-y-6;
+    }
+
+    &-url {
+      @apply underline text-sm text-secondary;
+    }
+  }
+}

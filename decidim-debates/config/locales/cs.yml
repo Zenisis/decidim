@@ -1,0 +1,227 @@
+cs:
+  activemodel:
+    attributes:
+      debate:
+        category_id: Kategorie
+        closed_at: Uzavřeno v
+        conclusions: Závěry
+        decidim_category_id: Kategorie
+        description: Popis
+        end_time: Končí v
+        information_updates: Aktualizace informací
+        instructions: Pokyny k účasti
+        scope_id: Oblast působnosti
+        start_time: Začíná v
+        title: Titul
+        user_group_id: Vytvořte debatu jako
+    models:
+      decidim/debates/close_debate_event: Debata byla uzavřena
+      decidim/debates/create_debate_event: Debata
+      decidim/debates/creation_disabled_event: Debaty zakázány
+      decidim/debates/creation_enabled_event: Vytvoření debat povoleno
+  activerecord:
+    models:
+      decidim/debates/debate:
+        one: Rozprava
+        few: Debaty
+        many: Debaty
+        other: Debaty
+  decidim:
+    components:
+      debates:
+        actions:
+          comment: Komentář
+          create: Vytvořit
+          endorse: Schválit
+        name: Debaty
+        settings:
+          global:
+            announcement: Oznámení
+            comments_enabled: Komentáře povoleny
+            comments_max_length: Maximální délka komentáře (ponechte 0 pro výchozí hodnotu)
+            scope_id: Oblast působnosti
+            scopes_enabled: Oblasti působnosti povoleny
+          step:
+            announcement: Oznámení
+            comments_blocked: Komentáře blokovány
+            creation_enabled: Účastníci mohou vytvářet debaty
+            endorsements_blocked: Schvalování blokováno
+            endorsements_enabled: Schvalování povoleno
+    debates:
+      actions:
+        close: Zavřít
+        confirm_destroy: Jste si jisti?
+        destroy: Odstranit
+        edit: Upravit
+        new: Nová debata
+        title: Akce
+      admin:
+        debate_closes:
+          edit:
+            close: Zavřít
+            title: Ukončit debatu
+        debates:
+          create:
+            invalid: Během debaty vznikl problém.
+            success: Debata byla úspěšně vytvořena.
+          destroy:
+            success: Debata byla úspěšně smazána.
+          edit:
+            title: Upravit debatu
+            update: Aktualizovat debatu
+          form:
+            debate_type: Typ debaty
+            finite: Konečný (s počátečním a koncovým obdobím)
+            open: Otevřený (žádné počáteční nebo koncové období)
+          index:
+            title: Debaty
+          new:
+            create: Vytvořit debatu
+            title: Nová debata
+          update:
+            invalid: Při aktualizaci této debaty došlo k problému.
+            success: Debata byla úspěšně aktualizována.
+        exports:
+          comments: Komentáře
+      admin_log:
+        debate:
+          close: "%{user_name} ukončil debatu %{resource_name} ve skupině %{space_name}"
+          create: "%{user_name} vytvořil debatu %{resource_name} o skupině %{space_name}"
+          update: "%{user_name} aktualizovala %{resource_name} diskusi o %{space_name} prostoru"
+      debate_m:
+        commented_time_ago: Komentováno před %{time}
+      debates:
+        close:
+          invalid: Při uzavírání debaty došlo k chybě.
+          success: Debata byla úspěšně uzavřena.
+        close_debate_modal:
+          cancel: Zrušit
+          description: Jaké je shrnutí nebo závěr této debaty?
+          send: Ukončit debatu
+        count:
+          debates_count:
+            one: "%{count} debata"
+            few: "%{count} debat"
+            many: "%{count} debat"
+            other: "%{count} debat"
+        create:
+          invalid: Při vytváření debaty došlo k chybě.
+          success: Debata byla úspěšně vytvořena.
+        debates:
+          empty: Zatím nejsou žádné diskuse.
+          empty_filters: S těmito kritérii nejsou žádné diskuse.
+        edit:
+          back: Zpět
+          save: Uložit změny
+          title: Upravit debatu
+        filters:
+          activity: Moje aktivita
+          all: Vše
+          category: Kategorie
+          category_prompt: Vyberte kategorii
+          commented: Okomentováno
+          my_debates: Moje rozpravy
+          official: Oficiální
+          origin: Původ
+          participants: Účastníci
+          search: Hledat
+          state: Stav
+          state_values:
+            closed: Uzavřeno
+            open: Otevřeno
+          user_group: Skupiny
+        form:
+          select_a_category: Vyberte kategorii
+        index:
+          new_debate: Nová debata
+        new:
+          back: Zpět
+          create: Vytvořit
+          title: Nová debata
+        orders:
+          commented: Nejvíce komentované
+          label: Řazení rozprav podle
+          random: Náhodné pořadí
+          recent: Nejnovější
+          updated: Naposledy aktualizované
+        show:
+          close_debate: Ukončit debatu
+          debate_closed: Uzavřeno
+          debate_conclusions_are: 'Debata byla uzavřena dne %{date} těmito závěry:'
+          edit_conclusions: Upravit závěry
+          edit_debate: Upravit debatu
+          groups_count: Skupiny
+          open: Otevřená diskuse
+          participants_count: Účastníci
+        update:
+          invalid: Při aktualizaci rozpravy došlo k chybě.
+          success: Debata byla úspěšně aktualizována.
+      last_activity:
+        debate_updated: 'Debata aktualizována:'
+        new_debate: 'Nová debata:'
+      models:
+        debate:
+          fields:
+            end: Konec
+            end_time: Datum ukončení
+            official_debate: Oficiální debata
+            start: Začátek
+            start_time: Datum zahájení
+            title: Titul
+    events:
+      debates:
+        create_debate_event:
+          space_followers:
+            email_intro: |-
+              Dobrý den,
+              Byla vytvořena nová debata "%{resource_title}" ve skupině %{participatory_space_title}, omrkněte a přispějte:
+            email_outro: Toto oznámení jste obdrželi, protože sledujete participační prostor %{participatory_space_title}. Můžete zrušit příjem oznámení na předchozím odkazu.
+            email_subject: Nová debata "%{resource_title}" na %{participatory_space_title}
+            notification_title: Debata <a href="%{resource_path}">%{resource_title}</a> byla vytvořena na <a href="%{participatory_space_url}">%{participatory_space_title}</a>.
+          user_followers:
+            email_intro: |-
+              Ahoj,
+              %{author_name} %{author_nickname}, kterého sledujete, vytvořil novou debatu "%{resource_title}". Omrkněte ji a přispějte:
+            email_outro: Toto oznámení jste obdrželi, protože sledujete %{author_nickname}. Na předchozím odkazu můžete zrušit přijem oznámení.
+            email_subject: Nová debata "%{resource_title}" od %{author_nickname}
+            notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> vytvořil <a href="%{resource_path}">%{resource_title}</a> debatu.
+        creation_disabled:
+          email_intro: 'Tvorba debaty již není aktivní v %{participatory_space_title}. Na otevřených debatách se můžete stále účastnit z této stránky:'
+          email_outro: Toto oznámení jste obdrželi, protože jste sledovali %{participatory_space_title}. Na předchozím odkazu můžete přestat přijímat oznámení.
+          email_subject: Vytváření debaty je zakázáno v %{participatory_space_title}
+          notification_title: Vytváření debaty je nyní zakázáno v <a href="%{participatory_space_url}">%{participatory_space_title}</a>
+        creation_enabled:
+          email_intro: 'Nyní můžete začít debaty v %{participatory_space_title}! Začněte se účastnit této stránky:'
+          email_outro: Toto oznámení jste obdrželi, protože jste sledovali %{participatory_space_title}. Na předchozím odkazu můžete přestat přijímat oznámení.
+          email_subject: Debaty jsou nyní k dispozici v %{participatory_space_title}
+          notification_title: Nyní můžete začít <a href="%{resource_path}">novou debatu</a> v <a href="%{participatory_space_url}">%{participatory_space_title}</a>.
+        debate_closed:
+          affected_user:
+            email_intro: 'Debata "%{resource_title}" byla ukončena. Závěry si můžete přečíst z její stránky:'
+            email_outro: Obdrželi jste toto oznámení, protože sledujete debatu "%{resource_title}". Můžete ji zrušit z předchozího odkazu.
+            email_subject: Debata "%{resource_title}" byla ukončena
+            notification_title: Debata <a href="%{resource_path}">%{resource_title}</a> byla ukončena.
+          follower:
+            email_intro: 'Debata "%{resource_title}" byla ukončena. Závěry si můžete přečíst z její stránky:'
+            email_outro: Obdrželi jste toto oznámení, protože sledujete debatu "%{resource_title}". Můžete ji zrušit z předchozího odkazu.
+            email_subject: Debata "%{resource_title}" byla ukončena
+            notification_title: Debata <a href="%{resource_path}">%{resource_title}</a> byla ukončena.
+    gamification:
+      badges:
+        commented_debates:
+          conditions:
+            - Vyberte si otevřenou debatu, do které se můžete zapojit
+          description: Tento odznak se uděluje, když se aktivně účastníte různých debat tím, že tam zanecháte své komentáře.
+          description_another: Tento uživatel se zúčastnil %{score} debat.
+          description_own: Zúčastnili jste se %{score} debat.
+          name: Debaty
+          next_level_in: Zúčastněte se dalších %{score} debat, abyste dosáhli další úrovně!
+          unearned_another: Tento účastník se dosud nezúčastnil žádné debaty.
+          unearned_own: Zatím jste se nezúčastnili žádné debaty.
+    metrics:
+      debates:
+        description: Počet vytvořených debat
+        object: debaty
+        title: Debaty
+    statistics:
+      debates_count: Debaty

@@ -1,0 +1,186 @@
+sk:
+  activemodel:
+    attributes:
+      config:
+        available_methods: Dostupné metódy
+        offline: Offline
+        offline_explanation: Pokyny pre overenie offline
+        online: Online
+      id_document_information:
+        document_number: Číslo dokumentu (s písmenom)
+        document_type: Typ dokumentu
+      id_document_upload:
+        document_number: Číslo dokumentu (s písmenom)
+        document_type: Typ dokumentu
+        user: Užívateľ
+        verification_attachment: Naskenované kópie dokumentu
+      offline_confirmation:
+        email: Užívateľský email
+      postal_letter_address:
+        full_address: Celá adresa
+      postal_letter_confirmation:
+        verification_code: Overovací kód
+      postal_letter_postage:
+        full_address: Celá adresa
+        verification_code: Overovací kód
+  decidim:
+    admin:
+      menu:
+        authorization_revocation:
+          before_date_info: Užitočné, pokiaľ už proces začal, a chcete zrušiť povolenia, nastavené v predchádzajúcom procese.
+          button: Zrušiť všetky
+          button_before: Zrušiť všetky pred dátumom
+          info: Je tu celkovo %{count} overených účastníkov.
+    authorization_handlers:
+      admin:
+        id_documents:
+          help:
+            - Užívatelia vyplní informácie o svojej identite a nahrajú kópiu dokumentu.
+            - Vyplníte informácie obsiahnuté v nahranom obrázku.
+            - Informácie by mali zodpovedať používateľovi, ktorý vyplnil.
+            - 
+        postal_letter:
+          help:
+            - Užívatelia požadujú, aby ich adresa bola odoslaná certifikačnému kódu.
+            - Na adresu zasielate list s overovacím kódom.
+            - Označte písmeno ako odoslaný.
+            - Akonáhle označíte odoslanej písmeno, užívateľ bude schopný kód zadať a overiť.
+      csv_census:
+        name: Sčítanie organizácie
+      direct: Priamo
+      help: Pomoc
+      id_documents:
+        name: Doklady totožnosti
+      multistep: Viac krokov
+      name: názov
+      postal_letter:
+        name: Kód poštou
+    verifications:
+      authorizations:
+        authorization_metadata:
+          info: 'Údaje ku tejto verifikácii:'
+          no_data_stored: Žiadne uložené údaje.
+        create:
+          error: Pri vytváraní oprávnenia došlo k chybe.
+          unconfirmed: Potrebujete potvrdiť svoj e-mail, aby ste sa autorizovali.
+        destroy:
+          error: Počas rušenia autorizácie nastal problém.
+        first_login:
+          actions:
+            another_dummy_authorization_handler: Overte proti inému príkladu poverenia pre autorizáciu
+            csv_census: Overte voči cenzu organizácie
+            dummy_authorization_handler: Overte proti príklade poverenia autorizácie
+            dummy_authorization_workflow: Overte proti pracovnému postupu autorizácie
+            id_documents: Získajte overenie odoslaním dokladu totožnosti
+            postal_letter: Overte si, či dostanete overovací kód poštou
+            sms: Overte svoj účet prostsredníctvom SMS
+          title: Potvrďte vašu identitu
+          verify_with_these_options: 'Sú to dostupné možnosti na overenie totožnosti:'
+        index:
+          expired_verification: Overovací kód vypršal
+          show_renew_info: Kliknite na obnovenie verifikácie
+        new:
+          authorize: Odoslať
+          authorize_with: Overte pomocou %{authorizer}
+        renew_modal:
+          cancel: zrušenie
+          continue: Pokračovať
+          title: Obnoviť verifikáciu
+        skip_verification: Môžete to teraz preskočiť a %{link}
+        start_exploring: začať skúmať
+      csv_census:
+        admin:
+          census:
+            create:
+              error: Pri importe sčítaní došlo k chybe.
+          destroy:
+            title: Zmazať všetky dáta sčítania
+          index:
+            empty: Neexistujú údaje o sčítaní. Pomocou nižšie uvedeného formulára ho importujte pomocou súboru CSV.
+            title: Aktuálne údaje o sčítaní
+          instructions:
+            body: Ak chcete urobiť, musíte vstúpiť do správy systému a pridať oprávnenia csv_census organizáciu
+          new:
+            file: ".CSV súbor s dátami e-mailov"
+            info: 'Must byť súborom vo formáte CSV s iba jedným stĺpcom s e-mailovou adresou:'
+            submit: Nahrať súbor
+            title: Nahrajte nové sčítanie
+        authorizations:
+          new:
+            error: Váš účet nebol overený, alebo nie ste v sčítanie organizácie.
+            success: Účet bol úspešne overený.
+      dummy_authorization:
+        extra_explanation:
+          postal_codes:
+            one: Účasť je obmedzená na užívateľov s poštovým smerovacím číslom%{postal_codes}.
+            few: 'Účasť je obmedzená na používateľov s niektorým z nasledujúcich poštových smerovacích čísel:%{postal_codes}.'
+            many: 'Účasť je obmedzená na používateľov s niektorým z nasledujúcich poštových smerovacích čísel:%{postal_codes}.'
+            other: 'Účasť je obmedzená na používateľov s niektorým z nasledujúcich poštových smerovacích čísel:%{postal_codes}.'
+      id_documents:
+        admin:
+          config:
+            edit:
+              title: Konfigurácia dokumentov identít
+              update: Aktualizácia
+            update:
+              error: Pri aktualizácii konfigurácie došlo k chybe.
+          confirmations:
+            new:
+              introduce_user_data: Vložte dáta do obrázku
+              reject: Odmietnuť
+              verify: Overte
+          offline_confirmations:
+            new:
+              cancel: zrušenie
+              introduce_user_data: Zadajte e-mail používateľa a dáta dokumentu
+              verify: Overte
+          pending_authorizations:
+            index:
+              config: Konfigurácia
+              offline_verification: Overenie offline
+              title: Čakajúci overenie online
+              verification_number: 'Overenie #%{n}'
+        authorizations:
+          choose:
+            choose_a_type: 'Vyberte, ako chcete overiť:'
+            offline: Offline
+            online: Online
+            title: Overte svoju identitu
+          edit:
+            offline: Použite overenie offline
+            online: Používajte overenie online
+            send: Znovu požiadajte o overení
+          new:
+            send: Požiadajte o overenie
+            title: Nahrajte svoj doklad totožnosti
+        passport: Cestovný pas
+      postal_letter:
+        admin:
+          pending_authorizations:
+            index:
+              address: Adresa
+              letter_sent_at: List adresovaný na
+              mark_as_sent: Označiť ako odoslané
+              not_yet_sent: Doteraz nebola odoslaná
+              title: Prebiehajúce overovanie
+              username: Užívateľské meno
+              verification_code: Overovací kód
+        authorizations:
+          edit:
+            send: Potvrdiť
+          new:
+            send: Pošlite mi list
+            title: Požiadajte o overovací kód
+      sms:
+        authorizations:
+          edit:
+            confirm_destroy: Naozaj chcete obnoviť overovací kód?
+            destroy: Obnoviť overovací kód
+            send: Potvrdiť
+            title: Zadajte overovací kód, ktorý ste obdržali
+          new:
+            send: Pošlite mi SMS
+            title: Požiadajte o overovací kód
+  errors:
+    messages:
+      uppercase_only_letters_numbers: musia byť všetky veľké a obsahujú iba písmená a / alebo čísla

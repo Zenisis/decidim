@@ -1,0 +1,64 @@
+cs:
+  activemodel:
+    attributes:
+      dummy_resource:
+        created_at: Vytvořeno v
+        decidim_scope_id: Oblast působnosti
+        field: Moje pole
+        start_date: Počáteční datum
+        title: Titul
+        translatable_text: Přeložitelný text
+        updated_at: Aktualizováno na
+  decidim:
+    components:
+      dummy:
+        settings:
+          global:
+            guided: Řízené zadávání
+            guided_help: Text nápovědy
+            guided_readonly: Zakázaný zápis
+            guided_rich: Řízené plnohodnotné zadávání
+            guided_rich_help_html: HTML textová <strong>nápověda</strong>
+            guided_rich_readonly_html: HTML <strong>nápověda</strong> text pro zakázaný zápis
+            readonly_attribute: Atribut pouze pro čtení
+            test: Zkouška A
+            test_choices:
+              a: Možnost A
+              b: Možnost B
+              c: Možnost C
+            test_options:
+              bar: Bar
+              baz: Baz
+              foo: Foo
+          step:
+            endorsements_blocked: Schvalování blokováno
+            endorsements_enabled: Schvalování povoleno
+            readonly_step_attribute: Atribut krok čtení
+            test_options:
+              bar: Bar
+              baz: Baz
+              foo: Foo
+    dummy:
+      admin:
+        exports:
+          dummies: Dummies
+    gamification:
+      badges:
+        test:
+          conditions:
+            - Použijte testovací prostředí pro decidim.
+          description: Uživatelé získají tento odznak vytvořením testů.
+          description_another: Tento uživatel vytvořil %{score} testů.
+          description_own: Vytvořili jste %{score} testů.
+          name: Testy
+          next_level_in: Vytvořte %{score} dalších testů, abyste dosáhli další úrovně!
+          unearned_another: Tento uživatel zatím nevytvořil žádné testy.
+          unearned_own: Dosud jste nevytvořili žádné testy.
+    resource_links:
+      test_link:
+        dummy_resource_dummy: Související testovací soubor
+    statistics:
+      bar: Bar
+      dummies_count_high: Figuríny vysoké
+      dummies_count_medium: Dummies střední
+      foo: Foo

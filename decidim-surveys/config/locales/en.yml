@@ -1,0 +1,77 @@
+---
+en:
+  activemodel:
+    models:
+      decidim/surveys/closed_survey_event: Survey ended
+      decidim/surveys/opened_survey_event: Survey started
+  activerecord:
+    models:
+      decidim/surveys/survey:
+        one: Survey
+        other: Surveys
+      decidim/surveys/survey_answer:
+        one: Answer
+        other: Answers
+  decidim:
+    components:
+      surveys:
+        actions:
+          answer: Answer
+        name: Survey
+        settings:
+          global:
+            announcement: Announcement
+            clean_after_publish: Delete answers when publishing the survey
+            ends_at: Answers accepted until
+            ends_at_help: Leave blank for no specific date
+            scope_id: Scope
+            scopes_enabled: Scopes enabled
+            starts_at: Answers accepted from
+            starts_at_help: Leave blank for no specific date
+          step:
+            allow_answers: Allow answers
+            allow_unregistered: Allow unregistered users to answer the survey
+            allow_unregistered_help: If active, no login will be required in order to answer the survey. This may lead to poor or unreliable data and it will be more vulnerable to automated attacks. Use with caution! Mind that a participant could answer the same survey multiple times, by using different browsers or the "private browsing" feature of her web browser.
+            announcement: Announcement
+    events:
+      surveys:
+        survey_closed:
+          email_intro: The survey %{resource_title} in %{participatory_space_title} has been closed.
+          email_outro: You have received this notification because you are following %{participatory_space_title}. You can stop receiving notifications following the previous link.
+          email_subject: A survey has finished in %{participatory_space_title}
+          notification_title: The survey <a href="%{resource_path}">%{resource_title}</a> in <a href="%{participatory_space_url}">%{participatory_space_title}</a> has finished.
+        survey_opened:
+          email_intro: 'The survey %{resource_title} in %{participatory_space_title} is now open. You can participate in it from this page:'
+          email_outro: You have received this notification because you are following %{participatory_space_title}. You can stop receiving notifications following the previous link.
+          email_subject: A new survey in %{participatory_space_title}
+          notification_title: The survey <a href="%{resource_path}">%{resource_title}</a> in <a href="%{participatory_space_url}">%{participatory_space_title}</a> is now open.
+    metrics:
+      survey_answers:
+        description: Number of surveys answered by participants
+        object: answers to surveys
+        title: Answers to surveys
+    statistics:
+      answers_count: Answers
+    surveys:
+      admin:
+        component:
+          actions:
+            answers_alert: If you publish the component, all results will be removed.
+        exports:
+          survey_user_answers: Survey participant answers
+        surveys:
+          update:
+            invalid: There was a problem saving the survey.
+            success: Survey successfully saved.
+      last_activity:
+        new_survey: 'New survey:'
+      survey_confirmation_mailer:
+        confirmation:
+          body: You have successfully answered the %{questionnaire_title} survey within %{participatory_space}
+          subject: Questionnaire %{questionnaire_title} answering confirmation
+        export_name: Survey answers
+      surveys:
+        answer:
+          invalid: There was a problem answering the survey.
+          spam_detected: There was a problem answering the form. Maybe you have been too quick, can you try again?
+          success: Survey successfully answered.

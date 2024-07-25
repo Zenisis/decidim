@@ -1,0 +1,19 @@
+<%= button_reveal_modal %>
+
+<%= decidim_modal id: modal_id do %>
+  <div data-dialog-container>
+    <%= icon "draft-line" %>
+    <h3 class="h3" id="dialog-title-<%= modal_id %>" tabindex="-1" data-dialog-title>
+      <%= modal_title %>
+    </h3>
+
+    <p>
+      <%= modal_body %>
+    </p>
+  </div>
+
+  <div data-dialog-actions>
+    <%= button_cancel %>
+    <%= button_continue %>
+  </div>
+<% end %>

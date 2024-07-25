@@ -1,0 +1,62 @@
+gl:
+  activemodel:
+    attributes:
+      questionnaire:
+        title: Título
+      template:
+        description: Descrición
+        name: Nome
+  decidim:
+    admin:
+      menu:
+        templates: Padróns
+      templates:
+        apply:
+          error: Produciuse un problema ao aplicar o padrón.
+        copy:
+          error: Produciuse un problema ao copiar o padrón.
+        create:
+          error: Produciuse un problema ao crear o padrón.
+        empty: Aínda non hai padróns.
+      titles:
+        template_types:
+          questionnaires: Padrón para cuestionarios
+        templates: Padróns
+    models:
+      questionnaire_template:
+        fields:
+          questions: Número de preguntas
+          title: Título do cuestionario
+      template:
+        fields:
+          created_at: Creado o
+        name: Padrón
+    templates:
+      admin:
+        block_user_templates:
+          form:
+            save: Gardar
+        proposal_answer_templates:
+          form:
+            save: Gardar
+        questionnaire_templates:
+          choose:
+            create_from_template: Crear a partir dun padrón
+            description: Estás a punto de crear un novo cuestonario. Podes escoller un padrón predefinido e modificalo despois.
+            label: Escoller padrón
+            placeholder: Escoller padrón
+            skip_template: Omitir
+          edit:
+            edit: Editar
+            questionnaire: Cuestionario
+          form:
+            title: Padrón de cuestionario %{questionnaire_for}
+          index:
+            confirm_delete: Tes a certeza de querer eliminar este padrón?
+            title: Padróns de cuestionario
+          preview:
+            current_step: Paso %{step}
+            of_total_steps: de %{total_steps}
+            tos_agreement: Ao participar, aceptas os termos do servizo
+      template_types:
+        questionnaires: Cuestionarios

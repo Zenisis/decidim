@@ -1,0 +1,87 @@
+ro:
+  activemodel:
+    attributes:
+      post:
+        body: Conținut
+        decidim_author_id: Autor
+        published_at: Publicat la
+        title: Titlu
+    models:
+      decidim/blogs/create_post_event: Postare nouă pe blog
+  activerecord:
+    models:
+      decidim/blogs/post:
+        one: Postare
+        few: Postări
+        other: Postări
+  decidim:
+    blogs:
+      actions:
+        author_id: Creează postare ca
+        confirm_destroy: Sigur dorești să ştergi această postare?
+        destroy: Șterge
+        edit: Editează
+        new: Postare nouă
+        title: Acțiuni
+      admin:
+        posts:
+          create:
+            invalid: A apărut o eroare la crearea acestei postări.
+            success: Postarea a fost creată cu succes.
+          destroy:
+            success: Postarea a fost ștearsă cu succes.
+          edit:
+            save: Actualizează
+            title: Editează postarea
+          index:
+            not_published_yet: Nu a fost publicat încă.
+            title: Postări
+          new:
+            create: Creează
+            title: Creează postare
+          update:
+            invalid: A apărut o eroare la salvarea postării.
+            success: Postarea a fost salvată cu succes.
+      admin_log:
+        post:
+          create: "%{user_name} a creat postarea de blog %{resource_name} în %{space_name}"
+          delete: "%{user_name} a șters postarea de blog %{resource_name} din %{space_name}"
+          update: "%{user_name} a actualizat postarea de blog %{resource_name} în %{space_name}"
+      last_activity:
+        new_post: 'Postare nouă:'
+      models:
+        post:
+          fields:
+            author: Autor
+            body: Conținut
+            official_blog_post: Postare oficială
+            published_at: Publicat la
+            title: Titlu
+    components:
+      blogs:
+        actions:
+          comment: Comentariu
+          create: Creează
+          destroy: Șterge
+          endorse: Susține
+          update: Actualizează
+        name: Blog
+        settings:
+          global:
+            announcement: Anunţ
+            comments_enabled: Comentarii activate
+            comments_max_length: Lungimea maximă a comentariilor (lăsați 0 pentru valoarea implicită)
+          step:
+            announcement: Anunţ
+            comments_blocked: Comentarii blocate
+            endorsements_blocked: Susțineri blocate
+            endorsements_enabled: Susțineri activate
+    events:
+      blogs:
+        post_created:
+          email_intro: Postarea "%{resource_title}" a fost publicată în "%{participatory_space_title}" pe care o urmărești.
+          email_outro: Ai primit această notificare deoarece urmărești „%{participatory_space_title}”. Poți anula abonarea de la link-ul anterior.
+          email_subject: Postare nouă publicată în %{participatory_space_title}
+          notification_title: Postarea <a href="%{resource_path}">%{resource_title}</a> a fost publicată în %{participatory_space_title}
+    statistics:
+      posts_count: Postări

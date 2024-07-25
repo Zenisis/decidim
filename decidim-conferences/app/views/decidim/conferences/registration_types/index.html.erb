@@ -1,0 +1,39 @@
+<% add_decidim_meta_tags(title: t("registration_types.index.title", scope: "decidim.conferences")) %>
+<% add_decidim_page_title(translated_attribute(current_participatory_space.title)) %>
+
+<%
+edit_link(
+  decidim_admin_conferences.conference_registration_types_path(current_participatory_space.slug),
+  :update,
+  :conference,
+  conference: current_participatory_space
+)
+%>
+
+<%= append_javascript_pack_tag "decidim_conferences" %>
+<%= append_stylesheet_pack_tag "decidim_conferences" %>
+
+<%# NOTE: this page does not use a regular layout %>
+<main class="container">
+
+  <section>
+    <h1 class="title-decorator my-12">
+      <span class="not-sr-only"><%= t("registration_types.index.register", scope: "decidim.conferences") %></span>
+      <span class="sr-only"><%= t("registration_types.index.register", scope: "decidim.conferences") %> (<%= translated_attribute current_participatory_space.title %>)</span>
+    </h1>
+
+    <%= render partial: "decidim/devise/shared/login_boxes", locals: { scope: "decidim.conferences.conferences.show" } unless current_user %>
+
+    <% if collection.any? %>
+      <p class="conference__registration-container-title"><%= t(".choose_an_option") %></p>
+      <div class="conference__registration-container">
+        <% collection.each do |registration_type| %>
+          <%= cell "decidim/conferences/registration_type", registration_type, allowed: allowed_to?(:join, :conference, conference: current_participatory_space) %>
+        <% end %>
+      </div>
+    <% else %>
+      <%= cell("decidim/announcement", t("registration_types.index.no_registrations", scope: "decidim.conferences")) %>
+    <% end %>
+  </section>
+
+</main>

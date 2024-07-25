@@ -1,0 +1,14 @@
+<%= decidim_modal id: "budget-excess" do %>
+  <div data-dialog-container>
+    <%= icon "error-warning-line" %>
+    <h3 class="h3" id="dialog-title-budget-excess" data-dialog-title>
+      <%= current_order.projects_rule? ? t(".projects_excess.title") : t(".budget_excess.title") %>
+    </h3>
+    <p id="dialog-desc-budget-excess"><%= current_order.projects_rule? ? t(".projects_excess.description") : t(".budget_excess.description") %></p>
+  </div>
+  <div data-dialog-actions>
+    <button data-dialog-close="budget-excess" class="button button__sm md:button__lg button__secondary">
+      <%= t("ok", scope: "decidim.budgets.projects.budget_excess") %>
+    </button>
+  </div>
+<% end %>

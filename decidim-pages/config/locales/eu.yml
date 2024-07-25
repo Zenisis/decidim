@@ -1,0 +1,32 @@
+eu:
+  activerecord:
+    models:
+      decidim/pages/page:
+        one: Orria
+        other: Orriak
+  decidim:
+    admin_log:
+      page:
+        update: "%{user_name} k %{resource_name} orrialdea hemen %{space_name} eguneratu du"
+    components:
+      pages:
+        name: Orria
+        settings:
+          global:
+            announcement: Oharra
+          step:
+            announcement: Oharra
+    pages:
+      admin:
+        models:
+          components:
+            body: Gorputza
+        pages:
+          edit:
+            save: Eguneratu
+            title: Editatu orria
+          update:
+            invalid: Arazo bat egon da argitalpena gordetzean.
+            success: Orria zuzen gorde da.
+      show:
+        empty: Oraindik ez dago edukirik webgune honetan.

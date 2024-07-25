@@ -1,0 +1,250 @@
+ru:
+  activemodel:
+    attributes:
+      initiative:
+        decidim_user_group_id: Автор
+        description: Описание
+        offline_votes: Выражения поддержки на личных встречах
+        scope_id: Охват
+        signature_end_date: Конец периода сбора подписей
+        signature_start_date: Начало периода сбора подписей
+        signature_type: Вид сбора подписей
+        signature_type_values:
+          any: Смешанный
+          offline: Лицом к лицу
+          online: Онлайн
+        title: Заголовок
+      initiatives_committee_member:
+        user: Член рабочей группы
+      initiatives_type:
+        banner_image: Изображение баннера
+        description: Описание
+        title: Название
+      organization_data:
+        address: Адрес
+        id_document: Документ, удостоверяющий личность
+        name: Полное имя
+  activerecord:
+    models:
+      decidim/initiative_comittee:
+        one: Рабочая группа
+        few: Рабочих группы
+        many: Рабочих групп
+        other: Рабочих групп
+      decidim/initiative_vote:
+        one: Подпись
+        few: Подписи
+        many: Подписей
+        other: Подписей
+  decidim:
+    admin:
+      actions:
+        new_initiative_type: Добавить вид почина
+      menu:
+        information: Сведения
+        initiatives: Почины
+        initiatives_types: Виды починов
+      models:
+        initiatives:
+          fields:
+            created_at: 'Создано:'
+            state: Cостояние
+            supports_count: Подписей
+            title: Почины
+        initiatives_type_scope:
+          fields:
+            scope: Охват
+            supports_required: Сколько необходимо выражений поддержки
+          name: Охват вида почина
+        initiatives_types:
+          fields:
+            created_at: 'Создано:'
+            title: Виды починов
+          name: Вид почина
+      titles:
+        initiatives: Почины
+        initiatives_types: Виды починов
+    events:
+      initiatives:
+        initiative_extended:
+          email_intro: Срок сбора подписей в поддержку почина %{resource_title} продлен!
+          email_outro: Вы получили это уведомление, потому что вы следите за «%{resource_title}». Вы можете отписаться от уведомлений, перейдя по приведенной выше ссылке.
+          email_subject: Срок сбора подписей в поддержку почина продлен!
+          notification_title: Срок сбора подписей в поддержку почина <a href="%{resource_path}">%{resource_title}</a> продлен.
+        milestone_completed:
+          affected_user:
+            email_subject: Достигнута новая веха!
+          follower:
+            email_intro: Почин %{resource_title} достиг %{percentage}% подписей!
+            email_subject: Достигнута новая веха!
+            notification_title: Почин <a href="%{resource_path}">%{resource_title}</a> достиг %{percentage}% подписей.
+    initiatives:
+      admin:
+        answers:
+          info_initiative:
+            state: Cостояние
+        committee_requests:
+          index:
+            approve: Одобрить
+            confirm_revoke: Вы уверены?
+            revoke: Отозвать
+            title: Члены рабочей группы
+        initiatives:
+          edit:
+            accept: Принять почин
+            confirm: Вы уверены?
+            discard: Отбросить почин
+            export_votes: Сохранить выражения поддержки в виде файла
+            reject: Отклонить почин
+            send_to_technical_validation: Отправить на техническую проверку
+            update: Обновить
+          form:
+            title: Общие сведения
+          index:
+            actions_title: Действие
+            preview: Предпросмотр
+            print: Распечатать
+        initiatives_type_scopes:
+          edit:
+            title: Изменить охват вида почина
+            update: Обновить
+          new:
+            create: Создать
+            title: Создать охват вида почина
+        initiatives_types:
+          edit:
+            update: Обновить
+          initiative_type_scopes:
+            title: Охваты для вида почина
+          new:
+            create: Создать
+            title: Добавить вид почина
+      admin_log:
+        initiative:
+          publish: "%{user_name} обнародовал почин %{resource_name}"
+          send_to_technical_validation: "%{user_name} отправил почин %{resource_name} на техническую проверку"
+          unpublish: "%{user_name} отбросил почин %{resource_name}"
+          update: "%{user_name} обновил почин %{resource_name}"
+      admin_states:
+        created: Созданные
+        discarded: Отброшенные
+        validating: Техническая проверка
+      application_helper:
+        filter_state_values:
+          closed: Закрыты
+          open: Открыты
+      committee_requests:
+        new:
+          continue: Продолжить
+        spawn:
+          success: Ваш запрос отправлен автору почина.
+      content_blocks:
+        highlighted_initiatives:
+          name: Рекомендуемые почины
+      create_initiative:
+        fill_data:
+          back: Вернуться
+          continue: Продолжить
+          more_information: "(Дополнительные сведения)"
+          select_scope: Выбрать охват
+        finish:
+          back: Вернуться
+          back_to_initiatives: Вернуться к починам
+          go_to_my_initiatives: Перейти к моим починам
+          more_information: "(Дополнительные сведения)"
+        previous_form:
+          back: Вернуться
+          continue: Продолжить
+        promotal_committee:
+          more_information: "(Дополнительные сведения)"
+        select_initiative_type:
+          back: Вернуться
+          more_information: (Дополнительные сведения)
+        share_committee_link:
+          invite_to_committee_help: Ссылка для приглашения людей, которые войдут в рабочую группу по продвижению
+      events:
+        create_initiative_event:
+          email_intro: "%{author_name} %{author_nickname}, за которым вы следите, создал новый почин. Прочитайте его и внесите свой вклад:"
+          email_outro: Вы получили это уведомление, потому что вы следите за «%{author_nickname}». Вы можете отписаться от уведомлений, перейдя по приведенной выше ссылке.
+          email_subject: Новый почин от %{author_nickname}
+          notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> предложил почин <a href="%{resource_path}">%{resource_title}</a>.
+        endorse_initiative_event:
+          email_intro: "%{author_name} %{author_nickname}, за которым вы следите, поддержал следующую инициативу. Возможно, вы хотите поучаствовать в разговоре:"
+          email_outro: Вы получили это уведомление, потому что вы следите за «%{author_nickname}». Вы можете отписаться от уведомлений, перейдя по приведенной выше ссылке.
+          email_subject: Инициатива поддержана %{author_nickname}
+          notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> поддержал почин <a href="%{resource_path}">%{resource_title}</a>.
+      initiative_votes:
+        create:
+          error: При попытке подписаться за этот почин произошли ошибки.
+      initiatives:
+        author_list:
+          hidden_authors_count:
+            one: и еще 1 человек
+            few: и еще %{count} людей
+            many: и еще %{count} человек
+            other: и еще %{count} человек
+        count:
+          title:
+            one: "%{count} почин"
+            few: "%{count} почина"
+            many: "%{count} починов"
+            other: "%{count} починов"
+        filters:
+          any: Любые
+          author: Автор
+          myself: Мои почины
+          state: Cостояние
+          type: Вид
+        index_header:
+          new_initiative: Добавить почин
+        orders:
+          label: 'Упорядочить инициативы по:'
+          most_commented: Самые комментируемые
+          most_voted: С наибольшим количеством подписей
+          random: Произвольно
+          recent: Самые последние
+        print:
+          city: Город
+        result:
+          initiative_rejected_reason: Этот почин был отвергнут из-за недостатка поддержки.
+        signatures_count:
+          one: " подпись"
+          few: " подписи"
+          many: " подписей"
+          other: " подписей"
+        vote_cabin:
+          already_voted: Уже подписали
+          vote: Подписать
+          votes_blocked: Подписание отключено
+        votes_count:
+          count:
+            one: ПОДПИСЬ
+            few: ПОДПИСИ
+            many: ПОДПИСЕЙ
+            other: ПОДПИСЕЙ
+      initiatives_mailer:
+        creation_subject: Ваш гражданский почин '%{title}' был создан
+        initiative_link:
+          check_initiative_details: Вы можете посмотреть сведения о почине
+          here: здесь
+        more_information: Вот дополнительные сведения о процессе создания почина.
+        progress_report_body_for: Почин %{title} достиг %{percentage}% от необходимой поддержки.
+        progress_report_for: 'Кратко о почине: %{title}'
+        promotal_committee_help: Помните, что вы должны пригласить не менее %{member_count} человек в рабочую группу по продвижению. Перешлите им следующую ссылку, чтобы пригласить их в рабочую группу по продвижению
+        status_change_body_for: 'Состояние почина %{title} изменилось на: %{state}'
+        status_change_for: Состояние почина %{title} изменилось
+      states:
+        accepted: Принятые
+        expired: Истекшие
+    menu:
+      initiatives: Почины
+  layouts:
+    decidim:
+      initiative_creation_header:
+        fill_data: Создать
+        finish: Закончить
+        promotal_committee: Рабочая группа по продвижению
+        select_initiative_type: Выбрать
+      initiatives:
+        no_initiatives_yet:
+          no_initiatives_yet: Еще нет ни одного почина!

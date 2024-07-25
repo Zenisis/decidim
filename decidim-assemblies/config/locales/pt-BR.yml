@@ -1,0 +1,456 @@
+pt-BR:
+  activemodel:
+    attributes:
+      assemblies_type:
+        title: Título
+      assembly:
+        announcement: Avisos
+        area_id: Área
+        assembly_type: Tipo de assembleia
+        assembly_type_other: Outro tipo de assambleia
+        banner_image: Imagem da bandeira
+        closing_date: Data de finalização
+        closing_date_reason: Razão da data de finalização
+        composition: Composição
+        copy_categories: Copiar categorias
+        copy_components: Copiar componentes
+        copy_features: Recursos de cópia
+        created_by: Criado por
+        created_by_other: Criado por outro
+        creation_date: Data de criação
+        decidim_area_id: Área
+        decidim_assemblies_type_id: Tipo de assembleia
+        decidim_scope_id: Âmbito
+        description: Descrição
+        developer_group: Grupo promotor
+        document: Documento
+        domain: Domínio
+        duration: Duração
+        facebook: Facebook
+        github: GitHub
+        hashtag: Hashtag
+        hero_image: Imagem inicial
+        import_attachments: Importar anexos
+        import_categories: Importar categorias
+        import_components: Importar componentes
+        included_at: Incluído em
+        instagram: Instagram
+        internal_organisation: Organização interna
+        is_transparent: É transparente
+        local_area: Área da organização
+        meta_scope: Metadados do escopo
+        parent_id: Assembleia mãe
+        participatory_processes_ids: Processos participativos relacionados
+        participatory_scope: O que é decidido
+        participatory_structure: Como é decidido
+        private_space: Espaço privado
+        promoted: Destacado
+        published_at: Publicado em
+        purpose_of_action: Objetivo da ação
+        scope_id: Âmbito
+        scopes_enabled: Escopos ativados
+        short_description: Pequena descrição
+        slug: Slug de URL
+        special_features: Funcionalidades especiais
+        subtitle: Subtítulo
+        target: Quem participa
+        title: Título
+        twitter: X
+        weight: Posição de ordem
+        youtube: YouTube
+      assembly_member:
+        birthday: Aniversário
+        birthplace: Local de nascimento
+        ceased_date: Data de cessação
+        designation_date: Data de designação
+        full_name: Nome completo
+        gender: Gênero
+        non_user_avatar: Avatar
+        position: Posição
+        user_id: Usuário ou grupo
+        weight: Posição de ordem
+      assembly_user_role:
+        email: E-mail
+        name: Nome
+        role: Cargo
+    errors:
+      models:
+        assembly:
+          attributes:
+            document:
+              allowed_file_content_types: 'Tipo de documento inválido. Apenas arquivos com as seguintes extensões são permitidos: %{types}.'
+  activerecord:
+    models:
+      decidim/assembly:
+        one: Assembleia
+        other: Assembleias
+      decidim/assembly_member:
+        one: Membro da assembleia
+        other: Membros da assembleia
+      decidim/assembly_user_role:
+        one: Cargo do usuário da Assembleia
+        other: Funções do usuário da Assembleia
+  decidim:
+    admin:
+      actions:
+        import_assembly: Importar
+        new_assembly: Nova assembleia
+        new_assembly_member: Novo membro da assembleia
+        new_assembly_type: Novo tipo de assembleia
+        new_assembly_user_role: Novo administrador da assembleia
+      assemblies:
+        create:
+          error: Ocorreu um erro ao criar uma nova assembleia.
+          success: Assembleia criada com sucesso.
+        edit:
+          update: Atualizar
+        index:
+          private: Privado
+          public: Público
+          published: Publicados
+          unpublished: Despublicado
+        new:
+          create: Criar
+          title: Nova assembleia
+        update:
+          error: Ocorreu um erro ao atualizar esta assembleia.
+          success: Assembleia atualizada com sucesso.
+      assemblies_copies:
+        create:
+          error: Ocorreu um erro ao duplicar esta assembleia.
+          success: Assembleia duplicada com sucesso.
+      assemblies_types:
+        create:
+          error: Ocorreu um erro ao criar um novo tipo de assembleia.
+          success: Tipo de assembleia criado com sucesso.
+        destroy:
+          success: Tipo de assembleia excluído com sucesso.
+        new:
+          create: Criar
+          title: Novo tipo de assembleia
+        update:
+          error: Ocorreu um erro ao atualizar este tipo de assembleia.
+          success: Tipo de assembleia atualizado com sucesso.
+      assembly_copies:
+        new:
+          copy: Cópia
+          select: Selecione os dados que você gostaria de duplicar
+          title: Duplicar assembleia
+      assembly_imports:
+        create:
+          error: Ocorreu um erro ao importar esta assembleia.
+          success: Assembleia importada com sucesso.
+        new:
+          import: Importar
+          select: Selecione quais dados você gostaria de importar
+          title: Importar assembleia
+      assembly_members:
+        create:
+          error: Ocorreu um erro ao adicionar um membro para esta assembleia.
+          success: Membro criado com sucesso para esta assembleia.
+        destroy:
+          success: Membro excluído com êxito para esta assembleia.
+        edit:
+          title: Atualizar membro da assembleia
+          update: Atualizar
+        index:
+          assembly_members_title: Membros da assembleia
+        new:
+          create: Criar
+          title: Novo membro da assembleia
+        update:
+          error: Houve um erro ao atualizar o membro para esta assembleia.
+          success: Membro atualizado com êxito para esta assembleia.
+      assembly_publications:
+        create:
+          error: Ocorreu um erro ao publicar esta assembleia.
+          success: Assembleia publicada com sucesso.
+        destroy:
+          error: Ocorreu um erro ao atualizar esta assembleia.
+          success: Assembleia não publicada com sucesso.
+      assembly_user_roles:
+        create:
+          error: Ocorreu um erro ao adicionar um administrador para esta assembleia.
+          success: Usuário administrador adicionado com sucesso a esta assembleia.
+        destroy:
+          success: Usuário removido com sucesso deste assembleia.
+        edit:
+          title: Atualizar administrador da assembleia
+          update: Atualizar
+        index:
+          assembly_admins_title: Administradores da assembleia
+        new:
+          create: Criar
+          title: Novo administrador da assembleia
+        update:
+          error: Ocorreu um erro ao atualizar um administrador para esta assembleia.
+          success: Administrador atualizado com sucesso para esta assembleia.
+      filters:
+        ceased_date_not_null:
+          label: Cessado
+          values:
+            'false': Não cessado
+            'true': Cessado
+        decidim_assemblies_type_id_eq:
+          label: Tipo de assembleia
+        search_placeholder:
+          full_name_or_user_name_or_user_nickname_cont: Procurar por nome ou nome de usuário
+      menu:
+        assemblies: Assembleias
+        assemblies_submenu:
+          assembly_admins: Administradores da assembleia
+          assembly_members: Membros
+          attachment_collections: Pastas
+          attachment_files: arquivos
+          attachments: Anexos
+          categories: Categorias
+          components: Componentes
+          info: Sobre essa assambleia
+          landing_page: Página principal
+          moderations: Moderação
+          see_assembly: Ver assembleia
+        assemblies_types: Tipos de assembleia
+      models:
+        assemblies_types:
+          fields:
+            created_at: Criado em
+            title: Título
+        assembly:
+          fields:
+            actions: Ações
+            created_at: Criado em
+            private: Privado
+            promoted: Em destaque
+            published: Publicados
+            title: Título
+          name: Assembleia
+        assembly_member:
+          fields:
+            ceased_date: Data de cessação
+            designation_date: Data de designação
+            full_name: Nome
+            position: Posição
+          name: Membro
+          positions:
+            other: De outros
+            president: Presidente
+            secretary: Secretário
+            vice_president: Vice presidente
+        assembly_user_role:
+          fields:
+            email: O email
+            name: Nome
+            role: Cargo
+          name: Administrador da assembleia
+          roles:
+            admin: Administrador
+            collaborator: Colaborador
+            moderator: Moderador
+            valuator: Avaliador
+      titles:
+        assemblies: Assembleias
+        assemblies_types: Tipos de assembleia
+    admin_log:
+      assembly:
+        create: "%{user_name} criou a assembleia %{resource_name}"
+        duplicate: "%{user_name} duplicou a assembleia %{resource_name}"
+        export: "%{user_name} exportou a assembleia %{resource_name}"
+        import: "%{user_name} importou a assembleia %{resource_name}"
+        publish: "%{user_name} publicou a assembleia %{resource_name}"
+        unpublish: "%{user_name} não desplublicou a assembleia %{resource_name}"
+        update: "%{user_name} atualizou a assembleia %{resource_name}"
+      assembly_member:
+        create: "%{user_name} criou o membro %{resource_name} na assembleia %{space_name}"
+        delete: "%{user_name} removeu o membro %{resource_name} da assembleia %{space_name}"
+        update: "%{user_name} atualizou o %{resource_name} membro na assembleia %{space_name}"
+      assembly_setting:
+        update: "%{user_name} atualizou as configurações da assembleia"
+      assembly_type:
+        create: "%{user_name} criou o tipo de assembleia %{resource_name}"
+        delete: "%{user_name} removeu o tipo de assembleia %{resource_name}"
+        publish: "%{user_name} publicou o tipo de assembleia %{resource_name}"
+        unpublish: "%{user_name} despublicou o tipo de assembleia %{resource_name}"
+        update: "%{user_name} atualizou o tipo de assembleia %{resource_name}"
+      assembly_user_role:
+        create: "%{user_name} convidou %{resource_name} para a assembelia %{space_name}"
+        delete: "%{user_name} removeu o usuário %{resource_name} da assembleia %{space_name}"
+        update: "%{user_name} alterou a função de %{resource_name} na assembleia %{space_name}"
+    assemblies:
+      admin:
+        assemblies:
+          form:
+            announcement_help: O texto que você inserir aqui será mostrado ao usuário logo abaixo das informações de assembleia.
+            duration: Duração
+            duration_help: Se a duração dessa assembleia for limitada, selecione a data final. Caso contrário, aparecerá como indefinido.
+            filters: Filtros
+            images: Imagens
+            included_at_help: Selecione a data em que a assambleia foi adicionada à plataforma. Não precisa necessariamente ser o mesmo que a data de criação.
+            metadata: Metadados
+            other: De outros
+            select_a_created_by: Selecione um criado por
+            select_an_area: Selecione uma área
+            select_an_assembly_type: Selecione um tipo de assembleia
+            select_parent_assembly: Selecione a assembleia mãe
+            slug_help_html: 'Os slugs de URL são usados ​​para gerar os URLs que apontam para essa assembleia. Apenas aceita letras, números e traços, e deve começar com uma carta. Exemplo: %{url}'
+            social_handlers: Social
+            title: Informação geral
+        assemblies_types:
+          form:
+            title: Editar o tipo de assembleia
+        assembly_copies:
+          form:
+            slug_help_html: 'Os slugs de URL são usados ​​para gerar os URLs que apontam para essa assembleia. Apenas aceita letras, números e traços, e deve começar com uma carta. Exemplo: %{url}'
+        assembly_imports:
+          form:
+            slug_help_html: 'Os slugs de URL são usados ​​para gerar os URLs que apontam para essa assembleia. Apenas aceita letras, números e traços, e deve começar com uma carta. Exemplo: %{url}'
+        assembly_members:
+          form:
+            existing_user: Participante existente
+            explanation: 'Orientação para a imagem:'
+            non_user: Não-participante
+            non_user_avatar_help: Você deve receber o consentimento das pessoas antes de publicá-las como membro.
+            select_a_position: Selecione uma posição
+            select_user: Selecione um participante
+            user_type: Tipo de participante
+        content_blocks:
+          highlighted_assemblies:
+            max_results: Quantidade máxima de elementos para mostrar
+        new_import:
+          accepted_types:
+            json: JSON
+      assemblies:
+        description:
+          area_name: Área
+          closing_date: Data de encerramento
+          created_by: Criado por
+          creation_date: Data de criação
+          data: Dados da assembleia
+          developer_group: Grupo promotor
+          duration: Duração
+          included_at: Incluído em
+          indefinite_duration: Indefinido
+          local_area: Área de organização
+          meta_scope: Escopo
+          participatory_scope: O que é decidido
+          participatory_structure: Como é decidido
+          target: Quem participa
+          title: Sobre essa assembleia
+        filters:
+          names:
+            all: Todos
+          type: Tipo
+        show:
+          title: Sobre essa assembleia
+      assembly_members:
+        index:
+          members: Membros
+      assembly_types:
+        commission: Comissão
+        consultative_advisory: Consultivo / Consultivo
+        executive: Executivo
+        government: Governo
+        others: Outras
+        participatory: Participativo
+        working_group: Grupo de trabalho
+      content_blocks:
+        children_assemblies:
+          name: Assembleias
+        dates_metadata:
+          name: Metadados dos dados
+        extra_data:
+          name: Tipo e duração
+        highlighted_assemblies:
+          name: Assembleias em destaque
+        related_assemblies:
+          name: Assembleias Relacionadas
+      created_by:
+        city_council: Câmara Municipal
+        others: Outras
+        public: Público
+      filter:
+        all: Todos os tipos
+        commission: Comissão
+        consultative_advisory: Consultivo / Consultivo
+        executive: Executivo
+        government: Governo
+        help: 'Exposição:'
+        others: Outras
+        participatory: Participativo
+        working_group: Grupo de trabalho
+      index:
+        title: Assembleias
+      last_activity:
+        new_assembly: 'Nova assembleia:'
+      pages:
+        home:
+          highlighted_assemblies:
+            active_spaces: Assembleias ativas
+            see_all_spaces: Ver todas as assembleias 
+        user_profile:
+          member_of:
+            member_of: Membro de
+      show:
+        assembly_type: Tipo de assembleia
+        duration: Duração
+        private_space: Esta é uma assembleia privada
+        social_networks_title: Visite assembleia em
+    assembly_members:
+      assembly_member:
+        designated_on: Designado em
+      index:
+        title: Membros
+    events:
+      assemblies:
+        create_assembly_member:
+          email_intro: Um administrador da assembleia <a href="%{resource_url}">%{resource_name}</a> adicionou você como um de seus membros.
+          email_outro: Você recebeu esta notificação porque foi convidado para um assembleia. Verifique a <a href="%{resource_url}">página de assembleia</a> para contribuir!
+          email_subject: Você foi convidado para ser um membro da assembleia %{resource_name}!
+          notification_title: Você foi registrado como um membro da Assembleia <a href="%{resource_path}">%{resource_name}</a>. Verifique a <a href="%{resource_path}">página do assembleia</a> para contribuir!
+      assembly:
+        role_assigned:
+          email_intro: Você foi atribuído como %{role} para assembleia "%{resource_title}".
+          email_outro: Você recebeu esta notificação porque você é %{role} da assembleia "%{resource_title}".
+          email_subject: Você foi designado como %{role} para "%{resource_title}".
+          notification_title: Você foi atribuído como %{role} para assembleia <a href="%{resource_url}">%{resource_title}</a>.
+    help:
+      participatory_spaces:
+        assemblies:
+          contextual: "<p>Uma <strong>assembleia</strong> é um grupo de membros de uma organização que se reúne periodicamente para tomar decisões sobre uma área ou escopo específico da organização.</p> <p>As assembleias realizam reuniões, algumas são privadas e outras estão abertas. Se estiverem abertas, é possível participar delas (por exemplo: participar se a capacidade permitir, adicionar pontos à agenda ou comentar as propostas e decisões tomadas por este órgão).</p> <p>Exemplos: Assembleia Geral (que se reúne uma vez por ano para definir as principais linhas de ação da organização, bem como seus órgãos executivos por votação), um conselho consultivo para a igualdade (que se reúne a cada dois meses para apresentar propostas sobre como melhorar as relações de gênero na organização), uma comissão de avaliação (que se reúne todos os meses para monitorar um processo) ou um órgão de garantia (que coleta incidentes, abusos ou propostas para melhorar os procedimentos de tomada de decisão) são exemplos de assembleias.</p>\n"
+          page: "<p>Uma <strong>assembleia</strong> é um grupo de membros de uma organização que se reúne periodicamente para tomar decisões sobre uma área ou escopo específico da organização.</p> <p>As assembleias realizam reuniões, algumas são privadas e outras estão abertas. Se estiverem abertas, é possível participar delas (por exemplo: participar se a capacidade permitir, adicionar pontos à agenda ou comentar as propostas e decisões tomadas por este órgão).</p> <p>Exemplos: Assembleia Geral (que se reúne uma vez por ano para definir as principais linhas de ação da organização, bem como seus órgãos executivos por votação), um conselho consultivo para a igualdade (que se reúne a cada dois meses para apresentar propostas sobre como melhorar as relações de gênero na organização), uma comissão de avaliação (que se reúne todos os meses para monitorar um processo) ou um órgão de garantia (que coleta incidentes, abusos ou propostas para melhorar os procedimentos de tomada de decisão) são exemplos de assembleias.</p>\n"
+          title: O que são montagens?
+    log:
+      value_types:
+        assembly_presenter:
+          not_found: 'A assembleia não foi encontrada no banco de dados (ID: %{id})'
+        assembly_type_presenter:
+          not_found: 'O tipo de assembleia não foi encontrado no banco de dados (ID: %{id})'
+    menu:
+      assemblies: Assembleias
+    metrics:
+      assemblies:
+        description: Número de montagens criadas
+        object: assembleias
+        title: Assembleias
+    participatory_processes:
+      show:
+        related_assemblies: Assembleias Relacionadas
+    statistics:
+      assemblies_count: Assembleias
+  layouts:
+    decidim:
+      assemblies:
+        assembly:
+          more_info: Mais informações
+          take_part: Participar
+        index:
+          promoted_assemblies: Montagens destacadas
+        metadata:
+          children_item:
+            one: "Assembleia %{count}"
+            other: "Assembleia %{count}"
+        order_by_assemblies:
+          assemblies:
+            one: "%{count} assembleia"
+            other: "%{count} assembleias"
+      assembly_navigation:
+        assembly_member_menu_item: Membros

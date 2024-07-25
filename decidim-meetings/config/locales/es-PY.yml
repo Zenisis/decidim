@@ -1,0 +1,690 @@
+es-PY:
+  activemodel:
+    attributes:
+      close_meeting:
+        attendees_count: Número de asistentes
+        attending_organizations: Lista de organizaciones que han participado
+        audio_url: URL de audio
+        closing_report: Acta
+        closing_visible: Es visible
+        contributions_count: Número de contribuciones
+        proposal_ids: Propuestas creadas en el encuentro
+        video_url: URL de video
+      meeting:
+        address: Dirección
+        available_slots: Espacios disponibles para este encuentro
+        customize_registration_email: Personalizar email de inscripción
+        decidim_category_id: Categoría
+        decidim_scope_id: Ámbito
+        decidim_user_group_id: Grupo de usuarias
+        description: Descripción
+        end_time: Día y hora de finalización
+        id: ID
+        iframe_access_level: Visualización de la sala videoconferencia
+        iframe_embed_type: Visualización de la sala de videoconferencia
+        iframe_embed_type_html: Sólo unos pocos servicios permiten "Incrustar en la página de reunión" o "Abrir en la página del evento en directo". Tenga en cuenta que con la opción "Incrustar en la página de reunión" en teléfonos móviles, ya que la pantalla hereda diferentes dimensiones, en realidad funcionará como una "Abrir en la página del evento en directo".
+        location: Ubicación
+        location_hints: Pistas de ubicación
+        online_meeting_url: URL del encuentro online
+        organizer_gid: Crear como
+        organizer_id: Organizador
+        private_meeting: Encuentro privado
+        registration_email_custom_content: Contenido personalizado del email de inscripción
+        registration_form_enabled: Formulario de inscripción habilitado
+        registration_terms: Términos y condiciones de inscripción
+        registration_type: Tipo de inscripción
+        registration_url: URL de inscripción
+        registrations_enabled: Inscripciones abiertas
+        reserved_slots: Plazas reservadas para este encuentro
+        start_time: Día y hora de inicio
+        title: Título
+        transparent: Transparente
+        type_of_meeting: Tipo
+      meeting_agenda:
+        title: Título
+        visible: Visible
+      meeting_agenda_items:
+        description: Descripción
+        duration: Duración
+        title: Título
+      meeting_registration_invite:
+        email: Correo electrónico
+        name: Nombre
+      validate_registration_code:
+        code: Código
+    errors:
+      models:
+        meeting:
+          attributes:
+            iframe_embed_type:
+              not_embeddable: Esta URL no puede ser incrustada en la página de encuentro o evento en directo.
+            online_meeting_url:
+              url_format: Debe ser una URL válida
+        meeting_agenda:
+          attributes:
+            base:
+              too_many_minutes: La duración de los ítems supera la duración del encuentro en %{count} minutos.
+              too_many_minutes_child: La duración de los sub-ítems excede el punto "%{parent_title}" del orden del día en %{count} minuto.
+        meeting_registration_invite:
+          attributes:
+            email:
+              already_invited: Ya se había invitado a este correo electrónico.
+    models:
+      decidim/meetings/close_meeting_event: Encuentro cerrado
+      decidim/meetings/create_meeting_event: Encuentro
+      decidim/meetings/meeting_registrations_enabled_event: Registro habilitado
+      decidim/meetings/meeting_registrations_over_percentage_event: Registros por encima del límite
+      decidim/meetings/upcoming_meeting_event: Próximo encuentro
+      decidim/meetings/update_meeting_event: Encuentro actualizado
+  activerecord:
+    models:
+      decidim/meetings/meeting:
+        one: Encuentro
+        other: Encuentros
+      decidim/meetings/minutes:
+        one: Acta
+        other: Actas
+      decidim/meetings/registration:
+        one: Registro
+        other: Registros
+  decidim:
+    admin:
+      filters:
+        accepted_at_not_null:
+          label: Aceptada
+          values:
+            'false': No aceptada
+            'true': Aceptada
+        meetings:
+          category_id_eq:
+            label: Categoría
+          closed_at_present:
+            label: Estado
+            values:
+              'false': Abierto
+              'true': Cerrado
+          is_upcoming_true:
+            label: Fecha
+            values:
+              'false': Pasados
+              'true': Próximos
+          scope_id_eq:
+            label: Ámbito
+          with_any_origin:
+            label: Origen
+            values:
+              official: Oficial
+              participants: Participante
+              user_group: Grupos
+          with_any_type:
+            label: Tipo de encuentro
+            values:
+              hybrid: Híbrido
+              in_person: Presencial
+              online: Online
+        rejected_at_not_null:
+          label: Rechazada
+          values:
+            'false': No rechazada
+            'true': Rechazada
+        search_placeholder:
+          user_name_or_user_email_cont: Buscar por nombre o correo electrónico
+        sent_at_not_null:
+          label: Enviada
+          values:
+            'false': No enviada
+            'true': Enviada
+      meeting_copies:
+        create:
+          error: Se ha producido un error al duplicar este encuentro.
+          success: El encuentro se ha duplicado con éxito.
+        new:
+          copy: Copiar
+          title: Duplicar encuentro
+    components:
+      meetings:
+        actions:
+          comment: Comentar
+          join: Unirse
+          reply_poll: Responder la consulta
+        name: Encuentros
+        settings:
+          global:
+            announcement: Anuncio
+            comments_enabled: Comentarios habilitados
+            comments_max_length: Longitud máxima de los comentarios (deja 0 si quieres mantener la configuración por defecto)
+            creation_enabled_for_participants: Las participantes pueden crear encuentros
+            default_registration_terms: Términos de registro predeterminados
+            enable_pads_creation: Habilitar la creación de pads
+            maps_enabled: Mapas habilitados
+            registration_code_enabled: Código de inscripción activado
+            resources_permissions_enabled: Los permisos sobre acciones pueden establecerse para cada encuentro
+            scope_id: Ámbito
+            scopes_enabled: Ámbitos habilitados
+            terms_and_conditions_url_for_meeting_creators: URL de términos y condiciones para las creadoras de encuentros
+          step:
+            announcement: Anuncio
+            comments_blocked: Comentarios bloqueados
+            creation_enabled_for_participants: Habilitar la creación de encuentros por parte de las participantes
+            creation_enabled_for_user_groups: Habilitar la creación de encuentros por parte de los grupos de usuarias
+    events:
+      meetings:
+        meeting_closed:
+          affected_user:
+            email_intro: 'Tu reunión "%{resource_title}" fue cerrada. Puedes leer las conclusiones desde su página:'
+            email_outro: Ha recibido esta notificación porque organizó la reunión "%{resource_title}".
+            email_subject: Se ha cerrado el encuentro "%{resource_title}"
+            notification_title: El encuentro <a href="%{resource_path}">%{resource_title}</a> ha sido cerrada.
+          follower:
+            email_intro: 'Se ha cerrado la reunión "%{resource_title}". Puedes leer las conclusiones en su página:'
+            email_outro: Ha recibido esta notificación porque está siguiendo la reunión "%{resource_title}". Puedes dejar de seguirlo desde el enlace anterior.
+            email_subject: Se ha cerrado el encuentro "%{resource_title}"
+            notification_title: El encuentro <a href="%{resource_path}">%{resource_title}</a> ha sido cerrada.
+        meeting_created:
+          button_text: Inscribirse en el encuentro
+          email_intro: Se ha añadido el encuentro "%{resource_title}" al espacio "%{participatory_space_title}" que estás siguiendo.
+          email_outro: Has recibido esta notificación porque sigues "%{participatory_space_title}". Puedes dejar de seguirlo en el enlace anterior.
+          email_subject: Nuevo encuentro añadido a %{participatory_space_title}
+          notification_title: Se ha añadido el encuentro <a href="%{resource_path}">%{resource_title}</a> a %{participatory_space_title}
+        meeting_registration_confirmed:
+          notification_title: Su inscripción para la reunión <a href="%{resource_url}">%{resource_title}</a> ha sido confirmada. Su código de registro es %{registration_code}.
+        meeting_registrations_over_percentage:
+          email_intro: Las inscripciones ocupadas en "%{resource_title}" son %{percentage}%.
+          email_outro: Has recibido esta notificación porque eres es un administrador del espacio participativo de la reunión.
+          email_subject: Las inscripciones en "%{resource_title}" están por encima del %{percentage}%
+          notification_title: Las inscripciones de <a href="%{resource_path}">%{resource_title}</a> están por encima del %{percentage}%.
+        meeting_updated:
+          email_intro: 'Se ha cerrado el encuentro "%{resource_title}". Puedes leer las conclusiones en su página:'
+          email_outro: Has recibido esta notificación porque sigues el encuentro "%{resource_title}". Puedes dejar de seguirlo en el enlace anterior.
+          email_subject: Se ha actualizado el encuentro "%{resource_title}"
+          notification_title: El encuentro <a href="%{resource_path}">%{resource_title}</a> ha sido actualizado.
+        registration_code_validated:
+          email_intro: Su código de registro "%{registration_code}" para la reunión "%{resource_title}" ha sido validado.
+          email_outro: Recibió esta notificación porque su código de registro para el encuentro "%{resource_title}" ha sido validado.
+          email_subject: Su código de registro "%{registration_code}" para la reunión "%{resource_title}" ha sido validado
+          notification_title: Su código de registro "%{registration_code}" para el encuentro <a href="%{resource_path}">%{resource_title}</a> ha sido validado.
+        registrations_enabled:
+          email_intro: 'El encuentro "%{resource_title}" ha ha abierto las inscripciones. Puedes inscribirte en su página:'
+          email_outro: Has recibido esta notificación porque sigues el encuentro "%{resource_title}". Puedes dejar de seguirlo en el enlace anterior.
+          email_subject: El encuentro "%{resource_title}" ha abierto las inscripciones.
+          notification_title: El encuentro <a href="%{resource_path}">%{resource_title}</a> ha abierto las inscripciones.
+        upcoming_meeting:
+          email_intro: El encuentro "%{resource_title}" comenzará en menos de 48 h.
+          email_outro: Has recibido esta notificación porque sigues el encuentro "%{resource_title}". Puedes dejar de seguirlo en el enlace anterior.
+          email_subject: El encuentro "%{resource_title}" comenzará en menos de 48 h.
+          notification_title: El encuentro <a href="%{resource_path}">%{resource_title}</a> comenzará en menos de 48 h.
+    forms:
+      meetings:
+        attendees_count_help_text: No te olvides de añadir el número total de asistentes a la reunión, ya sea en persona, en línea o híbrido.
+    gamification:
+      badges:
+        attended_meetings:
+          conditions:
+            - Regístrate en las reuniones a las que quieres asistir.
+          description: Este distintivo se otorga cuando asiste a varias reuniones cara a cara.
+          description_another: Este usuario asistió a %{score} encuentros.
+          description_own: Usted ha asistido a %{score} reuniones.
+          name: Reuniones asistidas
+          next_level_in: '¡Asiste a %{score} reuniones más para alcanzar el siguiente nivel!'
+          unearned_another: Esta participante aún no ha asistido a ningún encuentro.
+          unearned_own: No has asistido a ningún encuentro todavía.
+    meetings:
+      actions:
+        agenda: Orden del día
+        attachment_collections: Carpetas
+        attachments: Archivos adjuntos
+        close: Cerrar
+        confirm_destroy: '¿Está seguro de que quiere eliminar este encuentro?'
+        destroy: Borrar
+        edit: Editar
+        invalid_destroy:
+          proposals_count:
+            one: 'El encuentro no se puede eliminar porque tiene %{count} propuesta asociada:'
+            other: 'El encuentro no se puede eliminar porque tiene %{count} propuestas asociadas:'
+        manage_poll: Configurar encuesta
+        new_meeting: Añadir encuentro
+        preview: Previsualizar
+        registrations: Inscripciones
+        title: Acciones
+      admin:
+        agenda:
+          agenda_item:
+            add_agenda_item_child: Añadir un sub-ítem en el orden del día
+            agenda_item: Punto del orden del día
+            agenda_item_children: Sub-ítems del orden del día
+            down: Bajar
+            remove: Eliminar
+            up: Subir
+          agenda_item_child:
+            agenda_item_child: Sub-ítem del orden del día
+            down: Bajar
+            remove: Eliminar
+            up: Subir
+          create:
+            invalid: Se ha producido un error al crear este orden del día.
+            success: El orden del día se ha creado correctamente.
+          edit:
+            title: Editar orden del día
+            update: Actualizar
+          form:
+            add_agenda_item: Añadir punto del orden del día
+            agenda_items: Puntos del orden del día
+            end_date: Fecha final
+            start_date: Fecha de inicio
+          new:
+            create: Crear
+            title: Nuevo orden del día
+          update:
+            invalid: Se ha producido un error al actualizar este orden del día.
+            success: El orden del día se ha actualizado correctamente.
+        exports:
+          answers: Respuestas
+          meeting_comments: Comentarios
+          meetings: Reuniones
+          registrations: Inscripciones
+        invite_join_meeting_mailer:
+          invite:
+            decline: Rechazar invitación
+            invited_you_to_join_a_meeting: "%{invited_by} te ha invitado a unirte a un encuentro en %{application}. Puedes aceptarlo a través del siguiente enlace."
+            join: Únete al encuentro '%{meeting_title}'
+        invites:
+          create:
+            error: Ha habido un problema al invitar al usuario a unirse al encuentro.
+            success: El usuario ha sido invitado con éxito a unirse al encuentro.
+          form:
+            attendee_type: Tipo de asistente
+            existing_user: Usuario existente
+            invite: Invitar
+            invite_explanation: El usuario será invitado a unirse a la reunión y también a la organización.
+            non_user: Usuario no existente
+            select_user: Selecciona un usuario
+          index:
+            invite_attendee: Invitar asistente
+            invites: Invitaciones
+            registrations_disabled: No puedes invitar a nadie porque las inscripciones están deshabilitadas.
+        meeting_closes:
+          edit:
+            close: Cerrar
+            title: Cerrar encuentro
+        meetings:
+          close:
+            invalid: Se ha producido un error al cerrar este encuentro.
+            success: Encuentro cerrado con éxito.
+          create:
+            invalid: Se ha producido un error al crear este encuentro.
+            success: Encuentro creado correctamente. Ten en cuenta que aún no se ha publicado, deberás publicarlo manualmente.
+          destroy:
+            invalid:
+              proposals_count:
+                one: No se puede eliminar el encuentro porque tiene %{count} propuesta relacionada.
+                other: No se puede eliminar el encuentro porque tiene %{count} propuestas relacionadas.
+            success: El encuentro se ha eliminado correctamente
+          edit:
+            title: Editar encuentro
+            update: Actualizar
+          form:
+            address_help: 'Dirección: usada por Geocoder para encontrar la ubicación'
+            disclaimer: 'Descargo de responsabilidad: Mediante el uso de un sistema de inscripción externo, aceptas que las organizadoras de %{organization} no son responsables de los datos proporcionados por las usuarias en el servicio externo.'
+            iframe_embed_type_html: 'Solo unos pocos servicios permiten ser incrustados en encuentros o eventos en directo desde los siguientes dominios: %{domains}'
+            location_help: 'Ubicación: mensaje dirigido a las participantes indicando el lugar donde reunirse'
+            location_hints_help: 'Consejos de ubicación: información adicional. Ejemplo: la planta del edificio si se trata de un encuentro presencial, o la contraseña de la sala si se trata de un encuentro online con acceso restringido.'
+            online_meeting_url_help: 'Enlace: permitir a las participantes conectarse directamente a tu encuentro'
+            registration_url_help: 'Enlace: permitir a las participantes ir al servicio externo que estás utilizando para las inscripciones'
+            select_a_meeting_type: Por favor, selecciona un tipo de encuentro
+            select_a_registration_type: Por favor, seleccione un tipo de inscripción
+            select_an_iframe_access_level: Por favor, seleccione un nivel de acceso iframe
+          index:
+            title: Encuentros
+          new:
+            create: Crear
+            title: Crear encuentro
+          publish:
+            invalid: Se ha producido un error al publicar este encuentro.
+            success: Encuentro publicado correctamente.
+          service:
+            description: Descripción
+            down: Abajo
+            remove: Eliminar
+            service: Servicio
+            title: Título
+            up: Arriba
+          services:
+            add_service: Añadir servicio
+            services: Servicios
+          unpublish:
+            invalid: Se ha producido un error al despublicar este encuentro.
+            success: Encuentro despublicado correctamente.
+          update:
+            invalid: Se ha producido un error al actualizar este encuentro.
+            success: Encuentro actualizado correctamente.
+        meetings_poll:
+          form:
+            title: Editar cuestionario de encuesta para %{questionnaire_for}
+          update:
+            invalid: Se ha producido un error al actualizar esta encuesta.
+            success: Encuesta actualizada correctamente.
+        poll:
+          form:
+            announcement_html:
+              - Cuando una pregunta recibe respuestas o está publicada/cerrada, ya no se puede editar.
+              - Puedes añadir una pregunta en cualquier momento.
+              - La consulta se cerrará cuando se hayan publicado los resultados de todas las preguntas creadas.
+              - Visita la <a href='%{admin_link}'>página de administración de encuestas</a> para enviar preguntas y publicar resultados.
+        registrations:
+          edit:
+            save: Guardar
+            validate: Validar
+            validate_registration_code: Validar el código de registro
+          form:
+            available_slots_help: Déjalo a 0 si tiene inscripciones ilimitadas.
+            invites: Invitaciones
+            recommendation_message: Por razones de privacidad te recomendamos que elimines este formulario de inscripción cuando ya no lo necesites. Por defecto, esto es 3 meses después de que la reunión haya finalizado.
+            registration_email_help: Este texto aparecerá en medio del correo de confirmación de inscripción. Justo después del código de inscripción.
+            registration_form: Formulario de inscripción
+            registrations_count:
+              one: Ha habido %{count} registro.
+              other: Ha habido %{count} registros.
+            reserved_slots_help: Déjalo a 0 si no tienes espacios reservados.
+            reserved_slots_less_than: Debe ser menor que o igual a %{count}
+            title: Registros
+          update:
+            invalid: Se ha producido un problema al guardar la configuración de la inscripción.
+            success: Se han guardado correctamente las configuraciones de inscripciones de encuentros.
+          validate_registration_code:
+            invalid: Este código de registro no es válido.
+            success: Código de registro validado con éxito.
+      admin_log:
+        invite:
+          create: "%{user_name} ha invitado a %{attendee_name} a unirse a la reunión %{resource_name} en el espacio %{space_name}"
+          deleted: "%{user_name} ha eliminado la invitación de %{attendee_name} de unirse a la reunión %{resource_name} en el espacio %{space_name}"
+          update: "%{user_name} ha invitado a %{attendee_name} a unirse a la reunión %{resource_name} en el espacio %{space_name}"
+        meeting:
+          close: "%{user_name} cerró el encuentro %{resource_name} en el espacio %{space_name}"
+          create: "%{user_name} creó el encuentro %{resource_name} en el espacio %{space_name}"
+          delete: "%{user_name} eliminó el encuentro %{resource_name} en el espacio %{space_name}"
+          export_registrations: "%{user_name} exportó los registros del encuentro %{resource_name} en el espacio %{space_name}"
+          update: "%{user_name} actualizó el encuentro %{resource_name} en el espacio %{space_name}"
+          value_types:
+            organizer_presenter:
+              not_found: 'El organizador no se encontró en la base de datos (ID: %{id})'
+        questionnaire:
+          update: "%{user_name} ha actualizado el cuestionario del encuentro %{meeting_name}"
+      application_helper:
+        filter_category_values:
+          all: Todas
+        filter_meeting_space_values:
+          all: Todos
+      calendar:
+        meeting_to_event:
+          read_more: Leer más sobre este encuentro
+      calendar_modal:
+        calendar_url: URL del calendario
+        copy_calendar_url: Copiar
+        copy_calendar_url_clarification: Copiar la URL del calendario al portapapeles
+        copy_calendar_url_copied: '¡Copiado!'
+        copy_calendar_url_description: Puedes ver todas las reuniones publicadas en tu aplicación o proveedor de calendario. Copia y pega esta URL en tu calendario usando la opción "Añadir nuevo calendario desde una URL".
+        copy_calendar_url_explanation: Ten en cuenta que estás exportando una selección de encuentros, ya que hay filtros activos. Si deseas exportarlos todos, primero desactiva todos los filtros.
+        copy_calendar_url_message: Se ha copiado el enlace al portapapeles correctamente.
+        export_calendar: Exportar calendario
+      close_meeting_reminder_mailer:
+        close_meeting_reminder:
+          body: El encuentro <a href="%{meeting_path}">"%{meeting_title}"</a> está pendiente de cerrarse. Por favor, agrega un informe de la reunión usando el botón "Cerrar encuentro".
+          greetings: Hola,<br/>%{organization_name}<br/><a href="%{organization_url}">%{organization_url}</a>
+          hello: Hola %{username},
+          subject: Ahora puede cerrar la reunión "%{meeting_title}" con un informe
+      conference_venues: Lugares de conferencia
+      content_blocks:
+        upcoming_meetings:
+          name: Próximos encuentros
+      directory:
+        meetings:
+          index:
+            meetings: Reuniones
+            space_type: Espacio participativo
+      iframe_access_level:
+        all: Todos los visitantes
+        registered: Participantes inscritas en este encuentro
+        signed_in: Sólo participantes registradas
+      iframe_embed_type:
+        embed_in_meeting_page: Incrustar en la página del encuentro
+        none: Ninguno
+        open_in_live_event_page: Abrir en la página del evento en directo
+        open_in_new_tab: Abrir en nueva pestaña
+      last_activity:
+        meeting_updated: 'Encuentro actualizado:'
+        new_meeting: 'Nuevo encuentro:'
+      layouts:
+        live_event:
+          close: cerrar
+      mailer:
+        invite_join_meeting_mailer:
+          invite:
+            subject: Invitación a unirse a una reunión
+        registration_mailer:
+          confirmation:
+            subject: La inscripción a tu encuentro ha sido confirmada
+      meeting:
+        not_allowed: No tienes permiso para ver este encuentro.
+      meeting_closes:
+        edit:
+          back: Atrás
+          close: Crear encuentro
+          title: Cerrar el encuentro
+      meetings:
+        calendar_modal:
+          add_to_calendar: Añadir al calendario
+          apple: Añadir al calendario de Apple
+          full_details_html: Para obtener todos los detalles ve a %{link}
+          google: Añadir al calendario de Google
+          outlook: Abrir el calendario de Outlook
+        count:
+          meetings_count:
+            one: "%{count} encuentro"
+            other: "%{count} encuentros"
+        create:
+          invalid: Se ha producido un error al crear este encuentro.
+          success: Has creado el encuentro con éxito.
+        edit:
+          back: Atrás
+          title: Editar el encuentro
+          update: Actualizar
+        filters:
+          activity: Mi actividad
+          all: Todos
+          category: Categoría
+          date: Fecha
+          date_values:
+            all: Todas
+            past: Pasadas
+            upcoming: Próximas
+          my_meetings: Mis encuentros
+          origin: Origen
+          origin_values:
+            all: Todos
+            official: Oficial
+            participants: Participantes
+            user_group: Grupos
+          search: Buscar
+          type: Tipo
+          type_values:
+            all: Todos
+            hybrid: Híbrida
+            in_person: Presencial
+            online: Online
+        form:
+          address_help: 'Dirección: que utilizará Geocoder para encontrar la ubicación'
+          available_slots_help: Déjalo a 0 si tienes espacio ilimitado disponible
+          create_as: Crear encuentro como
+          disclaimer: 'Descargo de responsabilidad: Mediante el uso de un sistema de inscripción externo, aceptas que las organizadoras de %{organization} no son responsables de los datos proporcionados por las usuarias en el servicio externo.'
+          iframe_embed_type_html: 'Solo unos pocos servicios permiten ser incrustados en encuentros o eventos en directo desde los siguientes dominios: %{domains}'
+          location_help: 'Ubicación: mensaje dirigido a las participantes indicando el lugar donde reunirse'
+          location_hints_help: 'Consejos de ubicación: información adicional. Ejemplo: la planta del edificio si se trata de un encuentro presencial, o la contraseña de la sala si se trata de un encuentro online con acceso restringido.'
+          online_meeting_url_help: 'Enlace: permitir a las participantes conectarse directamente a tu encuentro'
+          registration_url_help: 'Enlace: permitir a las participantes ir al servicio externo que estás utilizando para las inscripciones'
+          select_a_category: Por favor, selecciona una categoría
+          select_a_meeting_type: Por favor, selecciona un tipo de encuentro
+          select_a_registration_type: Por favor, selecciona un tipo de inscripción
+          select_an_iframe_access_level: Por favor, selecciona un nivel de acceso iframe
+        index:
+          click_here: Ver todos los encuentros
+          new_meeting: Nuevo encuentro
+          see_all: Ver todos los encuentros
+          see_all_withdrawn: Ver todos los encuentros retirados
+          text_banner: Estás viendo la lista de encuentros retirados por sus autores. %{go_back_link}.
+        meeting:
+          close_meeting: Cerrar el encuentro
+          edit_close_meeting: Editar el informe del encuentro
+          edit_meeting: Editar el encuentro
+          join_meeting: Unirse al encuentro
+          reply_poll: Responder consulta
+          view_poll: Ver consulta
+        meetings:
+          no_meetings_warning: No hay encuentros que coincidan con tu búsqueda o no hay ningún encuentro programado.
+          upcoming_meetings_warning: Actualmente no hay encuentros programados, pero puedes ver los encuentros anteriores.
+        new:
+          back: Atrás
+          create: Crear
+          title: Crea tu encuentro
+        registration_confirm:
+          cancel: Cancelar
+          confirm: Confirmar
+        show:
+          attendees: Número de asistentes
+          contributions: Número de contribuciones
+          join: Inscribirse al encuentro
+          leave: Cancela tu inscripción
+          leave_confirmation: '¿Seguro que quieres cancelar tu inscripción para este encuentro?'
+          link_available_soon: Enlace disponible próximamente
+          link_closed: El enlace para unirte a la reunión estará disponible unos minutos antes de que comience
+          live_event: Este encuentro está sucediendo ahora mismo
+          meeting_minutes: Acta del encuentro
+          micro_camera_permissions_warning: Cuando hagas clic en el botón de abajo, se te pedirán permisos de micrófono y/o cámara y te unirás a la videoconferencia
+          no_slots_available: No hay espacio disponible
+          organizations: Organizaciones que han asistido
+          registration_code_help_text: Tu codigo de registro
+          registration_state:
+            validated: Validado
+            validation_pending: VALIDACIÓN PENDIENTE
+          remaining_slots:
+            one: "Queda %{count} ranuras"
+            other: "%{count} ranuras restantes"
+          visit_finished: Ver encuentro pasado
+          withdraw_btn_hint: Puedes retirar tu encuentro si cambias de opinión. El encuentro no será eliminado, aparecerá en la lista de encuentros retirados.
+          withdraw_confirmation_html: '¿Seguro que quieres retirar este encuentro?<br><br><strong>¡Esta acción no se puede cancelar!</strong>'
+          withdraw_meeting: Retirar encuentro
+        update:
+          invalid: Se ha producido un error al actualizar este encuentro.
+          success: Has actualizado el encuentro con éxito.
+      models:
+        invite:
+          fields:
+            email: Correo electrónico
+            name: Nombre
+            sent_at: Enviado el
+            status: Estado
+          status:
+            accepted: Aceptada (%{at})
+            rejected: Rechazada (%{at})
+            sent: Enviadas
+        meeting:
+          fields:
+            closed: Cerrado
+            end_time: Fecha de finalización
+            id: ID
+            map: Mapa
+            official_meeting: Encuentro oficial
+            start_time: Fecha de inicio
+            title: Título
+      polls:
+        answers:
+          index:
+            administrate: Administrar
+            title: Consulta
+          index_admin:
+            back_to_meeting: Volver al encuentro
+            title: Administrar consulta
+            view_poll: Ver consulta
+        questions:
+          closed_question:
+            announcement: Se han cerrado las respuestas a esta pregunta.
+            question: Pregunta
+            question_results: Resultados
+          index:
+            empty_questions: A lo largo de este encuentro, se enviarán algunas preguntas y podrás responderlas. Se mostrarán aquí.
+          index_admin:
+            edit: Editar en el panel de administración
+            question: Pregunta
+            received_answer: respuesta recibida
+            received_answers: respuestas recibidas
+            results: Resultados
+            send: Enviar
+            sent: Enviada
+            statuses:
+              closed: Resultados enviados (cerrados)
+              published: Enviada (abierta)
+              unpublished: Pendiente de enviar
+          published_question:
+            max_choices_alert: Hay demasiadas opciones seleccionadas
+            question: Pregunta
+            question_replied: Pregunta respondida
+            reply_question: Responder pregunta
+      public_participants_list:
+        attending_organizations: Organizaciones
+        attending_participants: Participantes asistentes
+        hidden_participants_count:
+          one: y %{count} persona más
+          other: y %{count} personas más
+      read_more: "(leer más)"
+      registration_mailer:
+        confirmation:
+          confirmed_html: Se ha confirmado su inscripción para el encuentro <a href="%{url}">%{title}</a>.
+          details: Encontrarás detalles del encuentro en el archivo adjunto.
+          registration_code: Tu código de registro es %{code}.
+      registration_type:
+        on_different_platform: En una plataforma diferente
+        on_this_platform: En esta plataforma
+        registration_disabled: Inscripciones deshabilitadas
+      registrations:
+        create:
+          invalid: Ha habido un problema al unirse a este encuentro.
+          success: Te has inscrito al encuentro con éxito. Por estar inscrita recibirás una notificación si se producen actualizaciones.
+        decline_invitation:
+          invalid: Ha habido un problema al rechazar la invitación.
+          success: Has rechazado la invitación con éxito.
+        destroy:
+          invalid: Ha habido un problema al salir de esta encuentro.
+          success: Has salido del encuentro con éxito.
+      type_of_meeting:
+        hybrid: Híbrido
+        in_person: Presencial
+        online: En línea
+      types:
+        private_meeting: Encuentro privado
+        transparent: Transparente
+        withdraw: Retirado
+      withdraw:
+        error: Se ha producido un error al retirar el encuentro.
+        success: El encuentro se ha retirado con éxito.
+    metrics:
+      meetings:
+        description: Número de reuniones creadas
+        object: reuniones
+        title: Reuniones
+    participatory_spaces:
+      highlighted_meetings:
+        past_meetings: Encuentros pasados
+        see_all: Ver todo (%{count})
+        upcoming_meetings: Próximos encuentros
+    resource_links:
+      meetings_through_proposals:
+        meeting_result: 'Resultados relacionados:'
+        result_meeting: 'Encuentros relacionados:'
+      proposals_from_meeting:
+        meeting_proposal: 'Propuestas relacionadas:'
+        proposal_meeting: 'Encuentros relacionados:'
+    statistics:
+      meetings_count: Encuentros
+  devise:
+    mailer:
+      join_meeting:
+        subject: Invitación a unirse a una reunión

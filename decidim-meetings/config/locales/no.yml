@@ -1,0 +1,489 @@
+"no":
+  activemodel:
+    attributes:
+      close_meeting:
+        attendees_count: Antall deltagere
+        attending_organizations: Liste over organisasjoner som deltok
+        audio_url: Audio URL
+        closing_report: Referat
+        closing_visible: Er synlig
+        contributions_count: Antall bidrag
+        proposal_ids: Forslag opprettet i møtet
+        video_url: Video URL
+      meeting:
+        address: Adresse
+        available_slots: Tilgjengelige plasser for dette møtet
+        customize_registration_email: Tilpass registrerings-e-post
+        decidim_category_id: Kategori
+        decidim_scope_id: Tema
+        decidim_user_group_id: Brukergruppe
+        description: Beskrivelse
+        id: ID
+        location: Plassering
+        location_hints: Plasseringstips
+        online_meeting_url: Link til nettmøte
+        organizer_gid: Opprett som
+        organizer_id: Planlegger
+        private_meeting: Privat møte
+        registration_form_enabled: Registreringsskjemaet aktivert
+        registration_terms: Registrerings vilkår
+        registration_url: Link til registrering
+        registrations_enabled: Registreringer aktivert
+        title: Tittel
+        transparent: Privat
+        type_of_meeting: Type møte
+    models:
+      decidim/meetings/close_meeting_event: Møttet lukket
+      decidim/meetings/create_meeting_event: Møte
+      decidim/meetings/meeting_registrations_enabled_event: Registreringer aktivert
+      decidim/meetings/meeting_registrations_over_percentage_event: Registreringer over grensen
+      decidim/meetings/upcoming_meeting_event: Kommende møte
+      decidim/meetings/update_meeting_event: Møtet er oppdatert
+  activerecord:
+    models:
+      decidim/meetings/meeting:
+        one: Møte
+        other: Møter
+      decidim/meetings/minutes:
+        one: Referat
+        other: Referat
+      decidim/meetings/registration:
+        one: Registrering
+        other: Registreringer
+  decidim:
+    admin:
+      filters:
+        meetings:
+          category_id_eq:
+            label: Kategori
+          closed_at_present:
+            label: Status
+            values:
+              'false': Åpen
+              'true': Lukket
+          is_upcoming_true:
+            label: Dato
+            values:
+              'false': Tidligere
+              'true': Kommende
+          scope_id_eq:
+            label: Tema
+          with_any_origin:
+            values:
+              user_group: Brukergrupper
+          with_any_type:
+            label: Type møte
+            values:
+              in_person: Tilstede
+      meeting_copies:
+        create:
+          error: Det oppstod et problem med å publisere dette møtet.
+          success: Møtet ble duplisert.
+        new:
+          copy: Kopier
+          title: Duplisert møte
+    components:
+      meetings:
+        actions:
+          comment: Kommenter
+          join: Bli med
+        name: Møter
+        settings:
+          global:
+            announcement: Kunngjøring
+            comments_enabled: Kommentarer aktivert
+            comments_max_length: Maks lengde på kommentarer (Sett 0 for standardverdi)
+            creation_enabled_for_participants: Deltakere kan opprette møter
+            default_registration_terms: Standard registreringsvilkår
+            enable_pads_creation: Aktiver oppretting av pads
+            maps_enabled: Kart aktivert
+            registration_code_enabled: Registreringskode aktivert
+            resources_permissions_enabled: Handlings tillatelser kan settes for hvert møte
+            scope_id: Tema
+            scopes_enabled: Temaer aktivert
+            terms_and_conditions_url_for_meeting_creators: Link til vilkår og betingelser for arrangører
+          step:
+            announcement: Kunngjøring
+            comments_blocked: Kommentarer blokkert
+            creation_enabled_for_participants: Deltakere kan nå opprette møter
+            creation_enabled_for_user_groups: Brukergrupper kan nå opprette møter
+    events:
+      meetings:
+        meeting_closed:
+          affected_user:
+            email_intro: 'Møte ditt "%{resource_title}" ble avsluttet. Du kan lese konklusjonen fra siden:'
+            email_outro: Du har mottatt denne varslingen fordi du arrangerte "%{resource_title}" møtet.
+            email_subject: Møtet "%{resource_title}" ble avsluttet
+            notification_title: <a href="%{resource_path}">%{resource_title}</a> møtet ble lukket.
+          follower:
+            email_intro: 'Møtet "%{resource_title}" var lukket. Du kan lese konklusjonen fra siden:'
+            email_outro: Du har mottatt denne varslingen fordi du følger "%{resource_title}" møte. Du kan slutte å følge den fra den forrige lenken.
+            email_subject: Møtet "%{resource_title}" ble avsluttet
+            notification_title: <a href="%{resource_path}">%{resource_title}</a> møtet ble lukket.
+        meeting_created:
+          button_text: Registrer deg til møtet
+          email_intro: Møtet "%{resource_title}" er blitt lagt til "%{participatory_space_title}" som du følger.
+          email_outro: Du har mottatt denne varslingen fordi du følger "%{participatory_space_title}". Du kan slutte å følge den fra den forrige lenken.
+          email_subject: Nytt møte lagt til %{participatory_space_title}
+          notification_title: Møtet <a href="%{resource_path}">%{resource_title}</a> har blitt lagt til %{participatory_space_title}
+        meeting_registration_confirmed:
+          notification_title: Registreringen din for møtet <a href="%{resource_url}">%{resource_title}</a> er bekreftet. Registreringskoden din er %{registration_code}.
+        meeting_registrations_over_percentage:
+          email_intro: De tildelte plassene for "%{resource_title}" møtet er over %{percentage}%.
+          email_outro: Du har mottatt denne varslingen fordi du er administrator av møtets deltakerområde.
+          email_subject: De tildelte plassene for "%{resource_title}" møtet er over %{percentage}%
+          notification_title: De tildelte plassene for <a href="%{resource_path}">%{resource_title}</a> møtet er over %{percentage}%.
+        meeting_updated:
+          email_intro: 'Møtet "%{resource_title}" var oppdatert. Du kan lese den nye versjonen fra siden:'
+          email_outro: Du har mottatt denne varslingen fordi du følger "%{resource_title}" møte. Du kan slutte å følge den fra den forrige lenken.
+          email_subject: Møtet "%{resource_title}" ble oppdatert
+          notification_title: <a href="%{resource_path}">%{resource_title}</a> møtet ble oppdatert.
+        registration_code_validated:
+          email_intro: Din registreringskode "%{registration_code}" for "%{resource_title}" møtet er blitt validert.
+          email_outro: Du har mottatt denne varslingen fordi registreringskoden din for "%{resource_title}" møtet er blitt validert.
+          email_subject: Din registreringskode "%{registration_code}" for "%{resource_title}" møtet er blitt validert
+          notification_title: Din registreringskode "%{registration_code}" for <a href="%{resource_path}">%{resource_title}</a> møtet er blitt validert.
+        registrations_enabled:
+          email_intro: '"%{resource_title}" møtet har muliggjort registreringer. Du kan registrere deg selv på siden:'
+          email_outro: Du har mottatt denne varslingen fordi du følger "%{resource_title}" møte. Du kan slutte å følge den fra den forrige lenken.
+          email_subject: Møtet "%{resource_title}" har muliggjort registreringer.
+          notification_title: <a href="%{resource_path}">%{resource_title}</a> møtet har muliggjort registreringer.
+        upcoming_meeting:
+          email_intro: '"%{resource_title}" møtet starter om mindre enn 48 timer.'
+          email_outro: Du har mottatt denne varslingen fordi du følger "%{resource_title}" møte. Du kan slutte å følge den fra den forrige lenken.
+          email_subject: '"%{resource_title}" møtet starter om mindre enn 48 timer.'
+          notification_title: <a href="%{resource_path}">%{resource_title}</a> møtet starter om mindre enn 48 timer.
+    gamification:
+      badges:
+        attended_meetings:
+          conditions:
+            - Registrer for møtene du ønsker å delta
+          description: Dette merket blir gitt når du deltar på flere møter ansikt til ansikt.
+          description_another: Denne deltakeren har deltatt på %{score} møter.
+          description_own: Du har deltatt %{score} møter.
+          name: Deltok møter
+          next_level_in: Delta %{score} flere møter for å nå neste nivå!
+    meetings:
+      actions:
+        agenda: Dagsorden
+        attachment_collections: Mapper
+        attachments: Vedlegg
+        close: Lukk
+        confirm_destroy: Er du sikker på at du vil slette dette møtet?
+        destroy: Slett
+        edit: Rediger
+        invalid_destroy:
+          proposals_count:
+            one: 'Dette møtet kan ikke slettes, da det har %{count} forslag tilknyttet:'
+            other: 'Dette møtet kan ikke slettes, da det har %{count} forslag tilknyttet:'
+        manage_poll: Administrere menignsmåling
+        preview: Forhåndsvis
+        registrations: Registreringer
+        title: Handlinger
+      admin:
+        agenda:
+          agenda_item:
+            add_agenda_item_child: Legg til dagsordens underelement
+            agenda_item: Dagsordens element
+            agenda_item_children: Dagsordens underelementer
+            down: Ned
+            remove: Fjern
+            up: Opp
+          agenda_item_child:
+            agenda_item_child: Dagsordens underelement
+            down: Ned
+            remove: Fjern
+            up: Opp
+          edit:
+            title: Rediger agenda
+            update: Oppdater
+          form:
+            add_agenda_item: Legg til dagsordens element
+            agenda_items: Dagsordens elementer
+            end_date: Sluttdato
+            start_date: Startdato
+          new:
+            create: Opprett
+            title: Ny agenda
+        exports:
+          answers: Svar
+          meeting_comments: Kommentarer
+          meetings: Møter
+          registrations: Registreringer
+        invite_join_meeting_mailer:
+          invite:
+            decline: Avvis invitasjon
+            invited_you_to_join_a_meeting: "%{invited_by} har invitert deg til å delta et møte på %{application}. Du kan avvise eller godta gjennom lenkene nedenfor."
+            join: Bli med på møte '%{meeting_title}'
+        invites:
+          create:
+            error: Det oppstod et problem med å invitere deltakeren til å delta på møtet.
+            success: Deltakeren ble invitert til å delta møtet.
+          form:
+            attendee_type: Deltakertype
+            existing_user: Eksisterende deltaker
+            invite: Inviter
+            invite_explanation: Deltakeren vil bli invitert til å delta på møtet og i organisasjonen også.
+            non_user: Ikke eksisterende deltaker
+            select_user: Velg deltaker
+          index:
+            invite_attendee: Inviter deltaker
+            invites: Invitasjoner
+        meeting_closes:
+          edit:
+            close: Lukk
+            title: Lukk møte
+        meetings:
+          create:
+            success: Møtet ble opprettet. Merk at dette ikke er publisert enda, du må publisere det manuelt.
+          destroy:
+            success: Møtet ble slettet
+          edit:
+            title: Rediger møte
+            update: Oppdater
+          form:
+            address_help: 'Adresse: brukes av Geocoder for å finne lokasjonen'
+            location_help: 'Plassering: melding rettet til brukerne som antyder stedet å møte på'
+            location_hints_help: 'Hint: ekstra info. Eksempel: Etasje i bygningen hvis det er et fysisk møte, eller møtepassordet hvis det er et nettmøte med begrenset tilgang.'
+            online_meeting_url_help: 'Lenke: tillat deltakere å koble direkte til møtet ditt'
+            registration_url_help: 'Lenke: La deltakerne gå på den eksterne tjenesten du bruker for registreringer'
+            select_a_meeting_type: Vennligst velg en møtetype
+            select_a_registration_type: Velg en registreringstype
+            select_an_iframe_access_level: Velg et tilgangsnivå for iframe
+          index:
+            title: Møter
+          new:
+            create: Opprett
+            title: Opprett møte
+          service:
+            description: Beskrivelse
+            down: Ned
+            remove: Fjern
+            service: Tjeneste
+            title: Tittel
+            up: Opp
+          services:
+            add_service: Legg til tjeneste
+            services: Tjenester
+        meetings_poll:
+          form:
+            title: Rediger meningsmåling for %{questionnaire_for}
+        registrations:
+          edit:
+            save: Lagre
+            validate: Valider
+            validate_registration_code: Valider registreringskode
+          form:
+            available_slots_help: Sett den til 0 hvis du har ubegrensede plasser tilgjengelig.
+            invites: Invitasjoner
+            registration_email_help: Denne teksten vil dukke opp i midten av e-posten med registreringsbekreftelsen. Like etter registreringskoden.
+            registration_form: Registreingsskjema
+            registrations_count:
+              one: Det har vært %{count} registrering.
+              other: Det har vært %{count} registreringer.
+            reserved_slots_less_than: Må være mindre enn eller lik %{count}
+            title: Registreringer
+          update:
+            invalid: Det oppstod et problem med å lagre registrerings innstillingene.
+            success: Innstillinger for møte registreringer er lagret.
+          validate_registration_code:
+            invalid: Denne registreringskoden er ugyldig.
+            success: Registreringskoden ble validert.
+      admin_log:
+        invite:
+          create: "%{user_name} inviterte %{attendee_name} til å delta i %{resource_name} møtet på %{space_name} rommet"
+          deleted: "%{user_name} fjern invitasjon %{attendee_name} fra å bli med i %{resource_name} møtet på %{space_name} rommet"
+          update: "%{user_name} inviterte %{attendee_name} til å delta i %{resource_name} møtet på %{space_name} rommet"
+        meeting:
+          close: "%{user_name} lukket %{resource_name} møtet i %{space_name} rommet"
+          create: "%{user_name} opprettet %{resource_name} møte på %{space_name} rommet"
+          delete: "%{user_name} slettet %{resource_name} møte på %{space_name} rommet"
+          export_registrations: "%{user_name} eksporterte registreringen av %{resource_name} møte på %{space_name} rommet"
+          update: "%{user_name} oppdaterte %{resource_name} møte på %{space_name} rommet"
+          value_types:
+            organizer_presenter:
+              not_found: 'Arrangøren ble ikke funnet i databasen (ID: %{id})'
+      application_helper:
+        filter_category_values:
+          all: Alle
+        filter_meeting_space_values:
+          all: Alle
+      calendar_modal:
+        calendar_url: Kalender URL
+        export_calendar: Eksporter kalender
+      conference_venues: Konferanse Arenaer
+      content_blocks:
+        upcoming_meetings:
+          name: Kommende møter
+      directory:
+        meetings:
+          index:
+            meetings: Møter
+            space_type: Deltakerområde
+      iframe_access_level:
+        all: Alle besøkende
+        registered: Registrerte deltakere til dette møtet
+        signed_in: Bare påloggede deltakere
+      iframe_embed_type:
+        embed_in_meeting_page: Bygg inn på møteside
+        none: Ingen
+      layouts:
+        live_event:
+          close: lukk
+      mailer:
+        invite_join_meeting_mailer:
+          invite:
+            subject: Invitasjon til å delta et møtet
+        registration_mailer:
+          confirmation:
+            subject: Registrering av møtet ditt er bekreftet
+      meeting_closes:
+        edit:
+          back: Tilbake
+          close: Avslutt møte
+          title: Avslutt møte
+      meetings:
+        calendar_modal:
+          add_to_calendar: Legg til i kalender
+          apple: Legg til i Apple kalender
+          full_details_html: For komplette detaljer, gå til %{link}
+          google: Legg til i Google kalender
+          outlook: Legg til i Outlook kalender
+        count:
+          meetings_count:
+            one: "%{count} møte"
+            other: "%{count} møter"
+        create:
+          invalid: Det oppstod et problem med å opprette dette møtet.
+          success: Du har nå opprettet møtet.
+        edit:
+          back: Tilbake
+          title: Rediger møtet ditt
+          update: Oppdater
+        filters:
+          activity: Min aktivitet
+          all: Alle
+          category: Kategori
+          date: Dato
+          date_values:
+            all: Alle
+            past: Tidligere
+            upcoming: Kommende
+          my_meetings: Mine møter
+          origin: Opprinnelse
+          origin_values:
+            all: Alle
+            official: Offisiell
+            participants: Deltakere
+          search: Søk
+          type: Type
+          type_values:
+            all: Alle
+            in_person: Fysisk
+            online: Digitalt
+        form:
+          address_help: 'Adresse: brukes av Geocoder for å finne lokasjonen'
+          available_slots_help: Sett den til 0 hvis du har ubegrensede plasser tilgjengelig
+          create_as: Opprett møte som
+          select_a_category: Velg en kategori
+          select_a_meeting_type: Velg en møtetype
+          select_a_registration_type: Velg en registreringstype
+          select_an_iframe_access_level: Velg et tilgangsnivå for iframe
+        index:
+          click_here: Se alle møter
+          new_meeting: Nytt møte
+        meetings:
+          upcoming_meetings_warning: For øyeblikket er det ingen planlagte møter, men her kan du finne alle de forrige møtene oppført.
+        registration_confirm:
+          cancel: Avbryt
+          confirm: Bekreft
+        show:
+          attendees: Antall deltakere
+          contributions: Bidrag teller
+          join: Bli med på møte
+          meeting_minutes: Møte referater
+          no_slots_available: Ingen plasser tilgjengelig
+          organizations: Deltakende organisasjoner
+          registration_code_help_text: Din registreringskode
+          registration_state:
+            validated: VALIDERT
+            validation_pending: VALIDERING VENTER
+          remaining_slots:
+            one: "%{count} plass igjen"
+            other: "%{count} plasser igjen"
+        update:
+          invalid: Det oppstod et problem med å oppdatere dette møtet.
+          success: Du har nå oppdatert møtet.
+      models:
+        invite:
+          fields:
+            email: Epost
+            name: Navn
+            sent_at: Sendt på
+            status: Status
+          status:
+            accepted: Aksepterte (%{at})
+            rejected: Avvist (%{at})
+            sent: Sendt
+        meeting:
+          fields:
+            closed: Lukket
+            end_time: Sluttdato
+            map: Kart
+            start_time: Startdato
+            title: Tittel
+      polls:
+        questions:
+          index:
+            empty_questions: Gjennom dette møtet stilles noen spørsmål, og du vil kunne svare på dem. De vil bli vist her.
+          index_admin:
+            question: Spørsmål
+            received_answer: mottatt svar
+            received_answers: mottatt svar
+            results: Resultater
+            send: Send
+            sent: Sendt
+          published_question:
+            max_choices_alert: For mange valg er merket
+            question: Spørsmål
+            question_replied: Spørsmål besvart
+            reply_question: Besvar spørsmål
+      read_more: "(Les mer)"
+      registration_mailer:
+        confirmation:
+          confirmed_html: Din påmelding til møtet <a href="%{url}">%{title}</a> er bekreftet.
+          details: Du finner møtets detaljer i vedlegget.
+          registration_code: Registreringskoden din er %{code}.
+      registrations:
+        create:
+          invalid: Det oppstod et problem med å bli med på dette møtet.
+        decline_invitation:
+          invalid: Det oppstod et problem med å avslå invitasjonen.
+          success: Du har avslått invitasjonen.
+        destroy:
+          invalid: Det oppstod et problem med å forlate dette møtet.
+          success: Du har forlatt møtet.
+      types:
+        private_meeting: Privat møte
+        transparent: Privat
+    metrics:
+      meetings:
+        description: Antall møter opprettet
+        object: møter
+        title: Møter
+    participatory_spaces:
+      highlighted_meetings:
+        past_meetings: Tidligere møter
+        see_all: Vis alle (%{count})
+        upcoming_meetings: Kommende møter
+    resource_links:
+      meetings_through_proposals:
+        meeting_result: 'Relaterte resultater:'
+        result_meeting: 'Relaterte møter:'
+      proposals_from_meeting:
+        meeting_proposal: 'Relaterte forslag:'
+        proposal_meeting: 'Relaterte møter:'
+  devise:
+    mailer:
+      join_meeting:
+        subject: Invitasjon til å delta et møtet

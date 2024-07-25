@@ -1,0 +1,24 @@
+<section class="search__result">
+  <h2 class="h4">
+    <%= searchable_resource_human_name(class_name.constantize, count: 5) %>&nbsp;
+    <span class="label text-md"><%= results_count %></span>
+  </h2>
+
+  <% results.each do |result| %>
+    <%= card_for result, { size: :s } %>
+  <% end %>
+
+  <% if results_count > Decidim::Search::HIGHLIGHTED_RESULTS_COUNT && !paginated? %>
+    <%= link_to(
+      search_path_by_resource_type(class_name),
+      class: "button button__text-secondary"
+    ) do %>
+      <span><%= t("decidim.searches.results.view_all", count: results_count) %></span>
+      <%= icon "arrow-right-line" %>
+    <% end %>
+  <% end %>
+
+  <% if paginated? %>
+    <%= decidim_paginate results %>
+  <% end %>
+</section>

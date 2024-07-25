@@ -1,0 +1,64 @@
+de:
+  activemodel:
+    attributes:
+      dummy_resource:
+        created_at: Erstellt am
+        decidim_scope_id: Umfang
+        field: Mein Feld
+        start_date: Startdatum
+        title: Titel
+        translatable_text: Übersetzbarer Text
+        updated_at: Aktualisiert am
+  decidim:
+    components:
+      dummy:
+        settings:
+          global:
+            guided: Geführte Eingabe
+            guided_help: Hilfetext
+            guided_readonly: Deaktivierte Eingabe
+            guided_rich: Geführte reiche Eingabe
+            guided_rich_help_html: HTML <strong>Hilfe</strong> Text
+            guided_rich_readonly_html: HTML <strong>Hilfe</strong> Text für deaktivierte Eingabe
+            readonly_attribute: Attribut schreibgeschützt
+            test: Test A
+            test_choices:
+              a: Wahl A
+              b: Wahl B
+              c: Wahl C
+            test_options:
+              bar: Bar
+              baz: Baz
+              foo: Foo
+          step:
+            endorsements_blocked: Befürwortungen blockiert
+            endorsements_enabled: Befürwortungen aktiviert
+            readonly_step_attribute: Schritt-Attribut schreibgeschützt
+            test_options:
+              bar: Bar
+              baz: Baz
+              foo: Foo
+    dummy:
+      admin:
+        exports:
+          dummies: Dummies
+    gamification:
+      badges:
+        test:
+          conditions:
+            - Verwenden Sie eine Testumgebung für Decidim.
+          description: Benutzer erhalten dieses Badge, indem sie Tests erstellen.
+          description_another: Dieser Benutzer hat %{score} Tests erstellt.
+          description_own: Sie haben %{score} Tests erstellt.
+          name: Tests
+          next_level_in: Erstellen Sie %{score} weitere Tests, um das nächste Level zu erreichen!
+          unearned_another: Dieser Teilnehmer hat noch keine Tests erstellt.
+          unearned_own: Sie haben noch keine Tests erstellt.
+    resource_links:
+      test_link:
+        dummy_resource_dummy: Verwandter Dummy
+    statistics:
+      bar: Bar
+      dummies_count_high: Dummies hoch
+      dummies_count_medium: Dummies mittel
+      foo: Foo
